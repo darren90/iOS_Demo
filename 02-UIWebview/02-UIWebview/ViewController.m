@@ -64,6 +64,21 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [webView loadRequest:request ];
 }
+
+
+-(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    NSLog(@":%@----:%ld",request.URL,(long)navigationType);
+    
+    //防止调回视频对应的客户端
+    NSString *urlStr = request.URL.absoluteString;
+    if ([urlStr rangeOfString:@"sohuvideo:"].location != NSNotFound //拦截搜狐
+        || [urlStr rangeOfString:@"action.cmd"].location != NSNotFound) {
+        return NO;
+    }else{
+        return YES;
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
