@@ -1,0 +1,515 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FE0F74371BA477EF00E4ECDC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0F74361BA477EF00E4ECDC /* main.m */; };
+		FE0F743A1BA477EF00E4ECDC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0F74391BA477EF00E4ECDC /* AppDelegate.m */; };
+		FE0F743D1BA477EF00E4ECDC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0F743C1BA477EF00E4ECDC /* ViewController.m */; };
+		FE0F74401BA477EF00E4ECDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE0F743E1BA477EF00E4ECDC /* Main.storyboard */; };
+		FE0F74421BA477EF00E4ECDC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE0F74411BA477EF00E4ECDC /* Images.xcassets */; };
+		FE0F74451BA477EF00E4ECDC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0F74431BA477EF00E4ECDC /* LaunchScreen.xib */; };
+		FE0F74511BA477F000E4ECDC /* MMTabBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0F74501BA477F000E4ECDC /* MMTabBarTests.m */; };
+		FE0F74681BA4787D00E4ECDC /* RAMBounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0F745D1BA4787D00E4ECDC /* RAMBounceAnimation.swift */; };
+		FE0F74691BA4787D00E4ECDC /* RAMFrameItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0F745F1BA4787D00E4ECDC /* RAMFrameItemAnimation.swift */; };
+		FE0F746A1BA4787D00E4ECDC /* RAMFumeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0F74611BA4787D00E4ECDC /* RAMFumeAnimation.swift */; };
+		FE0F746B1BA4787D00E4ECDC /* RAMRotationAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0F74631BA4787D00E4ECDC /* RAMRotationAnimation.swift */; };
+		FE0F746C1BA4787D00E4ECDC /* RAMTransitionItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0F74651BA4787D00E4ECDC /* RAMTransitionItemAnimation.swift */; };
+		FE0F746D1BA4787D00E4ECDC /* RAMAnimatedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0F74661BA4787D00E4ECDC /* RAMAnimatedTabBarController.swift */; };
+		FE0F746E1BA4787D00E4ECDC /* RAMItemAnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0F74671BA4787D00E4ECDC /* RAMItemAnimationProtocol.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FE0F744B1BA477EF00E4ECDC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE0F74291BA477EF00E4ECDC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE0F74301BA477EF00E4ECDC;
+			remoteInfo = MMTabBar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FE0F74311BA477EF00E4ECDC /* MMTabBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMTabBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE0F74351BA477EF00E4ECDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE0F74361BA477EF00E4ECDC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FE0F74381BA477EF00E4ECDC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FE0F74391BA477EF00E4ECDC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FE0F743B1BA477EF00E4ECDC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FE0F743C1BA477EF00E4ECDC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FE0F743F1BA477EF00E4ECDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FE0F74411BA477EF00E4ECDC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FE0F74441BA477EF00E4ECDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		FE0F744A1BA477EF00E4ECDC /* MMTabBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MMTabBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE0F744F1BA477F000E4ECDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE0F74501BA477F000E4ECDC /* MMTabBarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMTabBarTests.m; sourceTree = "<group>"; };
+		FE0F745D1BA4787D00E4ECDC /* RAMBounceAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMBounceAnimation.swift; sourceTree = "<group>"; };
+		FE0F745F1BA4787D00E4ECDC /* RAMFrameItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMFrameItemAnimation.swift; sourceTree = "<group>"; };
+		FE0F74611BA4787D00E4ECDC /* RAMFumeAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMFumeAnimation.swift; sourceTree = "<group>"; };
+		FE0F74631BA4787D00E4ECDC /* RAMRotationAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMRotationAnimation.swift; sourceTree = "<group>"; };
+		FE0F74651BA4787D00E4ECDC /* RAMTransitionItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMTransitionItemAnimation.swift; sourceTree = "<group>"; };
+		FE0F74661BA4787D00E4ECDC /* RAMAnimatedTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMAnimatedTabBarController.swift; sourceTree = "<group>"; };
+		FE0F74671BA4787D00E4ECDC /* RAMItemAnimationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMItemAnimationProtocol.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FE0F742E1BA477EF00E4ECDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE0F74471BA477EF00E4ECDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FE0F74281BA477EF00E4ECDC = {
+			isa = PBXGroup;
+			children = (
+				FE0F74331BA477EF00E4ECDC /* MMTabBar */,
+				FE0F744D1BA477F000E4ECDC /* MMTabBarTests */,
+				FE0F74321BA477EF00E4ECDC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FE0F74321BA477EF00E4ECDC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE0F74311BA477EF00E4ECDC /* MMTabBar.app */,
+				FE0F744A1BA477EF00E4ECDC /* MMTabBarTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE0F74331BA477EF00E4ECDC /* MMTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				FE0F745A1BA4787D00E4ECDC /* RAMAnimatedTabBarController */,
+				FE0F74381BA477EF00E4ECDC /* AppDelegate.h */,
+				FE0F74391BA477EF00E4ECDC /* AppDelegate.m */,
+				FE0F743B1BA477EF00E4ECDC /* ViewController.h */,
+				FE0F743C1BA477EF00E4ECDC /* ViewController.m */,
+				FE0F743E1BA477EF00E4ECDC /* Main.storyboard */,
+				FE0F74411BA477EF00E4ECDC /* Images.xcassets */,
+				FE0F74431BA477EF00E4ECDC /* LaunchScreen.xib */,
+				FE0F74341BA477EF00E4ECDC /* Supporting Files */,
+			);
+			path = MMTabBar;
+			sourceTree = "<group>";
+		};
+		FE0F74341BA477EF00E4ECDC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE0F74351BA477EF00E4ECDC /* Info.plist */,
+				FE0F74361BA477EF00E4ECDC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FE0F744D1BA477F000E4ECDC /* MMTabBarTests */ = {
+			isa = PBXGroup;
+			children = (
+				FE0F74501BA477F000E4ECDC /* MMTabBarTests.m */,
+				FE0F744E1BA477F000E4ECDC /* Supporting Files */,
+			);
+			path = MMTabBarTests;
+			sourceTree = "<group>";
+		};
+		FE0F744E1BA477F000E4ECDC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE0F744F1BA477F000E4ECDC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FE0F745A1BA4787D00E4ECDC /* RAMAnimatedTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				FE0F745B1BA4787D00E4ECDC /* Animations */,
+				FE0F74661BA4787D00E4ECDC /* RAMAnimatedTabBarController.swift */,
+				FE0F74671BA4787D00E4ECDC /* RAMItemAnimationProtocol.swift */,
+			);
+			path = RAMAnimatedTabBarController;
+			sourceTree = "<group>";
+		};
+		FE0F745B1BA4787D00E4ECDC /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				FE0F745C1BA4787D00E4ECDC /* BounceAnimation */,
+				FE0F745E1BA4787D00E4ECDC /* FrameAnimation */,
+				FE0F74601BA4787D00E4ECDC /* FumeAnimation */,
+				FE0F74621BA4787D00E4ECDC /* RotationAnimation */,
+				FE0F74641BA4787D00E4ECDC /* TransitionAniamtions */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		FE0F745C1BA4787D00E4ECDC /* BounceAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				FE0F745D1BA4787D00E4ECDC /* RAMBounceAnimation.swift */,
+			);
+			path = BounceAnimation;
+			sourceTree = "<group>";
+		};
+		FE0F745E1BA4787D00E4ECDC /* FrameAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				FE0F745F1BA4787D00E4ECDC /* RAMFrameItemAnimation.swift */,
+			);
+			path = FrameAnimation;
+			sourceTree = "<group>";
+		};
+		FE0F74601BA4787D00E4ECDC /* FumeAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				FE0F74611BA4787D00E4ECDC /* RAMFumeAnimation.swift */,
+			);
+			path = FumeAnimation;
+			sourceTree = "<group>";
+		};
+		FE0F74621BA4787D00E4ECDC /* RotationAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				FE0F74631BA4787D00E4ECDC /* RAMRotationAnimation.swift */,
+			);
+			path = RotationAnimation;
+			sourceTree = "<group>";
+		};
+		FE0F74641BA4787D00E4ECDC /* TransitionAniamtions */ = {
+			isa = PBXGroup;
+			children = (
+				FE0F74651BA4787D00E4ECDC /* RAMTransitionItemAnimation.swift */,
+			);
+			path = TransitionAniamtions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FE0F74301BA477EF00E4ECDC /* MMTabBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE0F74541BA477F000E4ECDC /* Build configuration list for PBXNativeTarget "MMTabBar" */;
+			buildPhases = (
+				FE0F742D1BA477EF00E4ECDC /* Sources */,
+				FE0F742E1BA477EF00E4ECDC /* Frameworks */,
+				FE0F742F1BA477EF00E4ECDC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MMTabBar;
+			productName = MMTabBar;
+			productReference = FE0F74311BA477EF00E4ECDC /* MMTabBar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FE0F74491BA477EF00E4ECDC /* MMTabBarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE0F74571BA477F000E4ECDC /* Build configuration list for PBXNativeTarget "MMTabBarTests" */;
+			buildPhases = (
+				FE0F74461BA477EF00E4ECDC /* Sources */,
+				FE0F74471BA477EF00E4ECDC /* Frameworks */,
+				FE0F74481BA477EF00E4ECDC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE0F744C1BA477EF00E4ECDC /* PBXTargetDependency */,
+			);
+			name = MMTabBarTests;
+			productName = MMTabBarTests;
+			productReference = FE0F744A1BA477EF00E4ECDC /* MMTabBarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FE0F74291BA477EF00E4ECDC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = tengfei;
+				TargetAttributes = {
+					FE0F74301BA477EF00E4ECDC = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					FE0F74491BA477EF00E4ECDC = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = FE0F74301BA477EF00E4ECDC;
+					};
+				};
+			};
+			buildConfigurationList = FE0F742C1BA477EF00E4ECDC /* Build configuration list for PBXProject "MMTabBar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FE0F74281BA477EF00E4ECDC;
+			productRefGroup = FE0F74321BA477EF00E4ECDC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FE0F74301BA477EF00E4ECDC /* MMTabBar */,
+				FE0F74491BA477EF00E4ECDC /* MMTabBarTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE0F742F1BA477EF00E4ECDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE0F74401BA477EF00E4ECDC /* Main.storyboard in Resources */,
+				FE0F74451BA477EF00E4ECDC /* LaunchScreen.xib in Resources */,
+				FE0F74421BA477EF00E4ECDC /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE0F74481BA477EF00E4ECDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FE0F742D1BA477EF00E4ECDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE0F743D1BA477EF00E4ECDC /* ViewController.m in Sources */,
+				FE0F746D1BA4787D00E4ECDC /* RAMAnimatedTabBarController.swift in Sources */,
+				FE0F743A1BA477EF00E4ECDC /* AppDelegate.m in Sources */,
+				FE0F746C1BA4787D00E4ECDC /* RAMTransitionItemAnimation.swift in Sources */,
+				FE0F746E1BA4787D00E4ECDC /* RAMItemAnimationProtocol.swift in Sources */,
+				FE0F74371BA477EF00E4ECDC /* main.m in Sources */,
+				FE0F746B1BA4787D00E4ECDC /* RAMRotationAnimation.swift in Sources */,
+				FE0F74691BA4787D00E4ECDC /* RAMFrameItemAnimation.swift in Sources */,
+				FE0F746A1BA4787D00E4ECDC /* RAMFumeAnimation.swift in Sources */,
+				FE0F74681BA4787D00E4ECDC /* RAMBounceAnimation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE0F74461BA477EF00E4ECDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE0F74511BA477F000E4ECDC /* MMTabBarTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FE0F744C1BA477EF00E4ECDC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE0F74301BA477EF00E4ECDC /* MMTabBar */;
+			targetProxy = FE0F744B1BA477EF00E4ECDC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FE0F743E1BA477EF00E4ECDC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE0F743F1BA477EF00E4ECDC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FE0F74431BA477EF00E4ECDC /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE0F74441BA477EF00E4ECDC /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FE0F74521BA477F000E4ECDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FE0F74531BA477F000E4ECDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FE0F74551BA477F000E4ECDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MMTabBar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FE0F74561BA477F000E4ECDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MMTabBar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FE0F74581BA477F000E4ECDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MMTabBarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MMTabBar.app/MMTabBar";
+			};
+			name = Debug;
+		};
+		FE0F74591BA477F000E4ECDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MMTabBarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MMTabBar.app/MMTabBar";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FE0F742C1BA477EF00E4ECDC /* Build configuration list for PBXProject "MMTabBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE0F74521BA477F000E4ECDC /* Debug */,
+				FE0F74531BA477F000E4ECDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE0F74541BA477F000E4ECDC /* Build configuration list for PBXNativeTarget "MMTabBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE0F74551BA477F000E4ECDC /* Debug */,
+				FE0F74561BA477F000E4ECDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FE0F74571BA477F000E4ECDC /* Build configuration list for PBXNativeTarget "MMTabBarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE0F74581BA477F000E4ECDC /* Debug */,
+				FE0F74591BA477F000E4ECDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FE0F74291BA477EF00E4ECDC /* Project object */;
+}
