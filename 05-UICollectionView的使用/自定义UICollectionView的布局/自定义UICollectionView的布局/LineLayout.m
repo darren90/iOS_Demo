@@ -17,7 +17,7 @@ static const CGFloat ItemHW = 100;
     if (self = [super init]) {
         //初始化
         self.itemSize = CGSizeMake(ItemHW, ItemHW);
-        
+        self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     }
     return self;
 }

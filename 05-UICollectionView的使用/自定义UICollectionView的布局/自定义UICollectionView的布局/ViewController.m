@@ -21,7 +21,7 @@ static NSString *const ID = @"collectionview";
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    CGRect rect = CGRectMake(0, 100, self.view.frame.size.width, 320);
+    CGRect rect = CGRectMake(0, 160, self.view.frame.size.width, 200);
     LineLayout *flow = [[LineLayout alloc]init];
     UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:rect collectionViewLayout:flow];
     [self.view addSubview:collectionView];
