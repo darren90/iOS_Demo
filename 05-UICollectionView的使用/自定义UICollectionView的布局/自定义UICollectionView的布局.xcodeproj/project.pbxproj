@@ -15,6 +15,7 @@
 		FE7184D11C301A5A0035F588 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE7184CF1C301A5A0035F588 /* LaunchScreen.storyboard */; };
 		FE7184DC1C301A5A0035F588 /* ___UICollectionView___Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7184DB1C301A5A0035F588 /* ___UICollectionView___Tests.m */; };
 		FE7184E71C301A5A0035F588 /* ___UICollectionView___UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7184E61C301A5A0035F588 /* ___UICollectionView___UITests.m */; };
+		FE7184F61C3020190035F588 /* LineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7184F51C3020190035F588 /* LineLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		FE7184E21C301A5A0035F588 /* 自定义UICollectionView的布局UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "自定义UICollectionView的布局UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE7184E61C301A5A0035F588 /* ___UICollectionView___UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "___UICollectionView___UITests.m"; sourceTree = "<group>"; };
 		FE7184E81C301A5A0035F588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE7184F41C3020190035F588 /* LineLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineLayout.h; sourceTree = "<group>"; };
+		FE7184F51C3020190035F588 /* LineLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,8 @@
 			children = (
 				FE7184C41C301A5A0035F588 /* AppDelegate.h */,
 				FE7184C51C301A5A0035F588 /* AppDelegate.m */,
+				FE7184F41C3020190035F588 /* LineLayout.h */,
+				FE7184F51C3020190035F588 /* LineLayout.m */,
 				FE7184C71C301A5A0035F588 /* ViewController.h */,
 				FE7184C81C301A5A0035F588 /* ViewController.m */,
 				FE7184CA1C301A5A0035F588 /* Main.storyboard */,
@@ -271,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE7184C91C301A5A0035F588 /* ViewController.m in Sources */,
+				FE7184F61C3020190035F588 /* LineLayout.m in Sources */,
 				FE7184C61C301A5A0035F588 /* AppDelegate.m in Sources */,
 				FE7184C31C301A5A0035F588 /* main.m in Sources */,
 			);

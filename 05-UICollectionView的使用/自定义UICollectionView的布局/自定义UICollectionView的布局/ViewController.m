@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "LineLayout.h"
 
 @interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic,strong)NSMutableArray *dataArray;
@@ -20,8 +21,8 @@ static NSString *const ID = @"collectionview";
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    CGRect rect = CGRectMake(0, 100, 320, 320);
-    UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc]init];
+    CGRect rect = CGRectMake(0, 100, self.view.frame.size.width, 320);
+    LineLayout *flow = [[LineLayout alloc]init];
     UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:rect collectionViewLayout:flow];
     [self.view addSubview:collectionView];
     collectionView.delegate = self;
@@ -47,17 +48,11 @@ static NSString *const ID = @"collectionview";
     return cell;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
 -(NSMutableArray *)dataArray
 {
     if (_dataArray == nil) {
         _dataArray = [NSMutableArray array];
-        for (int i = 1; i<=20; i++) {
+        for (int i = 1; i<=50; i++) {
             [_dataArray addObject:[NSString stringWithFormat:@"%d",i]];
         }
     }
