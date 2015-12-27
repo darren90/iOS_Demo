@@ -1,0 +1,526 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FE7184C31C301A5A0035F588 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7184C21C301A5A0035F588 /* main.m */; };
+		FE7184C61C301A5A0035F588 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7184C51C301A5A0035F588 /* AppDelegate.m */; };
+		FE7184C91C301A5A0035F588 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7184C81C301A5A0035F588 /* ViewController.m */; };
+		FE7184CC1C301A5A0035F588 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE7184CA1C301A5A0035F588 /* Main.storyboard */; };
+		FE7184CE1C301A5A0035F588 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE7184CD1C301A5A0035F588 /* Assets.xcassets */; };
+		FE7184D11C301A5A0035F588 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE7184CF1C301A5A0035F588 /* LaunchScreen.storyboard */; };
+		FE7184DC1C301A5A0035F588 /* ___UICollectionView___Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7184DB1C301A5A0035F588 /* ___UICollectionView___Tests.m */; };
+		FE7184E71C301A5A0035F588 /* ___UICollectionView___UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7184E61C301A5A0035F588 /* ___UICollectionView___UITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FE7184D81C301A5A0035F588 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE7184B61C301A5A0035F588 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE7184BD1C301A5A0035F588;
+			remoteInfo = "自定义UICollectionView的布局";
+		};
+		FE7184E31C301A5A0035F588 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE7184B61C301A5A0035F588 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE7184BD1C301A5A0035F588;
+			remoteInfo = "自定义UICollectionView的布局";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FE7184BE1C301A5A0035F588 /* 自定义UICollectionView的布局.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "自定义UICollectionView的布局.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE7184C21C301A5A0035F588 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FE7184C41C301A5A0035F588 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FE7184C51C301A5A0035F588 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FE7184C71C301A5A0035F588 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FE7184C81C301A5A0035F588 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FE7184CB1C301A5A0035F588 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FE7184CD1C301A5A0035F588 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FE7184D01C301A5A0035F588 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FE7184D21C301A5A0035F588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE7184D71C301A5A0035F588 /* 自定义UICollectionView的布局Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "自定义UICollectionView的布局Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE7184DB1C301A5A0035F588 /* ___UICollectionView___Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "___UICollectionView___Tests.m"; sourceTree = "<group>"; };
+		FE7184DD1C301A5A0035F588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE7184E21C301A5A0035F588 /* 自定义UICollectionView的布局UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "自定义UICollectionView的布局UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE7184E61C301A5A0035F588 /* ___UICollectionView___UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "___UICollectionView___UITests.m"; sourceTree = "<group>"; };
+		FE7184E81C301A5A0035F588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FE7184BB1C301A5A0035F588 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE7184D41C301A5A0035F588 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE7184DF1C301A5A0035F588 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FE7184B51C301A5A0035F588 = {
+			isa = PBXGroup;
+			children = (
+				FE7184C01C301A5A0035F588 /* 自定义UICollectionView的布局 */,
+				FE7184DA1C301A5A0035F588 /* 自定义UICollectionView的布局Tests */,
+				FE7184E51C301A5A0035F588 /* 自定义UICollectionView的布局UITests */,
+				FE7184BF1C301A5A0035F588 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FE7184BF1C301A5A0035F588 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE7184BE1C301A5A0035F588 /* 自定义UICollectionView的布局.app */,
+				FE7184D71C301A5A0035F588 /* 自定义UICollectionView的布局Tests.xctest */,
+				FE7184E21C301A5A0035F588 /* 自定义UICollectionView的布局UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE7184C01C301A5A0035F588 /* 自定义UICollectionView的布局 */ = {
+			isa = PBXGroup;
+			children = (
+				FE7184C41C301A5A0035F588 /* AppDelegate.h */,
+				FE7184C51C301A5A0035F588 /* AppDelegate.m */,
+				FE7184C71C301A5A0035F588 /* ViewController.h */,
+				FE7184C81C301A5A0035F588 /* ViewController.m */,
+				FE7184CA1C301A5A0035F588 /* Main.storyboard */,
+				FE7184CD1C301A5A0035F588 /* Assets.xcassets */,
+				FE7184CF1C301A5A0035F588 /* LaunchScreen.storyboard */,
+				FE7184D21C301A5A0035F588 /* Info.plist */,
+				FE7184C11C301A5A0035F588 /* Supporting Files */,
+			);
+			path = "自定义UICollectionView的布局";
+			sourceTree = "<group>";
+		};
+		FE7184C11C301A5A0035F588 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE7184C21C301A5A0035F588 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FE7184DA1C301A5A0035F588 /* 自定义UICollectionView的布局Tests */ = {
+			isa = PBXGroup;
+			children = (
+				FE7184DB1C301A5A0035F588 /* ___UICollectionView___Tests.m */,
+				FE7184DD1C301A5A0035F588 /* Info.plist */,
+			);
+			path = "自定义UICollectionView的布局Tests";
+			sourceTree = "<group>";
+		};
+		FE7184E51C301A5A0035F588 /* 自定义UICollectionView的布局UITests */ = {
+			isa = PBXGroup;
+			children = (
+				FE7184E61C301A5A0035F588 /* ___UICollectionView___UITests.m */,
+				FE7184E81C301A5A0035F588 /* Info.plist */,
+			);
+			path = "自定义UICollectionView的布局UITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FE7184BD1C301A5A0035F588 /* 自定义UICollectionView的布局 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE7184EB1C301A5A0035F588 /* Build configuration list for PBXNativeTarget "自定义UICollectionView的布局" */;
+			buildPhases = (
+				FE7184BA1C301A5A0035F588 /* Sources */,
+				FE7184BB1C301A5A0035F588 /* Frameworks */,
+				FE7184BC1C301A5A0035F588 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "自定义UICollectionView的布局";
+			productName = "自定义UICollectionView的布局";
+			productReference = FE7184BE1C301A5A0035F588 /* 自定义UICollectionView的布局.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FE7184D61C301A5A0035F588 /* 自定义UICollectionView的布局Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE7184EE1C301A5A0035F588 /* Build configuration list for PBXNativeTarget "自定义UICollectionView的布局Tests" */;
+			buildPhases = (
+				FE7184D31C301A5A0035F588 /* Sources */,
+				FE7184D41C301A5A0035F588 /* Frameworks */,
+				FE7184D51C301A5A0035F588 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE7184D91C301A5A0035F588 /* PBXTargetDependency */,
+			);
+			name = "自定义UICollectionView的布局Tests";
+			productName = "自定义UICollectionView的布局Tests";
+			productReference = FE7184D71C301A5A0035F588 /* 自定义UICollectionView的布局Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FE7184E11C301A5A0035F588 /* 自定义UICollectionView的布局UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE7184F11C301A5A0035F588 /* Build configuration list for PBXNativeTarget "自定义UICollectionView的布局UITests" */;
+			buildPhases = (
+				FE7184DE1C301A5A0035F588 /* Sources */,
+				FE7184DF1C301A5A0035F588 /* Frameworks */,
+				FE7184E01C301A5A0035F588 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE7184E41C301A5A0035F588 /* PBXTargetDependency */,
+			);
+			name = "自定义UICollectionView的布局UITests";
+			productName = "自定义UICollectionView的布局UITests";
+			productReference = FE7184E21C301A5A0035F588 /* 自定义UICollectionView的布局UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FE7184B61C301A5A0035F588 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = tengfei;
+				TargetAttributes = {
+					FE7184BD1C301A5A0035F588 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					FE7184D61C301A5A0035F588 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = FE7184BD1C301A5A0035F588;
+					};
+					FE7184E11C301A5A0035F588 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = FE7184BD1C301A5A0035F588;
+					};
+				};
+			};
+			buildConfigurationList = FE7184B91C301A5A0035F588 /* Build configuration list for PBXProject "自定义UICollectionView的布局" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FE7184B51C301A5A0035F588;
+			productRefGroup = FE7184BF1C301A5A0035F588 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FE7184BD1C301A5A0035F588 /* 自定义UICollectionView的布局 */,
+				FE7184D61C301A5A0035F588 /* 自定义UICollectionView的布局Tests */,
+				FE7184E11C301A5A0035F588 /* 自定义UICollectionView的布局UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE7184BC1C301A5A0035F588 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE7184D11C301A5A0035F588 /* LaunchScreen.storyboard in Resources */,
+				FE7184CE1C301A5A0035F588 /* Assets.xcassets in Resources */,
+				FE7184CC1C301A5A0035F588 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE7184D51C301A5A0035F588 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE7184E01C301A5A0035F588 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FE7184BA1C301A5A0035F588 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE7184C91C301A5A0035F588 /* ViewController.m in Sources */,
+				FE7184C61C301A5A0035F588 /* AppDelegate.m in Sources */,
+				FE7184C31C301A5A0035F588 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE7184D31C301A5A0035F588 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE7184DC1C301A5A0035F588 /* ___UICollectionView___Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE7184DE1C301A5A0035F588 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE7184E71C301A5A0035F588 /* ___UICollectionView___UITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FE7184D91C301A5A0035F588 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE7184BD1C301A5A0035F588 /* 自定义UICollectionView的布局 */;
+			targetProxy = FE7184D81C301A5A0035F588 /* PBXContainerItemProxy */;
+		};
+		FE7184E41C301A5A0035F588 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE7184BD1C301A5A0035F588 /* 自定义UICollectionView的布局 */;
+			targetProxy = FE7184E31C301A5A0035F588 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FE7184CA1C301A5A0035F588 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE7184CB1C301A5A0035F588 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FE7184CF1C301A5A0035F588 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE7184D01C301A5A0035F588 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FE7184E91C301A5A0035F588 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FE7184EA1C301A5A0035F588 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FE7184EC1C301A5A0035F588 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "自定义UICollectionView的布局/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ftf.collectionview.---UICollectionView---";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FE7184ED1C301A5A0035F588 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "自定义UICollectionView的布局/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ftf.collectionview.---UICollectionView---";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FE7184EF1C301A5A0035F588 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "自定义UICollectionView的布局Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ftf.collectionview.---UICollectionView---Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/自定义UICollectionView的布局.app/自定义UICollectionView的布局";
+			};
+			name = Debug;
+		};
+		FE7184F01C301A5A0035F588 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "自定义UICollectionView的布局Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ftf.collectionview.---UICollectionView---Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/自定义UICollectionView的布局.app/自定义UICollectionView的布局";
+			};
+			name = Release;
+		};
+		FE7184F21C301A5A0035F588 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "自定义UICollectionView的布局UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ftf.collectionview.---UICollectionView---UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "自定义UICollectionView的布局";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		FE7184F31C301A5A0035F588 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "自定义UICollectionView的布局UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ftf.collectionview.---UICollectionView---UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "自定义UICollectionView的布局";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FE7184B91C301A5A0035F588 /* Build configuration list for PBXProject "自定义UICollectionView的布局" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE7184E91C301A5A0035F588 /* Debug */,
+				FE7184EA1C301A5A0035F588 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE7184EB1C301A5A0035F588 /* Build configuration list for PBXNativeTarget "自定义UICollectionView的布局" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE7184EC1C301A5A0035F588 /* Debug */,
+				FE7184ED1C301A5A0035F588 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE7184EE1C301A5A0035F588 /* Build configuration list for PBXNativeTarget "自定义UICollectionView的布局Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE7184EF1C301A5A0035F588 /* Debug */,
+				FE7184F01C301A5A0035F588 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE7184F11C301A5A0035F588 /* Build configuration list for PBXNativeTarget "自定义UICollectionView的布局UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE7184F21C301A5A0035F588 /* Debug */,
+				FE7184F31C301A5A0035F588 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FE7184B61C301A5A0035F588 /* Project object */;
+}
