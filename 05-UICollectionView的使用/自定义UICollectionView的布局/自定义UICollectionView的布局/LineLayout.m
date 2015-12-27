@@ -22,4 +22,9 @@ static const CGFloat ItemHW = 100;
     return self;
 }
 
+//-(NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect
+//{
+//    return nil;
+//}
+
 @end
