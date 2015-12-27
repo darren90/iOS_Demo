@@ -35,6 +35,7 @@ static NSString *const ID = @"collectionview";
 {
     return 1;
 }
+
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return self.dataArray.count;
