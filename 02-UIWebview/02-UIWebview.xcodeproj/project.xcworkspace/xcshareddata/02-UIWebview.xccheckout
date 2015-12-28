@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>B9180495-4131-4A6F-BFAA-F7A913448647</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>02-UIWebview</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>511758DB0DA867ADB5D823B38E3525F84AF3A0BC</key>
 		<string>https://github.com/darren90/iOS_Demo</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>02-UIWebview/02-UIWebview.xcodeproj/project.xcworkspace</string>
+	<string>02-UIWebview/02-UIWebview.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>511758DB0DA867ADB5D823B38E3525F84AF3A0BC</key>
