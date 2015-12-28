@@ -16,6 +16,8 @@
 		8955EC8E1C311E5D001CAD57 /* UITableViewCell______Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8955EC8D1C311E5D001CAD57 /* UITableViewCell______Tests.m */; };
 		8955EC991C311E5D001CAD57 /* UITableViewCell______UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8955EC981C311E5D001CAD57 /* UITableViewCell______UITests.m */; };
 		8955ECA81C3127CD001CAD57 /* UnfoldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8955ECA71C3127CD001CAD57 /* UnfoldCell.m */; };
+		8955ECAB1C312C3E001CAD57 /* UnfoldModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8955ECAA1C312C3E001CAD57 /* UnfoldModel.m */; };
+		8955ECAE1C312C50001CAD57 /* UnfoldFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8955ECAD1C312C50001CAD57 /* UnfoldFrameModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,10 @@
 		8955EC9A1C311E5D001CAD57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8955ECA61C3127CC001CAD57 /* UnfoldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnfoldCell.h; sourceTree = "<group>"; };
 		8955ECA71C3127CD001CAD57 /* UnfoldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnfoldCell.m; sourceTree = "<group>"; };
+		8955ECA91C312C3E001CAD57 /* UnfoldModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnfoldModel.h; sourceTree = "<group>"; };
+		8955ECAA1C312C3E001CAD57 /* UnfoldModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnfoldModel.m; sourceTree = "<group>"; };
+		8955ECAC1C312C4F001CAD57 /* UnfoldFrameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnfoldFrameModel.h; sourceTree = "<group>"; };
+		8955ECAD1C312C50001CAD57 /* UnfoldFrameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnfoldFrameModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +114,10 @@
 				8955EC771C311E5D001CAD57 /* AppDelegate.m */,
 				8955EC791C311E5D001CAD57 /* ViewController.h */,
 				8955EC7A1C311E5D001CAD57 /* ViewController.m */,
+				8955ECA91C312C3E001CAD57 /* UnfoldModel.h */,
+				8955ECAA1C312C3E001CAD57 /* UnfoldModel.m */,
+				8955ECAC1C312C4F001CAD57 /* UnfoldFrameModel.h */,
+				8955ECAD1C312C50001CAD57 /* UnfoldFrameModel.m */,
 				8955ECA61C3127CC001CAD57 /* UnfoldCell.h */,
 				8955ECA71C3127CD001CAD57 /* UnfoldCell.m */,
 				8955EC7C1C311E5D001CAD57 /* Main.storyboard */,
@@ -278,7 +288,9 @@
 				8955EC7B1C311E5D001CAD57 /* ViewController.m in Sources */,
 				8955EC781C311E5D001CAD57 /* AppDelegate.m in Sources */,
 				8955EC751C311E5D001CAD57 /* main.m in Sources */,
+				8955ECAE1C312C50001CAD57 /* UnfoldFrameModel.m in Sources */,
 				8955ECA81C3127CD001CAD57 /* UnfoldCell.m in Sources */,
+				8955ECAB1C312C3E001CAD57 /* UnfoldModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
