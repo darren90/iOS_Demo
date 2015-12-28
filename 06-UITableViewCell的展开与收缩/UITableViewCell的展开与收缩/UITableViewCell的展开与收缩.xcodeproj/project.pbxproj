@@ -15,6 +15,7 @@
 		8955EC831C311E5D001CAD57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8955EC811C311E5D001CAD57 /* LaunchScreen.storyboard */; };
 		8955EC8E1C311E5D001CAD57 /* UITableViewCell______Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8955EC8D1C311E5D001CAD57 /* UITableViewCell______Tests.m */; };
 		8955EC991C311E5D001CAD57 /* UITableViewCell______UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8955EC981C311E5D001CAD57 /* UITableViewCell______UITests.m */; };
+		8955ECA81C3127CD001CAD57 /* UnfoldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8955ECA71C3127CD001CAD57 /* UnfoldCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		8955EC941C311E5D001CAD57 /* UITableViewCell的展开与收缩UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UITableViewCell的展开与收缩UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8955EC981C311E5D001CAD57 /* UITableViewCell______UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell______UITests.m"; sourceTree = "<group>"; };
 		8955EC9A1C311E5D001CAD57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8955ECA61C3127CC001CAD57 /* UnfoldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnfoldCell.h; sourceTree = "<group>"; };
+		8955ECA71C3127CD001CAD57 /* UnfoldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnfoldCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				8955EC771C311E5D001CAD57 /* AppDelegate.m */,
 				8955EC791C311E5D001CAD57 /* ViewController.h */,
 				8955EC7A1C311E5D001CAD57 /* ViewController.m */,
+				8955ECA61C3127CC001CAD57 /* UnfoldCell.h */,
+				8955ECA71C3127CD001CAD57 /* UnfoldCell.m */,
 				8955EC7C1C311E5D001CAD57 /* Main.storyboard */,
 				8955EC7F1C311E5D001CAD57 /* Assets.xcassets */,
 				8955EC811C311E5D001CAD57 /* LaunchScreen.storyboard */,
@@ -273,6 +278,7 @@
 				8955EC7B1C311E5D001CAD57 /* ViewController.m in Sources */,
 				8955EC781C311E5D001CAD57 /* AppDelegate.m in Sources */,
 				8955EC751C311E5D001CAD57 /* main.m in Sources */,
+				8955ECA81C3127CD001CAD57 /* UnfoldCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
