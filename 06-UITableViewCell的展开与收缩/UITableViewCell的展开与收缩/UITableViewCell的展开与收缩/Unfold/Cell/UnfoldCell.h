@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@class UnfoldFrameModel;
 
 @protocol UnfoldCellDelegate  <NSObject>
 @optional
--(void)UnfoldCellDidClickUnfoldBtn;
+-(void)UnfoldCellDidClickUnfoldBtn:(UnfoldFrameModel *)model;
 @end
 
-@class UnfoldFrameModel;
+
 @interface UnfoldCell : UITableViewCell
 
 

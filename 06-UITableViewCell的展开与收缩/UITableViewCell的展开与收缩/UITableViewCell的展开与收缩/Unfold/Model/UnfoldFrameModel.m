@@ -12,7 +12,6 @@
 
 @implementation UnfoldFrameModel
 
-
 -(void)setModel:(UnfoldModel *)model
 {
     _model = model;

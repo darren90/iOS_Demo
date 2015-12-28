@@ -52,11 +52,11 @@
 
 -(void)unflodCell:(UIButton *)btn
 {
-    UnfoldModel *model = self.frameModel.model;
-    model.isUnflod = !model.isUnflod;
+//    UnfoldModel *model = self.frameModel.model;
+//    model.isUnflod = !model.isUnflod;
     
-    if ([self.delegate respondsToSelector:@selector(UnfoldCellDidClickUnfoldBtn)]) {
-        [self.delegate UnfoldCellDidClickUnfoldBtn];
+    if ([self.delegate respondsToSelector:@selector(UnfoldCellDidClickUnfoldBtn:)]) {
+        [self.delegate UnfoldCellDidClickUnfoldBtn:self.frameModel];
     }
 }
 
