@@ -20,6 +20,6 @@
 @property (nonatomic,assign)CGRect unflodBtnF;
 
 
-@property (nonatomic,assign)CGFloat * cellH;
+@property (nonatomic,assign)CGFloat cellH;
 
 @end

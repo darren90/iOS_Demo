@@ -56,6 +56,12 @@
     return cell;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UnfoldFrameModel *frameModel = self.dataArray[indexPath.row];
+    return frameModel.cellH;
+}
+
 
 -(NSMutableArray *)dataArray
 {

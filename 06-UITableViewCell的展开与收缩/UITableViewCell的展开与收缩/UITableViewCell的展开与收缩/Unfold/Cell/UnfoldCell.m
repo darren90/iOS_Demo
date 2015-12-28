@@ -58,8 +58,18 @@
     
     UnfoldModel *model = frameModel.model;
     
+    self.contentLabel.frame = frameModel.contentF;
+    self.unfoldBtn.frame = frameModel.unflodBtnF;
     
+    self.contentLabel.text = model.contenxt;
     
+    if (model.isUnflod) {
+        [self.unfoldBtn setImage:[UIImage imageNamed:@"down"] forState:UIControlStateNormal];
+        [self.unfoldBtn setTitle:@"显示全部" forState:UIControlStateNormal];
+    }else{
+        [self.unfoldBtn setImage:[UIImage imageNamed:@"up"] forState:UIControlStateNormal];
+        [self.unfoldBtn setTitle:@"收起" forState:UIControlStateNormal];
+    }
 }
 
 
