@@ -28,10 +28,7 @@
 }
 
 
-/**
- *  swift版本的：http://blog.csdn.net/NSNirvana/article/details/48826409
- *  代码：http://code.cocoachina.com/view/127011
- */
+
 -(void)initLoadData
 {
     self.dataArray = [NSMutableArray array];
@@ -40,7 +37,7 @@
     for (NSString *str in array) {
         UnfoldModel *model = [[UnfoldModel alloc]init];
         model.contenxt = str;
-        model.isUnflod = NO;
+        model.isUnflod = NO;//给出初始值
         
         UnfoldFrameModel *frameModel = [[UnfoldFrameModel alloc]init];
         frameModel.model = model;
