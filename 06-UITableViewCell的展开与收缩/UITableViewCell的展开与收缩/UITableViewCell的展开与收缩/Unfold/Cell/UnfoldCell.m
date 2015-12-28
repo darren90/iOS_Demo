@@ -7,6 +7,13 @@
 //
 
 #import "UnfoldCell.h"
+#import "UnfoldFrameModel.h"
+
+@interface UnfoldCell ()
+
+
+
+@end
 
 @implementation UnfoldCell
 

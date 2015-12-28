@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class UnfoldFrameModel;
 @interface UnfoldCell : UITableViewCell
+
+
+@property (nonatomic,strong)UnfoldFrameModel * frameModel;
+
 
 @end
