@@ -30,6 +30,7 @@
 
 /**
  *  swift版本的：http://blog.csdn.net/NSNirvana/article/details/48826409
+ *  代码：http://code.cocoachina.com/view/127011
  */
 -(void)initLoadData
 {
@@ -39,7 +40,7 @@
     for (NSString *str in array) {
         UnfoldModel *model = [[UnfoldModel alloc]init];
         model.contenxt = str;
-        model.isUnflod = YES;
+        model.isUnflod = NO;
         
         UnfoldFrameModel *frameModel = [[UnfoldFrameModel alloc]init];
         frameModel.model = model;
