@@ -8,11 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol UnfoldCellDelegate  <NSObject>
+@optional
+-(void)UnfoldCellDidClickUnfoldBtn;
+@end
+
 @class UnfoldFrameModel;
 @interface UnfoldCell : UITableViewCell
 
 
 @property (nonatomic,strong)UnfoldFrameModel * frameModel;
 
+
+@property (nonatomic,weak)id<UnfoldCellDelegate> delegate;
 
 @end

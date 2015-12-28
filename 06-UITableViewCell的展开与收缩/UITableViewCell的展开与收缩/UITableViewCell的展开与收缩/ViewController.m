@@ -11,7 +11,7 @@
 #import "UnfoldModel.h"
 #import "UnfoldCell.h"
 
-@interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ViewController ()<UITableViewDelegate,UITableViewDataSource,UnfoldCellDelegate>
 @property (nonatomic,strong)NSMutableArray *dataArray;
 
 @property (nonatomic,weak)UITableView * tableView;
@@ -52,7 +52,7 @@
     }
     //2,设置cell的数据
     cell.frameModel = self.dataArray[indexPath.row];
-    
+    cell.delegate = self;
     return cell;
 }
 
@@ -61,6 +61,14 @@
     UnfoldFrameModel *frameModel = self.dataArray[indexPath.row];
     return frameModel.cellH;
 }
+
+
+-(void)UnfoldCellDidClickUnfoldBtn
+{
+    [self.tableView reloadData];
+}
+
+
 
 
 -(NSMutableArray *)dataArray
@@ -73,6 +81,7 @@
         for (NSString *str in array) {
             UnfoldModel *model = [[UnfoldModel alloc]init];
             model.contenxt = str;
+            model.isUnflod = YES;
             
             UnfoldFrameModel *frameModel = [[UnfoldFrameModel alloc]init];
             frameModel.model = model;

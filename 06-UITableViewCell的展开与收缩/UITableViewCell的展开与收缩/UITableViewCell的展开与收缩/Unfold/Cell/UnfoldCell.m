@@ -39,16 +39,25 @@
         [self.contentView addSubview:unfoldBtn];
         [self.unfoldBtn setImage:[UIImage imageNamed:@"down"] forState:UIControlStateNormal];
         [self.unfoldBtn setTitle:@"显示全部" forState:UIControlStateNormal];
+        [unfoldBtn addTarget:self action:@selector(unflodCell:) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
 }
-
-
 
 -(void)layoutSubviews
 {
     [super layoutSubviews];
 
+}
+
+-(void)unflodCell:(UIButton *)btn
+{
+    UnfoldModel *model = self.frameModel.model;
+    model.isUnflod = !model.isUnflod;
+    
+    if ([self.delegate respondsToSelector:@selector(UnfoldCellDidClickUnfoldBtn)]) {
+        [self.delegate UnfoldCellDidClickUnfoldBtn];
+    }
 }
 
 
