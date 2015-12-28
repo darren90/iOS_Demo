@@ -31,10 +31,18 @@
     self.contentF = CGRectMake(margin, margin,contentLabelW,contentH);
     
     CGFloat btnW = 50;
-    self.unflodBtnF = CGRectMake(cellW - btnW - margin, CGRectGetMaxY(self.contentF), btnW, 30);
+//    self.unflodBtnF = CGRectMake(cellW - btnW - margin, CGRectGetMaxY(self.contentF), btnW, 30);
     
-    self.cellH = CGRectGetMaxY(self.unflodBtnF)+margin;
+    CGFloat cellMaxH = 0;
+    if (contentH == oneLineH) {//只有一行的时候，就隐藏UbflodBtn
+        self.unflodBtnF = CGRectZero;
+        cellMaxH = contentH;
+    }else{
+        self.unflodBtnF = CGRectMake(cellW - btnW - margin, CGRectGetMaxY(self.contentF), btnW, 30);
+        cellMaxH = CGRectGetMaxY(self.unflodBtnF);
+    }
+    self.cellH = cellMaxH + margin;
 }
- 
+
 
 @end

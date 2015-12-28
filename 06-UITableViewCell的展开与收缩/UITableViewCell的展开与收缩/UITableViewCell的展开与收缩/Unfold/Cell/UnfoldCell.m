@@ -33,13 +33,17 @@
         self.contentLabel = contentLabel;
         contentLabel.numberOfLines = 0;
         contentLabel.font = [UIFont systemFontOfSize:16];
+        contentLabel.userInteractionEnabled = YES;
+        
+        UIGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(unflodCell)];
+        [contentLabel addGestureRecognizer:tap];
         
         UIButton *unfoldBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         self.unfoldBtn = unfoldBtn;
         [self.contentView addSubview:unfoldBtn];
-        [self.unfoldBtn setImage:[UIImage imageNamed:@"down"] forState:UIControlStateNormal];
-        [self.unfoldBtn setTitle:@"显示全部" forState:UIControlStateNormal];
-        [unfoldBtn addTarget:self action:@selector(unflodCell:) forControlEvents:UIControlEventTouchUpInside];
+        [self.unfoldBtn setImage:[UIImage imageNamed:@"up"] forState:UIControlStateNormal];
+//        [self.unfoldBtn setTitle:@"显示全部" forState:UIControlStateNormal];
+        [unfoldBtn addTarget:self action:@selector(unflodCell) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
 }
@@ -50,7 +54,7 @@
 
 }
 
--(void)unflodCell:(UIButton *)btn
+-(void)unflodCell
 {
 //    UnfoldModel *model = self.frameModel.model;
 //    model.isUnflod = !model.isUnflod;
@@ -73,16 +77,14 @@
     self.contentLabel.text = model.contenxt;
     
     if (model.isUnflod) {
-        [self.unfoldBtn setImage:[UIImage imageNamed:@"down"] forState:UIControlStateNormal];
-        [self.unfoldBtn setTitle:@"显示全部" forState:UIControlStateNormal];
-    }else{
         [self.unfoldBtn setImage:[UIImage imageNamed:@"up"] forState:UIControlStateNormal];
-        [self.unfoldBtn setTitle:@"收起" forState:UIControlStateNormal];
+//        [self.unfoldBtn setTitle:@"显示全部" forState:UIControlStateNormal];
+    }else{
+        [self.unfoldBtn setImage:[UIImage imageNamed:@"down"] forState:UIControlStateNormal];
+//        [self.unfoldBtn setTitle:@"收起" forState:UIControlStateNormal];
     }
 }
-
-
-
+ 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
