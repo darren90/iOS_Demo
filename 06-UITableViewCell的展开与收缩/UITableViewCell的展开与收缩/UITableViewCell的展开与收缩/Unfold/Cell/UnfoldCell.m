@@ -8,16 +8,18 @@
 
 #import "UnfoldCell.h"
 #import "UnfoldFrameModel.h"
+#import "UnfoldModel.h"
 
 @interface UnfoldCell ()
 
+@property (nonatomic,weak)UILabel * contentLabel;
 
+
+@property (nonatomic,weak)UIButton * unfoldBtn;
 
 @end
 
 @implementation UnfoldCell
-
-
 
 - (void)awakeFromNib {
     // Initialization code
@@ -26,7 +28,17 @@
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        UILabel *contentLabel = [[UILabel alloc]init];
+        [self.contentView addSubview:contentLabel];
+        self.contentLabel = contentLabel;
+        contentLabel.numberOfLines = 0;
+        contentLabel.font = [UIFont systemFontOfSize:16];
         
+        UIButton *unfoldBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.unfoldBtn = unfoldBtn;
+        [self.contentView addSubview:unfoldBtn];
+        [self.unfoldBtn setImage:[UIImage imageNamed:@"down"] forState:UIControlStateNormal];
+        [self.unfoldBtn setTitle:@"显示全部" forState:UIControlStateNormal];
     }
     return self;
 }
@@ -36,6 +48,16 @@
 -(void)layoutSubviews
 {
     [super layoutSubviews];
+
+}
+
+
+-(void)setFrameModel:(UnfoldFrameModel *)frameModel
+{
+    _frameModel = frameModel;
+    
+    UnfoldModel *model = frameModel.model;
+    
     
     
 }

@@ -12,6 +12,9 @@
 
 @property (nonatomic,copy)NSString * contenxt;
 
-
+/**
+ *  是否是折叠的，YES：是。NO：没有折叠
+ */
+@property (nonatomic,assign)BOOL isUnflod;
 
 @end

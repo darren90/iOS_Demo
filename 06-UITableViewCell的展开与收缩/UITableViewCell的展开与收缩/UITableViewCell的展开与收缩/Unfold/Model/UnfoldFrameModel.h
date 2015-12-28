@@ -17,6 +17,8 @@
 
 @property (nonatomic,assign)CGRect contentF;
 
+@property (nonatomic,assign)CGRect unflodBtnF;
+
 
 @property (nonatomic,assign)CGFloat * cellH;
 
