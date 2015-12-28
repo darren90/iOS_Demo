@@ -8,8 +8,10 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong)NSMutableArray *dataArray;
+
+@property (nonatomic,weak)UITableView * tableView;
 @end
 
 @implementation ViewController
@@ -17,6 +19,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [self initTableView];
+}
+
+-(void)initTableView
+{
+    UITableView * tableView = [[UITableView alloc]init];
+    self.tableView = tableView;
+    [self.view addSubview:tableView];
+    tableView.frame = self.view.bounds;
+    tableView.delegate = self;
+    tableView.dataSource = self;
 }
 
 
