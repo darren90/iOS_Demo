@@ -16,6 +16,8 @@
 - 05-：UICollectionView的使用大全
 - 06-UITableViewCell的展开与收缩	
 	实现了UITableViewCell内容的动态显示，点击展开与收缩
+	
+	博客地址[UITableViewCell的展开与收缩的实现思路](http://www.cnblogs.com/fengtengfei/p/5084222.html)
 
 ---
 
