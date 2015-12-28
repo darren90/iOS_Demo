@@ -22,25 +22,31 @@
     CGFloat contentH = [model.contenxt boundingRectWithSize:CGSizeMake(contentLabelW, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName :[UIFont systemFontOfSize:16]} context:nil].size.height;
     CGFloat oneLineH = [@"这是一行" boundingRectWithSize:CGSizeMake(contentLabelW, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName :[UIFont systemFontOfSize:16]} context:nil].size.height;
 
+    CGFloat btnH = 0;
     if (!model.isUnflod) {
-        if (contentH > 3 * oneLineH) {
+        if (contentH >= 3 * oneLineH) {
             contentH = 3*oneLineH;
+            btnH = 20;
+        }else{
+            btnH = 0;
         }
-    } 
+    }else{
+        btnH = 20;
+    }
     
     self.contentF = CGRectMake(margin, margin,contentLabelW,contentH);
     
     CGFloat btnW = 50;
-//    self.unflodBtnF = CGRectMake(cellW - btnW - margin, CGRectGetMaxY(self.contentF), btnW, 30);
-    
     CGFloat cellMaxH = 0;
-    if (contentH == oneLineH) {//只有一行的时候，就隐藏UbflodBtn
+
+    if (btnH == 0) {//只有一行的时候，就隐藏UbflodBtn
         self.unflodBtnF = CGRectZero;
-        cellMaxH = contentH;
+        cellMaxH = CGRectGetMaxY(self.contentF)+margin;
     }else{
-        self.unflodBtnF = CGRectMake(cellW - btnW - margin, CGRectGetMaxY(self.contentF), btnW, 30);
-        cellMaxH = CGRectGetMaxY(self.unflodBtnF);
+        self.unflodBtnF = CGRectMake(cellW - btnW - margin, CGRectGetMaxY(self.contentF), btnW, 20);
+        cellMaxH = CGRectGetMaxY(self.unflodBtnF)-margin;
     }
+    
     self.cellH = cellMaxH + margin;
 }
 

@@ -44,6 +44,9 @@
         [self.unfoldBtn setImage:[UIImage imageNamed:@"up"] forState:UIControlStateNormal];
 //        [self.unfoldBtn setTitle:@"显示全部" forState:UIControlStateNormal];
         [unfoldBtn addTarget:self action:@selector(unflodCell) forControlEvents:UIControlEventTouchUpInside];
+        
+//        contentLabel.backgroundColor = [UIColor grayColor];
+//        unfoldBtn.backgroundColor = [UIColor blueColor];
     }
     return self;
 }
