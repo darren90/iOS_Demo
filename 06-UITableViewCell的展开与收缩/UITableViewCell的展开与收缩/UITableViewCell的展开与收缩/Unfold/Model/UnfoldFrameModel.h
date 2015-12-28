@@ -7,7 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
+@class UnfoldModel;
 @interface UnfoldFrameModel : NSObject
+
+@property (nonatomic,strong)UnfoldModel *model;
+
+
+@property (nonatomic,assign)CGRect contentF;
+
+
+@property (nonatomic,assign)CGFloat * cellH;
 
 @end

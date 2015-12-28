@@ -1,14 +1,17 @@
-
 //
-//  UnfoldFrameModel.m
+//  UnfoldModel.h
 //  UITableViewCell的展开与收缩
 //
 //  Created by Fengtf on 15/12/28.
 //  Copyright © 2015年 ftf. All rights reserved.
 //
 
-#import "UnfoldFrameModel.h"
+#import <Foundation/Foundation.h>
 
-@implementation UnfoldFrameModel
+@interface UnfoldModel : NSObject
+
+@property (nonatomic,copy)NSString * contenxt;
+
+
 
 @end
