@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "LineLayout.h"
+#define KRandomColor     [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0];
 
 @interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic,strong)NSMutableArray *dataArray;
@@ -45,7 +46,7 @@ static NSString *const ID = @"collectionview";
 {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
     
-    cell.backgroundColor = [UIColor grayColor];
+    cell.backgroundColor = KRandomColor;
     return cell;
 }
 
@@ -53,7 +54,7 @@ static NSString *const ID = @"collectionview";
 {
     if (_dataArray == nil) {
         _dataArray = [NSMutableArray array];
-        for (int i = 1; i<=50; i++) {
+        for (int i = 1; i<=20; i++) {
             [_dataArray addObject:[NSString stringWithFormat:@"%d",i]];
         }
     }
