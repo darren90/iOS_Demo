@@ -35,7 +35,41 @@ static const CGFloat ItemHW = 100;
     self.minimumLineSpacing = 100;
     CGFloat inset = (self.collectionView.frame.size.width - ItemHW) / 2;
     self.sectionInset = UIEdgeInsetsMake(0, inset, 0, inset);
+}
 
+
+/**
+ *  控制最后srollview的最后去哪里
+ *  用来设置collectionView停止滚动那一刻的位置
+ *
+ *  @param proposedContentOffset 原本Scrollview停止滚动那一刻的位置
+ *  @param velocity              滚动速度
+ */
+-(CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity
+{
+    //1.计算scrollview最后停留的范围
+    CGRect lastRect ;
+    lastRect.origin = proposedContentOffset;
+    lastRect.size = self.collectionView.frame.size;
+    
+    //2.取出这个范围内的所有属性
+    NSArray *array = [self layoutAttributesForElementsInRect:lastRect];
+    
+    //计算屏幕最中间的x
+    CGFloat centerX = proposedContentOffset.x + self.collectionView.frame.size.width / 2 ;
+    
+    //3.遍历所有的属性
+    CGFloat adjustOffsetX = MAXFLOAT;
+    for (UICollectionViewLayoutAttributes *attrs in array) {
+        if(ABS(attrs.center.x - centerX) < ABS(adjustOffsetX)){//取出最小值
+            adjustOffsetX = attrs.center.x - centerX;
+        }
+    }
+    
+    
+//    CGPoint point = [super targetContentOffsetForProposedContentOffset:proposedContentOffset withScrollingVelocity:velocity];
+    
+    return CGPointMake(proposedContentOffset.x + adjustOffsetX, proposedContentOffset.y);
 }
 
 /**
@@ -48,6 +82,11 @@ static const CGFloat ItemHW = 100;
 
 -(NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect
 {
+    //0:计算可见的矩形框
+    CGRect visiableRect;
+    visiableRect.size = self.collectionView.frame.size;
+    visiableRect.origin = self.collectionView.contentOffset;
+    
 //    UICollectionViewLayoutAttributes
     //1.取出默认cell的UICollectionViewLayoutAttributes
     NSArray *array = [super layoutAttributesForElementsInRect:rect];
@@ -55,24 +94,22 @@ static const CGFloat ItemHW = 100;
     //计算屏幕最中间的x
     CGFloat centerX = self.collectionView.contentOffset.x + self.collectionView.frame.size.width / 2 ;
     
-    
     //2.遍历所有的布局属性
     for (UICollectionViewLayoutAttributes *attrs in array) {
+        //不是可见范围的 就返回，不再屏幕就直接跳过
+        if (!CGRectIntersectsRect(visiableRect, attrs.frame)) continue;
+        
         //每一个item的中心x值
         CGFloat itemCenterx = attrs.center.x;
         //差距越小，缩放比例越大
         //根据与屏幕最中间的距离计算缩放比例
        CGFloat scale = 1 + (1 - ABS(itemCenterx - centerX) / self.collectionView.frame.size.width * 0.5)*0.8;//比例值很随意，适合就好
         
+        //用这个，缩放不会改变frame大小，所以判断可见范围就无效，item即将离开可见范围的时候，突然消失不见
         attrs.transform3D = CATransform3DMakeScale(scale, scale, 1.0);
     }
     
     return array;
 }
-
-//-(NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect
-//{
-//    return nil;
-//}
 
 @end
