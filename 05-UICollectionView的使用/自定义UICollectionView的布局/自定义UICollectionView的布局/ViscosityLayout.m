@@ -1,22 +1,21 @@
 //
-//  LineLayout.m
+//  ViscosityLayout.m
 //  自定义UICollectionView的布局
 //
-//  Created by Tengfei on 15/12/27.
-//  Copyright © 2015年 tengfei. All rights reserved.
+//  Created by Tengfei on 16/1/3.
+//  Copyright © 2016年 tengfei. All rights reserved.
 //
 
-#import "LineLayout.h"
-
+#import "ViscosityLayout.h"
 static const CGFloat ItemHW = 100;
 
-@implementation LineLayout
+@implementation ViscosityLayout
 
 -(instancetype)init
 {
     if (self = [super init]) {
- //        UICollectionViewLayoutAttributes
-    
+        //        UICollectionViewLayoutAttributes
+        
         
     }
     return self;
@@ -67,7 +66,7 @@ static const CGFloat ItemHW = 100;
     }
     
     
-//    CGPoint point = [super targetContentOffsetForProposedContentOffset:proposedContentOffset withScrollingVelocity:velocity];
+    //    CGPoint point = [super targetContentOffsetForProposedContentOffset:proposedContentOffset withScrollingVelocity:velocity];
     
     return CGPointMake(proposedContentOffset.x + adjustOffsetX, proposedContentOffset.y);
 }
@@ -87,7 +86,7 @@ static const CGFloat ItemHW = 100;
     visiableRect.size = self.collectionView.frame.size;
     visiableRect.origin = self.collectionView.contentOffset;
     
-//    UICollectionViewLayoutAttributes
+    //    UICollectionViewLayoutAttributes
     //1.取出默认cell的UICollectionViewLayoutAttributes
     NSArray *array = [super layoutAttributesForElementsInRect:rect];
     
@@ -103,7 +102,7 @@ static const CGFloat ItemHW = 100;
         CGFloat itemCenterx = attrs.center.x;
         //差距越小，缩放比例越大
         //根据与屏幕最中间的距离计算缩放比例
-       CGFloat scale = 1 + (1 - ABS(itemCenterx - centerX) / self.collectionView.frame.size.width * 0.6)*0.8;//比例值很随意，适合就好
+        CGFloat scale = 1 + (1 - ABS(itemCenterx - centerX) / self.collectionView.frame.size.width * 0.6)*0.8;//比例值很随意，适合就好
         NSLog(@"--scale:%f",scale);
         
         //用这个，缩放不会改变frame大小，所以判断可见范围就无效，item即将离开可见范围的时候，突然消失不见
@@ -114,12 +113,3 @@ static const CGFloat ItemHW = 100;
 }
 
 @end
-
-
-
-
-
-
-
-
-

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE23BE2B1C39005B00AD159D /* ViscosityLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FE23BE2A1C39005B00AD159D /* ViscosityLayout.m */; };
 		FE7184C31C301A5A0035F588 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7184C21C301A5A0035F588 /* main.m */; };
 		FE7184C61C301A5A0035F588 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7184C51C301A5A0035F588 /* AppDelegate.m */; };
 		FE7184C91C301A5A0035F588 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7184C81C301A5A0035F588 /* ViewController.m */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FE23BE291C39005B00AD159D /* ViscosityLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViscosityLayout.h; sourceTree = "<group>"; };
+		FE23BE2A1C39005B00AD159D /* ViscosityLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViscosityLayout.m; sourceTree = "<group>"; };
 		FE7184BE1C301A5A0035F588 /* 自定义UICollectionView的布局.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "自定义UICollectionView的布局.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE7184C21C301A5A0035F588 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FE7184C41C301A5A0035F588 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -108,6 +111,8 @@
 				FE7184C51C301A5A0035F588 /* AppDelegate.m */,
 				FE7184F41C3020190035F588 /* LineLayout.h */,
 				FE7184F51C3020190035F588 /* LineLayout.m */,
+				FE23BE291C39005B00AD159D /* ViscosityLayout.h */,
+				FE23BE2A1C39005B00AD159D /* ViscosityLayout.m */,
 				FE7184C71C301A5A0035F588 /* ViewController.h */,
 				FE7184C81C301A5A0035F588 /* ViewController.m */,
 				FE7184CA1C301A5A0035F588 /* Main.storyboard */,
@@ -278,6 +283,7 @@
 				FE7184C91C301A5A0035F588 /* ViewController.m in Sources */,
 				FE7184F61C3020190035F588 /* LineLayout.m in Sources */,
 				FE7184C61C301A5A0035F588 /* AppDelegate.m in Sources */,
+				FE23BE2B1C39005B00AD159D /* ViscosityLayout.m in Sources */,
 				FE7184C31C301A5A0035F588 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

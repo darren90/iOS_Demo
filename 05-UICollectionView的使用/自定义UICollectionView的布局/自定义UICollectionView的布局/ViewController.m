@@ -12,6 +12,9 @@
 
 @interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic,strong)NSMutableArray *dataArray;
+
+@property (nonatomic,weak)UICollectionView *collectionView;
+
 @end
 
 @implementation ViewController
@@ -29,8 +32,13 @@ static NSString *const ID = @"collectionview";
     collectionView.delegate = self;
     collectionView.dataSource = self;
     [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:ID];
+    self.collectionView = collectionView;
 }
 
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+//    [self.collectionView setCollectionViewLayout:[[UICollectionViewFlowLayout alloc]init] animated:YES];
+}
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
