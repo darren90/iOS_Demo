@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FE23BE2B1C39005B00AD159D /* ViscosityLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FE23BE2A1C39005B00AD159D /* ViscosityLayout.m */; };
+		FE23BE311C39012E00AD159D /* LineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FE23BE2E1C39012E00AD159D /* LineLayout.m */; };
+		FE23BE321C39012E00AD159D /* ViscosityLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FE23BE301C39012E00AD159D /* ViscosityLayout.m */; };
 		FE7184C31C301A5A0035F588 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7184C21C301A5A0035F588 /* main.m */; };
 		FE7184C61C301A5A0035F588 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7184C51C301A5A0035F588 /* AppDelegate.m */; };
 		FE7184C91C301A5A0035F588 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7184C81C301A5A0035F588 /* ViewController.m */; };
@@ -16,7 +17,6 @@
 		FE7184D11C301A5A0035F588 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE7184CF1C301A5A0035F588 /* LaunchScreen.storyboard */; };
 		FE7184DC1C301A5A0035F588 /* ___UICollectionView___Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7184DB1C301A5A0035F588 /* ___UICollectionView___Tests.m */; };
 		FE7184E71C301A5A0035F588 /* ___UICollectionView___UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7184E61C301A5A0035F588 /* ___UICollectionView___UITests.m */; };
-		FE7184F61C3020190035F588 /* LineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7184F51C3020190035F588 /* LineLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FE23BE291C39005B00AD159D /* ViscosityLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViscosityLayout.h; sourceTree = "<group>"; };
-		FE23BE2A1C39005B00AD159D /* ViscosityLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViscosityLayout.m; sourceTree = "<group>"; };
+		FE23BE2D1C39012E00AD159D /* LineLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineLayout.h; sourceTree = "<group>"; };
+		FE23BE2E1C39012E00AD159D /* LineLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineLayout.m; sourceTree = "<group>"; };
+		FE23BE2F1C39012E00AD159D /* ViscosityLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViscosityLayout.h; sourceTree = "<group>"; };
+		FE23BE301C39012E00AD159D /* ViscosityLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViscosityLayout.m; sourceTree = "<group>"; };
 		FE7184BE1C301A5A0035F588 /* 自定义UICollectionView的布局.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "自定义UICollectionView的布局.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE7184C21C301A5A0035F588 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FE7184C41C301A5A0035F588 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -55,8 +57,6 @@
 		FE7184E21C301A5A0035F588 /* 自定义UICollectionView的布局UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "自定义UICollectionView的布局UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE7184E61C301A5A0035F588 /* ___UICollectionView___UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "___UICollectionView___UITests.m"; sourceTree = "<group>"; };
 		FE7184E81C301A5A0035F588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FE7184F41C3020190035F588 /* LineLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineLayout.h; sourceTree = "<group>"; };
-		FE7184F51C3020190035F588 /* LineLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +84,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE23BE2C1C39012E00AD159D /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				FE23BE2D1C39012E00AD159D /* LineLayout.h */,
+				FE23BE2E1C39012E00AD159D /* LineLayout.m */,
+				FE23BE2F1C39012E00AD159D /* ViscosityLayout.h */,
+				FE23BE301C39012E00AD159D /* ViscosityLayout.m */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
 		FE7184B51C301A5A0035F588 = {
 			isa = PBXGroup;
 			children = (
@@ -109,10 +120,7 @@
 			children = (
 				FE7184C41C301A5A0035F588 /* AppDelegate.h */,
 				FE7184C51C301A5A0035F588 /* AppDelegate.m */,
-				FE7184F41C3020190035F588 /* LineLayout.h */,
-				FE7184F51C3020190035F588 /* LineLayout.m */,
-				FE23BE291C39005B00AD159D /* ViscosityLayout.h */,
-				FE23BE2A1C39005B00AD159D /* ViscosityLayout.m */,
+				FE23BE2C1C39012E00AD159D /* Layout */,
 				FE7184C71C301A5A0035F588 /* ViewController.h */,
 				FE7184C81C301A5A0035F588 /* ViewController.m */,
 				FE7184CA1C301A5A0035F588 /* Main.storyboard */,
@@ -281,9 +289,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE7184C91C301A5A0035F588 /* ViewController.m in Sources */,
-				FE7184F61C3020190035F588 /* LineLayout.m in Sources */,
 				FE7184C61C301A5A0035F588 /* AppDelegate.m in Sources */,
-				FE23BE2B1C39005B00AD159D /* ViscosityLayout.m in Sources */,
+				FE23BE311C39012E00AD159D /* LineLayout.m in Sources */,
+				FE23BE321C39012E00AD159D /* ViscosityLayout.m in Sources */,
 				FE7184C31C301A5A0035F588 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
