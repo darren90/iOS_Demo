@@ -36,12 +36,11 @@ static const CGFloat ItemMaigin = 20;
     self.sectionInset = UIEdgeInsetsMake(0, inset, 0, inset);
 }
 
-
 /**
- *  控制最后srollview的最后去哪里
- *  用来设置collectionView停止滚动那一刻的位置
+ *  控制最后UICollectionView的最后去哪里
+ *  用来设置UICollectionView停止滚动那一刻的位置
  *
- *  @param proposedContentOffset 原本Scrollview停止滚动那一刻的位置
+ *  @param proposedContentOffset 原本UICollectionView停止滚动那一刻的位置
  *  @param velocity              滚动速度
  */
 -(CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity
@@ -54,33 +53,24 @@ static const CGFloat ItemMaigin = 20;
     //2.取出这个范围内的所有属性
     NSArray *array = [self layoutAttributesForElementsInRect:lastRect];
     
-    //计算屏幕最中间的x
-    CGFloat centerX = proposedContentOffset.x + self.collectionView.frame.size.width / 2 ;
+    //起始的x值，也即默认情况下要停下来的x值
     CGFloat startX = proposedContentOffset.x;
     
     //3.遍历所有的属性
     CGFloat adjustOffsetX = MAXFLOAT;
     for (UICollectionViewLayoutAttributes *attrs in array) {
-        NSLog(@"-frame--:%@--:%f",NSStringFromCGRect(attrs.frame),proposedContentOffset.x);
-//        if(ABS(attrs.center.x - centerX) < ABS(adjustOffsetX)){//取出最小值
-//            adjustOffsetX = attrs.center.x - centerX;
-//        }
-        
-//        attrs.frame.origin.x
         CGFloat attrsX = CGRectGetMinX(attrs.frame);
         CGFloat attrsW = CGRectGetWidth(attrs.frame) ;
+//        NSLog(@"-frame--:%@-%f-:%f",NSStringFromCGRect(attrs.frame),attrsX,proposedContentOffset.x);
+
         if (startX - attrsX  < attrsW/2) {
-            adjustOffsetX = -(startX - attrsX);
+            adjustOffsetX = -(startX - attrsX+ItemMaigin);
         }else{
             adjustOffsetX = attrsW - (startX - attrsX);
         }
     
-        continue ;
+        break ;//只循环数组中第一个元素即可，所以直接break了
     }
-    
-    
-    //    CGPoint point = [super targetContentOffsetForProposedContentOffset:proposedContentOffset withScrollingVelocity:velocity];
-    
     return CGPointMake(proposedContentOffset.x + adjustOffsetX, proposedContentOffset.y);
 }
 

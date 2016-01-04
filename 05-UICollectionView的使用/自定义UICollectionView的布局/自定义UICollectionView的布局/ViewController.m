@@ -11,7 +11,6 @@
 #import "ViscosityLayout.h"
 #import "CollectionViewCell.h"
 
-#define KRandomColor     [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0];
 
 @interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic,strong)NSMutableArray *dataArray;
@@ -27,13 +26,13 @@ static NSString *const ID = @"cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
     CGRect rect = CGRectMake(0, 160, self.view.frame.size.width, 180);
     LineLayout *flowLayout = [[LineLayout alloc]init];
     ViscosityLayout *viscosityLayout = [[ViscosityLayout alloc]init];
     
-    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:rect collectionViewLayout:viscosityLayout];
+    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:rect collectionViewLayout:flowLayout];
     [self.view addSubview:collectionView];
+    collectionView.backgroundColor = [UIColor blackColor];
     collectionView.delegate = self;
     collectionView.dataSource = self;
 //    [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:ID];
@@ -60,7 +59,7 @@ static NSString *const ID = @"cell";
 {
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
     cell.index = indexPath.item;
-    cell.backgroundColor = KRandomColor;
+//    cell.backgroundColor = KRandomColor;
     return cell;
 }
 
