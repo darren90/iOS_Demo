@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FE23BE311C39012E00AD159D /* LineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FE23BE2E1C39012E00AD159D /* LineLayout.m */; };
 		FE23BE321C39012E00AD159D /* ViscosityLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FE23BE301C39012E00AD159D /* ViscosityLayout.m */; };
+		FE23BE361C3ABA0E00AD159D /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE23BE341C3ABA0E00AD159D /* CollectionViewCell.m */; };
+		FE23BE371C3ABA0E00AD159D /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE23BE351C3ABA0E00AD159D /* CollectionViewCell.xib */; };
 		FE7184C31C301A5A0035F588 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7184C21C301A5A0035F588 /* main.m */; };
 		FE7184C61C301A5A0035F588 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7184C51C301A5A0035F588 /* AppDelegate.m */; };
 		FE7184C91C301A5A0035F588 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7184C81C301A5A0035F588 /* ViewController.m */; };
@@ -41,6 +43,9 @@
 		FE23BE2E1C39012E00AD159D /* LineLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineLayout.m; sourceTree = "<group>"; };
 		FE23BE2F1C39012E00AD159D /* ViscosityLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViscosityLayout.h; sourceTree = "<group>"; };
 		FE23BE301C39012E00AD159D /* ViscosityLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViscosityLayout.m; sourceTree = "<group>"; };
+		FE23BE331C3ABA0E00AD159D /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		FE23BE341C3ABA0E00AD159D /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		FE23BE351C3ABA0E00AD159D /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		FE7184BE1C301A5A0035F588 /* 自定义UICollectionView的布局.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "自定义UICollectionView的布局.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE7184C21C301A5A0035F588 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FE7184C41C301A5A0035F588 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -123,6 +128,9 @@
 				FE23BE2C1C39012E00AD159D /* Layout */,
 				FE7184C71C301A5A0035F588 /* ViewController.h */,
 				FE7184C81C301A5A0035F588 /* ViewController.m */,
+				FE23BE331C3ABA0E00AD159D /* CollectionViewCell.h */,
+				FE23BE341C3ABA0E00AD159D /* CollectionViewCell.m */,
+				FE23BE351C3ABA0E00AD159D /* CollectionViewCell.xib */,
 				FE7184CA1C301A5A0035F588 /* Main.storyboard */,
 				FE7184CD1C301A5A0035F588 /* Assets.xcassets */,
 				FE7184CF1C301A5A0035F588 /* LaunchScreen.storyboard */,
@@ -263,6 +271,7 @@
 			files = (
 				FE7184D11C301A5A0035F588 /* LaunchScreen.storyboard in Resources */,
 				FE7184CE1C301A5A0035F588 /* Assets.xcassets in Resources */,
+				FE23BE371C3ABA0E00AD159D /* CollectionViewCell.xib in Resources */,
 				FE7184CC1C301A5A0035F588 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE23BE361C3ABA0E00AD159D /* CollectionViewCell.m in Sources */,
 				FE7184C91C301A5A0035F588 /* ViewController.m in Sources */,
 				FE7184C61C301A5A0035F588 /* AppDelegate.m in Sources */,
 				FE23BE311C39012E00AD159D /* LineLayout.m in Sources */,

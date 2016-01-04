@@ -56,16 +56,24 @@ static const CGFloat ItemMaigin = 20;
     
     //计算屏幕最中间的x
     CGFloat centerX = proposedContentOffset.x + self.collectionView.frame.size.width / 2 ;
+    CGFloat startX = proposedContentOffset.x;
     
     //3.遍历所有的属性
     CGFloat adjustOffsetX = MAXFLOAT;
     for (UICollectionViewLayoutAttributes *attrs in array) {
-//        NSLog(@"-frame--:%@",NSStringFromCGRect(attrs.frame));
+        NSLog(@"-frame--:%@--:%f",NSStringFromCGRect(attrs.frame),proposedContentOffset.x);
 //        if(ABS(attrs.center.x - centerX) < ABS(adjustOffsetX)){//取出最小值
 //            adjustOffsetX = attrs.center.x - centerX;
 //        }
         
 //        attrs.frame.origin.x
+        CGFloat attrsX = CGRectGetMinX(attrs.frame);
+        CGFloat attrsW = CGRectGetWidth(attrs.frame) ;
+        if (startX - attrsX  < attrsW/2) {
+            adjustOffsetX = -(startX - attrsX);
+        }else{
+            adjustOffsetX = attrsW - (startX - attrsX);
+        }
     
         continue ;
     }
