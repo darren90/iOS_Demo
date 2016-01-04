@@ -16,7 +16,6 @@ static const CGFloat ItemHW = 100;
     if (self = [super init]) {
         //        UICollectionViewLayoutAttributes
         
-        
     }
     return self;
 }
@@ -79,6 +78,9 @@ static const CGFloat ItemHW = 100;
     return YES;
 }
 
+/**
+ *  返回代表collectionView详细UICollectionViewLayoutAttributes信息的数组
+ */
 -(NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect
 {
     //0:计算可见的矩形框
