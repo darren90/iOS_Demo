@@ -27,7 +27,7 @@ static NSString *const ID = @"collectionview";
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    CGRect rect = CGRectMake(0, 160, self.view.frame.size.width, 200);
+    CGRect rect = CGRectMake(0, 160, self.view.frame.size.width, 180);
     LineLayout *flowLayout = [[LineLayout alloc]init];
     ViscosityLayout *viscosityLayout = [[ViscosityLayout alloc]init];
     

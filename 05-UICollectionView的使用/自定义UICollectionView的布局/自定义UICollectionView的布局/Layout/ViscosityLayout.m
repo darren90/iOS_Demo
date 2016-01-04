@@ -7,7 +7,8 @@
 //
 
 #import "ViscosityLayout.h"
-static const CGFloat ItemHW = 100;
+static const CGFloat ItemHW = 90;
+static const CGFloat ItemMaigin = 20;
 
 @implementation ViscosityLayout
 
@@ -30,8 +31,8 @@ static const CGFloat ItemHW = 100;
     //初始化
     self.itemSize = CGSizeMake(ItemHW, ItemHW);
     self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    self.minimumLineSpacing = 100;
-    CGFloat inset = (self.collectionView.frame.size.width - ItemHW) / 2;
+    self.minimumLineSpacing = ItemMaigin;
+    CGFloat inset = ItemMaigin;//(self.collectionView.frame.size.width - ItemHW) / 2;
     self.sectionInset = UIEdgeInsetsMake(0, inset, 0, inset);
 }
 
@@ -59,9 +60,14 @@ static const CGFloat ItemHW = 100;
     //3.遍历所有的属性
     CGFloat adjustOffsetX = MAXFLOAT;
     for (UICollectionViewLayoutAttributes *attrs in array) {
-        if(ABS(attrs.center.x - centerX) < ABS(adjustOffsetX)){//取出最小值
-            adjustOffsetX = attrs.center.x - centerX;
-        }
+//        NSLog(@"-frame--:%@",NSStringFromCGRect(attrs.frame));
+//        if(ABS(attrs.center.x - centerX) < ABS(adjustOffsetX)){//取出最小值
+//            adjustOffsetX = attrs.center.x - centerX;
+//        }
+        
+//        attrs.frame.origin.x
+    
+        continue ;
     }
     
     
@@ -81,37 +87,37 @@ static const CGFloat ItemHW = 100;
 /**
  *  返回代表collectionView详细UICollectionViewLayoutAttributes信息的数组
  */
--(NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect
-{
-    //0:计算可见的矩形框
-    CGRect visiableRect;
-    visiableRect.size = self.collectionView.frame.size;
-    visiableRect.origin = self.collectionView.contentOffset;
-    
-    //    UICollectionViewLayoutAttributes
-    //1.取出默认cell的UICollectionViewLayoutAttributes
-    NSArray *array = [super layoutAttributesForElementsInRect:rect];
-    
-    //计算屏幕最中间的x
-    CGFloat centerX = self.collectionView.contentOffset.x + self.collectionView.frame.size.width / 2 ;
-    
-    //2.遍历所有的布局属性
-    for (UICollectionViewLayoutAttributes *attrs in array) {
-        //不是可见范围的 就返回，不再屏幕就直接跳过
-        if (!CGRectIntersectsRect(visiableRect, attrs.frame)) continue;
-        
-        //每一个item的中心x值
-        CGFloat itemCenterx = attrs.center.x;
-        //差距越小，缩放比例越大
-        //根据与屏幕最中间的距离计算缩放比例
-        CGFloat scale = 1 + (1 - ABS(itemCenterx - centerX) / self.collectionView.frame.size.width * 0.6)*0.8;//比例值很随意，适合就好
-        NSLog(@"--scale:%f",scale);
-        
-        //用这个，缩放不会改变frame大小，所以判断可见范围就无效，item即将离开可见范围的时候，突然消失不见
-        attrs.transform3D = CATransform3DMakeScale(scale, scale, 1.0);
-    }
-    
-    return array;
-}
+//-(NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect
+//{
+//    //0:计算可见的矩形框
+//    CGRect visiableRect;
+//    visiableRect.size = self.collectionView.frame.size;
+//    visiableRect.origin = self.collectionView.contentOffset;
+//    
+//    //    UICollectionViewLayoutAttributes
+//    //1.取出默认cell的UICollectionViewLayoutAttributes
+//    NSArray *array = [super layoutAttributesForElementsInRect:rect];
+//    
+//    //计算屏幕最中间的x
+//    CGFloat centerX = self.collectionView.contentOffset.x + self.collectionView.frame.size.width / 2 ;
+//    
+//    //2.遍历所有的布局属性
+//    for (UICollectionViewLayoutAttributes *attrs in array) {
+//        //不是可见范围的 就返回，不再屏幕就直接跳过
+//        if (!CGRectIntersectsRect(visiableRect, attrs.frame)) continue;
+//        
+//        //每一个item的中心x值
+//        CGFloat itemCenterx = attrs.center.x;
+//        //差距越小，缩放比例越大
+//        //根据与屏幕最中间的距离计算缩放比例
+//        CGFloat scale = 1 + (1 - ABS(itemCenterx - centerX) / self.collectionView.frame.size.width * 0.6)*0.8;//比例值很随意，适合就好
+//        NSLog(@"--scale:%f",scale);
+//        
+//        //用这个，缩放不会改变frame大小，所以判断可见范围就无效，item即将离开可见范围的时候，突然消失不见
+//        attrs.transform3D = CATransform3DMakeScale(scale, scale, 1.0);
+//    }
+//    
+//    return array;
+//}
 
 @end
