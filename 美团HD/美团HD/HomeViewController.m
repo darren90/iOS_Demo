@@ -10,6 +10,7 @@
 #import "TFConst.h"
 #import "UIBarButtonItem+Extension.h"
 #import "UIView+Extension.h"
+#import "TFHomeTopItem.h"
 
 @interface HomeViewController ()
 
@@ -54,12 +55,25 @@ static NSString * const reuseIdentifier = @"Cell";
 
 -(void)setupLeftNav
 {
+    //1.logol
     UIBarButtonItem *logo = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon_meituan_logo"] style:UIBarButtonItemStyleDone target:nil action:nil];
     logo.enabled = NO;
     
+    //2.
+    TFHomeTopItem *categoryItem = [TFHomeTopItem item];
+    UIBarButtonItem *category = [[UIBarButtonItem alloc]initWithCustomView:categoryItem];
+
+    //3.
+    TFHomeTopItem *districItem = [TFHomeTopItem item];
+    UIBarButtonItem *distric = [[UIBarButtonItem alloc]initWithCustomView:districItem];
+
     
+    //4.
+    TFHomeTopItem *sortItem = [TFHomeTopItem item];
+    UIBarButtonItem *sort = [[UIBarButtonItem alloc]initWithCustomView:sortItem];
+
     
-    self.navigationItem.leftBarButtonItems = @[logo];
+    self.navigationItem.leftBarButtonItems = @[logo,category,distric,sort];
 }
 
 -(void)setupRightNav
