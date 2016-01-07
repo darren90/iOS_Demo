@@ -16,6 +16,8 @@
 		FEE3D35A1C3EAC650011628B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D3591C3EAC650011628B /* HomeViewController.m */; };
 		FEE3D35D1C3EB0E20011628B /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D35C1C3EB0E20011628B /* BaseNavigationController.m */; };
 		FEE3D3601C3EB1770011628B /* TFConst.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D35F1C3EB1770011628B /* TFConst.m */; };
+		FEE3D3631C3EB3A00011628B /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D3621C3EB3A00011628B /* UIBarButtonItem+Extension.m */; };
+		FEE3D3661C3EB3AB0011628B /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D3651C3EB3AB0011628B /* UIView+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,10 @@
 		FEE3D35C1C3EB0E20011628B /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		FEE3D35E1C3EB1770011628B /* TFConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFConst.h; sourceTree = "<group>"; };
 		FEE3D35F1C3EB1770011628B /* TFConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFConst.m; sourceTree = "<group>"; };
+		FEE3D3611C3EB3A00011628B /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
+		FEE3D3621C3EB3A00011628B /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		FEE3D3641C3EB3AB0011628B /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		FEE3D3651C3EB3AB0011628B /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +114,10 @@
 			children = (
 				FEE3D3281C3EA7920011628B /* AppDelegate.h */,
 				FEE3D3291C3EA7920011628B /* AppDelegate.m */,
+				FEE3D3611C3EB3A00011628B /* UIBarButtonItem+Extension.h */,
+				FEE3D3621C3EB3A00011628B /* UIBarButtonItem+Extension.m */,
+				FEE3D3641C3EB3AB0011628B /* UIView+Extension.h */,
+				FEE3D3651C3EB3AB0011628B /* UIView+Extension.m */,
 				FEE3D35E1C3EB1770011628B /* TFConst.h */,
 				FEE3D35F1C3EB1770011628B /* TFConst.m */,
 				FEE3D35B1C3EB0E20011628B /* BaseNavigationController.h */,
@@ -277,8 +287,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEE3D3631C3EB3A00011628B /* UIBarButtonItem+Extension.m in Sources */,
 				FEE3D35D1C3EB0E20011628B /* BaseNavigationController.m in Sources */,
 				FEE3D32A1C3EA7920011628B /* AppDelegate.m in Sources */,
+				FEE3D3661C3EB3AB0011628B /* UIView+Extension.m in Sources */,
 				FEE3D3601C3EB1770011628B /* TFConst.m in Sources */,
 				FEE3D3271C3EA7920011628B /* main.m in Sources */,
 				FEE3D35A1C3EAC650011628B /* HomeViewController.m in Sources */,

@@ -8,6 +8,8 @@
 
 #import "HomeViewController.h"
 #import "TFConst.h"
+#import "UIBarButtonItem+Extension.h"
+#import "UIView+Extension.h"
 
 @interface HomeViewController ()
 
@@ -43,6 +45,31 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
+    
+    //设置导航栏内容
+    [self setupLeftNav];
+    [self setupRightNav];
+}
+
+
+-(void)setupLeftNav
+{
+    UIBarButtonItem *logo = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon_meituan_logo"] style:UIBarButtonItemStyleDone target:nil action:nil];
+    logo.enabled = NO;
+    
+    
+    
+    self.navigationItem.leftBarButtonItems = @[logo];
+}
+
+-(void)setupRightNav
+{
+    UIBarButtonItem *map = [UIBarButtonItem itemWithTarget:nil action:nil image:@"icon_map" highImage:@"icon_map_highlighted"];
+    map.customView.width = 60;
+    
+    UIBarButtonItem *search = [UIBarButtonItem itemWithTarget:nil action:nil image:@"icon_search" highImage:@"icon_search_highlighted"];
+    search.customView.width = 60;
+    self.navigationItem.rightBarButtonItems = @[map, search];
 }
 
 - (void)didReceiveMemoryWarning {
