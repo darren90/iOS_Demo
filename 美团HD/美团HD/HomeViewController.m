@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "TFConst.h"
 
 @interface HomeViewController ()
 
@@ -22,11 +23,21 @@ static NSString * const reuseIdentifier = @"Cell";
     return [self initWithCollectionViewLayout:layout];
 }
 
+/**
+    //tableview
+ *  self.view == self.tableview
+    //collectionView
+    self.view == self.collectionView.superview
+ */
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
+    self.view.backgroundColor = MTGlobalBg;
+    self.collectionView.backgroundColor = MTGlobalBg;
+    
+    
     
     // Register cell classes
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];

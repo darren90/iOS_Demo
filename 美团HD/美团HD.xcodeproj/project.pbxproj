@@ -14,6 +14,8 @@
 		FEE3D3401C3EA7920011628B /* __HDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D33F1C3EA7920011628B /* __HDTests.m */; };
 		FEE3D34B1C3EA7920011628B /* __HDUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D34A1C3EA7920011628B /* __HDUITests.m */; };
 		FEE3D35A1C3EAC650011628B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D3591C3EAC650011628B /* HomeViewController.m */; };
+		FEE3D35D1C3EB0E20011628B /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D35C1C3EB0E20011628B /* BaseNavigationController.m */; };
+		FEE3D3601C3EB1770011628B /* TFConst.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D35F1C3EB1770011628B /* TFConst.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,10 @@
 		FEE3D34C1C3EA7920011628B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEE3D3581C3EAC650011628B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		FEE3D3591C3EAC650011628B /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		FEE3D35B1C3EB0E20011628B /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		FEE3D35C1C3EB0E20011628B /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		FEE3D35E1C3EB1770011628B /* TFConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFConst.h; sourceTree = "<group>"; };
+		FEE3D35F1C3EB1770011628B /* TFConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFConst.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,10 @@
 			children = (
 				FEE3D3281C3EA7920011628B /* AppDelegate.h */,
 				FEE3D3291C3EA7920011628B /* AppDelegate.m */,
+				FEE3D35E1C3EB1770011628B /* TFConst.h */,
+				FEE3D35F1C3EB1770011628B /* TFConst.m */,
+				FEE3D35B1C3EB0E20011628B /* BaseNavigationController.h */,
+				FEE3D35C1C3EB0E20011628B /* BaseNavigationController.m */,
 				FEE3D3581C3EAC650011628B /* HomeViewController.h */,
 				FEE3D3591C3EAC650011628B /* HomeViewController.m */,
 				FEE3D3311C3EA7920011628B /* Assets.xcassets */,
@@ -267,7 +277,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEE3D35D1C3EB0E20011628B /* BaseNavigationController.m in Sources */,
 				FEE3D32A1C3EA7920011628B /* AppDelegate.m in Sources */,
+				FEE3D3601C3EB1770011628B /* TFConst.m in Sources */,
 				FEE3D3271C3EA7920011628B /* main.m in Sources */,
 				FEE3D35A1C3EAC650011628B /* HomeViewController.m in Sources */,
 			);
@@ -491,6 +503,7 @@
 				FEE3D3511C3EA7920011628B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FEE3D3521C3EA7920011628B /* Build configuration list for PBXNativeTarget "美团HDTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +512,7 @@
 				FEE3D3541C3EA7920011628B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FEE3D3551C3EA7920011628B /* Build configuration list for PBXNativeTarget "美团HDUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +521,7 @@
 				FEE3D3571C3EA7920011628B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
