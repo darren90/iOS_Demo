@@ -8,6 +8,13 @@
 
 #import "TFHomeTopItem.h"
 
+@interface TFHomeTopItem ()
+
+- (IBAction)didClick:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *button;
+
+@end
+
 @implementation TFHomeTopItem
 
 +(instancetype)item
@@ -15,4 +22,13 @@
     return [[[NSBundle mainBundle]loadNibNamed:@"TFHomeTopItem" owner:nil options:nil] firstObject];
 }
 
+- (IBAction)didClick:(UIButton *)sender {
+}
+
+
+
+-(void)addTaget:(id)target action:(SEL)action
+{
+    [self.button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+}
 @end

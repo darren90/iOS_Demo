@@ -1,5 +1,5 @@
 //
-//  TFHomeDropdown.h
+//  CategoryController.h
 //  美团HD
 //
 //  Created by Tengfei on 16/1/8.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TFHomeDropdown : UIView
-+(instancetype)dropDown;
+@interface CategoryController : UIViewController
+
 @end

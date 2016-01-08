@@ -11,8 +11,8 @@
             <rect key="frame" x="0.0" y="0.0" width="140" height="35"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view alpha="0.5" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V3m-au-Gh2" userLabel="分割线">
-                    <rect key="frame" x="5" y="5" width="1" height="30"/>
+                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V3m-au-Gh2" userLabel="分割线">
+                    <rect key="frame" x="5" y="5" width="1" height="25"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="1" id="nt0-0r-bcb"/>
@@ -27,8 +27,8 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ugu-Br-iy7" userLabel="子标题">
-                    <rect key="frame" x="46" y="19" width="89" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ugu-Br-iy7" userLabel="子标题">
+                    <rect key="frame" x="46" y="14" width="89" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="nN4-UI-ZjG"/>
                     </constraints>
@@ -36,11 +36,14 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghU-H6-gRM" userLabel="图标按钮">
-                    <rect key="frame" x="0.0" y="0.0" width="140" height="40"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghU-H6-gRM" userLabel="图标按钮">
+                    <rect key="frame" x="0.0" y="0.0" width="140" height="35"/>
                     <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <state key="normal" image="icon_district"/>
                     <state key="highlighted" image="icon_district_highlighted"/>
+                    <connections>
+                        <action selector="didClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="5IT-WZ-O9b"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -61,6 +64,9 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="button" destination="ghU-H6-gRM" id="ioq-p0-SPv"/>
+            </connections>
             <point key="canvasLocation" x="302" y="363"/>
         </view>
     </objects>

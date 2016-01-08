@@ -10,12 +10,15 @@
 
 @implementation TFHomeDropdown
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
++(instancetype)dropDown
+{
+    return [[[NSBundle mainBundle]loadNibNamed:@"TFHomeDropdown" owner:nil options:nil] firstObject];
 }
-*/
+
+
+
+
+
+
 
 @end

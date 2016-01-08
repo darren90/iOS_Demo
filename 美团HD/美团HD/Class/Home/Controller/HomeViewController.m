@@ -11,8 +11,22 @@
 #import "UIBarButtonItem+Extension.h"
 #import "UIView+Extension.h"
 #import "TFHomeTopItem.h"
+#import "TFHomeDropdown.h"
+#import "CategoryController.h"
 
 @interface HomeViewController ()
+/**
+ *  分类item
+ */
+@property (nonatomic,weak)UIBarButtonItem * categoryItem;
+/**
+ *  区域item
+ */
+@property (nonatomic,weak)UIBarButtonItem * districtItem;
+/**
+ *  排序item
+ */
+@property (nonatomic,weak)UIBarButtonItem * sortItem;
 
 @end
 
@@ -61,17 +75,21 @@ static NSString * const reuseIdentifier = @"Cell";
     
     //2.
     TFHomeTopItem *categoryItem = [TFHomeTopItem item];
+    [categoryItem addTaget:self action:@selector(categoryClick)];
     UIBarButtonItem *category = [[UIBarButtonItem alloc]initWithCustomView:categoryItem];
+    self.categoryItem = category;
 
     //3.
     TFHomeTopItem *districItem = [TFHomeTopItem item];
+    [districItem addTaget:self action:@selector(districtClick)];
     UIBarButtonItem *distric = [[UIBarButtonItem alloc]initWithCustomView:districItem];
-
+    self.districtItem = distric;
     
     //4.
     TFHomeTopItem *sortItem = [TFHomeTopItem item];
+    [sortItem addTaget:self action:@selector(sortClick)];
     UIBarButtonItem *sort = [[UIBarButtonItem alloc]initWithCustomView:sortItem];
-
+    self.sortItem = sort;
     
     self.navigationItem.leftBarButtonItems = @[logo,category,distric,sort];
 }
@@ -85,6 +103,27 @@ static NSString * const reuseIdentifier = @"Cell";
     search.customView.width = 60;
     self.navigationItem.rightBarButtonItems = @[map, search];
 }
+#pragma mark - 顶部item的点击方法
+-(void)categoryClick
+{
+//    NSLog(@"categoryClick");
+    //
+    CategoryController *cate = [[CategoryController alloc]init];
+    UIPopoverController *popover = [[UIPopoverController alloc]initWithContentViewController:cate];
+    [popover presentPopoverFromBarButtonItem:self.categoryItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+}
+
+
+-(void)districtClick
+{
+    
+}
+
+-(void)sortClick
+{
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

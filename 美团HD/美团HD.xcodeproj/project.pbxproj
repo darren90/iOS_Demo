@@ -22,6 +22,7 @@
 		FEE3D3891C3FEECD0011628B /* TFConst.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D3811C3FEECD0011628B /* TFConst.m */; };
 		FEE3D38C1C3FF09A0011628B /* TFHomeDropdown.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D38B1C3FF09A0011628B /* TFHomeDropdown.m */; };
 		FEE3D38E1C3FF0CF0011628B /* TFHomeDropdown.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEE3D38D1C3FF0CF0011628B /* TFHomeDropdown.xib */; };
+		FEE3D3911C3FF8D10011628B /* CategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D3901C3FF8D10011628B /* CategoryController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		FEE3D38A1C3FF09A0011628B /* TFHomeDropdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHomeDropdown.h; sourceTree = "<group>"; };
 		FEE3D38B1C3FF09A0011628B /* TFHomeDropdown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHomeDropdown.m; sourceTree = "<group>"; };
 		FEE3D38D1C3FF0CF0011628B /* TFHomeDropdown.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TFHomeDropdown.xib; sourceTree = "<group>"; };
+		FEE3D38F1C3FF8D10011628B /* CategoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryController.h; sourceTree = "<group>"; };
+		FEE3D3901C3FF8D10011628B /* CategoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +200,8 @@
 			children = (
 				FEE3D3761C3FEECD0011628B /* HomeViewController.h */,
 				FEE3D3771C3FEECD0011628B /* HomeViewController.m */,
+				FEE3D38F1C3FF8D10011628B /* CategoryController.h */,
+				FEE3D3901C3FF8D10011628B /* CategoryController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -362,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEE3D3831C3FEECD0011628B /* UIBarButtonItem+Extension.m in Sources */,
+				FEE3D3911C3FF8D10011628B /* CategoryController.m in Sources */,
 				FEE3D3881C3FEECD0011628B /* BaseNavigationController.m in Sources */,
 				FEE3D3821C3FEECD0011628B /* AppDelegate.m in Sources */,
 				FEE3D3841C3FEECD0011628B /* UIView+Extension.m in Sources */,
