@@ -8,18 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		FEE3D3271C3EA7920011628B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D3261C3EA7920011628B /* main.m */; };
-		FEE3D32A1C3EA7920011628B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D3291C3EA7920011628B /* AppDelegate.m */; };
 		FEE3D3321C3EA7920011628B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEE3D3311C3EA7920011628B /* Assets.xcassets */; };
 		FEE3D3351C3EA7920011628B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE3D3331C3EA7920011628B /* LaunchScreen.storyboard */; };
 		FEE3D3401C3EA7920011628B /* __HDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D33F1C3EA7920011628B /* __HDTests.m */; };
 		FEE3D34B1C3EA7920011628B /* __HDUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D34A1C3EA7920011628B /* __HDUITests.m */; };
-		FEE3D35A1C3EAC650011628B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D3591C3EAC650011628B /* HomeViewController.m */; };
-		FEE3D35D1C3EB0E20011628B /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D35C1C3EB0E20011628B /* BaseNavigationController.m */; };
-		FEE3D3601C3EB1770011628B /* TFConst.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D35F1C3EB1770011628B /* TFConst.m */; };
-		FEE3D3631C3EB3A00011628B /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D3621C3EB3A00011628B /* UIBarButtonItem+Extension.m */; };
-		FEE3D3661C3EB3AB0011628B /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D3651C3EB3AB0011628B /* UIView+Extension.m */; };
-		FEE3D3681C3EB7010011628B /* TFHomeTopItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEE3D3671C3EB7010011628B /* TFHomeTopItem.xib */; };
-		FEE3D36B1C3EB9990011628B /* TFHomeTopItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D36A1C3EB9990011628B /* TFHomeTopItem.m */; };
+		FEE3D3821C3FEECD0011628B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D36E1C3FEECD0011628B /* AppDelegate.m */; };
+		FEE3D3831C3FEECD0011628B /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D3711C3FEECD0011628B /* UIBarButtonItem+Extension.m */; };
+		FEE3D3841C3FEECD0011628B /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D3731C3FEECD0011628B /* UIView+Extension.m */; };
+		FEE3D3851C3FEECD0011628B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D3771C3FEECD0011628B /* HomeViewController.m */; };
+		FEE3D3861C3FEECD0011628B /* TFHomeTopItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D37B1C3FEECD0011628B /* TFHomeTopItem.m */; };
+		FEE3D3871C3FEECD0011628B /* TFHomeTopItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEE3D37C1C3FEECD0011628B /* TFHomeTopItem.xib */; };
+		FEE3D3881C3FEECD0011628B /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D37F1C3FEECD0011628B /* BaseNavigationController.m */; };
+		FEE3D3891C3FEECD0011628B /* TFConst.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D3811C3FEECD0011628B /* TFConst.m */; };
+		FEE3D38C1C3FF09A0011628B /* TFHomeDropdown.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D38B1C3FF09A0011628B /* TFHomeDropdown.m */; };
+		FEE3D38E1C3FF0CF0011628B /* TFHomeDropdown.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEE3D38D1C3FF0CF0011628B /* TFHomeDropdown.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +44,6 @@
 /* Begin PBXFileReference section */
 		FEE3D3221C3EA7920011628B /* 美团HD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "美团HD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE3D3261C3EA7920011628B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FEE3D3281C3EA7920011628B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		FEE3D3291C3EA7920011628B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FEE3D3311C3EA7920011628B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEE3D3341C3EA7920011628B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FEE3D3361C3EA7920011628B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,19 +53,24 @@
 		FEE3D3461C3EA7920011628B /* 美团HDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "美团HDUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE3D34A1C3EA7920011628B /* __HDUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __HDUITests.m; sourceTree = "<group>"; };
 		FEE3D34C1C3EA7920011628B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FEE3D3581C3EAC650011628B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		FEE3D3591C3EAC650011628B /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		FEE3D35B1C3EB0E20011628B /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
-		FEE3D35C1C3EB0E20011628B /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
-		FEE3D35E1C3EB1770011628B /* TFConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFConst.h; sourceTree = "<group>"; };
-		FEE3D35F1C3EB1770011628B /* TFConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFConst.m; sourceTree = "<group>"; };
-		FEE3D3611C3EB3A00011628B /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
-		FEE3D3621C3EB3A00011628B /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
-		FEE3D3641C3EB3AB0011628B /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
-		FEE3D3651C3EB3AB0011628B /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
-		FEE3D3671C3EB7010011628B /* TFHomeTopItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TFHomeTopItem.xib; sourceTree = "<group>"; };
-		FEE3D3691C3EB9990011628B /* TFHomeTopItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHomeTopItem.h; sourceTree = "<group>"; };
-		FEE3D36A1C3EB9990011628B /* TFHomeTopItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHomeTopItem.m; sourceTree = "<group>"; };
+		FEE3D36D1C3FEECD0011628B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FEE3D36E1C3FEECD0011628B /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FEE3D3701C3FEECD0011628B /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
+		FEE3D3711C3FEECD0011628B /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		FEE3D3721C3FEECD0011628B /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		FEE3D3731C3FEECD0011628B /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		FEE3D3761C3FEECD0011628B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		FEE3D3771C3FEECD0011628B /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		FEE3D37A1C3FEECD0011628B /* TFHomeTopItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHomeTopItem.h; sourceTree = "<group>"; };
+		FEE3D37B1C3FEECD0011628B /* TFHomeTopItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHomeTopItem.m; sourceTree = "<group>"; };
+		FEE3D37C1C3FEECD0011628B /* TFHomeTopItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TFHomeTopItem.xib; sourceTree = "<group>"; };
+		FEE3D37E1C3FEECD0011628B /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		FEE3D37F1C3FEECD0011628B /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		FEE3D3801C3FEECD0011628B /* TFConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFConst.h; sourceTree = "<group>"; };
+		FEE3D3811C3FEECD0011628B /* TFConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFConst.m; sourceTree = "<group>"; };
+		FEE3D38A1C3FF09A0011628B /* TFHomeDropdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHomeDropdown.h; sourceTree = "<group>"; };
+		FEE3D38B1C3FF09A0011628B /* TFHomeDropdown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHomeDropdown.m; sourceTree = "<group>"; };
+		FEE3D38D1C3FF0CF0011628B /* TFHomeDropdown.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TFHomeDropdown.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,22 +122,8 @@
 		FEE3D3241C3EA7920011628B /* 美团HD */ = {
 			isa = PBXGroup;
 			children = (
-				FEE3D3281C3EA7920011628B /* AppDelegate.h */,
-				FEE3D3291C3EA7920011628B /* AppDelegate.m */,
-				FEE3D3611C3EB3A00011628B /* UIBarButtonItem+Extension.h */,
-				FEE3D3621C3EB3A00011628B /* UIBarButtonItem+Extension.m */,
-				FEE3D3641C3EB3AB0011628B /* UIView+Extension.h */,
-				FEE3D3651C3EB3AB0011628B /* UIView+Extension.m */,
-				FEE3D35E1C3EB1770011628B /* TFConst.h */,
-				FEE3D35F1C3EB1770011628B /* TFConst.m */,
-				FEE3D35B1C3EB0E20011628B /* BaseNavigationController.h */,
-				FEE3D35C1C3EB0E20011628B /* BaseNavigationController.m */,
-				FEE3D3581C3EAC650011628B /* HomeViewController.h */,
-				FEE3D3591C3EAC650011628B /* HomeViewController.m */,
-				FEE3D3671C3EB7010011628B /* TFHomeTopItem.xib */,
-				FEE3D3691C3EB9990011628B /* TFHomeTopItem.h */,
-				FEE3D36A1C3EB9990011628B /* TFHomeTopItem.m */,
 				FEE3D3311C3EA7920011628B /* Assets.xcassets */,
+				FEE3D36C1C3FEECD0011628B /* Class */,
 				FEE3D3251C3EA7920011628B /* Supporting Files */,
 			);
 			path = "美团HD";
@@ -164,6 +155,79 @@
 				FEE3D34C1C3EA7920011628B /* Info.plist */,
 			);
 			path = "美团HDUITests";
+			sourceTree = "<group>";
+		};
+		FEE3D36C1C3FEECD0011628B /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				FEE3D36F1C3FEECD0011628B /* Category */,
+				FEE3D36D1C3FEECD0011628B /* AppDelegate.h */,
+				FEE3D36E1C3FEECD0011628B /* AppDelegate.m */,
+				FEE3D3801C3FEECD0011628B /* TFConst.h */,
+				FEE3D3811C3FEECD0011628B /* TFConst.m */,
+				FEE3D37D1C3FEECD0011628B /* Main */,
+				FEE3D3741C3FEECD0011628B /* Home */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		FEE3D36F1C3FEECD0011628B /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				FEE3D3701C3FEECD0011628B /* UIBarButtonItem+Extension.h */,
+				FEE3D3711C3FEECD0011628B /* UIBarButtonItem+Extension.m */,
+				FEE3D3721C3FEECD0011628B /* UIView+Extension.h */,
+				FEE3D3731C3FEECD0011628B /* UIView+Extension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		FEE3D3741C3FEECD0011628B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FEE3D3751C3FEECD0011628B /* Controller */,
+				FEE3D3781C3FEECD0011628B /* Model */,
+				FEE3D3791C3FEECD0011628B /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FEE3D3751C3FEECD0011628B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FEE3D3761C3FEECD0011628B /* HomeViewController.h */,
+				FEE3D3771C3FEECD0011628B /* HomeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FEE3D3781C3FEECD0011628B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FEE3D3791C3FEECD0011628B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FEE3D37A1C3FEECD0011628B /* TFHomeTopItem.h */,
+				FEE3D37B1C3FEECD0011628B /* TFHomeTopItem.m */,
+				FEE3D37C1C3FEECD0011628B /* TFHomeTopItem.xib */,
+				FEE3D38A1C3FF09A0011628B /* TFHomeDropdown.h */,
+				FEE3D38B1C3FF09A0011628B /* TFHomeDropdown.m */,
+				FEE3D38D1C3FF0CF0011628B /* TFHomeDropdown.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FEE3D37D1C3FEECD0011628B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FEE3D37E1C3FEECD0011628B /* BaseNavigationController.h */,
+				FEE3D37F1C3FEECD0011628B /* BaseNavigationController.m */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,8 +334,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEE3D3351C3EA7920011628B /* LaunchScreen.storyboard in Resources */,
-				FEE3D3681C3EB7010011628B /* TFHomeTopItem.xib in Resources */,
+				FEE3D3871C3FEECD0011628B /* TFHomeTopItem.xib in Resources */,
 				FEE3D3321C3EA7920011628B /* Assets.xcassets in Resources */,
+				FEE3D38E1C3FF0CF0011628B /* TFHomeDropdown.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,14 +361,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEE3D3631C3EB3A00011628B /* UIBarButtonItem+Extension.m in Sources */,
-				FEE3D35D1C3EB0E20011628B /* BaseNavigationController.m in Sources */,
-				FEE3D32A1C3EA7920011628B /* AppDelegate.m in Sources */,
-				FEE3D3661C3EB3AB0011628B /* UIView+Extension.m in Sources */,
-				FEE3D3601C3EB1770011628B /* TFConst.m in Sources */,
+				FEE3D3831C3FEECD0011628B /* UIBarButtonItem+Extension.m in Sources */,
+				FEE3D3881C3FEECD0011628B /* BaseNavigationController.m in Sources */,
+				FEE3D3821C3FEECD0011628B /* AppDelegate.m in Sources */,
+				FEE3D3841C3FEECD0011628B /* UIView+Extension.m in Sources */,
+				FEE3D38C1C3FF09A0011628B /* TFHomeDropdown.m in Sources */,
+				FEE3D3851C3FEECD0011628B /* HomeViewController.m in Sources */,
+				FEE3D3891C3FEECD0011628B /* TFConst.m in Sources */,
 				FEE3D3271C3EA7920011628B /* main.m in Sources */,
-				FEE3D35A1C3EAC650011628B /* HomeViewController.m in Sources */,
-				FEE3D36B1C3EB9990011628B /* TFHomeTopItem.m in Sources */,
+				FEE3D3861C3FEECD0011628B /* TFHomeTopItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
