@@ -7,6 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "BaseViewController.h"
+#import "BaseTabBarController.h"
+#import "BaseNavigationController.h"
+#import "HomeController.h"
+#import "MeController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +22,26 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
+
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    self.window.backgroundColor = [UIColor whiteColor];
+//    [self.window makeKeyAndVisible];
+//
+//    
+//    //set
+//    HomeController *home = [[HomeController alloc]init];
+//    BaseNavigationController *home_nav = [[BaseNavigationController alloc]initWithRootViewController:home];
+//    
+//    MeController *me = [[MeController alloc]init];
+//    me.title = @"Me";
+//    BaseNavigationController *me_nav = [[BaseNavigationController alloc]initWithRootViewController:me];
+//    
+//    BaseTabBarController *tabBarVC = [[BaseTabBarController alloc]init];
+//    tabBarVC.viewControllers = @[home_nav,me_nav];
+//    self.window.rootViewController = tabBarVC;
+    
     return YES;
 }
 

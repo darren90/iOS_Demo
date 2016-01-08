@@ -15,6 +15,12 @@
 		89B213BC1C3FB11700229E09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B213BA1C3FB11700229E09 /* LaunchScreen.storyboard */; };
 		89B213C71C3FB11700229E09 /* OrientationDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B213C61C3FB11700229E09 /* OrientationDemoTests.m */; };
 		89B213D21C3FB11700229E09 /* OrientationDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B213D11C3FB11700229E09 /* OrientationDemoUITests.m */; };
+		89B213E71C3FB1BD00229E09 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B213E61C3FB1BD00229E09 /* HomeController.m */; };
+		89B213F01C3FB3B900229E09 /* MeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B213EF1C3FB3B900229E09 /* MeController.m */; };
+		89B213F81C3FB4D800229E09 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B213F31C3FB4D800229E09 /* BaseNavigationController.m */; };
+		89B213F91C3FB4D800229E09 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B213F51C3FB4D800229E09 /* BaseTabBarController.m */; };
+		89B213FA1C3FB4D800229E09 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B213F71C3FB4D800229E09 /* BaseViewController.m */; };
+		89B213FD1C3FB53B00229E09 /* DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B213FC1C3FB53B00229E09 /* DetailController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,18 @@
 		89B213CD1C3FB11700229E09 /* OrientationDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrientationDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B213D11C3FB11700229E09 /* OrientationDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrientationDemoUITests.m; sourceTree = "<group>"; };
 		89B213D31C3FB11700229E09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89B213E51C3FB1BD00229E09 /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
+		89B213E61C3FB1BD00229E09 /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
+		89B213EE1C3FB3B900229E09 /* MeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeController.h; sourceTree = "<group>"; };
+		89B213EF1C3FB3B900229E09 /* MeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeController.m; sourceTree = "<group>"; };
+		89B213F21C3FB4D800229E09 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		89B213F31C3FB4D800229E09 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		89B213F41C3FB4D800229E09 /* BaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
+		89B213F51C3FB4D800229E09 /* BaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
+		89B213F61C3FB4D800229E09 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		89B213F71C3FB4D800229E09 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		89B213FB1C3FB53B00229E09 /* DetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailController.h; sourceTree = "<group>"; };
+		89B213FC1C3FB53B00229E09 /* DetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +123,13 @@
 				89B213B01C3FB11700229E09 /* AppDelegate.m */,
 				89B213B21C3FB11700229E09 /* ViewController.h */,
 				89B213B31C3FB11700229E09 /* ViewController.m */,
+				89B213F11C3FB4D800229E09 /* Main_Base */,
+				89B213E51C3FB1BD00229E09 /* HomeController.h */,
+				89B213E61C3FB1BD00229E09 /* HomeController.m */,
+				89B213FB1C3FB53B00229E09 /* DetailController.h */,
+				89B213FC1C3FB53B00229E09 /* DetailController.m */,
+				89B213EE1C3FB3B900229E09 /* MeController.h */,
+				89B213EF1C3FB3B900229E09 /* MeController.m */,
 				89B213B51C3FB11700229E09 /* Main.storyboard */,
 				89B213B81C3FB11700229E09 /* Assets.xcassets */,
 				89B213BA1C3FB11700229E09 /* LaunchScreen.storyboard */,
@@ -138,6 +163,19 @@
 				89B213D31C3FB11700229E09 /* Info.plist */,
 			);
 			path = OrientationDemoUITests;
+			sourceTree = "<group>";
+		};
+		89B213F11C3FB4D800229E09 /* Main_Base */ = {
+			isa = PBXGroup;
+			children = (
+				89B213F21C3FB4D800229E09 /* BaseNavigationController.h */,
+				89B213F31C3FB4D800229E09 /* BaseNavigationController.m */,
+				89B213F41C3FB4D800229E09 /* BaseTabBarController.h */,
+				89B213F51C3FB4D800229E09 /* BaseTabBarController.m */,
+				89B213F61C3FB4D800229E09 /* BaseViewController.h */,
+				89B213F71C3FB4D800229E09 /* BaseViewController.m */,
+			);
+			path = Main_Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,9 +308,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89B213F91C3FB4D800229E09 /* BaseTabBarController.m in Sources */,
 				89B213B41C3FB11700229E09 /* ViewController.m in Sources */,
+				89B213FD1C3FB53B00229E09 /* DetailController.m in Sources */,
+				89B213FA1C3FB4D800229E09 /* BaseViewController.m in Sources */,
 				89B213B11C3FB11700229E09 /* AppDelegate.m in Sources */,
+				89B213F81C3FB4D800229E09 /* BaseNavigationController.m in Sources */,
+				89B213E71C3FB1BD00229E09 /* HomeController.m in Sources */,
 				89B213AE1C3FB11700229E09 /* main.m in Sources */,
+				89B213F01C3FB3B900229E09 /* MeController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +458,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = OrientationDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ftf.loding.OrientationDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -425,6 +470,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = OrientationDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ftf.loding.OrientationDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -498,6 +544,7 @@
 				89B213D81C3FB11700229E09 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		89B213D91C3FB11700229E09 /* Build configuration list for PBXNativeTarget "OrientationDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +553,7 @@
 				89B213DB1C3FB11700229E09 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		89B213DC1C3FB11700229E09 /* Build configuration list for PBXNativeTarget "OrientationDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +562,7 @@
 				89B213DE1C3FB11700229E09 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
