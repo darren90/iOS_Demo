@@ -14,6 +14,11 @@
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 @property (weak, nonatomic) IBOutlet UITableView *subTableView;
 
+/**
+ *  选中的类别-左边
+ */
+@property (nonatomic,strong)TFCategory * selectedCategory;
+
 @end
 
 @implementation TFHomeDropdown
@@ -22,8 +27,6 @@
 {
     return [[[NSBundle mainBundle]loadNibNamed:@"TFHomeDropdown" owner:nil options:nil] firstObject];
 }
-
-
 
 -(void)setCategories:(NSArray *)categories
 {
@@ -34,38 +37,57 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.categories.count;
+    if (tableView == self.mainTableView) {
+        return self.categories.count;
+    }else{
+       return self.selectedCategory.subcategories.count;
+    }
 }
 
  -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //1,创建cell
-    static NSString *ID = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if(cell == nil){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID ];
-    }
-    //2,设置cell的数据
-    TFCategory *category = self.categories[indexPath.row];
-    cell.textLabel.text = category.name;
-    cell.imageView.image = [UIImage imageNamed:category.small_icon];
-    if (category.subcategories.count) {
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    UITableViewCell *cell = nil;
+    if (tableView == self.mainTableView) {
+        static NSString *ID = @"cell";
+        cell = [tableView dequeueReusableCellWithIdentifier:ID];
+        if(cell == nil){
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID ];
+        }
+        cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bg_dropdown_leftpart"]];
+        cell.selectedBackgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bg_dropdown_left_selected"]];
+        TFCategory *category = self.categories[indexPath.row];
+        cell.textLabel.text = category.name;
+        cell.imageView.image = [UIImage imageNamed:category.small_icon];
+        if (category.subcategories.count) {
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        }else{
+            cell.accessoryType = UITableViewCellAccessoryNone;
+        }
     }else{
-        cell.accessoryType = UITableViewCellAccessoryNone;
+        static NSString *subID = @"cell2";
+        cell = [tableView dequeueReusableCellWithIdentifier:subID];
+        if(cell == nil){
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:subID];
+        }
+        cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bg_dropdown_rightpart"]];
+        cell.selectedBackgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bg_dropdown_right_selected"]];
+        NSString *name = self.selectedCategory.subcategories[indexPath.row];
+        cell.textLabel.text = name;
+//        cell.imageView.image = [UIImage imageNamed:category.small_icon];
     }
     return cell;
+
 }
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    TFCategory *category = self.categories[indexPath.row];
-    
-    if (category.subcategories.count) {//刷新右边数据
-        
-    }else{
-
+    if (tableView == self.mainTableView) {
+        TFCategory *category = self.categories[indexPath.row];
+//        if (category.subcategories.count) {//刷新右边数据
+            self.selectedCategory = category;
+//        }
+        [self.subTableView reloadData];
     }
 }
 
