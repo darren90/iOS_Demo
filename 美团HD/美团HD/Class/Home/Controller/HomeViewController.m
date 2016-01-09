@@ -110,6 +110,7 @@ static NSString * const reuseIdentifier = @"Cell";
     //
     CategoryController *cate = [[CategoryController alloc]init];
     UIPopoverController *popover = [[UIPopoverController alloc]initWithContentViewController:cate];
+    popover.popoverContentSize = CGSizeMake(400, 300);
     [popover presentPopoverFromBarButtonItem:self.categoryItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 

@@ -49,8 +49,24 @@
     TFCategory *category = self.categories[indexPath.row];
     cell.textLabel.text = category.name;
     cell.imageView.image = [UIImage imageNamed:category.small_icon];
-    
+    if (category.subcategories.count) {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }else{
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     return cell;
+}
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    TFCategory *category = self.categories[indexPath.row];
+    
+    if (category.subcategories.count) {//刷新右边数据
+        
+    }else{
+
+    }
 }
 
 
