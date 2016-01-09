@@ -10,4 +10,10 @@
 
 @interface TFHomeDropdown : UIView
 +(instancetype)dropDown;
+
+
+
+
+@property (nonatomic,strong)NSArray * categories;
+
 @end

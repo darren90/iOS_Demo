@@ -9,6 +9,8 @@
 #import "CategoryController.h"
 #import "TFHomeDropdown.h"
 #import "UIView+Extension.h"
+#import "MJExtension.h"
+#import "TFCategory.h"
 
 @interface CategoryController ()
 
@@ -20,9 +22,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    //加载分类数据
+//    NSString *file = [[NSBundle mainBundle]pathForResource:@"categories.plist" ofType:nil];
+//    NSArray *dictArray = [NSArray arrayWithContentsOfFile:file];
+//    NSArray *categories = [TFCategory objectArrayWithKeyValuesArray:dictArray];
+    NSArray *categories = [TFCategory objectArrayWithFilename:@"categories.plist"];
+    
     TFHomeDropdown *dropdown = [TFHomeDropdown dropDown];
     [self.view addSubview:dropdown];
     dropdown.frame = self.view.bounds;
+    dropdown.categories = categories;
 }
 
 - (void)didReceiveMemoryWarning {

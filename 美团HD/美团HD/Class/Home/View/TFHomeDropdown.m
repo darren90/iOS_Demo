@@ -7,6 +7,14 @@
 //
 
 #import "TFHomeDropdown.h"
+#import "TFCategory.h"
+
+
+@interface TFHomeDropdown()<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *mainTableView;
+@property (weak, nonatomic) IBOutlet UITableView *subTableView;
+
+@end
 
 @implementation TFHomeDropdown
 
@@ -17,8 +25,33 @@
 
 
 
+-(void)setCategories:(NSArray *)categories
+{
+    _categories = categories;
+    
+    [self.mainTableView reloadData];
+}
 
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.categories.count;
+}
 
+ -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //1,创建cell
+    static NSString *ID = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if(cell == nil){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID ];
+    }
+    //2,设置cell的数据
+    TFCategory *category = self.categories[indexPath.row];
+    cell.textLabel.text = category.name;
+    cell.imageView.image = [UIImage imageNamed:category.small_icon];
+    
+    return cell;
+}
 
 
 @end

@@ -10,6 +10,10 @@
 
 @interface TFHomeTopItem ()
 
+@end
+
+@interface TFHomeTopItem ()
+
 - (IBAction)didClick:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *button;
 

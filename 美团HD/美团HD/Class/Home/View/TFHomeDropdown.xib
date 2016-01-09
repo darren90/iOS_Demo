@@ -7,17 +7,25 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TFHomeDropdown">
             <rect key="frame" x="0.0" y="0.0" width="291" height="360"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5LA-So-QeQ">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5LA-So-QeQ" userLabel="主表">
                     <rect key="frame" x="0.0" y="0.0" width="145.5" height="360"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="rYd-zo-hEq"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="kY7-8X-UU7"/>
+                    </connections>
                 </tableView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XJD-4w-Cl3">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XJD-4w-Cl3" userLabel="从表">
                     <rect key="frame" x="145.5" y="0.0" width="145.5" height="360"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="FS0-8X-k2X"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="b14-wL-jvU"/>
+                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -33,6 +41,10 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="mainTableView" destination="5LA-So-QeQ" id="jgF-q5-Nbc"/>
+                <outlet property="subTableView" destination="XJD-4w-Cl3" id="iLi-my-5Kb"/>
+            </connections>
             <point key="canvasLocation" x="325.5" y="320"/>
         </view>
     </objects>
