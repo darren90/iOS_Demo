@@ -8,7 +8,8 @@
 
 #import "TFHomeDropdown.h"
 #import "TFCategory.h"
-
+#import "MTHomeDropdownSubCell.h"
+#import "MTHomeDropdownMainCell.h"
 
 @interface TFHomeDropdown()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
@@ -48,13 +49,8 @@
 {
     UITableViewCell *cell = nil;
     if (tableView == self.mainTableView) {
-        static NSString *ID = @"cell";
-        cell = [tableView dequeueReusableCellWithIdentifier:ID];
-        if(cell == nil){
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID ];
-        }
-        cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bg_dropdown_leftpart"]];
-        cell.selectedBackgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bg_dropdown_left_selected"]];
+        cell = [MTHomeDropdownMainCell cellWithTableView:tableView];
+      
         TFCategory *category = self.categories[indexPath.row];
         cell.textLabel.text = category.name;
         cell.imageView.image = [UIImage imageNamed:category.small_icon];
@@ -64,13 +60,8 @@
             cell.accessoryType = UITableViewCellAccessoryNone;
         }
     }else{
-        static NSString *subID = @"cell2";
-        cell = [tableView dequeueReusableCellWithIdentifier:subID];
-        if(cell == nil){
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:subID];
-        }
-        cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bg_dropdown_rightpart"]];
-        cell.selectedBackgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bg_dropdown_right_selected"]];
+        cell = [MTHomeDropdownSubCell cellWithTableView:tableView];
+        
         NSString *name = self.selectedCategory.subcategories[indexPath.row];
         cell.textLabel.text = name;
 //        cell.imageView.image = [UIImage imageNamed:category.small_icon];

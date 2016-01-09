@@ -13,6 +13,7 @@
 #import "TFHomeTopItem.h"
 #import "TFHomeDropdown.h"
 #import "CategoryController.h"
+#import "DistrictViewController.h"
 
 @interface HomeViewController ()
 /**
@@ -110,14 +111,17 @@ static NSString * const reuseIdentifier = @"Cell";
     //
     CategoryController *cate = [[CategoryController alloc]init];
     UIPopoverController *popover = [[UIPopoverController alloc]initWithContentViewController:cate];
-    popover.popoverContentSize = CGSizeMake(330, 500);
+    popover.popoverContentSize = CGSizeMake(300, 500);
     [popover presentPopoverFromBarButtonItem:self.categoryItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
-
+//区域
 -(void)districtClick
 {
-    
+    DistrictViewController *cate = [[DistrictViewController alloc]init];
+    UIPopoverController *popover = [[UIPopoverController alloc]initWithContentViewController:cate];
+    popover.popoverContentSize = CGSizeMake(300, 500);
+    [popover presentPopoverFromBarButtonItem:self.districtItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
 -(void)sortClick
