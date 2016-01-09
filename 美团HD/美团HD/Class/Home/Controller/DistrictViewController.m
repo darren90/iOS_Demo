@@ -9,9 +9,12 @@
 #import "DistrictViewController.h"
 #import "TFHomeDropdown.h"
 #import "Masonry.h"
+#import "TFCityViewController.h"
+#import "BaseNavigationController.h"
 
 @interface DistrictViewController ()
 @property (weak, nonatomic) IBOutlet UIView *titleView;
+- (IBAction)changeCity:(UIButton *)sender;
 
 @end
 
@@ -39,4 +42,10 @@
 }
 
 
+- (IBAction)changeCity:(UIButton *)sender {
+    TFCityViewController *city = [[TFCityViewController alloc]init];
+    BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:city];
+    nav.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:nav animated:YES completion:nil];
+}
 @end

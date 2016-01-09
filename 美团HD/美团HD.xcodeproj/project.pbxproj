@@ -31,6 +31,7 @@
 		FE80F1181C413CE1000AD3FF /* MTHomeDropdownSubCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F1161C413CE1000AD3FF /* MTHomeDropdownSubCell.m */; };
 		FE80F11F1C41406F000AD3FF /* DistrictViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F11D1C41406F000AD3FF /* DistrictViewController.m */; };
 		FE80F1201C41406F000AD3FF /* DistrictViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE80F11E1C41406F000AD3FF /* DistrictViewController.xib */; };
+		FE80F1231C41551A000AD3FF /* TFCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F1221C41551A000AD3FF /* TFCityViewController.m */; };
 		FEE3D3271C3EA7920011628B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D3261C3EA7920011628B /* main.m */; };
 		FEE3D3321C3EA7920011628B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEE3D3311C3EA7920011628B /* Assets.xcassets */; };
 		FEE3D3351C3EA7920011628B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE3D3331C3EA7920011628B /* LaunchScreen.storyboard */; };
@@ -125,6 +126,8 @@
 		FE80F11C1C41406F000AD3FF /* DistrictViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistrictViewController.h; sourceTree = "<group>"; };
 		FE80F11D1C41406F000AD3FF /* DistrictViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistrictViewController.m; sourceTree = "<group>"; };
 		FE80F11E1C41406F000AD3FF /* DistrictViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DistrictViewController.xib; sourceTree = "<group>"; };
+		FE80F1211C41551A000AD3FF /* TFCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFCityViewController.h; sourceTree = "<group>"; };
+		FE80F1221C41551A000AD3FF /* TFCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFCityViewController.m; sourceTree = "<group>"; };
 		FEE3D3221C3EA7920011628B /* 美团HD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "美团HD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE3D3261C3EA7920011628B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FEE3D3311C3EA7920011628B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -363,6 +366,8 @@
 				FE80F11C1C41406F000AD3FF /* DistrictViewController.h */,
 				FE80F11D1C41406F000AD3FF /* DistrictViewController.m */,
 				FE80F11E1C41406F000AD3FF /* DistrictViewController.xib */,
+				FE80F1211C41551A000AD3FF /* TFCityViewController.h */,
+				FE80F1221C41551A000AD3FF /* TFCityViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -582,6 +587,7 @@
 				FE80F1091C401191000AD3FF /* MJConst.m in Sources */,
 				FE80F1031C401191000AD3FF /* MASViewAttribute.m in Sources */,
 				FEE3D3861C3FEECD0011628B /* TFHomeTopItem.m in Sources */,
+				FE80F1231C41551A000AD3FF /* TFCityViewController.m in Sources */,
 				FE80F1111C401191000AD3FF /* NSObject+MJKeyValue.m in Sources */,
 				FE80F1001C401191000AD3FF /* MASConstraint.m in Sources */,
 			);
