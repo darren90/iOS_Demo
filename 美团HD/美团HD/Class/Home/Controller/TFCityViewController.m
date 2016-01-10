@@ -2,11 +2,14 @@
 //  TFCityViewController.m
 //  美团HD
 //
-//  Created by Tengfei on 16/1/9.
+//  Created by Tengfei on 16/1/10.
 //  Copyright © 2016年 tengfei. All rights reserved.
 //
 
+
 #import "TFCityViewController.h"
+#import "UIBarButtonItem+Extension.h"
+#import "UIView+Extension.h"
 
 @interface TFCityViewController ()
 
@@ -17,11 +20,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.title = @"切换城市";
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(close) image:@"btn_navigation_close" highImage:@"btn_navigation_close_hl"];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)close {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*
