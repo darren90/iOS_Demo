@@ -14,6 +14,9 @@
 #import "MJExtension.h"
 #import "TFCityGroup.h"
 #import "Masonry.h"
+#import "TFConst.h"
+#import "TFSearchResultController.h"
+#import "UIView+AutoLayout.h"
 
 
 static int TFCoverTag = 999;
@@ -23,8 +26,13 @@ static int TFCoverTag = 999;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @property (nonatomic,strong)NSArray * cities;
+@property (weak, nonatomic) IBOutlet UIButton *coverBtn;
+- (IBAction)coverClick:(UIButton *)sender;
 
-@property (nonatomic,weak)UIView *cover;
+//@property (nonatomic,weak)UIView *cover;
+
+
+@property (nonatomic,weak)TFSearchResultController * citySearchResult;
 
 @end
 
@@ -43,6 +51,23 @@ static int TFCoverTag = 999;
     NSArray *cities = [TFCityGroup objectArrayWithFilename:@"cityGroups.plist"];
     self.cities = [NSArray array];
     self.cities = cities;
+}
+
+-(TFSearchResultController *)citySearchResult
+{
+    if (!_citySearchResult) {
+        TFSearchResultController *citySearchResult = [[TFSearchResultController alloc]init];
+        [self addChildViewController:citySearchResult];
+        _citySearchResult = citySearchResult;
+        
+        [self.view addSubview:self.citySearchResult.view];
+        [self.citySearchResult.view autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeTop];
+        //        [self.citySearchResult.view autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.searchBar];
+        [self.citySearchResult.view autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.searchBar withOffset:6];
+//        self.citySearchResult.view.hidden = YES;
+
+    }
+    return _citySearchResult;
 }
 
 - (void)close {
@@ -107,19 +132,27 @@ static int TFCoverTag = 999;
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     
     //遮盖
-    UIView *cover = [[UIView alloc]init];
-    cover.backgroundColor = [UIColor blackColor];
-    cover.alpha = 0.5;
-    [self.view addSubview:cover];
-    cover.tag = TFCoverTag;
-    UIGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self.searchBar action:@selector(resignFirstResponder)];
-    [cover addGestureRecognizer:tap];
-    [cover mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.tableView.mas_left);
-        make.top.equalTo(self.tableView.mas_top);
-        make.right.equalTo(self.tableView.mas_right);
-        make.bottom.equalTo(self.tableView.mas_bottom);
+//    UIView *cover = [[UIView alloc]init];
+//    cover.backgroundColor = [UIColor blackColor];
+//    cover.alpha = 0.5;
+//    [self.view addSubview:cover];
+//    cover.tag = TFCoverTag;
+//    UIGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self.searchBar action:@selector(resignFirstResponder)];
+//    [cover addGestureRecognizer:tap];
+//    [cover mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(self.tableView.mas_left);
+//        make.top.equalTo(self.tableView.mas_top);
+//        make.right.equalTo(self.tableView.mas_right);
+//        make.bottom.equalTo(self.tableView.mas_bottom);
+//    }];
+ 
+    [UIView animateWithDuration:0.5 animations:^{
+        self.coverBtn.alpha = 0.5;
     }];
+    
+    //显示searchbar的取消按钮
+    [searchBar setShowsCancelButton:YES animated:YES];
+    searchBar.tintColor = MTColor(32, 191, 179);
     
     //修改过搜索框的背景图片
     [self.searchBar setBackgroundImage:[UIImage imageNamed:@"bg_login_textfield_hl"]];
@@ -131,11 +164,46 @@ static int TFCoverTag = 999;
 {
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 
-    [[self.view viewWithTag:TFCoverTag] removeFromSuperview];
+//    [[self.view viewWithTag:TFCoverTag] removeFromSuperview];
+    [UIView animateWithDuration:0.5 animations:^{
+        self.coverBtn.alpha = 0;
+    }];
+    //显示searchbar的取消按钮
+    [searchBar setShowsCancelButton:NO animated:YES];
     
-     [self.searchBar setBackgroundImage:[UIImage imageNamed:@"bg_login_textfield"]];
+    [self.searchBar setBackgroundImage:[UIImage imageNamed:@"bg_login_textfield"]];
 }
 
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    [self.searchBar resignFirstResponder];
+    self.citySearchResult.view.hidden = YES;
+}
+
+//搜索框里面的文字改变的时候调用
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    if (searchBar.text.length) {
+//        [self.view addSubview:self.citySearchResult.view];
+//        [self.citySearchResult.view autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeTop];
+////        [self.citySearchResult.view autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.searchBar];
+//        [self.citySearchResult.view autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.searchBar withOffset:10];
+
+        self.citySearchResult.view.hidden = NO;
+        self.citySearchResult.searchText = searchText;
+    }else{
+//        [self.citySearchResult.view removeFromSuperview];
+        self.citySearchResult.view.hidden = YES;
+
+    }
+}
+
+- (IBAction)coverClick:(UIButton *)sender {
+//    [UIView animateWithDuration:0.5 animations:^{
+//        self.coverBtn.alpha = 0;
+//    }];
+    [self.searchBar resignFirstResponder];
+}
 @end
 
 

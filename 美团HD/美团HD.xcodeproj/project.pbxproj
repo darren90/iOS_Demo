@@ -36,6 +36,8 @@
 		FE80F12B1C422139000AD3FF /* TFCity.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F12A1C422139000AD3FF /* TFCity.m */; };
 		FE80F12E1C42226F000AD3FF /* TFregion.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F12D1C42226F000AD3FF /* TFregion.m */; };
 		FE80F1311C422EDF000AD3FF /* TFCityGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F1301C422EDF000AD3FF /* TFCityGroup.m */; };
+		FE80F18F1C429E64000AD3FF /* TFSearchResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F18E1C429E64000AD3FF /* TFSearchResultController.m */; };
+		FE80F1921C429FC2000AD3FF /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F1911C429FC2000AD3FF /* UIView+AutoLayout.m */; };
 		FEE3D3271C3EA7920011628B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D3261C3EA7920011628B /* main.m */; };
 		FEE3D3321C3EA7920011628B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEE3D3311C3EA7920011628B /* Assets.xcassets */; };
 		FEE3D3351C3EA7920011628B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE3D3331C3EA7920011628B /* LaunchScreen.storyboard */; };
@@ -139,6 +141,11 @@
 		FE80F12D1C42226F000AD3FF /* TFregion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFregion.m; sourceTree = "<group>"; };
 		FE80F12F1C422EDF000AD3FF /* TFCityGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFCityGroup.h; sourceTree = "<group>"; };
 		FE80F1301C422EDF000AD3FF /* TFCityGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFCityGroup.m; sourceTree = "<group>"; };
+		FE80F18C1C429A3D000AD3FF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		FE80F18D1C429E64000AD3FF /* TFSearchResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFSearchResultController.h; sourceTree = "<group>"; };
+		FE80F18E1C429E64000AD3FF /* TFSearchResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFSearchResultController.m; sourceTree = "<group>"; };
+		FE80F1901C429FC2000AD3FF /* UIView+AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayout.h"; sourceTree = "<group>"; };
+		FE80F1911C429FC2000AD3FF /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
 		FEE3D3221C3EA7920011628B /* 美团HD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "美团HD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE3D3261C3EA7920011628B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FEE3D3311C3EA7920011628B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -349,6 +356,8 @@
 		FEE3D36F1C3FEECD0011628B /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				FE80F1901C429FC2000AD3FF /* UIView+AutoLayout.h */,
+				FE80F1911C429FC2000AD3FF /* UIView+AutoLayout.m */,
 				FEE3D3701C3FEECD0011628B /* UIBarButtonItem+Extension.h */,
 				FEE3D3711C3FEECD0011628B /* UIBarButtonItem+Extension.m */,
 				FEE3D3721C3FEECD0011628B /* UIView+Extension.h */,
@@ -380,6 +389,8 @@
 				FE80F1241C421556000AD3FF /* TFCityViewController.h */,
 				FE80F1251C421556000AD3FF /* TFCityViewController.m */,
 				FE80F1261C421556000AD3FF /* TFCityViewController.xib */,
+				FE80F18D1C429E64000AD3FF /* TFSearchResultController.h */,
+				FE80F18E1C429E64000AD3FF /* TFSearchResultController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -598,6 +609,8 @@
 				FE80F1061C401191000AD3FF /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				FE80F10B1C401191000AD3FF /* MJIvar.m in Sources */,
 				FE80F1021C401191000AD3FF /* MASLayoutConstraint.m in Sources */,
+				FE80F18F1C429E64000AD3FF /* TFSearchResultController.m in Sources */,
+				FE80F1921C429FC2000AD3FF /* UIView+AutoLayout.m in Sources */,
 				FE80F1011C401191000AD3FF /* MASConstraintMaker.m in Sources */,
 				FEE3D3851C3FEECD0011628B /* HomeViewController.m in Sources */,
 				FEE3D3891C3FEECD0011628B /* TFConst.m in Sources */,
@@ -651,6 +664,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				FEE3D3341C3EA7920011628B /* Base */,
+				FE80F18C1C429A3D000AD3FF /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

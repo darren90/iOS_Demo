@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TFCityViewController">
             <connections>
+                <outlet property="coverBtn" destination="Ljk-qO-DWD" id="jOZ-sE-OQd"/>
                 <outlet property="searchBar" destination="Ksa-3m-f0q" id="ig8-Lj-cbb"/>
                 <outlet property="tableView" destination="s4G-PF-ayy" id="Xcj-Jb-6vW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -35,13 +36,24 @@
                         <outlet property="delegate" destination="-1" id="rVq-qo-bcJ"/>
                     </connections>
                 </tableView>
+                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ljk-qO-DWD" userLabel="遮盖">
+                    <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="coverClick:" destination="-1" eventType="touchUpInside" id="yuE-3T-XLj"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Ksa-3m-f0q" secondAttribute="trailing" id="4M3-Hm-q6g"/>
                 <constraint firstAttribute="trailing" secondItem="s4G-PF-ayy" secondAttribute="trailing" id="8hi-sm-KJk"/>
+                <constraint firstAttribute="bottom" secondItem="Ljk-qO-DWD" secondAttribute="bottom" id="GuW-dr-VAv"/>
+                <constraint firstAttribute="trailing" secondItem="Ljk-qO-DWD" secondAttribute="trailing" id="IQi-3D-N5Y"/>
                 <constraint firstItem="s4G-PF-ayy" firstAttribute="top" secondItem="Ksa-3m-f0q" secondAttribute="bottom" id="Itl-RC-AoE"/>
+                <constraint firstItem="Ljk-qO-DWD" firstAttribute="top" secondItem="Ksa-3m-f0q" secondAttribute="bottom" id="OGM-Bc-TtM"/>
                 <constraint firstItem="Ksa-3m-f0q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bm2-hF-DOk"/>
+                <constraint firstItem="Ljk-qO-DWD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fhb-iF-AE5"/>
                 <constraint firstAttribute="bottom" secondItem="s4G-PF-ayy" secondAttribute="bottom" id="fw3-Gk-Naf"/>
                 <constraint firstItem="Ksa-3m-f0q" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rfS-gI-0N9"/>
                 <constraint firstItem="s4G-PF-ayy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="sFg-FH-aQV"/>
