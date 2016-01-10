@@ -21,6 +21,13 @@
 
 @implementation TFHomeTopItem
 
+
+-(void)awakeFromNib
+{
+    self.autoresizingMask = UIViewAutoresizingNone;//不拉伸
+}
+
+
 +(instancetype)item
 {
     return [[[NSBundle mainBundle]loadNibNamed:@"TFHomeTopItem" owner:nil options:nil] firstObject];

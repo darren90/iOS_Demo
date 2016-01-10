@@ -33,6 +33,8 @@
 		FE80F1201C41406F000AD3FF /* DistrictViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE80F11E1C41406F000AD3FF /* DistrictViewController.xib */; };
 		FE80F1271C421556000AD3FF /* TFCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F1251C421556000AD3FF /* TFCityViewController.m */; };
 		FE80F1281C421556000AD3FF /* TFCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE80F1261C421556000AD3FF /* TFCityViewController.xib */; };
+		FE80F12B1C422139000AD3FF /* TFCity.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F12A1C422139000AD3FF /* TFCity.m */; };
+		FE80F12E1C42226F000AD3FF /* TFregion.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F12D1C42226F000AD3FF /* TFregion.m */; };
 		FEE3D3271C3EA7920011628B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D3261C3EA7920011628B /* main.m */; };
 		FEE3D3321C3EA7920011628B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEE3D3311C3EA7920011628B /* Assets.xcassets */; };
 		FEE3D3351C3EA7920011628B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE3D3331C3EA7920011628B /* LaunchScreen.storyboard */; };
@@ -130,6 +132,10 @@
 		FE80F1241C421556000AD3FF /* TFCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFCityViewController.h; sourceTree = "<group>"; };
 		FE80F1251C421556000AD3FF /* TFCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFCityViewController.m; sourceTree = "<group>"; };
 		FE80F1261C421556000AD3FF /* TFCityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TFCityViewController.xib; sourceTree = "<group>"; };
+		FE80F1291C422139000AD3FF /* TFCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFCity.h; sourceTree = "<group>"; };
+		FE80F12A1C422139000AD3FF /* TFCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFCity.m; sourceTree = "<group>"; };
+		FE80F12C1C42226F000AD3FF /* TFregion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFregion.h; sourceTree = "<group>"; };
+		FE80F12D1C42226F000AD3FF /* TFregion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFregion.m; sourceTree = "<group>"; };
 		FEE3D3221C3EA7920011628B /* 美团HD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "美团HD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE3D3261C3EA7920011628B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FEE3D3311C3EA7920011628B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -380,6 +386,10 @@
 			children = (
 				FEE3D39B1C4007A50011628B /* TFCategory.h */,
 				FEE3D39C1C4007A50011628B /* TFCategory.m */,
+				FE80F1291C422139000AD3FF /* TFCity.h */,
+				FE80F12A1C422139000AD3FF /* TFCity.m */,
+				FE80F12C1C42226F000AD3FF /* TFregion.h */,
+				FE80F12D1C42226F000AD3FF /* TFregion.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -560,11 +570,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEE3D3831C3FEECD0011628B /* UIBarButtonItem+Extension.m in Sources */,
+				FE80F12E1C42226F000AD3FF /* TFregion.m in Sources */,
 				FE80F1121C401191000AD3FF /* NSObject+MJMember.m in Sources */,
 				FEE3D3911C3FF8D10011628B /* CategoryController.m in Sources */,
 				FEE3D3881C3FEECD0011628B /* BaseNavigationController.m in Sources */,
 				FEE3D3821C3FEECD0011628B /* AppDelegate.m in Sources */,
 				FE80F1081C401191000AD3FF /* MJArgument.m in Sources */,
+				FE80F12B1C422139000AD3FF /* TFCity.m in Sources */,
 				FE80F11F1C41406F000AD3FF /* DistrictViewController.m in Sources */,
 				FE80F0FF1C401191000AD3FF /* MASCompositeConstraint.m in Sources */,
 				FE80F1181C413CE1000AD3FF /* MTHomeDropdownSubCell.m in Sources */,
