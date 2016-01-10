@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TFCityViewController">
             <connections>
+                <outlet property="searchBar" destination="Ksa-3m-f0q" id="ig8-Lj-cbb"/>
                 <outlet property="tableView" destination="s4G-PF-ayy" id="Xcj-Jb-6vW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

@@ -13,11 +13,18 @@
 #import "TFCity.h"
 #import "MJExtension.h"
 #import "TFCityGroup.h"
+#import "Masonry.h"
+
+
+static int TFCoverTag = 999;
 
 @interface TFCityViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @property (nonatomic,strong)NSArray * cities;
+
+@property (nonatomic,weak)UIView *cover;
 
 @end
 
@@ -98,12 +105,40 @@
 -(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
+    //遮盖
+    UIView *cover = [[UIView alloc]init];
+    cover.backgroundColor = [UIColor blackColor];
+    cover.alpha = 0.5;
+    [self.view addSubview:cover];
+    cover.tag = TFCoverTag;
+    UIGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self.searchBar action:@selector(resignFirstResponder)];
+    [cover addGestureRecognizer:tap];
+    [cover mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.tableView.mas_left);
+        make.top.equalTo(self.tableView.mas_top);
+        make.right.equalTo(self.tableView.mas_right);
+        make.bottom.equalTo(self.tableView.mas_bottom);
+    }];
 }
 
 -(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
 {
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 
+    [[self.view viewWithTag:TFCoverTag] removeFromSuperview];
 }
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
