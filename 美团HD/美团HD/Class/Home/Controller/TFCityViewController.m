@@ -14,7 +14,7 @@
 #import "MJExtension.h"
 #import "TFCityGroup.h"
 
-@interface TFCityViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface TFCityViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic,strong)NSArray * cities;
@@ -81,11 +81,29 @@
 
 -(NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
-    NSMutableArray *titles = [NSMutableArray array];
-    for (TFCityGroup *group in self.cities) {
-        [titles addObject:group.title];
-    }
-    return titles;
+//    NSMutableArray *titles = [NSMutableArray array];
+//    for (TFCityGroup *group in self.cities) {
+//        [titles addObject:group.title];
+//    }
+//    return titles;
+    
+    
+    //黑科技  kvc
+    return [self.cities valueForKeyPath:@"title"];
+}
+
+
+#pragma mark - searchbar的代理
+
+-(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+-(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+
 }
 
 @end
