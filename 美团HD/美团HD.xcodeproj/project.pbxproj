@@ -35,6 +35,7 @@
 		FE80F1281C421556000AD3FF /* TFCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE80F1261C421556000AD3FF /* TFCityViewController.xib */; };
 		FE80F12B1C422139000AD3FF /* TFCity.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F12A1C422139000AD3FF /* TFCity.m */; };
 		FE80F12E1C42226F000AD3FF /* TFregion.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F12D1C42226F000AD3FF /* TFregion.m */; };
+		FE80F1311C422EDF000AD3FF /* TFCityGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F1301C422EDF000AD3FF /* TFCityGroup.m */; };
 		FEE3D3271C3EA7920011628B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D3261C3EA7920011628B /* main.m */; };
 		FEE3D3321C3EA7920011628B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEE3D3311C3EA7920011628B /* Assets.xcassets */; };
 		FEE3D3351C3EA7920011628B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE3D3331C3EA7920011628B /* LaunchScreen.storyboard */; };
@@ -136,6 +137,8 @@
 		FE80F12A1C422139000AD3FF /* TFCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFCity.m; sourceTree = "<group>"; };
 		FE80F12C1C42226F000AD3FF /* TFregion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFregion.h; sourceTree = "<group>"; };
 		FE80F12D1C42226F000AD3FF /* TFregion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFregion.m; sourceTree = "<group>"; };
+		FE80F12F1C422EDF000AD3FF /* TFCityGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFCityGroup.h; sourceTree = "<group>"; };
+		FE80F1301C422EDF000AD3FF /* TFCityGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFCityGroup.m; sourceTree = "<group>"; };
 		FEE3D3221C3EA7920011628B /* 美团HD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "美团HD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE3D3261C3EA7920011628B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FEE3D3311C3EA7920011628B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -390,6 +393,8 @@
 				FE80F12A1C422139000AD3FF /* TFCity.m */,
 				FE80F12C1C42226F000AD3FF /* TFregion.h */,
 				FE80F12D1C42226F000AD3FF /* TFregion.m */,
+				FE80F12F1C422EDF000AD3FF /* TFCityGroup.h */,
+				FE80F1301C422EDF000AD3FF /* TFCityGroup.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -583,6 +588,7 @@
 				FEE3D3841C3FEECD0011628B /* UIView+Extension.m in Sources */,
 				FE80F10F1C401191000AD3FF /* MJTypeEncoding.m in Sources */,
 				FE80F1041C401191000AD3FF /* MASViewConstraint.m in Sources */,
+				FE80F1311C422EDF000AD3FF /* TFCityGroup.m in Sources */,
 				FEE3D38C1C3FF09A0011628B /* TFHomeDropdown.m in Sources */,
 				FE80F10A1C401191000AD3FF /* MJFoundation.m in Sources */,
 				FE80F10E1C401191000AD3FF /* MJType.m in Sources */,
