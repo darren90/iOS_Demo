@@ -7,8 +7,15 @@
 //
 
 #import "TFSearchResultController.h"
+#import "TFCity.h"
+#import "MJExtension.h"
 
 @interface TFSearchResultController ()
+
+@property (nonatomic,strong)NSArray * cities;
+
+
+@property (nonatomic,strong)NSArray  * resultCites;
 
 @end
 
@@ -22,34 +29,70 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(NSArray *)cities
+{
+    if (!_cities) {
+        _cities = [NSArray array];
+        _cities = [TFCity objectArrayWithFilename:@"cities.plist"];
+    }
+    return _cities;
 }
+
+-(void)setSearchText:(NSString *)searchText
+{
+    _searchText = [searchText copy];
+    
+    searchText = searchText.lowercaseString;
+    //根据关键字，搜索数据
+//    NSLog(@"--searchText:%@",searchText);
+    self.resultCites = [NSArray array];
+    
+//    for (TFCity *city in self.cities) {
+//        if ([city.name containsString:searchText] || [city.pinYin.uppercaseString containsString:searchText.uppercaseString ] || [city.pinYinHead.uppercaseString containsString:searchText.uppercaseString]) {
+//            [self.resultCites addObject:city];
+//        }
+//    }
+    
+    //预言，谓词：能更具一定的条件，从一个数组中过滤出想要的数据
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name contains %@ or pinYin contains %@ or pinYinHead contains %@",searchText,searchText,searchText];
+    self.cities = [self.cities filteredArrayUsingPredicate:predicate];
+    
+    [self.tableView reloadData];
+}
+
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.resultCites.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    //1,创建cell
+    static NSString *ID = @"cites";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if(cell == nil){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID ];
+    }
+    //2,设置cell的数据
+    TFCity *city = self.resultCites[indexPath.row];
+    cell.textLabel.text = city.name;
     return cell;
 }
-*/
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [NSString stringWithFormat:@"共有%lu个搜索结果",(unsigned long)self.resultCites.count];
+}
+
 
 /*
 // Override to support conditional editing of the table view.
