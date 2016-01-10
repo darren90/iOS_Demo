@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <searchBar contentMode="redraw" placeholder="n" translatesAutoresizingMaskIntoConstraints="NO" id="Ksa-3m-f0q">
+                <searchBar contentMode="redraw" placeholder="请输入城市名或者拼音" backgroundImage="bg_login_textfield" translatesAutoresizingMaskIntoConstraints="NO" id="Ksa-3m-f0q">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="TXO-bZ-zOa"/>
@@ -49,4 +49,7 @@
             <nil key="simulatedStatusBarMetrics"/>
         </view>
     </objects>
+    <resources>
+        <image name="bg_login_textfield" width="9" height="11"/>
+    </resources>
 </document>

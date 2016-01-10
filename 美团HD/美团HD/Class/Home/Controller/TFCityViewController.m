@@ -38,7 +38,7 @@ static int TFCoverTag = 999;
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(close) image:@"btn_navigation_close" highImage:@"btn_navigation_close_hl"];
 //    self.tableView.sectionIndexBackgroundColor = [UIColor blackColor];
     self.tableView.sectionIndexColor = [UIColor blackColor];
-    
+
     //加载城市数据
     NSArray *cities = [TFCityGroup objectArrayWithFilename:@"cityGroups.plist"];
     self.cities = [NSArray array];
@@ -120,6 +120,11 @@ static int TFCoverTag = 999;
         make.right.equalTo(self.tableView.mas_right);
         make.bottom.equalTo(self.tableView.mas_bottom);
     }];
+    
+    //修改过搜索框的背景图片
+    [self.searchBar setBackgroundImage:[UIImage imageNamed:@"bg_login_textfield_hl"]];
+//    [self.searchBar setSearchFieldBackgroundImage:[UIImage imageNamed:@"bg_login_textfield_hl"] forState:UIControlStateSelected];
+    
 }
 
 -(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
@@ -127,6 +132,8 @@ static int TFCoverTag = 999;
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 
     [[self.view viewWithTag:TFCoverTag] removeFromSuperview];
+    
+     [self.searchBar setBackgroundImage:[UIImage imageNamed:@"bg_login_textfield"]];
 }
 
 @end
