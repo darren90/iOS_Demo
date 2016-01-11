@@ -58,7 +58,7 @@
                 <constraint firstAttribute="trailing" secondItem="5gE-Hh-L7w" secondAttribute="trailing" id="ixX-N8-T3H"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
-            <point key="canvasLocation" x="332" y="334"/>
+            <point key="canvasLocation" x="208" y="113"/>
         </view>
     </objects>
     <resources>

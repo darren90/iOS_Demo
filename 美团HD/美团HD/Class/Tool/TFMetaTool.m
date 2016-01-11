@@ -9,6 +9,7 @@
 #import "TFMetaTool.h"
 #import "MJExtension.h"
 #import "TFCityGroup.h"
+#import "TFCategory.h"
 
 @implementation TFMetaTool
 
@@ -23,4 +24,14 @@ static NSArray *_cities;
 }
 
 
+
+static NSArray *_categories;
+
++(NSArray *)categories
+{
+    if (_categories == nil) {
+        _categories = [TFCategory objectArrayWithFilename:@"categories"];
+    }
+    return _categories;
+}
 @end

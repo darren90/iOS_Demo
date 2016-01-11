@@ -7,7 +7,7 @@
 //
 
 #import "TFHomeDropdown.h"
-#import "TFCategory.h"
+//#import "TFCategory.h"
 #import "MTHomeDropdownSubCell.h"
 #import "MTHomeDropdownMainCell.h"
 
@@ -18,7 +18,8 @@
 /**
  *  选中的类别-左边
  */
-@property (nonatomic,strong)TFCategory * selectedCategory;
+
+@property (nonatomic,assign)NSInteger selectRow;
 
 @end
 
@@ -39,9 +40,9 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (tableView == self.mainTableView) {
-        return self.categories.count;
+        return [self.dataSource numofRowsInMainTable:self];
     }else{
-       return self.selectedCategory.subcategories.count;
+        return [self.dataSource homeDropdown:self subDataForInMainTable:self.selectRow].count;
     }
 }
 
@@ -51,10 +52,13 @@
     if (tableView == self.mainTableView) {
         cell = [MTHomeDropdownMainCell cellWithTableView:tableView];
       
-        TFCategory *category = self.categories[indexPath.row];
-        cell.textLabel.text = category.name;
-        cell.imageView.image = [UIImage imageNamed:category.small_icon];
-        if (category.subcategories.count) {
+        //取出模型数据
+        
+        cell.textLabel.text = [self.dataSource homeDropdown:self titleForInMainTable:indexPath.row];
+        NSArray *subData = [self.dataSource homeDropdown:self subDataForInMainTable:indexPath.row];
+        cell.imageView.image = [self.dataSource homeDropdown:self iconForInMainTable:indexPath.row];
+        cell.imageView.highlightedImage = [self.dataSource homeDropdown:self selectIconForInMainTable:indexPath.row];
+        if (subData.count) {
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }else{
             cell.accessoryType = UITableViewCellAccessoryNone;
@@ -62,8 +66,8 @@
     }else{
         cell = [MTHomeDropdownSubCell cellWithTableView:tableView];
         
-        NSString *name = self.selectedCategory.subcategories[indexPath.row];
-        cell.textLabel.text = name;
+        NSArray *subData = [self.dataSource homeDropdown:self subDataForInMainTable:self.selectRow];
+        cell.textLabel.text = subData[indexPath.row];
 //        cell.imageView.image = [UIImage imageNamed:category.small_icon];
     }
     return cell;
@@ -74,10 +78,8 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (tableView == self.mainTableView) {
-        TFCategory *category = self.categories[indexPath.row];
-//        if (category.subcategories.count) {//刷新右边数据
-            self.selectedCategory = category;
-//        }
+        self.selectRow = indexPath.row;
+        
         [self.subTableView reloadData];
     }
 }

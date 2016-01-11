@@ -10,10 +10,11 @@
 #import "TFCity.h"
 #import "MJExtension.h"
 #import "TFConst.h"
+#import "TFMetaTool.h"
 
 @interface TFSearchResultController ()
 
-@property (nonatomic,strong)NSArray * cities;
+//@property (nonatomic,strong)NSArray * cities;
 
 
 @property (nonatomic,strong)NSArray  * resultCites;
@@ -33,14 +34,14 @@
     
 }
 
--(NSArray *)cities
-{
-    if (!_cities) {
-        _cities = [NSArray array];
-        _cities = [TFCity objectArrayWithFilename:@"cities.plist"];
-    }
-    return _cities;
-}
+//-(NSArray *)cities
+//{
+//    if (!_cities) {
+//        _cities = [NSArray array];
+//        _cities = [TFCity objectArrayWithFilename:@"cities.plist"];
+//    }
+//    return _cities;
+//}
 
 -(void)setSearchText:(NSString *)searchText
 {
@@ -59,7 +60,7 @@
     
     //预言，谓词：能更具一定的条件，从一个数组中过滤出想要的数据
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name contains %@ or pinYin contains %@ or pinYinHead contains %@",searchText,searchText,searchText];
-    self.resultCites = [self.cities filteredArrayUsingPredicate:predicate];
+    self.resultCites = [[TFMetaTool cities] filteredArrayUsingPredicate:predicate];
     
     [self.tableView reloadData];
 }

@@ -11,8 +11,9 @@
 #import "UIView+Extension.h"
 #import "MJExtension.h"
 #import "TFCategory.h"
+#import "TFMetaTool.h"
 
-@interface CategoryController ()
+@interface CategoryController ()<TFHomeDropdownDataSource>
 
 @end
 
@@ -26,18 +27,50 @@
 //    NSString *file = [[NSBundle mainBundle]pathForResource:@"categories.plist" ofType:nil];
 //    NSArray *dictArray = [NSArray arrayWithContentsOfFile:file];
 //    NSArray *categories = [TFCategory objectArrayWithKeyValuesArray:dictArray];
-    NSArray *categories = [TFCategory objectArrayWithFilename:@"categories.plist"];
+//    NSArray *categories = [TFCategory objectArrayWithFilename:@"categories.plist"];
     
     TFHomeDropdown *dropdown = [TFHomeDropdown dropDown];
     [self.view addSubview:dropdown];
     dropdown.frame = self.view.bounds;
-    dropdown.categories = categories;
+//    dropdown.categories = categories;
+    dropdown.dataSource = self;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+#pragma mark - TFHomeDropdownDataSource
+-(NSInteger)numofRowsInMainTable:(TFHomeDropdown *)homeDropdown
+{
+    return [TFMetaTool categories].count;
+}
+
+-(NSString *)homeDropdown:(TFHomeDropdown *)homeDropdown titleForInMainTable:(int)row
+{
+    TFCategory *category = [TFMetaTool categories][row];
+    return category.name;
+}
+
+-(NSString *)homeDropdown:(TFHomeDropdown *)homeDropdown iconForInMainTable:(int)row
+{
+    TFCategory *category = [TFMetaTool categories][row];
+    return category.small_icon;
+}
+
+-(NSString *)homeDropdown:(TFHomeDropdown *)homeDropdown selectIconForInMainTable:(int)row
+{
+    TFCategory *category = [TFMetaTool categories][row];
+    return category.small_highlighted_icon;
+}
+-(NSArray *)homeDropdown:(TFHomeDropdown *)homeDropdown subDataForInMainTable:(int)row
+{
+    TFCategory *category = [TFMetaTool categories][row];
+    return category.subcategories;
+}
+
 
 /*
 #pragma mark - Navigation

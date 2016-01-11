@@ -8,6 +8,32 @@
 
 #import <Foundation/Foundation.h>
 
+
+/**
+ *  管理固定的数据
+ */
 @interface TFMetaTool : NSObject
+
+/**
+ *  返回所有的城市
+ *
+ *  @return 所有的城市
+ */
++(NSArray *)cities;
+
+
+/**
+ *  返回搜友的分类数据
+ *
+ *  @return
+ */
++(NSArray *)categories;
+
+
+
+
+
+
+
 
 @end

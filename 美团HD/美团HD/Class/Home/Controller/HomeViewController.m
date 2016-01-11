@@ -14,6 +14,8 @@
 #import "TFHomeDropdown.h"
 #import "CategoryController.h"
 #import "DistrictViewController.h"
+#import "TFMetaTool.h"
+#import "TFCity.h"
 
 @interface HomeViewController ()
 /**
@@ -28,6 +30,12 @@
  *  排序item
  */
 @property (nonatomic,weak)UIBarButtonItem * sortItem;
+
+/**
+ *  当前选中的城市的名字
+ */
+@property (nonatomic,copy)NSString * selectedCityName;
+
 
 @end
 
@@ -120,6 +128,12 @@ static NSString * const reuseIdentifier = @"Cell";
 -(void)districtClick
 {
     DistrictViewController *cate = [[DistrictViewController alloc]init];
+    //获取当前选中城市的区域
+    if (self.selectedCityName) {
+        NSArray *array = [[TFMetaTool cities] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"name = %@",self.selectedCityName]] ;
+        TFCity *city = [array firstObject];
+        cate.regions = city.regions;
+    }
     UIPopoverController *popover = [[UIPopoverController alloc]initWithContentViewController:cate];
     popover.popoverContentSize = CGSizeMake(300, 500);
     [popover presentPopoverFromBarButtonItem:self.districtItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
@@ -136,15 +150,6 @@ static NSString * const reuseIdentifier = @"Cell";
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark <UICollectionViewDataSource>
 
@@ -174,6 +179,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
     //1-更换听不区域item的文字
    TFHomeTopItem *topItem = (TFHomeTopItem *)self.districtItem.customView;
+    self.selectedCityName = cityName;
     topItem.title = [NSString stringWithFormat:@"%@ - 全部",cityName];
     topItem.subTitle = nil;
     
@@ -189,33 +195,6 @@ static NSString * const reuseIdentifier = @"Cell";
 
 #pragma mark <UICollectionViewDelegate>
 
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
 
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
 
 @end
