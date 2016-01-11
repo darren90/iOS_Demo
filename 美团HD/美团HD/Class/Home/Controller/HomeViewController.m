@@ -55,7 +55,9 @@ static NSString * const reuseIdentifier = @"Cell";
     self.view.backgroundColor = MTGlobalBg;
     self.collectionView.backgroundColor = MTGlobalBg;
     
-    
+
+    //监听城市选择的通知
+    [TFNotificationCenter addObserver:self selector:@selector(cityChage:) name:TFCityDidSelectNotification object:nil];
     
     // Register cell classes
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
@@ -66,7 +68,6 @@ static NSString * const reuseIdentifier = @"Cell";
     [self setupLeftNav];
     [self setupRightNav];
 }
-
 
 -(void)setupLeftNav
 {
@@ -148,13 +149,11 @@ static NSString * const reuseIdentifier = @"Cell";
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete implementation, return the number of sections
     return 0;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of items
     return 0;
 }
 
@@ -164,6 +163,28 @@ static NSString * const reuseIdentifier = @"Cell";
     // Configure the cell
     
     return cell;
+}
+
+
+#pragma mark - 监听城市改变
+-(void)cityChage:(NSNotification *)notification
+{
+    NSString *cityName = notification.userInfo[TFSelectCityName];
+//    NSLog(@"城市名字改变:%@",cityName);
+    
+    //1-更换听不区域item的文字
+   TFHomeTopItem *topItem = (TFHomeTopItem *)self.districtItem.customView;
+    topItem.title = [NSString stringWithFormat:@"%@ - 全部",cityName];
+    topItem.subTitle = nil;
+    
+    //2-刷新表格数据
+#warning TODO 
+}
+
+
+-(void)dealloc
+{
+    [TFNotificationCenter removeObserver:self];
 }
 
 #pragma mark <UICollectionViewDelegate>

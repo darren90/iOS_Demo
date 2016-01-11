@@ -19,4 +19,19 @@
  *  @param action 监听方法
  */
 -(void)addTaget:(id)target action:(SEL)action;
+
+
+
+@property (nonatomic,copy)NSString * title;
+
+@property (nonatomic,copy)NSString * subTitle;
+
+
+-(void)setIcon:(NSString *)icon highIcon:(NSString *)highIcon;
+
+//@property (nonatomic,copy)NSString * icon;
+//
+//@property (nonatomic,copy)NSString * highIcon;
+
+
 @end
