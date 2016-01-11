@@ -34,17 +34,17 @@
 
 
 
-//- (BOOL)shouldAutorotate{
-//    return YES;
-//}
-//
-//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
-//    return UIInterfaceOrientationPortrait;
-//}
-//
-//- (UIStatusBarStyle)preferredStatusBarStyle{
-//    return UIStatusBarStyleLightContent;
-//}
+- (BOOL)shouldAutorotate{
+    return YES;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
+    return UIInterfaceOrientationPortrait;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
 
 #pragma mark - 自动转屏的逻辑
 //- (BOOL)shouldAutorotate{

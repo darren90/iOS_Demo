@@ -7,6 +7,7 @@
 //
 
 #import "BaseNavigationController.h"
+#import "DetailController.h"
 
 @interface BaseNavigationController ()
 
@@ -25,7 +26,8 @@
 }
 
 - (BOOL)shouldAutorotate{
-    return YES;
+    NSLog(@"nav___top:%@",self.topViewController);
+    return NO;
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations{
@@ -36,14 +38,12 @@
     return [self.viewControllers.lastObject preferredInterfaceOrientationForPresentation];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end
+
+
+
+
+
+
+
+

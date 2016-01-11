@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OrientationDemo/Main_Base/BaseTabBarController.m"
-            timestampString = "473939756.099485"
+            filePath = "OrientationDemo/Main_Base/BaseNavigationController.m"
+            timestampString = "474174470.820844"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "-preferredInterfaceOrientationForPresentation"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "-shouldAutorotate"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OrientationDemo/Main_Base/BaseTabBarController.m"
-            timestampString = "473939755.089903"
+            filePath = "OrientationDemo/DetailController.m"
+            timestampString = "474174963.0018"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "-supportedInterfaceOrientations"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "-shouldAutorotate"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

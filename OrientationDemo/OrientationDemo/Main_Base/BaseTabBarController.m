@@ -33,28 +33,23 @@
 }
 
 - (BOOL)shouldAutorotate{
+//    NSLog(@"nav___top:%@",self.viewControllers);
+
     return YES;
 }
 
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
-    NSLog(@"UIInterfaceOrientationMask--:%@--:%@",self.viewControllers,self.viewControllers.lastObject);
+ 
+//- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+//
+//    //    [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+//    return [self.viewControllers.lastObject supportedInterfaceOrientations];
+//}
+//
+//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
+////    NSLog(@"UIInterfaceOrientation--:%@--:%@",self.viewControllers,self.viewControllers.lastObject);
+//    return [self.viewControllers.lastObject preferredInterfaceOrientationForPresentation];
+//}
 
-    return [self.viewControllers.lastObject supportedInterfaceOrientations];
-}
 
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
-    NSLog(@"UIInterfaceOrientation--:%@--:%@",self.viewControllers,self.viewControllers.lastObject);
-    return [self.viewControllers.lastObject preferredInterfaceOrientationForPresentation];
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
