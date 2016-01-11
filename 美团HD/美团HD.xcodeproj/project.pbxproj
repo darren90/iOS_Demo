@@ -38,6 +38,7 @@
 		FE80F1311C422EDF000AD3FF /* TFCityGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F1301C422EDF000AD3FF /* TFCityGroup.m */; };
 		FE80F18F1C429E64000AD3FF /* TFSearchResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F18E1C429E64000AD3FF /* TFSearchResultController.m */; };
 		FE80F1921C429FC2000AD3FF /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F1911C429FC2000AD3FF /* UIView+AutoLayout.m */; };
+		FE80F1961C43EAFA000AD3FF /* TFMetaTool.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F1951C43EAFA000AD3FF /* TFMetaTool.m */; };
 		FEE3D3271C3EA7920011628B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE3D3261C3EA7920011628B /* main.m */; };
 		FEE3D3321C3EA7920011628B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEE3D3311C3EA7920011628B /* Assets.xcassets */; };
 		FEE3D3351C3EA7920011628B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE3D3331C3EA7920011628B /* LaunchScreen.storyboard */; };
@@ -146,6 +147,8 @@
 		FE80F18E1C429E64000AD3FF /* TFSearchResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFSearchResultController.m; sourceTree = "<group>"; };
 		FE80F1901C429FC2000AD3FF /* UIView+AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayout.h"; sourceTree = "<group>"; };
 		FE80F1911C429FC2000AD3FF /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
+		FE80F1941C43EAFA000AD3FF /* TFMetaTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFMetaTool.h; sourceTree = "<group>"; };
+		FE80F1951C43EAFA000AD3FF /* TFMetaTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFMetaTool.m; sourceTree = "<group>"; };
 		FEE3D3221C3EA7920011628B /* 美团HD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "美团HD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE3D3261C3EA7920011628B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FEE3D3311C3EA7920011628B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -279,6 +282,15 @@
 			path = MJExtension;
 			sourceTree = "<group>";
 		};
+		FE80F1931C43EAE0000AD3FF /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				FE80F1941C43EAFA000AD3FF /* TFMetaTool.h */,
+				FE80F1951C43EAFA000AD3FF /* TFMetaTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		FEE3D3191C3EA7920011628B = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +354,7 @@
 		FEE3D36C1C3FEECD0011628B /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				FE80F1931C43EAE0000AD3FF /* Tool */,
 				FEE3D36F1C3FEECD0011628B /* Category */,
 				FEE3D36D1C3FEECD0011628B /* AppDelegate.h */,
 				FEE3D36E1C3FEECD0011628B /* AppDelegate.m */,
@@ -606,6 +619,7 @@
 				FE80F1071C401191000AD3FF /* View+MASAdditions.m in Sources */,
 				FE80F10D1C401191000AD3FF /* MJMethod.m in Sources */,
 				FE80F1171C413CE1000AD3FF /* MTHomeDropdownMainCell.m in Sources */,
+				FE80F1961C43EAFA000AD3FF /* TFMetaTool.m in Sources */,
 				FE80F1061C401191000AD3FF /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				FE80F10B1C401191000AD3FF /* MJIvar.m in Sources */,
 				FE80F1021C401191000AD3FF /* MASLayoutConstraint.m in Sources */,

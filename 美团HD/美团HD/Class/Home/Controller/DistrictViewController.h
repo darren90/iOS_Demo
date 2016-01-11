@@ -10,4 +10,9 @@
 
 @interface DistrictViewController : UIViewController
 
+
+
+@property (nonatomic,strong)NSArray * regions;
+
+
 @end
