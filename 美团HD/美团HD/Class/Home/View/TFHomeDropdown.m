@@ -56,8 +56,8 @@
         
         cell.textLabel.text = [self.dataSource homeDropdown:self titleForInMainTable:indexPath.row];
         NSArray *subData = [self.dataSource homeDropdown:self subDataForInMainTable:indexPath.row];
-        cell.imageView.image = [self.dataSource homeDropdown:self iconForInMainTable:indexPath.row];
-        cell.imageView.highlightedImage = [self.dataSource homeDropdown:self selectIconForInMainTable:indexPath.row];
+        cell.imageView.image = [UIImage imageNamed:[self.dataSource homeDropdown:self iconForInMainTable:indexPath.row]];
+        cell.imageView.highlightedImage = [UIImage imageNamed:[self.dataSource homeDropdown:self selectIconForInMainTable:indexPath.row]];
         if (subData.count) {
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }else{

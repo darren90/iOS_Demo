@@ -31,10 +31,8 @@
  */
 @property (nonatomic,weak)UIBarButtonItem * sortItem;
 
-/**
- *  当前选中的城市的名字
- */
-@property (nonatomic,copy)NSString * selectedCityName;
+/** 当前选中的城市 */
+@property (nonatomic, copy) NSString *selectedCityName;
 
 
 @end
@@ -129,7 +127,9 @@ static NSString * const reuseIdentifier = @"Cell";
 {
     DistrictViewController *cate = [[DistrictViewController alloc]init];
     //获取当前选中城市的区域
+    NSLog(@"--:selectedCityName:%@",self.selectedCityName);
     if (self.selectedCityName) {
+//MTCity *city = [[[MTMetaTool cities] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"name = %@", self.selectedCityName]] firstObject];
         NSArray *array = [[TFMetaTool cities] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"name = %@",self.selectedCityName]] ;
         TFCity *city = [array firstObject];
         cate.regions = city.regions;
@@ -174,13 +174,13 @@ static NSString * const reuseIdentifier = @"Cell";
 #pragma mark - 监听城市改变
 -(void)cityChage:(NSNotification *)notification
 {
-    NSString *cityName = notification.userInfo[TFSelectCityName];
+    self.selectedCityName = notification.userInfo[TFSelectCityName];
 //    NSLog(@"城市名字改变:%@",cityName);
     
     //1-更换听不区域item的文字
    TFHomeTopItem *topItem = (TFHomeTopItem *)self.districtItem.customView;
-    self.selectedCityName = cityName;
-    topItem.title = [NSString stringWithFormat:@"%@ - 全部",cityName];
+//    self.selectedCityName = cityName;
+    topItem.title = [NSString stringWithFormat:@"%@ - 全部",self.selectedCityName];
     topItem.subTitle = nil;
     
     //2-刷新表格数据

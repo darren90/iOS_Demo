@@ -11,8 +11,11 @@
 #import "Masonry.h"
 #import "TFCityViewController.h"
 #import "BaseNavigationController.h"
+#import "TFMetaTool.h"
+//#import "TFCityGroup.h"
+#import "TFregion.h"
 
-@interface DistrictViewController ()
+@interface DistrictViewController ()<TFHomeDropdownDataSource>
 @property (weak, nonatomic) IBOutlet UIView *titleView;
 - (IBAction)changeCity:(UIButton *)sender;
 
@@ -33,6 +36,7 @@
         make.left.equalTo(self.view.mas_left);
         make.right.equalTo(self.view.mas_right);
     }];
+    dropdown.dataSource = self;
 //    dropdown.backgroundColor = [UIColor grayColor];
 }
 
@@ -40,6 +44,34 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - TFHomeDropdownDataSource
+-(NSInteger)numofRowsInMainTable:(TFHomeDropdown *)homeDropdown
+{
+    return self.regions.count;
+}
+
+-(NSString *)homeDropdown:(TFHomeDropdown *)homeDropdown titleForInMainTable:(int)row
+{
+    TFregion  *region = self.regions[row];
+    return region.name;
+}
+
+-(NSString *)homeDropdown:(TFHomeDropdown *)homeDropdown iconForInMainTable:(int)row
+{
+    return nil;
+}
+
+-(NSString *)homeDropdown:(TFHomeDropdown *)homeDropdown selectIconForInMainTable:(int)row
+{
+  return nil;
+}
+-(NSArray *)homeDropdown:(TFHomeDropdown *)homeDropdown subDataForInMainTable:(int)row
+{
+    TFregion  *region = self.regions[row];
+    return region.subregions;
+}
+
 
 
 - (IBAction)changeCity:(UIButton *)sender {
