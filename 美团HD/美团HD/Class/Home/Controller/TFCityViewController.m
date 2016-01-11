@@ -123,7 +123,12 @@ static int TFCoverTag = 999;
     //黑科技  kvc
     return [self.cities valueForKeyPath:@"title"];
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    TFCityGroup *citys = self.cities[indexPath.section];
+    [TFNotificationCenter postNotificationName:TFCityDidSelectNotification object:nil userInfo:@{TFSelectCityName : citys.cities[indexPath.row]}];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 #pragma mark - searchbar的代理
 
@@ -170,8 +175,12 @@ static int TFCoverTag = 999;
     }];
     //显示searchbar的取消按钮
     [searchBar setShowsCancelButton:NO animated:YES];
-    
+
     [self.searchBar setBackgroundImage:[UIImage imageNamed:@"bg_login_textfield"]];
+    
+    
+    self.citySearchResult.view.hidden = YES;
+    searchBar.text = nil;
 }
 
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar

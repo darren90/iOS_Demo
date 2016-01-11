@@ -9,6 +9,7 @@
 #import "TFSearchResultController.h"
 #import "TFCity.h"
 #import "MJExtension.h"
+#import "TFConst.h"
 
 @interface TFSearchResultController ()
 
@@ -58,7 +59,7 @@
     
     //预言，谓词：能更具一定的条件，从一个数组中过滤出想要的数据
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name contains %@ or pinYin contains %@ or pinYinHead contains %@",searchText,searchText,searchText];
-    self.cities = [self.cities filteredArrayUsingPredicate:predicate];
+    self.resultCites = [self.cities filteredArrayUsingPredicate:predicate];
     
     [self.tableView reloadData];
 }
@@ -93,6 +94,13 @@
     return [NSString stringWithFormat:@"共有%lu个搜索结果",(unsigned long)self.resultCites.count];
 }
 
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    TFCity *city = self.resultCites[indexPath.row];
+    [TFNotificationCenter postNotificationName:TFCityDidSelectNotification object:nil userInfo:@{TFSelectCityName : city.name}];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 /*
 // Override to support conditional editing of the table view.
