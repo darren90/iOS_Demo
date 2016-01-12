@@ -87,6 +87,18 @@
 @end
 
 
+/** ---------代理---------- */
+
+@protocol TFHomeDropdownDelegate <NSObject>
+
+@optional
+-(void)homeDropdown:(TFHomeDropdown *)homeDropdown didSelectRowInMainTable:(int)row;
+-(void)homeDropdown:(TFHomeDropdown *)homeDropdown didSelectRowInSubTable:(int)row inMainTable:(int)mainRow;
+
+@end
+
+/** ---------代理---------- */
+
 @interface TFHomeDropdown : UIView
 +(instancetype)dropDown;
 
@@ -102,6 +114,8 @@
 // */
 //@property (nonatomic,strong)NSArray * data;
 
+
+@property (nonatomic,weak)id<TFHomeDropdownDelegate> delegate;
 
 @end
 

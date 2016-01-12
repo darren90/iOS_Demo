@@ -436,6 +436,9 @@
 		FEE3D3791C3FEECD0011628B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FEE3D38A1C3FF09A0011628B /* TFHomeDropdown.h */,
+				FEE3D38B1C3FF09A0011628B /* TFHomeDropdown.m */,
+				FEE3D38D1C3FF0CF0011628B /* TFHomeDropdown.xib */,
 				FE80F1131C413CE1000AD3FF /* MTHomeDropdownMainCell.h */,
 				FE80F1141C413CE1000AD3FF /* MTHomeDropdownMainCell.m */,
 				FE80F1151C413CE1000AD3FF /* MTHomeDropdownSubCell.h */,
@@ -443,9 +446,6 @@
 				FEE3D37A1C3FEECD0011628B /* TFHomeTopItem.h */,
 				FEE3D37B1C3FEECD0011628B /* TFHomeTopItem.m */,
 				FEE3D37C1C3FEECD0011628B /* TFHomeTopItem.xib */,
-				FEE3D38A1C3FF09A0011628B /* TFHomeDropdown.h */,
-				FEE3D38B1C3FF09A0011628B /* TFHomeDropdown.m */,
-				FEE3D38D1C3FF0CF0011628B /* TFHomeDropdown.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";

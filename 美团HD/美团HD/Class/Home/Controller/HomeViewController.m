@@ -18,6 +18,8 @@
 #import "TFCity.h"
 #import "TFSortViewController.h"
 #import "TFSort.h"
+#import "TFCategory.h"
+#import "TFregion.h"
 
 @interface HomeViewController ()
 /**
@@ -36,6 +38,18 @@
 /** 当前选中的城市 */
 @property (nonatomic, copy) NSString *selectedCityName;
 
+/**
+ *  分类popover
+ */
+@property (nonatomic,strong)UIPopoverController * categoryPopover;
+/**
+ *  区域popover
+ */
+@property (nonatomic,strong)UIPopoverController * regionPopover;
+/**
+ *  排序popover
+ */
+@property (nonatomic,strong)UIPopoverController * sortPopover;
 
 @end
 
@@ -70,6 +84,14 @@ static NSString * const reuseIdentifier = @"Cell";
     //监听排序改变
     [TFNotificationCenter addObserver:self selector:@selector(sortChage:) name:TFSortDidSelectNotification object:nil];
 
+    //监听排序改变
+    [TFNotificationCenter addObserver:self selector:@selector(categoryChage:) name:TFCategoryDidSelectNotification object:nil];
+    
+    //监听区域改变
+    [TFNotificationCenter addObserver:self selector:@selector(regionChage:) name:TFReginDidSelectNotification object:nil];
+
+    
+    
     // Register cell classes
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
@@ -125,7 +147,8 @@ static NSString * const reuseIdentifier = @"Cell";
     //
     CategoryController *cate = [[CategoryController alloc]init];
     UIPopoverController *popover = [[UIPopoverController alloc]initWithContentViewController:cate];
-    popover.popoverContentSize = CGSizeMake(300, 500);
+    popover.popoverContentSize = CGSizeMake(360, 500);
+    self.categoryPopover = popover;
     [popover presentPopoverFromBarButtonItem:self.categoryItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
@@ -143,6 +166,7 @@ static NSString * const reuseIdentifier = @"Cell";
     }
     UIPopoverController *popover = [[UIPopoverController alloc]initWithContentViewController:cate];
     popover.popoverContentSize = CGSizeMake(300, 500);
+     self.regionPopover = popover;
     [popover presentPopoverFromBarButtonItem:self.districtItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 //排序
@@ -151,6 +175,7 @@ static NSString * const reuseIdentifier = @"Cell";
     TFSortViewController *sort = [[TFSortViewController alloc]init];
     UIPopoverController *popover = [[UIPopoverController alloc]initWithContentViewController:sort];
 //    popover.popoverContentSize = CGSizeMake(300, 500);
+     self.sortPopover = popover;
     [popover presentPopoverFromBarButtonItem:self.sortItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
@@ -193,6 +218,8 @@ static NSString * const reuseIdentifier = @"Cell";
     topItem.title = [NSString stringWithFormat:@"%@ - 全部",self.selectedCityName];
     topItem.subTitle = nil;
     
+    [self.regionPopover dismissPopoverAnimated:YES];
+    
     //2-刷新表格数据
 #warning TODO 
 }
@@ -208,6 +235,43 @@ static NSString * const reuseIdentifier = @"Cell";
     //2-刷新表格数据
 #warning TODO
 }
+
+#pragma mark - 分类排序改变
+-(void)categoryChage:(NSNotification *)notification
+{
+    TFCategory *category = notification.userInfo[TFSelectCategoryName];
+    NSString *subCategory = notification.userInfo[TFSelectSubCategoryName];
+    
+    //1-更换分类item的文字
+    TFHomeTopItem *topItem = (TFHomeTopItem *)self.categoryItem.customView;
+    [topItem setIcon:category.icon highIcon:category.highlighted_icon];
+    topItem.title = category.name;
+    topItem.subTitle = subCategory ? subCategory : @"全部";
+    //关闭popover
+    [self.categoryPopover dismissPopoverAnimated:YES];
+    
+    //2-刷新表格数据
+#warning TODO
+}
+
+#pragma mark - 区域排序改变
+-(void)regionChage:(NSNotification *)notification
+{
+    TFregion  *region = notification.userInfo[TFSelectReginName];
+    NSString *subRegion = notification.userInfo[TFSelectSubReginName];
+    
+    //1-更换分类item的文字
+    TFHomeTopItem *topItem = (TFHomeTopItem *)self.districtItem.customView;
+//    [topItem setIcon:category.icon highIcon:category.highlighted_icon];
+    topItem.title = [NSString stringWithFormat:@"%@ - %@",self.selectedCityName,region.name];
+    topItem.subTitle = subRegion ? subRegion : @"全部";
+    //关闭popover
+    [self.regionPopover dismissPopoverAnimated:YES];
+    
+    //2-刷新表格数据
+#warning TODO
+}
+
 
 
 -(void)dealloc

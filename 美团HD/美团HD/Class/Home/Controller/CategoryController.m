@@ -12,8 +12,9 @@
 #import "MJExtension.h"
 #import "TFCategory.h"
 #import "TFMetaTool.h"
+#import "TFConst.h"
 
-@interface CategoryController ()<TFHomeDropdownDataSource>
+@interface CategoryController ()<TFHomeDropdownDataSource,TFHomeDropdownDelegate>
 
 @end
 
@@ -34,6 +35,7 @@
     dropdown.frame = self.view.bounds;
 //    dropdown.categories = categories;
     dropdown.dataSource = self;
+    dropdown.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,15 +73,29 @@
     return category.subcategories;
 }
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark  - TFHomeDropdownDelegate
+-(void)homeDropdown:(TFHomeDropdown *)homeDropdown didSelectRowInMainTable:(int)row
+{
+    TFCategory *category = [TFMetaTool categories][row];
+//    NSLog(@"---category:%@",category.name);
+    if (category.subcategories.count == 0) {//发出通知
+        [TFNotificationCenter postNotificationName:TFCategoryDidSelectNotification object:nil userInfo:@{TFSelectCategoryName : category}];
+    }
 }
-*/
+
+-(void)homeDropdown:(TFHomeDropdown *)homeDropdown didSelectRowInSubTable:(int)row inMainTable:(int)mainRow
+{
+    TFCategory *category = [TFMetaTool categories][mainRow];
+//    NSLog(@"--sub--category:%@",category.subcategories[row]);
+    [TFNotificationCenter postNotificationName:TFCategoryDidSelectNotification object:nil userInfo:@{TFSelectCategoryName : category, TFSelectSubCategoryName: category.subcategories[row]}];
+}
+
+
 
 @end
+
+
+
+
+
+

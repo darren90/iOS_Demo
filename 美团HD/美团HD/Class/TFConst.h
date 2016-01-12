@@ -15,11 +15,23 @@
 
 #define  TFNotificationCenter [NSNotificationCenter defaultCenter]
 
+//弹出选择城市
 extern NSString *const TFCityDidSelectNotification;
 extern NSString *const TFSelectCityName;
 
-
+//排序选择
 extern NSString *const TFSortDidSelectNotification;
 extern NSString *const TFSelectSortName;
+
+//分类选择
+extern NSString *const TFCategoryDidSelectNotification;
+extern NSString *const TFSelectCategoryName;
+extern NSString *const TFSelectSubCategoryName;
+
+
+//区域选择
+extern NSString *const TFReginDidSelectNotification;
+extern NSString *const TFSelectReginName;
+extern NSString *const TFSelectSubReginName;
 
 

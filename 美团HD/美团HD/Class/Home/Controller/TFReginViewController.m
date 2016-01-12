@@ -14,8 +14,9 @@
 #import "TFMetaTool.h"
 //#import "TFCityGroup.h"
 #import "TFregion.h"
+#import "TFConst.h"
 
-@interface TFReginViewController ()<TFHomeDropdownDataSource>
+@interface TFReginViewController ()<TFHomeDropdownDataSource,TFHomeDropdownDelegate>
 @property (weak, nonatomic) IBOutlet UIView *titleView;
 - (IBAction)changeCity:(UIButton *)sender;
 
@@ -37,6 +38,7 @@
         make.right.equalTo(self.view.mas_right);
     }];
     dropdown.dataSource = self;
+    dropdown.delegate = self;
 //    dropdown.backgroundColor = [UIColor grayColor];
 }
 
@@ -62,6 +64,23 @@
 {
     TFregion  *region = self.regions[row];
     return region.subregions;
+}
+
+#pragma mark  - TFHomeDropdownDelegate
+-(void)homeDropdown:(TFHomeDropdown *)homeDropdown didSelectRowInMainTable:(int)row
+{
+    TFregion *region = self.regions[row];
+    //    NSLog(@"---category:%@",category.name);
+    if (region.subregions.count == 0) {//发出通知
+        [TFNotificationCenter postNotificationName:TFReginDidSelectNotification object:nil userInfo:@{TFSelectReginName : region}];
+    }
+}
+
+-(void)homeDropdown:(TFHomeDropdown *)homeDropdown didSelectRowInSubTable:(int)row inMainTable:(int)mainRow
+{
+    TFregion *region = self.regions[row];
+    //    NSLog(@"--sub--category:%@",category.subcategories[row]);
+    [TFNotificationCenter postNotificationName:TFReginDidSelectNotification object:nil userInfo:@{TFSelectReginName : region, TFSelectSubReginName: region.subregions[row]}];
 }
 
 
