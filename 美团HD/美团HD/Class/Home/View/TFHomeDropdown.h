@@ -53,6 +53,17 @@
  *  @return
  */
 -(NSString *)homeDropdown:(TFHomeDropdown *)homeDropdown titleForInMainTable:(int)row;
+
+/**
+ *  每一行的左边的子数据
+ *
+ *  @param homeDropdown model
+ *  @param row          行号
+ *
+ *  @return
+ */
+-(NSArray *)homeDropdown:(TFHomeDropdown *)homeDropdown subDataForInMainTable:(int)row;
+@optional
 /**
  *  左边每一行的图标
  *
@@ -71,17 +82,6 @@
  *  @return
  */
 -(NSString *)homeDropdown:(TFHomeDropdown *)homeDropdown selectIconForInMainTable:(int)row;
-/**
- *  每一行的左边的子数据
- *
- *  @param homeDropdown model
- *  @param row          行号
- *
- *  @return
- */
--(NSArray *)homeDropdown:(TFHomeDropdown *)homeDropdown subDataForInMainTable:(int)row;
-
-
 //-(NSArray *)subDataForRowInMainTable:(int)row;
 
 @end

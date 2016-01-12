@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DistrictViewController : UIViewController
+@interface TFReginViewController : UIViewController
 
 
 

@@ -16,6 +16,10 @@
 #define  TFNotificationCenter [NSNotificationCenter defaultCenter]
 
 extern NSString *const TFCityDidSelectNotification;
-
 extern NSString *const TFSelectCityName;
+
+
+extern NSString *const TFSortDidSelectNotification;
+extern NSString *const TFSelectSortName;
+
 

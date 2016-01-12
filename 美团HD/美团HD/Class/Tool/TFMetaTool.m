@@ -11,6 +11,7 @@
 #import "TFCityGroup.h"
 #import "TFCategory.h"
 #import "TFCity.h"
+#import "TFSort.h"
 
 @implementation TFMetaTool
 
@@ -34,5 +35,16 @@ static NSArray *_categories;
         _categories = [TFCategory objectArrayWithFilename:@"categories.plist"];
     }
     return _categories;
+}
+
+
+static NSArray *_sorts;
+
++(NSArray *)sorts
+{
+    if (_sorts == nil) {
+        _sorts = [TFSort objectArrayWithFilename:@"sorts.plist"];
+    }
+    return _sorts;
 }
 @end

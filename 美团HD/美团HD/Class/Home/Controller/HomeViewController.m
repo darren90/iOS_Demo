@@ -13,9 +13,11 @@
 #import "TFHomeTopItem.h"
 #import "TFHomeDropdown.h"
 #import "CategoryController.h"
-#import "DistrictViewController.h"
+#import "TFReginViewController.h"
 #import "TFMetaTool.h"
 #import "TFCity.h"
+#import "TFSortViewController.h"
+#import "TFSort.h"
 
 @interface HomeViewController ()
 /**
@@ -65,6 +67,9 @@ static NSString * const reuseIdentifier = @"Cell";
     //监听城市选择的通知
     [TFNotificationCenter addObserver:self selector:@selector(cityChage:) name:TFCityDidSelectNotification object:nil];
     
+    //监听排序改变
+    [TFNotificationCenter addObserver:self selector:@selector(sortChage:) name:TFSortDidSelectNotification object:nil];
+
     // Register cell classes
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
@@ -95,6 +100,8 @@ static NSString * const reuseIdentifier = @"Cell";
     
     //4.
     TFHomeTopItem *sortItem = [TFHomeTopItem item];
+    sortItem.title = @"排序";
+    [sortItem setIcon:@"icon_sort" highIcon:@"icon_sort_highlighted"];
     [sortItem addTaget:self action:@selector(sortClick)];
     UIBarButtonItem *sort = [[UIBarButtonItem alloc]initWithCustomView:sortItem];
     self.sortItem = sort;
@@ -125,7 +132,7 @@ static NSString * const reuseIdentifier = @"Cell";
 //区域
 -(void)districtClick
 {
-    DistrictViewController *cate = [[DistrictViewController alloc]init];
+    TFReginViewController *cate = [[TFReginViewController alloc]init];
     //获取当前选中城市的区域
     NSLog(@"--:selectedCityName:%@",self.selectedCityName);
     if (self.selectedCityName) {
@@ -138,10 +145,13 @@ static NSString * const reuseIdentifier = @"Cell";
     popover.popoverContentSize = CGSizeMake(300, 500);
     [popover presentPopoverFromBarButtonItem:self.districtItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
-
+//排序
 -(void)sortClick
 {
-    
+    TFSortViewController *sort = [[TFSortViewController alloc]init];
+    UIPopoverController *popover = [[UIPopoverController alloc]initWithContentViewController:sort];
+//    popover.popoverContentSize = CGSizeMake(300, 500);
+    [popover presentPopoverFromBarButtonItem:self.sortItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
 
@@ -185,6 +195,18 @@ static NSString * const reuseIdentifier = @"Cell";
     
     //2-刷新表格数据
 #warning TODO 
+}
+
+#pragma mark - 监听排序改变
+-(void)sortChage:(NSNotification *)notification
+{
+    TFSort *sort = notification.userInfo[TFSelectSortName];
+    //1-更换听不区域item的文字
+    TFHomeTopItem *topItem = (TFHomeTopItem *)self.sortItem.customView;
+    topItem.subTitle = sort.label;
+    
+    //2-刷新表格数据
+#warning TODO
 }
 
 

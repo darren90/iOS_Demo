@@ -8,7 +8,8 @@ NSString *const TFCityDidSelectNotification = @"TFCityDidSelectNotification";
 NSString *const TFSelectCityName = @"TFSelectCity";
 
 
-
+NSString *const TFSortDidSelectNotification = @"TFSortDidSelectNotification";
+NSString *const TFSelectSortName = @"TFSelectSortName";
 
 
 

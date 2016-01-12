@@ -6,7 +6,7 @@
 //  Copyright © 2016年 tengfei. All rights reserved.
 //
 
-#import "DistrictViewController.h"
+#import "TFReginViewController.h"
 #import "TFHomeDropdown.h"
 #import "Masonry.h"
 #import "TFCityViewController.h"
@@ -15,13 +15,13 @@
 //#import "TFCityGroup.h"
 #import "TFregion.h"
 
-@interface DistrictViewController ()<TFHomeDropdownDataSource>
+@interface TFReginViewController ()<TFHomeDropdownDataSource>
 @property (weak, nonatomic) IBOutlet UIView *titleView;
 - (IBAction)changeCity:(UIButton *)sender;
 
 @end
 
-@implementation DistrictViewController
+@implementation TFReginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -57,15 +57,7 @@
     return region.name;
 }
 
--(NSString *)homeDropdown:(TFHomeDropdown *)homeDropdown iconForInMainTable:(int)row
-{
-    return nil;
-}
 
--(NSString *)homeDropdown:(TFHomeDropdown *)homeDropdown selectIconForInMainTable:(int)row
-{
-  return nil;
-}
 -(NSArray *)homeDropdown:(TFHomeDropdown *)homeDropdown subDataForInMainTable:(int)row
 {
     TFregion  *region = self.regions[row];
