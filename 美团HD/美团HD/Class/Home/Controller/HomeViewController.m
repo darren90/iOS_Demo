@@ -20,8 +20,9 @@
 #import "TFSort.h"
 #import "TFCategory.h"
 #import "TFregion.h"
+#import "DPAPI.h"
 
-@interface HomeViewController ()
+@interface HomeViewController ()<DPRequestDelegate>
 /**
  *  分类item
  */
@@ -35,8 +36,10 @@
  */
 @property (nonatomic,weak)UIBarButtonItem * sortItem;
 
-/** 当前选中的城市 */
+/** 当前选中的城市名字 */
 @property (nonatomic, copy) NSString *selectedCityName;
+/** 当前选中的分类的名字 */
+@property (nonatomic, copy) NSString *selectedCategoryName;
 
 /**
  *  分类popover
@@ -222,6 +225,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
     //2-刷新表格数据
 #warning TODO 
+    [self loadNewDeals];
 }
 
 #pragma mark - 监听排序改变
@@ -234,6 +238,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
     //2-刷新表格数据
 #warning TODO
+     [self loadNewDeals];
 }
 
 #pragma mark - 分类排序改变
@@ -241,6 +246,12 @@ static NSString * const reuseIdentifier = @"Cell";
 {
     TFCategory *category = notification.userInfo[TFSelectCategoryName];
     NSString *subCategory = notification.userInfo[TFSelectSubCategoryName];
+    
+    if (subCategory == nil) {
+        self.selectedCategoryName = category.name;
+    }else{
+        self.selectedCategoryName = [subCategory isEqualToString:@"全部"] ? category.name : subCategory;
+    }
     
     //1-更换分类item的文字
     TFHomeTopItem *topItem = (TFHomeTopItem *)self.categoryItem.customView;
@@ -252,6 +263,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
     //2-刷新表格数据
 #warning TODO
+    [self loadNewDeals];
 }
 
 #pragma mark - 区域排序改变
@@ -270,8 +282,34 @@ static NSString * const reuseIdentifier = @"Cell";
     
     //2-刷新表格数据
 #warning TODO
+     [self loadNewDeals];
 }
 
+/**
+ *  发送请求
+ */
+#pragma mark - 发送网络请求 - 服务器交互
+-(void)loadNewDeals
+{
+    DPAPI *api = [[DPAPI alloc]init];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"city"] = self.selectedCityName;
+    if (self.selectedCategoryName) {
+        params[@"category"] = self.selectedCategoryName;
+    }
+    [api requestWithURL:@"v1/deal/find_deals" params:params delegate:self];
+}
+
+
+-(void)request:(DPRequest *)request didFinishLoadingWithResult:(id)result
+{
+    NSLog(@"请求成功:%@",result);
+}
+
+-(void)request:(DPRequest *)request didFailWithError:(NSError *)error
+{
+    NSLog(@"请求失败:%@",error);
+}
 
 
 -(void)dealloc

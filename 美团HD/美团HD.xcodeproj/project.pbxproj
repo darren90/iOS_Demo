@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FE06214A1C452ABB00AA13A0 /* TFSort.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0621491C452ABB00AA13A0 /* TFSort.m */; };
 		FE06214D1C452B5800AA13A0 /* TFSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE06214C1C452B5800AA13A0 /* TFSortViewController.m */; };
+		FE0621541C4546BF00AA13A0 /* DPAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0621501C4546BF00AA13A0 /* DPAPI.m */; };
+		FE0621551C4546BF00AA13A0 /* DPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0621531C4546BF00AA13A0 /* DPRequest.m */; };
 		FE80F0FF1C401191000AD3FF /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F0D11C401191000AD3FF /* MASCompositeConstraint.m */; };
 		FE80F1001C401191000AD3FF /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F0D41C401191000AD3FF /* MASConstraint.m */; };
 		FE80F1011C401191000AD3FF /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F0D61C401191000AD3FF /* MASConstraintMaker.m */; };
@@ -86,6 +88,11 @@
 		FE0621491C452ABB00AA13A0 /* TFSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFSort.m; sourceTree = "<group>"; };
 		FE06214B1C452B5800AA13A0 /* TFSortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFSortViewController.h; sourceTree = "<group>"; };
 		FE06214C1C452B5800AA13A0 /* TFSortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFSortViewController.m; sourceTree = "<group>"; };
+		FE06214F1C4546BF00AA13A0 /* DPAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPAPI.h; sourceTree = "<group>"; };
+		FE0621501C4546BF00AA13A0 /* DPAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPAPI.m; sourceTree = "<group>"; };
+		FE0621511C4546BF00AA13A0 /* DPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPConstants.h; sourceTree = "<group>"; };
+		FE0621521C4546BF00AA13A0 /* DPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRequest.h; sourceTree = "<group>"; };
+		FE0621531C4546BF00AA13A0 /* DPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRequest.m; sourceTree = "<group>"; };
 		FE80F0D01C401191000AD3FF /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		FE80F0D11C401191000AD3FF /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
 		FE80F0D21C401191000AD3FF /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -219,9 +226,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE06214E1C4546BF00AA13A0 /* dianpingapi */ = {
+			isa = PBXGroup;
+			children = (
+				FE06214F1C4546BF00AA13A0 /* DPAPI.h */,
+				FE0621501C4546BF00AA13A0 /* DPAPI.m */,
+				FE0621511C4546BF00AA13A0 /* DPConstants.h */,
+				FE0621521C4546BF00AA13A0 /* DPRequest.h */,
+				FE0621531C4546BF00AA13A0 /* DPRequest.m */,
+			);
+			path = dianpingapi;
+			sourceTree = "<group>";
+		};
 		FE80F0CE1C401191000AD3FF /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				FE06214E1C4546BF00AA13A0 /* dianpingapi */,
 				FE80F0CF1C401191000AD3FF /* Masonry */,
 				FE80F0E71C401191000AD3FF /* MJExtension */,
 			);
@@ -632,6 +652,7 @@
 				FE80F10D1C401191000AD3FF /* MJMethod.m in Sources */,
 				FE80F1171C413CE1000AD3FF /* MTHomeDropdownMainCell.m in Sources */,
 				FE80F1961C43EAFA000AD3FF /* TFMetaTool.m in Sources */,
+				FE0621541C4546BF00AA13A0 /* DPAPI.m in Sources */,
 				FE80F1061C401191000AD3FF /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				FE80F10B1C401191000AD3FF /* MJIvar.m in Sources */,
 				FE80F1021C401191000AD3FF /* MASLayoutConstraint.m in Sources */,
@@ -647,6 +668,7 @@
 				FE80F1051C401191000AD3FF /* NSArray+MASAdditions.m in Sources */,
 				FE80F1091C401191000AD3FF /* MJConst.m in Sources */,
 				FE80F1031C401191000AD3FF /* MASViewAttribute.m in Sources */,
+				FE0621551C4546BF00AA13A0 /* DPRequest.m in Sources */,
 				FEE3D3861C3FEECD0011628B /* TFHomeTopItem.m in Sources */,
 				FE80F1271C421556000AD3FF /* TFCityViewController.m in Sources */,
 				FE80F1111C401191000AD3FF /* NSObject+MJKeyValue.m in Sources */,
