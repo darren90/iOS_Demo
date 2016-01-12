@@ -11,6 +11,7 @@
 		FE06214D1C452B5800AA13A0 /* TFSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE06214C1C452B5800AA13A0 /* TFSortViewController.m */; };
 		FE0621541C4546BF00AA13A0 /* DPAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0621501C4546BF00AA13A0 /* DPAPI.m */; };
 		FE0621551C4546BF00AA13A0 /* DPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0621531C4546BF00AA13A0 /* DPRequest.m */; };
+		FE0621571C454FB900AA13A0 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0621561C454FB900AA13A0 /* Foundation+Log.m */; };
 		FE80F0FF1C401191000AD3FF /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F0D11C401191000AD3FF /* MASCompositeConstraint.m */; };
 		FE80F1001C401191000AD3FF /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F0D41C401191000AD3FF /* MASConstraint.m */; };
 		FE80F1011C401191000AD3FF /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F0D61C401191000AD3FF /* MASConstraintMaker.m */; };
@@ -93,6 +94,7 @@
 		FE0621511C4546BF00AA13A0 /* DPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPConstants.h; sourceTree = "<group>"; };
 		FE0621521C4546BF00AA13A0 /* DPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRequest.h; sourceTree = "<group>"; };
 		FE0621531C4546BF00AA13A0 /* DPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRequest.m; sourceTree = "<group>"; };
+		FE0621561C454FB900AA13A0 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		FE80F0D01C401191000AD3FF /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		FE80F0D11C401191000AD3FF /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
 		FE80F0D21C401191000AD3FF /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -395,6 +397,7 @@
 		FEE3D36F1C3FEECD0011628B /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				FE0621561C454FB900AA13A0 /* Foundation+Log.m */,
 				FE80F1901C429FC2000AD3FF /* UIView+AutoLayout.h */,
 				FE80F1911C429FC2000AD3FF /* UIView+AutoLayout.m */,
 				FEE3D3701C3FEECD0011628B /* UIBarButtonItem+Extension.h */,
@@ -649,6 +652,7 @@
 				FE80F10A1C401191000AD3FF /* MJFoundation.m in Sources */,
 				FE80F10E1C401191000AD3FF /* MJType.m in Sources */,
 				FE80F1071C401191000AD3FF /* View+MASAdditions.m in Sources */,
+				FE0621571C454FB900AA13A0 /* Foundation+Log.m in Sources */,
 				FE80F10D1C401191000AD3FF /* MJMethod.m in Sources */,
 				FE80F1171C413CE1000AD3FF /* MTHomeDropdownMainCell.m in Sources */,
 				FE80F1961C43EAFA000AD3FF /* TFMetaTool.m in Sources */,

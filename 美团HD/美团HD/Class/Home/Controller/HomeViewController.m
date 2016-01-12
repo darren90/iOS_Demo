@@ -40,7 +40,10 @@
 @property (nonatomic, copy) NSString *selectedCityName;
 /** 当前选中的分类的名字 */
 @property (nonatomic, copy) NSString *selectedCategoryName;
-
+/** 当前选中的排序的名字 */
+@property (nonatomic, strong) TFSort *selectedSort;
+/** 当前选中的区域的名字 */
+@property (nonatomic, copy) NSString *selectedRegionName;
 /**
  *  分类popover
  */
@@ -232,6 +235,7 @@ static NSString * const reuseIdentifier = @"Cell";
 -(void)sortChage:(NSNotification *)notification
 {
     TFSort *sort = notification.userInfo[TFSelectSortName];
+    self.selectedSort = sort;
     //1-更换听不区域item的文字
     TFHomeTopItem *topItem = (TFHomeTopItem *)self.sortItem.customView;
     topItem.subTitle = sort.label;
@@ -253,6 +257,10 @@ static NSString * const reuseIdentifier = @"Cell";
         self.selectedCategoryName = [subCategory isEqualToString:@"全部"] ? category.name : subCategory;
     }
     
+    if ([self.selectedCategoryName isEqualToString:@"全部分类"]) {
+        self.selectedCategoryName = nil;
+    }
+    
     //1-更换分类item的文字
     TFHomeTopItem *topItem = (TFHomeTopItem *)self.categoryItem.customView;
     [topItem setIcon:category.icon highIcon:category.highlighted_icon];
@@ -266,11 +274,21 @@ static NSString * const reuseIdentifier = @"Cell";
     [self loadNewDeals];
 }
 
-#pragma mark - 区域排序改变
+#pragma mark - 区域改变
 -(void)regionChage:(NSNotification *)notification
 {
     TFregion  *region = notification.userInfo[TFSelectReginName];
     NSString *subRegion = notification.userInfo[TFSelectSubReginName];
+    
+    if (subRegion == nil || [subRegion isEqualToString:@"全部"]) {
+        self.selectedRegionName = region.name;
+    }else{
+        self.selectedRegionName = subRegion;
+    }
+    
+    if ([self.selectedRegionName isEqualToString:@"全部分类"]) {
+        self.selectedRegionName = nil;
+    }
     
     //1-更换分类item的文字
     TFHomeTopItem *topItem = (TFHomeTopItem *)self.districtItem.customView;
@@ -296,6 +314,12 @@ static NSString * const reuseIdentifier = @"Cell";
     params[@"city"] = self.selectedCityName;
     if (self.selectedCategoryName) {
         params[@"category"] = self.selectedCategoryName;
+    }
+    if (self.selectedSort) {
+        params[@"sort"] = @(self.selectedSort.value);
+    }
+    if (self.selectedRegionName) {
+        params[@"region"] = self.selectedRegionName;
     }
     [api requestWithURL:@"v1/deal/find_deals" params:params delegate:self];
 }
