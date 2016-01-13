@@ -32,13 +32,20 @@
     return UIStatusBarStyleLightContent;
 }
 
-- (BOOL)shouldAutorotate{
-//    NSLog(@"nav___top:%@",self.viewControllers);
+ 
 
+- (BOOL)shouldAutorotate{
     return YES;
 }
 
- 
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    return [self.viewControllers.lastObject supportedInterfaceOrientations];
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
+    return [self.viewControllers.lastObject preferredInterfaceOrientationForPresentation];
+}
+
 //- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
 //
 //    //    [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];

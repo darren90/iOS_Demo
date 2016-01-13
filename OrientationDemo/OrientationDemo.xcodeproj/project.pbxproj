@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89AD36BB1C45EACC00254F10 /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AD36BA1C45EACC00254F10 /* UIView+AutoLayout.m */; };
 		89B213AE1C3FB11700229E09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B213AD1C3FB11700229E09 /* main.m */; };
 		89B213B11C3FB11700229E09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B213B01C3FB11700229E09 /* AppDelegate.m */; };
 		89B213B41C3FB11700229E09 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B213B31C3FB11700229E09 /* ViewController.m */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		89AD36B91C45EACC00254F10 /* UIView+AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayout.h"; sourceTree = "<group>"; };
+		89AD36BA1C45EACC00254F10 /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
 		89B213A91C3FB11700229E09 /* OrientationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrientationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B213AD1C3FB11700229E09 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		89B213AF1C3FB11700229E09 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -96,6 +99,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89AD36B81C45EACC00254F10 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				89AD36B91C45EACC00254F10 /* UIView+AutoLayout.h */,
+				89AD36BA1C45EACC00254F10 /* UIView+AutoLayout.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		89B213A01C3FB11700229E09 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +131,7 @@
 		89B213AB1C3FB11700229E09 /* OrientationDemo */ = {
 			isa = PBXGroup;
 			children = (
+				89AD36B81C45EACC00254F10 /* Source */,
 				89B213AF1C3FB11700229E09 /* AppDelegate.h */,
 				89B213B01C3FB11700229E09 /* AppDelegate.m */,
 				89B213B21C3FB11700229E09 /* ViewController.h */,
@@ -313,6 +326,7 @@
 				89B213FD1C3FB53B00229E09 /* DetailController.m in Sources */,
 				89B213FA1C3FB4D800229E09 /* BaseViewController.m in Sources */,
 				89B213B11C3FB11700229E09 /* AppDelegate.m in Sources */,
+				89AD36BB1C45EACC00254F10 /* UIView+AutoLayout.m in Sources */,
 				89B213F81C3FB4D800229E09 /* BaseNavigationController.m in Sources */,
 				89B213E71C3FB1BD00229E09 /* HomeController.m in Sources */,
 				89B213AE1C3FB11700229E09 /* main.m in Sources */,
