@@ -50,7 +50,7 @@
                                 <color key="textColor" red="0.7843137255" green="0.21176470589999999" blue="0.019607843140000001" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥108" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEy-mo-ddb" userLabel="原价" customClass="MTCenterLineLabel">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥108" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEy-mo-ddb" userLabel="原价" customClass="TFCenterLineLabel">
                                 <rect key="frame" x="59" y="80" width="30.5" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="7GG-qe-5Ni"/>

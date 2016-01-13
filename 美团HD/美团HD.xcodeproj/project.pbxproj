@@ -31,6 +31,10 @@
 		FE06218F1C4682A700AA13A0 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FE06217D1C4682A700AA13A0 /* UIImageView+HighlightedWebCache.m */; };
 		FE0621901C4682A700AA13A0 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FE06217F1C4682A700AA13A0 /* UIImageView+WebCache.m */; };
 		FE0621911C4682A700AA13A0 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0621811C4682A700AA13A0 /* UIView+WebCacheOperation.m */; };
+		FE0621941C468DE800AA13A0 /* TFCenterLineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0621931C468DE800AA13A0 /* TFCenterLineLabel.m */; };
+		FE06219B1C46948E00AA13A0 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0621971C46948E00AA13A0 /* MBProgressHUD+MJ.m */; };
+		FE06219C1C46948E00AA13A0 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FE0621981C46948E00AA13A0 /* MBProgressHUD.bundle */; };
+		FE06219D1C46948E00AA13A0 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FE06219A1C46948E00AA13A0 /* MBProgressHUD.m */; };
 		FE80F0FF1C401191000AD3FF /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F0D11C401191000AD3FF /* MASCompositeConstraint.m */; };
 		FE80F1001C401191000AD3FF /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F0D41C401191000AD3FF /* MASConstraint.m */; };
 		FE80F1011C401191000AD3FF /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F0D61C401191000AD3FF /* MASConstraintMaker.m */; };
@@ -152,6 +156,13 @@
 		FE06217F1C4682A700AA13A0 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		FE0621801C4682A700AA13A0 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		FE0621811C4682A700AA13A0 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		FE0621921C468DE800AA13A0 /* TFCenterLineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFCenterLineLabel.h; sourceTree = "<group>"; };
+		FE0621931C468DE800AA13A0 /* TFCenterLineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFCenterLineLabel.m; sourceTree = "<group>"; };
+		FE0621961C46948E00AA13A0 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
+		FE0621971C46948E00AA13A0 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
+		FE0621981C46948E00AA13A0 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		FE0621991C46948E00AA13A0 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		FE06219A1C46948E00AA13A0 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		FE80F0D01C401191000AD3FF /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		FE80F0D11C401191000AD3FF /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
 		FE80F0D21C401191000AD3FF /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -337,9 +348,22 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		FE0621951C46948E00AA13A0 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				FE0621961C46948E00AA13A0 /* MBProgressHUD+MJ.h */,
+				FE0621971C46948E00AA13A0 /* MBProgressHUD+MJ.m */,
+				FE0621981C46948E00AA13A0 /* MBProgressHUD.bundle */,
+				FE0621991C46948E00AA13A0 /* MBProgressHUD.h */,
+				FE06219A1C46948E00AA13A0 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		FE80F0CE1C401191000AD3FF /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				FE0621951C46948E00AA13A0 /* MBProgressHUD */,
 				FE0621601C4682A700AA13A0 /* SDWebImage */,
 				FE06214E1C4546BF00AA13A0 /* dianpingapi */,
 				FE80F0CF1C401191000AD3FF /* Masonry */,
@@ -572,6 +596,8 @@
 				FEE3D37A1C3FEECD0011628B /* TFHomeTopItem.h */,
 				FEE3D37B1C3FEECD0011628B /* TFHomeTopItem.m */,
 				FEE3D37C1C3FEECD0011628B /* TFHomeTopItem.xib */,
+				FE0621921C468DE800AA13A0 /* TFCenterLineLabel.h */,
+				FE0621931C468DE800AA13A0 /* TFCenterLineLabel.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -705,6 +731,7 @@
 				FE06215F1C46816F00AA13A0 /* MTDealCell.xib in Resources */,
 				FE80F1201C41406F000AD3FF /* TFReginViewController.xib in Resources */,
 				FEE3D3351C3EA7920011628B /* LaunchScreen.storyboard in Resources */,
+				FE06219C1C46948E00AA13A0 /* MBProgressHUD.bundle in Resources */,
 				FEE3D3871C3FEECD0011628B /* TFHomeTopItem.xib in Resources */,
 				FEE3D3991C3FFC8F0011628B /* cityGroups.plist in Resources */,
 				FEE3D3321C3EA7920011628B /* Assets.xcassets in Resources */,
@@ -747,6 +774,7 @@
 				FEE3D3821C3FEECD0011628B /* AppDelegate.m in Sources */,
 				FE80F1081C401191000AD3FF /* MJArgument.m in Sources */,
 				FE80F12B1C422139000AD3FF /* TFCity.m in Sources */,
+				FE06219D1C46948E00AA13A0 /* MBProgressHUD.m in Sources */,
 				FE80F11F1C41406F000AD3FF /* TFReginViewController.m in Sources */,
 				FE0621871C4682A700AA13A0 /* SDWebImageDownloader.m in Sources */,
 				FE0621881C4682A700AA13A0 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -795,7 +823,9 @@
 				FE0621551C4546BF00AA13A0 /* DPRequest.m in Sources */,
 				FE0621841C4682A700AA13A0 /* SDImageCache.m in Sources */,
 				FEE3D3861C3FEECD0011628B /* TFHomeTopItem.m in Sources */,
+				FE06219B1C46948E00AA13A0 /* MBProgressHUD+MJ.m in Sources */,
 				FE0621911C4682A700AA13A0 /* UIView+WebCacheOperation.m in Sources */,
+				FE0621941C468DE800AA13A0 /* TFCenterLineLabel.m in Sources */,
 				FE80F1271C421556000AD3FF /* TFCityViewController.m in Sources */,
 				FE80F1111C401191000AD3FF /* NSObject+MJKeyValue.m in Sources */,
 				FE80F1001C401191000AD3FF /* MASConstraint.m in Sources */,

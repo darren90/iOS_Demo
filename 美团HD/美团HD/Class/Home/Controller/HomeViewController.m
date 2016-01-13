@@ -24,6 +24,7 @@
 #import "MJExtension.h"
 #import "TFDeal.h"
 #import "MTDealCell.h"
+#import "MBProgressHUD+MJ.h"
 
 @interface HomeViewController ()<DPRequestDelegate>
 /**
@@ -353,6 +354,7 @@ static NSString * const reuseIdentifier = @"deal";
 -(void)request:(DPRequest *)request didFailWithError:(NSError *)error
 {
     NSLog(@"请求失败:%@",error);
+    [MBProgressHUD showError:@"请稍后再试"];
 }
 
 - (NSMutableArray *)deals
