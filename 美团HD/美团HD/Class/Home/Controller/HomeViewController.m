@@ -21,6 +21,8 @@
 #import "TFCategory.h"
 #import "TFregion.h"
 #import "DPAPI.h"
+#import "MJExtension.h"
+#import "TFDeal.h"
 
 @interface HomeViewController ()<DPRequestDelegate>
 /**
@@ -57,6 +59,8 @@
  */
 @property (nonatomic,strong)UIPopoverController * sortPopover;
 
+/** 所有的团购数据 */
+@property (nonatomic, strong) NSMutableArray *deals;
 @end
 
 @implementation HomeViewController
@@ -83,7 +87,6 @@ static NSString * const reuseIdentifier = @"Cell";
     self.view.backgroundColor = MTGlobalBg;
     self.collectionView.backgroundColor = MTGlobalBg;
     
-
     //监听城市选择的通知
     [TFNotificationCenter addObserver:self selector:@selector(cityChage:) name:TFCityDidSelectNotification object:nil];
     
@@ -195,18 +198,19 @@ static NSString * const reuseIdentifier = @"Cell";
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 0;
+    return 1;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 0;
+    return self.deals.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell
+    cell.backgroundColor = [UIColor grayColor];
     
     return cell;
 }
@@ -328,6 +332,15 @@ static NSString * const reuseIdentifier = @"Cell";
 -(void)request:(DPRequest *)request didFinishLoadingWithResult:(id)result
 {
     NSLog(@"请求成功:%@",result);
+    MTLog(@"%@", result);
+    // 1.取出团购的字典数组
+    NSArray *newDeals = [TFDeal objectArrayWithKeyValuesArray:result[@"deals"]];
+    [self.deals removeAllObjects];
+    [self.deals addObjectsFromArray:newDeals];
+    
+    // 2.刷新表格
+    [self.collectionView reloadData];
+
 }
 
 -(void)request:(DPRequest *)request didFailWithError:(NSError *)error
@@ -335,7 +348,13 @@ static NSString * const reuseIdentifier = @"Cell";
     NSLog(@"请求失败:%@",error);
 }
 
-
+- (NSMutableArray *)deals
+{
+    if (!_deals) {
+        self.deals = [[NSMutableArray alloc] init];
+    }
+    return _deals;
+}
 -(void)dealloc
 {
     [TFNotificationCenter removeObserver:self];
