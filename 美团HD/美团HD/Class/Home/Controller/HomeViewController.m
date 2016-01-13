@@ -23,6 +23,7 @@
 #import "DPAPI.h"
 #import "MJExtension.h"
 #import "TFDeal.h"
+#import "MTDealCell.h"
 
 @interface HomeViewController ()<DPRequestDelegate>
 /**
@@ -65,13 +66,17 @@
 
 @implementation HomeViewController
 
-static NSString * const reuseIdentifier = @"Cell";
+static NSString * const reuseIdentifier = @"deal";
 
--(instancetype)init
+
+- (instancetype)init
 {
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    // cell的大小
+    layout.itemSize = CGSizeMake(305, 305);
     return [self initWithCollectionViewLayout:layout];
 }
+
 
 /**
     //tableview
@@ -102,7 +107,9 @@ static NSString * const reuseIdentifier = @"Cell";
     
     
     // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+//    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"MTDealCell" bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
+
     
     // Do any additional setup after loading the view.
     
@@ -207,10 +214,10 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    MTDealCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell
-    cell.backgroundColor = [UIColor grayColor];
+    cell.deal = self.deals[indexPath.row];
     
     return cell;
 }
