@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-@class MTDeal, MTDealCell;
+@class MTDeal, TFDeal;
 
 
 @interface MTDealCell : UICollectionViewCell
-@property (nonatomic, strong) MTDeal *deal;
+@property (nonatomic, strong) TFDeal *deal;
 
 @end
