@@ -38,20 +38,32 @@
 //}
 
 
+//-(BOOL)shouldAutorotate
+//{
+//    return [[self.viewControllers lastObject] shouldAutorotate];
+//}
+//
+//-(UIInterfaceOrientationMask)supportedInterfaceOrientations
+//{
+//    return [[self.viewControllers lastObject] supportedInterfaceOrientations];
+//}
+//
+//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+//{
+//    return [[self.viewControllers lastObject] preferredInterfaceOrientationForPresentation];
+//}
+
+
+-(NSUInteger)supportedInterfaceOrientations
+{
+    return [self.topViewController supportedInterfaceOrientations];
+}
+
 -(BOOL)shouldAutorotate
 {
-    return [[self.viewControllers lastObject] shouldAutorotate];
+    return YES;
 }
 
--(UIInterfaceOrientationMask)supportedInterfaceOrientations
-{
-    return [[self.viewControllers lastObject] supportedInterfaceOrientations];
-}
-
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
-{
-    return [[self.viewControllers lastObject] preferredInterfaceOrientationForPresentation];
-}
 
 @end
 

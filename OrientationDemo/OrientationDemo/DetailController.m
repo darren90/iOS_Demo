@@ -24,7 +24,8 @@
 
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [self.navigationController popViewControllerAnimated:YES];
+//    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,20 +33,36 @@
     // Dispose of any resources that can be recreated.
 }
 
+//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+//{
+//    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+//}
+//
+//-(NSUInteger)supportedInterfaceOrientations
+//{
+//    return UIInterfaceOrientationMaskAllButUpsideDown;
+//}
+//
+//-(BOOL)shouldAutorotate
+//{
+//    return YES;
+//}
 
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+//    if (self.interfaceOrientation != UIInterfaceOrientationMaskLandscape) {
+//        return UIInterfaceOrientationMaskLandscapeLeft;
+//    }
+    return UIInterfaceOrientationMaskLandscape ;
+}
 
 - (BOOL)shouldAutorotate{
     return YES;
 }
-
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
-    return UIInterfaceOrientationPortrait;
-}
-
-- (UIStatusBarStyle)preferredStatusBarStyle{
-    return UIStatusBarStyleLightContent;
-}
-
+//
+//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
+//    return UIInterfaceOrientationLandscapeLeft|UIInterfaceOrientationLandscapeRight;
+//}
 
 
 
@@ -62,6 +79,9 @@
 //        }
 //        return UIInterfaceOrientationMaskLandscapeLeft;
 //}
+
+
+
 
 //- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
 //    return UIInterfaceOrientationMaskPortrait ;

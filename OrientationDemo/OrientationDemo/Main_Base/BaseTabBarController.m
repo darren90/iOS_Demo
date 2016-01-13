@@ -34,29 +34,36 @@
 
  
 
-- (BOOL)shouldAutorotate{
-    return YES;
-}
-
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
-    return [self.viewControllers.lastObject supportedInterfaceOrientations];
-}
-
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
-    return [self.viewControllers.lastObject preferredInterfaceOrientationForPresentation];
-}
-
-//- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+//- (BOOL)shouldAutorotate{
+//    return YES;
+//}
 //
-//    //    [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+//- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
 //    return [self.viewControllers.lastObject supportedInterfaceOrientations];
 //}
 //
 //- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
-////    NSLog(@"UIInterfaceOrientation--:%@--:%@",self.viewControllers,self.viewControllers.lastObject);
 //    return [self.viewControllers.lastObject preferredInterfaceOrientationForPresentation];
 //}
 
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // You do not need this method if you are not supporting earlier iOS Versions
+    return [self.selectedViewController shouldAutorotateToInterfaceOrientation:interfaceOrientation];
+}
+
+-(UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    return [self.selectedViewController supportedInterfaceOrientations];
+}
+
+-(BOOL)shouldAutorotate
+{
+    return YES;
+}
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
+    return [self.selectedViewController preferredInterfaceOrientationForPresentation];
+}
 
 
 @end
