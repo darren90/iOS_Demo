@@ -56,6 +56,13 @@
     
     // 原价
     self.listPriceLabel.text = [NSString stringWithFormat:@"¥ %@", deal.list_price];
+    
+    // 是否显示新单图片
+    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+    fmt.dateFormat= @"yyyy-MM-dd";
+    NSString *nowStr = [fmt stringFromDate:[NSDate date]];
+    // 隐藏: 发布日期 < 今天
+    self.dealNewView.hidden = ([deal.publish_date compare:nowStr] == NSOrderedAscending);
 }
 
 - (void)drawRect:(CGRect)rect

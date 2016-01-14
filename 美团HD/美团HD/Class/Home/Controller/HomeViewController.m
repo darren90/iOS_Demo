@@ -235,6 +235,8 @@ static NSString * const reuseIdentifier = @"deal";
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    // 计算一遍内边距
+    [self viewWillTransitionToSize:CGSizeMake(collectionView.width, 0) withTransitionCoordinator:nil];
     return 1;
 }
 
