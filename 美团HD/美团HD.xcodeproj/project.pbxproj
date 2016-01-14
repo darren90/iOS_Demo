@@ -35,6 +35,14 @@
 		FE06219B1C46948E00AA13A0 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0621971C46948E00AA13A0 /* MBProgressHUD+MJ.m */; };
 		FE06219C1C46948E00AA13A0 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FE0621981C46948E00AA13A0 /* MBProgressHUD.bundle */; };
 		FE06219D1C46948E00AA13A0 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FE06219A1C46948E00AA13A0 /* MBProgressHUD.m */; };
+		FE0621AF1C47D19100AA13A0 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FE06219F1C47D19100AA13A0 /* MJRefresh.bundle */; };
+		FE0621B01C47D19100AA13A0 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0621A21C47D19100AA13A0 /* MJRefreshBaseView.m */; };
+		FE0621B11C47D19100AA13A0 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0621A41C47D19100AA13A0 /* MJRefreshConst.m */; };
+		FE0621B21C47D19100AA13A0 /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0621A61C47D19100AA13A0 /* MJRefreshFooterView.m */; };
+		FE0621B31C47D19100AA13A0 /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0621A81C47D19100AA13A0 /* MJRefreshHeaderView.m */; };
+		FE0621B41C47D19100AA13A0 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0621AA1C47D19100AA13A0 /* UIScrollView+MJExtension.m */; };
+		FE0621B51C47D19100AA13A0 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0621AC1C47D19100AA13A0 /* UIScrollView+MJRefresh.m */; };
+		FE0621B61C47D19100AA13A0 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0621AE1C47D19100AA13A0 /* UIView+MJExtension.m */; };
 		FE80F0FF1C401191000AD3FF /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F0D11C401191000AD3FF /* MASCompositeConstraint.m */; };
 		FE80F1001C401191000AD3FF /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F0D41C401191000AD3FF /* MASConstraint.m */; };
 		FE80F1011C401191000AD3FF /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F0D61C401191000AD3FF /* MASConstraintMaker.m */; };
@@ -163,6 +171,22 @@
 		FE0621981C46948E00AA13A0 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		FE0621991C46948E00AA13A0 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		FE06219A1C46948E00AA13A0 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		FE06219F1C47D19100AA13A0 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
+		FE0621A01C47D19100AA13A0 /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
+		FE0621A11C47D19100AA13A0 /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
+		FE0621A21C47D19100AA13A0 /* MJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBaseView.m; sourceTree = "<group>"; };
+		FE0621A31C47D19100AA13A0 /* MJRefreshConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshConst.h; sourceTree = "<group>"; };
+		FE0621A41C47D19100AA13A0 /* MJRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshConst.m; sourceTree = "<group>"; };
+		FE0621A51C47D19100AA13A0 /* MJRefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshFooterView.h; sourceTree = "<group>"; };
+		FE0621A61C47D19100AA13A0 /* MJRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshFooterView.m; sourceTree = "<group>"; };
+		FE0621A71C47D19100AA13A0 /* MJRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshHeaderView.h; sourceTree = "<group>"; };
+		FE0621A81C47D19100AA13A0 /* MJRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshHeaderView.m; sourceTree = "<group>"; };
+		FE0621A91C47D19100AA13A0 /* UIScrollView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJExtension.h"; sourceTree = "<group>"; };
+		FE0621AA1C47D19100AA13A0 /* UIScrollView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJExtension.m"; sourceTree = "<group>"; };
+		FE0621AB1C47D19100AA13A0 /* UIScrollView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJRefresh.h"; sourceTree = "<group>"; };
+		FE0621AC1C47D19100AA13A0 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
+		FE0621AD1C47D19100AA13A0 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
+		FE0621AE1C47D19100AA13A0 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		FE80F0D01C401191000AD3FF /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		FE80F0D11C401191000AD3FF /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
 		FE80F0D21C401191000AD3FF /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -360,9 +384,33 @@
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
+		FE06219E1C47D19100AA13A0 /* MJRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				FE06219F1C47D19100AA13A0 /* MJRefresh.bundle */,
+				FE0621A01C47D19100AA13A0 /* MJRefresh.h */,
+				FE0621A11C47D19100AA13A0 /* MJRefreshBaseView.h */,
+				FE0621A21C47D19100AA13A0 /* MJRefreshBaseView.m */,
+				FE0621A31C47D19100AA13A0 /* MJRefreshConst.h */,
+				FE0621A41C47D19100AA13A0 /* MJRefreshConst.m */,
+				FE0621A51C47D19100AA13A0 /* MJRefreshFooterView.h */,
+				FE0621A61C47D19100AA13A0 /* MJRefreshFooterView.m */,
+				FE0621A71C47D19100AA13A0 /* MJRefreshHeaderView.h */,
+				FE0621A81C47D19100AA13A0 /* MJRefreshHeaderView.m */,
+				FE0621A91C47D19100AA13A0 /* UIScrollView+MJExtension.h */,
+				FE0621AA1C47D19100AA13A0 /* UIScrollView+MJExtension.m */,
+				FE0621AB1C47D19100AA13A0 /* UIScrollView+MJRefresh.h */,
+				FE0621AC1C47D19100AA13A0 /* UIScrollView+MJRefresh.m */,
+				FE0621AD1C47D19100AA13A0 /* UIView+MJExtension.h */,
+				FE0621AE1C47D19100AA13A0 /* UIView+MJExtension.m */,
+			);
+			path = MJRefresh;
+			sourceTree = "<group>";
+		};
 		FE80F0CE1C401191000AD3FF /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				FE06219E1C47D19100AA13A0 /* MJRefresh */,
 				FE0621951C46948E00AA13A0 /* MBProgressHUD */,
 				FE0621601C4682A700AA13A0 /* SDWebImage */,
 				FE06214E1C4546BF00AA13A0 /* dianpingapi */,
@@ -733,6 +781,7 @@
 				FEE3D3351C3EA7920011628B /* LaunchScreen.storyboard in Resources */,
 				FE06219C1C46948E00AA13A0 /* MBProgressHUD.bundle in Resources */,
 				FEE3D3871C3FEECD0011628B /* TFHomeTopItem.xib in Resources */,
+				FE0621AF1C47D19100AA13A0 /* MJRefresh.bundle in Resources */,
 				FEE3D3991C3FFC8F0011628B /* cityGroups.plist in Resources */,
 				FEE3D3321C3EA7920011628B /* Assets.xcassets in Resources */,
 				FEE3D3981C3FFC8F0011628B /* cities.plist in Resources */,
@@ -793,10 +842,13 @@
 				FE0621831C4682A700AA13A0 /* NSData+ImageContentType.m in Sources */,
 				FE06218F1C4682A700AA13A0 /* UIImageView+HighlightedWebCache.m in Sources */,
 				FE80F10E1C401191000AD3FF /* MJType.m in Sources */,
+				FE0621B31C47D19100AA13A0 /* MJRefreshHeaderView.m in Sources */,
 				FE06218B1C4682A700AA13A0 /* UIButton+WebCache.m in Sources */,
+				FE0621B51C47D19100AA13A0 /* UIScrollView+MJRefresh.m in Sources */,
 				FE80F1071C401191000AD3FF /* View+MASAdditions.m in Sources */,
 				FE0621901C4682A700AA13A0 /* UIImageView+WebCache.m in Sources */,
 				FE0621571C454FB900AA13A0 /* Foundation+Log.m in Sources */,
+				FE0621B41C47D19100AA13A0 /* UIScrollView+MJExtension.m in Sources */,
 				FE80F10D1C401191000AD3FF /* MJMethod.m in Sources */,
 				FE06215A1C467CC000AA13A0 /* TFDeal.m in Sources */,
 				FE80F1171C413CE1000AD3FF /* MTHomeDropdownMainCell.m in Sources */,
@@ -812,9 +864,11 @@
 				FEE3D3851C3FEECD0011628B /* HomeViewController.m in Sources */,
 				FEE3D3891C3FEECD0011628B /* TFConst.m in Sources */,
 				FEE3D3271C3EA7920011628B /* main.m in Sources */,
+				FE0621B61C47D19100AA13A0 /* UIView+MJExtension.m in Sources */,
 				FE80F10C1C401191000AD3FF /* MJMember.m in Sources */,
 				FE80F1101C401191000AD3FF /* NSObject+MJCoding.m in Sources */,
 				FEE3D39D1C4007A50011628B /* TFCategory.m in Sources */,
+				FE0621B11C47D19100AA13A0 /* MJRefreshConst.m in Sources */,
 				FE0621861C4682A700AA13A0 /* SDWebImageDecoder.m in Sources */,
 				FE80F1051C401191000AD3FF /* NSArray+MASAdditions.m in Sources */,
 				FE80F1091C401191000AD3FF /* MJConst.m in Sources */,
@@ -823,7 +877,9 @@
 				FE0621551C4546BF00AA13A0 /* DPRequest.m in Sources */,
 				FE0621841C4682A700AA13A0 /* SDImageCache.m in Sources */,
 				FEE3D3861C3FEECD0011628B /* TFHomeTopItem.m in Sources */,
+				FE0621B21C47D19100AA13A0 /* MJRefreshFooterView.m in Sources */,
 				FE06219B1C46948E00AA13A0 /* MBProgressHUD+MJ.m in Sources */,
+				FE0621B01C47D19100AA13A0 /* MJRefreshBaseView.m in Sources */,
 				FE0621911C4682A700AA13A0 /* UIView+WebCacheOperation.m in Sources */,
 				FE0621941C468DE800AA13A0 /* TFCenterLineLabel.m in Sources */,
 				FE80F1271C421556000AD3FF /* TFCityViewController.m in Sources */,

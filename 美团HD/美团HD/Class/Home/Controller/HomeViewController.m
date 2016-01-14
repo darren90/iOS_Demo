@@ -25,6 +25,7 @@
 #import "TFDeal.h"
 #import "MTDealCell.h"
 #import "MBProgressHUD+MJ.h"
+#import "MJRefresh.h"
 
 @interface HomeViewController ()<DPRequestDelegate>
 /**
@@ -63,6 +64,9 @@
 
 /** 所有的团购数据 */
 @property (nonatomic, strong) NSMutableArray *deals;
+/** 记录当前页码 */
+@property (nonatomic, assign) int  currentPage;
+
 @end
 
 @implementation HomeViewController
@@ -75,7 +79,28 @@ static NSString * const reuseIdentifier = @"deal";
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     // cell的大小
     layout.itemSize = CGSizeMake(305, 305);
+//    CGFloat inset = 15;
+//    layout.sectionInset = UIEdgeInsetsMake(inset, inset, inset, inset);
     return [self initWithCollectionViewLayout:layout];
+}
+
+//-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+//{
+//}
+
+-(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
+{
+    NSLog(@"size:%@",NSStringFromCGSize(size));
+    // 根据屏幕宽度决定列数
+    int cols = (size.width == 1024) ? 3 : 2;
+    
+    // 根据列数计算内边距
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionViewLayout;
+    CGFloat inset = (size.width - cols * layout.itemSize.width) / (cols + 1);
+    layout.sectionInset = UIEdgeInsetsMake(inset, inset, inset, inset);
+    
+    // 设置每一行之间的间距
+    layout.minimumLineSpacing = inset;
 }
 
 
@@ -92,6 +117,7 @@ static NSString * const reuseIdentifier = @"deal";
     // self.clearsSelectionOnViewWillAppear = NO;
     self.view.backgroundColor = MTGlobalBg;
     self.collectionView.backgroundColor = MTGlobalBg;
+    self.collectionView.alwaysBounceVertical = YES;
     
     //监听城市选择的通知
     [TFNotificationCenter addObserver:self selector:@selector(cityChage:) name:TFCityDidSelectNotification object:nil];
@@ -117,6 +143,9 @@ static NSString * const reuseIdentifier = @"deal";
     //设置导航栏内容
     [self setupLeftNav];
     [self setupRightNav];
+    
+    // 添加上拉刷新
+    [self.collectionView addFooterWithTarget:self action:@selector(loadMoreDeals)];
 }
 
 -(void)setupLeftNav
@@ -319,7 +348,7 @@ static NSString * const reuseIdentifier = @"deal";
  *  发送请求
  */
 #pragma mark - 发送网络请求 - 服务器交互
--(void)loadNewDeals
+-(void)loadDeals
 {
     DPAPI *api = [[DPAPI alloc]init];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
@@ -327,13 +356,32 @@ static NSString * const reuseIdentifier = @"deal";
     if (self.selectedCategoryName) {
         params[@"category"] = self.selectedCategoryName;
     }
+    // 每页的条数
+    params[@"limit"] = @6;
     if (self.selectedSort) {
         params[@"sort"] = @(self.selectedSort.value);
     }
     if (self.selectedRegionName) {
         params[@"region"] = self.selectedRegionName;
     }
+    // 页码
+    params[@"page"] = @(self.currentPage);
     [api requestWithURL:@"v1/deal/find_deals" params:params delegate:self];
+}
+
+
+- (void)loadMoreDeals
+{
+    self.currentPage++;
+    
+    [self loadDeals];
+}
+
+- (void)loadNewDeals
+{
+    self.currentPage = 1;
+    
+    [self loadDeals];
 }
 
 
@@ -343,18 +391,22 @@ static NSString * const reuseIdentifier = @"deal";
     MTLog(@"%@", result);
     // 1.取出团购的字典数组
     NSArray *newDeals = [TFDeal objectArrayWithKeyValuesArray:result[@"deals"]];
-    [self.deals removeAllObjects];
+    if (self.currentPage == 1) { // 清除之前的旧数据
+        [self.deals removeAllObjects];
+    }
     [self.deals addObjectsFromArray:newDeals];
     
     // 2.刷新表格
     [self.collectionView reloadData];
-
+    
+    // 3.结束上拉加载
+    [self.collectionView footerEndRefreshing];
 }
 
 -(void)request:(DPRequest *)request didFailWithError:(NSError *)error
 {
     NSLog(@"请求失败:%@",error);
-    [MBProgressHUD showError:@"请稍后再试"];
+    [MBProgressHUD showError:@"请稍后再试" toView:self.view];
 }
 
 - (NSMutableArray *)deals
