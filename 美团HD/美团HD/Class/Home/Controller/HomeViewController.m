@@ -66,7 +66,8 @@
 @property (nonatomic, strong) NSMutableArray *deals;
 /** 记录当前页码 */
 @property (nonatomic, assign) int  currentPage;
-
+/** 最后一个请求 */
+@property (nonatomic, weak) DPRequest *lastRequest;
 @end
 
 @implementation HomeViewController
@@ -368,7 +369,8 @@ static NSString * const reuseIdentifier = @"deal";
     }
     // 页码
     params[@"page"] = @(self.currentPage);
-    [api requestWithURL:@"v1/deal/find_deals" params:params delegate:self];
+    self.lastRequest = [api requestWithURL:@"v1/deal/find_deals" params:params delegate:self];
+//    [api requestWithURL:@"v1/deal/find_deals" params:params delegate:self];
 }
 
 
@@ -389,6 +391,7 @@ static NSString * const reuseIdentifier = @"deal";
 
 -(void)request:(DPRequest *)request didFinishLoadingWithResult:(id)result
 {
+    if (request != self.lastRequest) return;
     NSLog(@"请求成功:%@",result);
     MTLog(@"%@", result);
     // 1.取出团购的字典数组
