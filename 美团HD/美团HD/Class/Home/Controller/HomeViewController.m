@@ -26,6 +26,8 @@
 #import "MTDealCell.h"
 #import "MBProgressHUD+MJ.h"
 #import "MJRefresh.h"
+#import "BaseNavigationController.h"
+#import "TFSearchViewController.h"
 
 @interface HomeViewController ()<DPRequestDelegate>
 /**
@@ -183,11 +185,19 @@ static NSString * const reuseIdentifier = @"deal";
     UIBarButtonItem *map = [UIBarButtonItem itemWithTarget:nil action:nil image:@"icon_map" highImage:@"icon_map_highlighted"];
     map.customView.width = 60;
     
-    UIBarButtonItem *search = [UIBarButtonItem itemWithTarget:nil action:nil image:@"icon_search" highImage:@"icon_search_highlighted"];
+    UIBarButtonItem *search = [UIBarButtonItem itemWithTarget:self action:@selector(search) image:@"icon_search" highImage:@"icon_search_highlighted"];
     search.customView.width = 60;
     self.navigationItem.rightBarButtonItems = @[map, search];
 }
 #pragma mark - 顶部item的点击方法
+
+#pragma mark - 点击搜索按钮
+- (void)search
+{
+    BaseNavigationController  *nav = [[BaseNavigationController alloc] initWithRootViewController:[[TFSearchViewController alloc] init]];
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
 -(void)categoryClick
 {
 //    NSLog(@"categoryClick");

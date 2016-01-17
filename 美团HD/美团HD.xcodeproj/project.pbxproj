@@ -43,6 +43,7 @@
 		FE0621B41C47D19100AA13A0 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0621AA1C47D19100AA13A0 /* UIScrollView+MJExtension.m */; };
 		FE0621B51C47D19100AA13A0 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0621AC1C47D19100AA13A0 /* UIScrollView+MJRefresh.m */; };
 		FE0621B61C47D19100AA13A0 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0621AE1C47D19100AA13A0 /* UIView+MJExtension.m */; };
+		FE328B7F1C4BD07900B71B86 /* TFSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE328B7E1C4BD07900B71B86 /* TFSearchViewController.m */; };
 		FE80F0FF1C401191000AD3FF /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F0D11C401191000AD3FF /* MASCompositeConstraint.m */; };
 		FE80F1001C401191000AD3FF /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F0D41C401191000AD3FF /* MASConstraint.m */; };
 		FE80F1011C401191000AD3FF /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F0D61C401191000AD3FF /* MASConstraintMaker.m */; };
@@ -187,6 +188,8 @@
 		FE0621AC1C47D19100AA13A0 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		FE0621AD1C47D19100AA13A0 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		FE0621AE1C47D19100AA13A0 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		FE328B7D1C4BD07900B71B86 /* TFSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFSearchViewController.h; sourceTree = "<group>"; };
+		FE328B7E1C4BD07900B71B86 /* TFSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFSearchViewController.m; sourceTree = "<group>"; };
 		FE80F0D01C401191000AD3FF /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		FE80F0D11C401191000AD3FF /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
 		FE80F0D21C401191000AD3FF /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -407,6 +410,23 @@
 			path = MJRefresh;
 			sourceTree = "<group>";
 		};
+		FE328B781C4BCECA00B71B86 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				FE328B791C4BCECA00B71B86 /* Controller */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		FE328B791C4BCECA00B71B86 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FE328B7D1C4BD07900B71B86 /* TFSearchViewController.h */,
+				FE328B7E1C4BD07900B71B86 /* TFSearchViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		FE80F0CE1C401191000AD3FF /* Lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -559,6 +579,7 @@
 				FEE3D3801C3FEECD0011628B /* TFConst.h */,
 				FEE3D3811C3FEECD0011628B /* TFConst.m */,
 				FEE3D37D1C3FEECD0011628B /* Main */,
+				FE328B781C4BCECA00B71B86 /* Search */,
 				FEE3D3741C3FEECD0011628B /* Home */,
 			);
 			path = Class;
@@ -842,6 +863,7 @@
 				FE0621831C4682A700AA13A0 /* NSData+ImageContentType.m in Sources */,
 				FE06218F1C4682A700AA13A0 /* UIImageView+HighlightedWebCache.m in Sources */,
 				FE80F10E1C401191000AD3FF /* MJType.m in Sources */,
+				FE328B7F1C4BD07900B71B86 /* TFSearchViewController.m in Sources */,
 				FE0621B31C47D19100AA13A0 /* MJRefreshHeaderView.m in Sources */,
 				FE06218B1C4682A700AA13A0 /* UIButton+WebCache.m in Sources */,
 				FE0621B51C47D19100AA13A0 /* UIScrollView+MJRefresh.m in Sources */,
