@@ -45,6 +45,10 @@
 		FE0621B61C47D19100AA13A0 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0621AE1C47D19100AA13A0 /* UIView+MJExtension.m */; };
 		FE328B7F1C4BD07900B71B86 /* TFSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE328B7E1C4BD07900B71B86 /* TFSearchViewController.m */; };
 		FE328B831C4BD4A800B71B86 /* TFDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE328B821C4BD4A800B71B86 /* TFDetailsViewController.m */; };
+		FE328B891C4BE24D00B71B86 /* AwesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = FE328B861C4BE24D00B71B86 /* AwesomeMenu.m */; };
+		FE328B8A1C4BE24D00B71B86 /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FE328B881C4BE24D00B71B86 /* AwesomeMenuItem.m */; };
+		FE328B9D1C4BF07100B71B86 /* TFRecentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE328B9C1C4BF07100B71B86 /* TFRecentViewController.m */; };
+		FE328BA01C4BF08100B71B86 /* TFCollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE328B9F1C4BF08100B71B86 /* TFCollectViewController.m */; };
 		FE80F0FF1C401191000AD3FF /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F0D11C401191000AD3FF /* MASCompositeConstraint.m */; };
 		FE80F1001C401191000AD3FF /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F0D41C401191000AD3FF /* MASConstraint.m */; };
 		FE80F1011C401191000AD3FF /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F0D61C401191000AD3FF /* MASConstraintMaker.m */; };
@@ -193,6 +197,14 @@
 		FE328B7E1C4BD07900B71B86 /* TFSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFSearchViewController.m; sourceTree = "<group>"; };
 		FE328B811C4BD4A800B71B86 /* TFDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFDetailsViewController.h; sourceTree = "<group>"; };
 		FE328B821C4BD4A800B71B86 /* TFDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFDetailsViewController.m; sourceTree = "<group>"; };
+		FE328B851C4BE24D00B71B86 /* AwesomeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenu.h; sourceTree = "<group>"; };
+		FE328B861C4BE24D00B71B86 /* AwesomeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenu.m; sourceTree = "<group>"; };
+		FE328B871C4BE24D00B71B86 /* AwesomeMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenuItem.h; sourceTree = "<group>"; };
+		FE328B881C4BE24D00B71B86 /* AwesomeMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenuItem.m; sourceTree = "<group>"; };
+		FE328B9B1C4BF07100B71B86 /* TFRecentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFRecentViewController.h; sourceTree = "<group>"; };
+		FE328B9C1C4BF07100B71B86 /* TFRecentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFRecentViewController.m; sourceTree = "<group>"; };
+		FE328B9E1C4BF08100B71B86 /* TFCollectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFCollectViewController.h; sourceTree = "<group>"; };
+		FE328B9F1C4BF08100B71B86 /* TFCollectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFCollectViewController.m; sourceTree = "<group>"; };
 		FE80F0D01C401191000AD3FF /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		FE80F0D11C401191000AD3FF /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
 		FE80F0D21C401191000AD3FF /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -439,9 +451,55 @@
 			path = Conttroller;
 			sourceTree = "<group>";
 		};
+		FE328B841C4BE24D00B71B86 /* AwesomeMenu */ = {
+			isa = PBXGroup;
+			children = (
+				FE328B851C4BE24D00B71B86 /* AwesomeMenu.h */,
+				FE328B861C4BE24D00B71B86 /* AwesomeMenu.m */,
+				FE328B871C4BE24D00B71B86 /* AwesomeMenuItem.h */,
+				FE328B881C4BE24D00B71B86 /* AwesomeMenuItem.m */,
+			);
+			path = AwesomeMenu;
+			sourceTree = "<group>";
+		};
+		FE328B8B1C4BF01D00B71B86 /* Collecct */ = {
+			isa = PBXGroup;
+			children = (
+				FE328B8C1C4BF01D00B71B86 /* Controller */,
+			);
+			path = Collecct;
+			sourceTree = "<group>";
+		};
+		FE328B8C1C4BF01D00B71B86 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FE328B9E1C4BF08100B71B86 /* TFCollectViewController.h */,
+				FE328B9F1C4BF08100B71B86 /* TFCollectViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FE328B911C4BF01D00B71B86 /* Recent */ = {
+			isa = PBXGroup;
+			children = (
+				FE328B921C4BF01D00B71B86 /* Controller */,
+			);
+			path = Recent;
+			sourceTree = "<group>";
+		};
+		FE328B921C4BF01D00B71B86 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FE328B9B1C4BF07100B71B86 /* TFRecentViewController.h */,
+				FE328B9C1C4BF07100B71B86 /* TFRecentViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		FE80F0CE1C401191000AD3FF /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				FE328B841C4BE24D00B71B86 /* AwesomeMenu */,
 				FE06219E1C47D19100AA13A0 /* MJRefresh */,
 				FE0621951C46948E00AA13A0 /* MBProgressHUD */,
 				FE0621601C4682A700AA13A0 /* SDWebImage */,
@@ -592,6 +650,8 @@
 				FEE3D3811C3FEECD0011628B /* TFConst.m */,
 				FEE3D37D1C3FEECD0011628B /* Main */,
 				FE328B781C4BCECA00B71B86 /* Search */,
+				FE328B8B1C4BF01D00B71B86 /* Collecct */,
+				FE328B911C4BF01D00B71B86 /* Recent */,
 				FEE3D3741C3FEECD0011628B /* Home */,
 			);
 			path = Class;
@@ -875,6 +935,7 @@
 				FEE3D38C1C3FF09A0011628B /* TFHomeDropdown.m in Sources */,
 				FE80F10A1C401191000AD3FF /* MJFoundation.m in Sources */,
 				FE0621831C4682A700AA13A0 /* NSData+ImageContentType.m in Sources */,
+				FE328B9D1C4BF07100B71B86 /* TFRecentViewController.m in Sources */,
 				FE06218F1C4682A700AA13A0 /* UIImageView+HighlightedWebCache.m in Sources */,
 				FE80F10E1C401191000AD3FF /* MJType.m in Sources */,
 				FE328B7F1C4BD07900B71B86 /* TFSearchViewController.m in Sources */,
@@ -894,6 +955,8 @@
 				FE80F10B1C401191000AD3FF /* MJIvar.m in Sources */,
 				FE80F1021C401191000AD3FF /* MASLayoutConstraint.m in Sources */,
 				FE06215E1C46816F00AA13A0 /* MTDealCell.m in Sources */,
+				FE328B8A1C4BE24D00B71B86 /* AwesomeMenuItem.m in Sources */,
+				FE328BA01C4BF08100B71B86 /* TFCollectViewController.m in Sources */,
 				FE80F18F1C429E64000AD3FF /* TFSearchResultController.m in Sources */,
 				FE80F1921C429FC2000AD3FF /* UIView+AutoLayout.m in Sources */,
 				FE80F1011C401191000AD3FF /* MASConstraintMaker.m in Sources */,
@@ -906,6 +969,7 @@
 				FEE3D39D1C4007A50011628B /* TFCategory.m in Sources */,
 				FE0621B11C47D19100AA13A0 /* MJRefreshConst.m in Sources */,
 				FE0621861C4682A700AA13A0 /* SDWebImageDecoder.m in Sources */,
+				FE328B891C4BE24D00B71B86 /* AwesomeMenu.m in Sources */,
 				FE80F1051C401191000AD3FF /* NSArray+MASAdditions.m in Sources */,
 				FE80F1091C401191000AD3FF /* MJConst.m in Sources */,
 				FE06218D1C4682A700AA13A0 /* UIImage+MultiFormat.m in Sources */,

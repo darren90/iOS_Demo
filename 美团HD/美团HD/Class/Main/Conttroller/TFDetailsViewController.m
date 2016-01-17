@@ -30,7 +30,8 @@
 @property (nonatomic, weak) UIImageView *noDataView;
 
 
-
+/** 总数 */
+@property (nonatomic, assign) int  totalCount;
 /** 所有的团购数据 */
 @property (nonatomic, strong) NSMutableArray *deals;
 /** 记录当前页码 */
@@ -141,8 +142,9 @@ static NSString * const reuseIdentifier = @"deal";
 -(void)request:(DPRequest *)request didFinishLoadingWithResult:(id)result
 {
     if (request != self.lastRequest) return;
-    NSLog(@"请求成功:%@",result);
-    MTLog(@"%@", result);
+    self.totalCount = [result[@"total_count"] intValue];
+    
+//    NSLog(@"请求成功:%@",result);
     // 1.取出团购的字典数组
     NSArray *newDeals = [TFDeal objectArrayWithKeyValuesArray:result[@"deals"]];
     if (self.currentPage == 1) { // 清除之前的旧数据
@@ -155,12 +157,27 @@ static NSString * const reuseIdentifier = @"deal";
     
     // 3.结束上拉加载
     [self.collectionView footerEndRefreshing];
+      [self.collectionView headerEndRefreshing];
 }
 
 -(void)request:(DPRequest *)request didFailWithError:(NSError *)error
 {
-    NSLog(@"请求失败:%@",error);
-    [MBProgressHUD showError:@"请稍后再试" toView:self.view];
+//    NSLog(@"请求失败:%@",error);
+//    [MBProgressHUD showError:@"请稍后再试" toView:self.view];
+    
+    if (request != self.lastRequest) return;
+    
+    // 1.提醒失败
+    [MBProgressHUD showError:@"网络繁忙,请稍后再试" toView:self.view];
+    
+    // 2.结束刷新
+    [self.collectionView headerEndRefreshing];
+    [self.collectionView footerEndRefreshing];
+    
+    // 3.如果是上拉加载失败了
+    if (self.currentPage > 1) {
+        self.currentPage--;
+    }
 }
 
 
@@ -175,6 +192,11 @@ static NSString * const reuseIdentifier = @"deal";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    // 控制尾部刷新控件的显示和隐藏
+    self.collectionView.footerHidden = (self.totalCount == self.deals.count);
+    
+    // 控制"没有数据"的提醒
+    self.noDataView.hidden = (self.deals.count != 0);
     return self.deals.count;
 }
 
@@ -183,8 +205,6 @@ static NSString * const reuseIdentifier = @"deal";
     
     // Configure the cell
     cell.deal = self.deals[indexPath.row];
-    // 控制"没有数据"的提醒
-    self.noDataView.hidden = (self.deals.count != 0);
     return cell;
 }
 

@@ -28,8 +28,13 @@
 #import "MJRefresh.h"
 #import "BaseNavigationController.h"
 #import "TFSearchViewController.h"
+#import "AwesomeMenu.h"
+#import "UIView+AutoLayout.h"
+#import "TFCollectViewController.h"
+#import "TFRecentViewController.h"
 
-@interface HomeViewController ()
+
+@interface HomeViewController ()<AwesomeMenuDelegate>
 /**
  *  分类item
  */
@@ -76,25 +81,61 @@
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
+    // Do any additional setup after loading the view.
+ 
+    [self setupNotifications];
+    
+    //设置导航栏内容
+    [self setupLeftNav];
+    [self setupRightNav];
+    
+    //创建awesomeMenu
+    [self setupAwesomeMenu];
+}
+
+- (void)setupAwesomeMenu
+{
+    // 1.中间的item
+    AwesomeMenuItem *startItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"icon_pathMenu_background_highlighted"] highlightedImage:nil ContentImage:[UIImage imageNamed:@"icon_pathMenu_mainMine_normal"] highlightedContentImage:nil];
+    
+    // 2.周边的item
+    AwesomeMenuItem *item0 = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"] highlightedImage:nil ContentImage:[UIImage imageNamed:@"icon_pathMenu_collect_normal"] highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_collect_highlighted"]];
+    AwesomeMenuItem *item1 = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"] highlightedImage:nil ContentImage:[UIImage imageNamed:@"icon_pathMenu_collect_normal"] highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_collect_highlighted"]];
+    AwesomeMenuItem *item2 = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"] highlightedImage:nil ContentImage:[UIImage imageNamed:@"icon_pathMenu_collect_normal"] highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_collect_highlighted"]];
+    AwesomeMenuItem *item3 = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"] highlightedImage:nil ContentImage:[UIImage imageNamed:@"icon_pathMenu_collect_normal"] highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_collect_highlighted"]];
+    
+    NSArray *items = @[item0, item1, item2, item3];
+    AwesomeMenu *menu = [[AwesomeMenu alloc] initWithFrame:CGRectZero startItem:startItem optionMenus:items];
+    menu.alpha = 0.5;
+    // 设置菜单的活动范围
+    menu.menuWholeAngle = M_PI_2;
+    // 设置开始按钮的位置
+    menu.startPoint = CGPointMake(50, 150);
+    // 设置代理
+    menu.delegate = self;
+    // 不要旋转中间按钮
+    menu.rotateAddButton = NO;
+    [self.view addSubview:menu];
+    
+    // 设置菜单永远在左下角
+    [menu autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:0];
+    [menu autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:0];
+    [menu autoSetDimensionsToSize:CGSizeMake(200, 200)];
+}
+
+-(void)setupNotifications
+{
     //监听城市选择的通知
     [TFNotificationCenter addObserver:self selector:@selector(cityChage:) name:TFCityDidSelectNotification object:nil];
     
     //监听排序改变
     [TFNotificationCenter addObserver:self selector:@selector(sortChage:) name:TFSortDidSelectNotification object:nil];
-
+    
     //监听排序改变
     [TFNotificationCenter addObserver:self selector:@selector(categoryChage:) name:TFCategoryDidSelectNotification object:nil];
     
     //监听区域改变
     [TFNotificationCenter addObserver:self selector:@selector(regionChage:) name:TFReginDidSelectNotification object:nil];
-
-    
-    // Do any additional setup after loading the view.
-    
-    //设置导航栏内容
-    [self setupLeftNav];
-    [self setupRightNav];
 }
 
 -(void)setupLeftNav
@@ -303,6 +344,47 @@
 
 
 
+#pragma mark - AwesomeMenuDelegate
+- (void)awesomeMenuWillAnimateOpen:(AwesomeMenu *)menu
+{
+    // 替换菜单的图片
+    menu.contentImage = [UIImage imageNamed:@"icon_pathMenu_cross_normal"];
+    
+    // 完全显示
+    menu.alpha = 1.0;
+}
+
+- (void)awesomeMenuWillAnimateClose:(AwesomeMenu *)menu
+{
+    // 替换菜单的图片
+    menu.contentImage = [UIImage imageNamed:@"icon_pathMenu_mainMine_normal"];
+    
+    // 半透明显示
+    menu.alpha = 0.5;
+}
+
+- (void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx
+{
+    // 替换菜单的图片
+    menu.contentImage = [UIImage imageNamed:@"icon_pathMenu_mainMine_normal"];
+
+    switch (idx) {
+        case 0: { // 收藏
+            BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:[[TFCollectViewController alloc] init]];
+            [self presentViewController:nav animated:YES completion:nil];
+            break;
+        }
+            
+        case 1: { // 最近访问记录
+            BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:[[TFRecentViewController alloc] init]];
+            [self presentViewController:nav animated:YES completion:nil];
+            break;
+        }
+            
+        default:
+            break;
+    }
+}
 
 
 -(void)dealloc
