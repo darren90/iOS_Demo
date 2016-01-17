@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TFDetailsViewController.h"
 
-@interface HomeViewController : UICollectionViewController
+@interface HomeViewController : TFDetailsViewController
 
 @end

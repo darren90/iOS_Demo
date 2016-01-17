@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TFDetailsViewController.h"
 
-@interface TFSearchViewController : UIViewController
+@interface TFSearchViewController : TFDetailsViewController
 
 @end

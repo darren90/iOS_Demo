@@ -44,6 +44,7 @@
 		FE0621B51C47D19100AA13A0 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0621AC1C47D19100AA13A0 /* UIScrollView+MJRefresh.m */; };
 		FE0621B61C47D19100AA13A0 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0621AE1C47D19100AA13A0 /* UIView+MJExtension.m */; };
 		FE328B7F1C4BD07900B71B86 /* TFSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE328B7E1C4BD07900B71B86 /* TFSearchViewController.m */; };
+		FE328B831C4BD4A800B71B86 /* TFDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE328B821C4BD4A800B71B86 /* TFDetailsViewController.m */; };
 		FE80F0FF1C401191000AD3FF /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F0D11C401191000AD3FF /* MASCompositeConstraint.m */; };
 		FE80F1001C401191000AD3FF /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F0D41C401191000AD3FF /* MASConstraint.m */; };
 		FE80F1011C401191000AD3FF /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F0D61C401191000AD3FF /* MASConstraintMaker.m */; };
@@ -190,6 +191,8 @@
 		FE0621AE1C47D19100AA13A0 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		FE328B7D1C4BD07900B71B86 /* TFSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFSearchViewController.h; sourceTree = "<group>"; };
 		FE328B7E1C4BD07900B71B86 /* TFSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFSearchViewController.m; sourceTree = "<group>"; };
+		FE328B811C4BD4A800B71B86 /* TFDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFDetailsViewController.h; sourceTree = "<group>"; };
+		FE328B821C4BD4A800B71B86 /* TFDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFDetailsViewController.m; sourceTree = "<group>"; };
 		FE80F0D01C401191000AD3FF /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		FE80F0D11C401191000AD3FF /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
 		FE80F0D21C401191000AD3FF /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -425,6 +428,15 @@
 				FE328B7E1C4BD07900B71B86 /* TFSearchViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		FE328B801C4BD48600B71B86 /* Conttroller */ = {
+			isa = PBXGroup;
+			children = (
+				FE328B811C4BD4A800B71B86 /* TFDetailsViewController.h */,
+				FE328B821C4BD4A800B71B86 /* TFDetailsViewController.m */,
+			);
+			path = Conttroller;
 			sourceTree = "<group>";
 		};
 		FE80F0CE1C401191000AD3FF /* Lib */ = {
@@ -674,6 +686,7 @@
 		FEE3D37D1C3FEECD0011628B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FE328B801C4BD48600B71B86 /* Conttroller */,
 				FE80F0CE1C401191000AD3FF /* Lib */,
 				FEE3D37E1C3FEECD0011628B /* BaseNavigationController.h */,
 				FEE3D37F1C3FEECD0011628B /* BaseNavigationController.m */,
@@ -851,6 +864,7 @@
 				FE06218C1C4682A700AA13A0 /* UIImage+GIF.m in Sources */,
 				FE06214D1C452B5800AA13A0 /* TFSortViewController.m in Sources */,
 				FE06214A1C452ABB00AA13A0 /* TFSort.m in Sources */,
+				FE328B831C4BD4A800B71B86 /* TFDetailsViewController.m in Sources */,
 				FE80F0FF1C401191000AD3FF /* MASCompositeConstraint.m in Sources */,
 				FE80F1181C413CE1000AD3FF /* MTHomeDropdownSubCell.m in Sources */,
 				FEE3D3841C3FEECD0011628B /* UIView+Extension.m in Sources */,
