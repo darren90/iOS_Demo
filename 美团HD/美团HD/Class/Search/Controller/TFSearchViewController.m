@@ -54,7 +54,7 @@
 #pragma mark - 实现父类提供的方法
 - (void)setupParams:(NSMutableDictionary *)params
 {
-    params[@"city"] = @"北京";
+    params[@"city"] = self.cityName;
     UISearchBar *bar = (UISearchBar *)self.navigationItem.titleView;
     params[@"keyword"] = bar.text;
 }

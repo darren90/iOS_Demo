@@ -11,4 +11,7 @@
 
 @interface TFSearchViewController : TFDetailsViewController
 
+@property (nonatomic,copy)NSString * cityName;
+
+
 @end

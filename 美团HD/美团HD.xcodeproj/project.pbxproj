@@ -49,6 +49,8 @@
 		FE328B8A1C4BE24D00B71B86 /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FE328B881C4BE24D00B71B86 /* AwesomeMenuItem.m */; };
 		FE328B9D1C4BF07100B71B86 /* TFRecentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE328B9C1C4BF07100B71B86 /* TFRecentViewController.m */; };
 		FE328BA01C4BF08100B71B86 /* TFCollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE328B9F1C4BF08100B71B86 /* TFCollectViewController.m */; };
+		FE328BAB1C4BF80800B71B86 /* TFDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE328BA91C4BF80800B71B86 /* TFDetailViewController.m */; };
+		FE328BAC1C4BF80800B71B86 /* TFDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE328BAA1C4BF80800B71B86 /* TFDetailViewController.xib */; };
 		FE80F0FF1C401191000AD3FF /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F0D11C401191000AD3FF /* MASCompositeConstraint.m */; };
 		FE80F1001C401191000AD3FF /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F0D41C401191000AD3FF /* MASConstraint.m */; };
 		FE80F1011C401191000AD3FF /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F0D61C401191000AD3FF /* MASConstraintMaker.m */; };
@@ -205,6 +207,9 @@
 		FE328B9C1C4BF07100B71B86 /* TFRecentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFRecentViewController.m; sourceTree = "<group>"; };
 		FE328B9E1C4BF08100B71B86 /* TFCollectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFCollectViewController.h; sourceTree = "<group>"; };
 		FE328B9F1C4BF08100B71B86 /* TFCollectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFCollectViewController.m; sourceTree = "<group>"; };
+		FE328BA81C4BF80800B71B86 /* TFDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFDetailViewController.h; sourceTree = "<group>"; };
+		FE328BA91C4BF80800B71B86 /* TFDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFDetailViewController.m; sourceTree = "<group>"; };
+		FE328BAA1C4BF80800B71B86 /* TFDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TFDetailViewController.xib; sourceTree = "<group>"; };
 		FE80F0D01C401191000AD3FF /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		FE80F0D11C401191000AD3FF /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
 		FE80F0D21C401191000AD3FF /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -496,6 +501,24 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		FE328BA31C4BF72C00B71B86 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				FE328BA41C4BF72C00B71B86 /* Controller */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		FE328BA41C4BF72C00B71B86 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FE328BA81C4BF80800B71B86 /* TFDetailViewController.h */,
+				FE328BA91C4BF80800B71B86 /* TFDetailViewController.m */,
+				FE328BAA1C4BF80800B71B86 /* TFDetailViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		FE80F0CE1C401191000AD3FF /* Lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -649,6 +672,7 @@
 				FEE3D3801C3FEECD0011628B /* TFConst.h */,
 				FEE3D3811C3FEECD0011628B /* TFConst.m */,
 				FEE3D37D1C3FEECD0011628B /* Main */,
+				FE328BA31C4BF72C00B71B86 /* Detail */,
 				FE328B781C4BCECA00B71B86 /* Search */,
 				FE328B8B1C4BF01D00B71B86 /* Collecct */,
 				FE328B911C4BF01D00B71B86 /* Recent */,
@@ -879,6 +903,7 @@
 				FEE3D3991C3FFC8F0011628B /* cityGroups.plist in Resources */,
 				FEE3D3321C3EA7920011628B /* Assets.xcassets in Resources */,
 				FEE3D3981C3FFC8F0011628B /* cities.plist in Resources */,
+				FE328BAC1C4BF80800B71B86 /* TFDetailViewController.xib in Resources */,
 				FEE3D3971C3FFC8F0011628B /* categories.plist in Resources */,
 				FEE3D38E1C3FF0CF0011628B /* TFHomeDropdown.xib in Resources */,
 			);
@@ -968,6 +993,7 @@
 				FE80F1101C401191000AD3FF /* NSObject+MJCoding.m in Sources */,
 				FEE3D39D1C4007A50011628B /* TFCategory.m in Sources */,
 				FE0621B11C47D19100AA13A0 /* MJRefreshConst.m in Sources */,
+				FE328BAB1C4BF80800B71B86 /* TFDetailViewController.m in Sources */,
 				FE0621861C4682A700AA13A0 /* SDWebImageDecoder.m in Sources */,
 				FE328B891C4BE24D00B71B86 /* AwesomeMenu.m in Sources */,
 				FE80F1051C401191000AD3FF /* NSArray+MASAdditions.m in Sources */,

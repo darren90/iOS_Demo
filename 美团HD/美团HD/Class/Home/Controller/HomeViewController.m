@@ -181,8 +181,14 @@
 #pragma mark - 点击搜索按钮
 - (void)search
 {
-    BaseNavigationController  *nav = [[BaseNavigationController alloc] initWithRootViewController:[[TFSearchViewController alloc] init]];
-    [self presentViewController:nav animated:YES completion:nil];
+    if (self.selectedCityName) {
+        TFSearchViewController *search = [[TFSearchViewController alloc] init];
+        search.cityName = self.selectedCityName;
+        BaseNavigationController  *nav = [[BaseNavigationController alloc] initWithRootViewController:search];
+        [self presentViewController:nav animated:YES completion:nil];
+    }else{
+        [MBProgressHUD showError:@"请选择城市后进行搜索" toView:self.view];
+    }
 }
 
 -(void)categoryClick

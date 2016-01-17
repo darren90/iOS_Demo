@@ -24,6 +24,7 @@
 #import "MBProgressHUD+MJ.h"
 #import "MJRefresh.h"
 #import "UIView+AutoLayout.h"
+#import "TFDetailViewController.h"
 
 
 @interface TFDetailsViewController ()<DPRequestDelegate>
@@ -206,6 +207,12 @@ static NSString * const reuseIdentifier = @"deal";
     // Configure the cell
     cell.deal = self.deals[indexPath.row];
     return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    TFDeal *deal = self.deals[indexPath.row];
+    
 }
 
 - (UIImageView *)noDataView
