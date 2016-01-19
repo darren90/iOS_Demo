@@ -131,6 +131,7 @@
                                         <constraint firstAttribute="width" constant="30" id="qK6-C3-bYt"/>
                                     </constraints>
                                     <state key="normal" image="icon_collect"/>
+                                    <state key="selected" image="icon_collect_highlighted"/>
                                     <state key="highlighted" image="icon_collect_highlighted"/>
                                     <connections>
                                         <action selector="collect" destination="-1" eventType="touchUpInside" id="YZL-XO-o1i"/>

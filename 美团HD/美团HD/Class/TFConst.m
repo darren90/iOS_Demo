@@ -21,3 +21,8 @@ NSString *const TFSelectSortName = @"TFSelectSortName";
  NSString *const TFReginDidSelectNotification = @"TFReginDidSelectNotification";
  NSString *const TFSelectReginName = @"TFSelectReginNam";
  NSString *const TFSelectSubReginName = @"TFSelectSubReginName";
+
+//收藏
+NSString *const MTCollectStateDidChangeNotification = @"MTCollectStateDidChangeNotification";
+NSString *const MTIsCollectKey = @"MTIsCollectKey";
+NSString *const MTCollectDealKey = @"MTCollectDealKey";

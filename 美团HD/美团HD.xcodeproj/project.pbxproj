@@ -52,6 +52,13 @@
 		FE328BAB1C4BF80800B71B86 /* TFDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE328BA91C4BF80800B71B86 /* TFDetailViewController.m */; };
 		FE328BAC1C4BF80800B71B86 /* TFDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE328BAA1C4BF80800B71B86 /* TFDetailViewController.xib */; };
 		FE328BB01C4E154700B71B86 /* MTRestrictions.m in Sources */ = {isa = PBXBuildFile; fileRef = FE328BAF1C4E154700B71B86 /* MTRestrictions.m */; };
+		FE328BBD1C4E2A7D00B71B86 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = FE328BB31C4E2A7D00B71B86 /* FMDatabase.m */; };
+		FE328BBE1C4E2A7D00B71B86 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FE328BB51C4E2A7D00B71B86 /* FMDatabaseAdditions.m */; };
+		FE328BBF1C4E2A7D00B71B86 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = FE328BB71C4E2A7D00B71B86 /* FMDatabasePool.m */; };
+		FE328BC01C4E2A7D00B71B86 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FE328BB91C4E2A7D00B71B86 /* FMDatabaseQueue.m */; };
+		FE328BC11C4E2A7D00B71B86 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = FE328BBC1C4E2A7D00B71B86 /* FMResultSet.m */; };
+		FE328BC51C4E2A8A00B71B86 /* MTDealTool.m in Sources */ = {isa = PBXBuildFile; fileRef = FE328BC41C4E2A8A00B71B86 /* MTDealTool.m */; };
+		FE328BC71C4E2AE600B71B86 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FE328BC61C4E2AE600B71B86 /* libsqlite3.tbd */; };
 		FE80F0FF1C401191000AD3FF /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F0D11C401191000AD3FF /* MASCompositeConstraint.m */; };
 		FE80F1001C401191000AD3FF /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F0D41C401191000AD3FF /* MASConstraint.m */; };
 		FE80F1011C401191000AD3FF /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F0D61C401191000AD3FF /* MASConstraintMaker.m */; };
@@ -213,6 +220,20 @@
 		FE328BAA1C4BF80800B71B86 /* TFDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TFDetailViewController.xib; sourceTree = "<group>"; };
 		FE328BAE1C4E154700B71B86 /* MTRestrictions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTRestrictions.h; sourceTree = "<group>"; };
 		FE328BAF1C4E154700B71B86 /* MTRestrictions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTRestrictions.m; sourceTree = "<group>"; };
+		FE328BB21C4E2A7D00B71B86 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		FE328BB31C4E2A7D00B71B86 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		FE328BB41C4E2A7D00B71B86 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		FE328BB51C4E2A7D00B71B86 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		FE328BB61C4E2A7D00B71B86 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		FE328BB71C4E2A7D00B71B86 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		FE328BB81C4E2A7D00B71B86 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		FE328BB91C4E2A7D00B71B86 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		FE328BBA1C4E2A7D00B71B86 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		FE328BBB1C4E2A7D00B71B86 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		FE328BBC1C4E2A7D00B71B86 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		FE328BC31C4E2A8A00B71B86 /* MTDealTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTDealTool.h; sourceTree = "<group>"; };
+		FE328BC41C4E2A8A00B71B86 /* MTDealTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTDealTool.m; sourceTree = "<group>"; };
+		FE328BC61C4E2AE600B71B86 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		FE80F0D01C401191000AD3FF /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		FE80F0D11C401191000AD3FF /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
 		FE80F0D21C401191000AD3FF /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -326,6 +347,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE328BC71C4E2AE600B71B86 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,9 +544,37 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		FE328BB11C4E2A7D00B71B86 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				FE328BB21C4E2A7D00B71B86 /* FMDatabase.h */,
+				FE328BB31C4E2A7D00B71B86 /* FMDatabase.m */,
+				FE328BB41C4E2A7D00B71B86 /* FMDatabaseAdditions.h */,
+				FE328BB51C4E2A7D00B71B86 /* FMDatabaseAdditions.m */,
+				FE328BB61C4E2A7D00B71B86 /* FMDatabasePool.h */,
+				FE328BB71C4E2A7D00B71B86 /* FMDatabasePool.m */,
+				FE328BB81C4E2A7D00B71B86 /* FMDatabaseQueue.h */,
+				FE328BB91C4E2A7D00B71B86 /* FMDatabaseQueue.m */,
+				FE328BBA1C4E2A7D00B71B86 /* FMDB.h */,
+				FE328BBB1C4E2A7D00B71B86 /* FMResultSet.h */,
+				FE328BBC1C4E2A7D00B71B86 /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
+		FE328BC21C4E2A8A00B71B86 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				FE328BC31C4E2A8A00B71B86 /* MTDealTool.h */,
+				FE328BC41C4E2A8A00B71B86 /* MTDealTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		FE80F0CE1C401191000AD3FF /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				FE328BB11C4E2A7D00B71B86 /* fmdb */,
 				FE328B841C4BE24D00B71B86 /* AwesomeMenu */,
 				FE06219E1C47D19100AA13A0 /* MJRefresh */,
 				FE0621951C46948E00AA13A0 /* MBProgressHUD */,
@@ -608,6 +658,7 @@
 		FEE3D3191C3EA7920011628B = {
 			isa = PBXGroup;
 			children = (
+				FE328BC61C4E2AE600B71B86 /* libsqlite3.tbd */,
 				FEE3D3241C3EA7920011628B /* 美团HD */,
 				FEE3D33E1C3EA7920011628B /* 美团HDTests */,
 				FEE3D3491C3EA7920011628B /* 美团HDUITests */,
@@ -775,6 +826,7 @@
 		FEE3D37D1C3FEECD0011628B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FE328BC21C4E2A8A00B71B86 /* Tool */,
 				FE328B801C4BD48600B71B86 /* Conttroller */,
 				FE80F0CE1C401191000AD3FF /* Lib */,
 				FEE3D37E1C3FEECD0011628B /* BaseNavigationController.h */,
@@ -939,8 +991,10 @@
 				FE0621891C4682A700AA13A0 /* SDWebImageManager.m in Sources */,
 				FE80F12E1C42226F000AD3FF /* TFregion.m in Sources */,
 				FE06218A1C4682A700AA13A0 /* SDWebImagePrefetcher.m in Sources */,
+				FE328BC51C4E2A8A00B71B86 /* MTDealTool.m in Sources */,
 				FE80F1121C401191000AD3FF /* NSObject+MJMember.m in Sources */,
 				FE06218E1C4682A700AA13A0 /* UIImage+WebP.m in Sources */,
+				FE328BBD1C4E2A7D00B71B86 /* FMDatabase.m in Sources */,
 				FEE3D3911C3FF8D10011628B /* CategoryController.m in Sources */,
 				FE0621821C4682A700AA13A0 /* MKAnnotationView+WebCache.m in Sources */,
 				FEE3D3881C3FEECD0011628B /* BaseNavigationController.m in Sources */,
@@ -952,6 +1006,7 @@
 				FE0621871C4682A700AA13A0 /* SDWebImageDownloader.m in Sources */,
 				FE0621881C4682A700AA13A0 /* SDWebImageDownloaderOperation.m in Sources */,
 				FE06218C1C4682A700AA13A0 /* UIImage+GIF.m in Sources */,
+				FE328BC11C4E2A7D00B71B86 /* FMResultSet.m in Sources */,
 				FE06214D1C452B5800AA13A0 /* TFSortViewController.m in Sources */,
 				FE06214A1C452ABB00AA13A0 /* TFSort.m in Sources */,
 				FE328B831C4BD4A800B71B86 /* TFDetailsViewController.m in Sources */,
@@ -981,6 +1036,7 @@
 				FE80F1171C413CE1000AD3FF /* MTHomeDropdownMainCell.m in Sources */,
 				FE80F1961C43EAFA000AD3FF /* TFMetaTool.m in Sources */,
 				FE0621541C4546BF00AA13A0 /* DPAPI.m in Sources */,
+				FE328BBE1C4E2A7D00B71B86 /* FMDatabaseAdditions.m in Sources */,
 				FE80F1061C401191000AD3FF /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				FE80F10B1C401191000AD3FF /* MJIvar.m in Sources */,
 				FE80F1021C401191000AD3FF /* MASLayoutConstraint.m in Sources */,
@@ -1000,6 +1056,7 @@
 				FE0621B11C47D19100AA13A0 /* MJRefreshConst.m in Sources */,
 				FE328BAB1C4BF80800B71B86 /* TFDetailViewController.m in Sources */,
 				FE0621861C4682A700AA13A0 /* SDWebImageDecoder.m in Sources */,
+				FE328BBF1C4E2A7D00B71B86 /* FMDatabasePool.m in Sources */,
 				FE328B891C4BE24D00B71B86 /* AwesomeMenu.m in Sources */,
 				FE80F1051C401191000AD3FF /* NSArray+MASAdditions.m in Sources */,
 				FE80F1091C401191000AD3FF /* MJConst.m in Sources */,
@@ -1017,6 +1074,7 @@
 				FE80F1271C421556000AD3FF /* TFCityViewController.m in Sources */,
 				FE80F1111C401191000AD3FF /* NSObject+MJKeyValue.m in Sources */,
 				FE80F1001C401191000AD3FF /* MASConstraint.m in Sources */,
+				FE328BC01C4E2A7D00B71B86 /* FMDatabaseQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,8 +10,15 @@
 #import "MJExtension.h"
 
 @implementation TFDeal
+MJCodingImplementation
 - (NSDictionary *)replacedKeyFromPropertyName
 {
     return @{@"desc" : @"description"};
+}
+
+
+- (BOOL)isEqual:(TFDeal *)other
+{
+    return [self.deal_id isEqual:other.deal_id];
 }
 @end

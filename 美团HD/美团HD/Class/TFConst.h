@@ -35,3 +35,8 @@ extern NSString *const TFSelectReginName;
 extern NSString *const TFSelectSubReginName;
 
 
+
+
+extern NSString *const MTCollectStateDidChangeNotification;
+extern NSString *const MTIsCollectKey;
+extern NSString *const MTCollectDealKey;
