@@ -92,7 +92,7 @@ static NSString * const reuseIdentifier = @"deal";
     // Do any additional setup after loading the view.
     
     //第一页的收藏数据
-    [self.deals addObjectsFromArray:[MTDealTool collectDeals:1]];
+//    [self.deals addObjectsFromArray:[MTDealTool collectDeals:1]];
     
     [TFNotificationCenter addObserver:self selector:@selector(collectStateChange:) name:MTCollectStateDidChangeNotification object:nil];
     
@@ -118,28 +118,18 @@ static NSString * const reuseIdentifier = @"deal";
 
 -(void)collectStateChange:(NSNotification *)notification
 {
-    TFDeal *deal = notification.userInfo[MTCollectDealKey];
-    if ( [notification.userInfo[MTIsCollectKey] boolValue]) {//收藏成功
-        [self.deals insertObject:deal atIndex:0];
-    }else{//取消收藏成功
-        [self.deals removeObject:deal];
-    }
-    [self.collectionView reloadData];
+//    TFDeal *deal = notification.userInfo[MTCollectDealKey];
+//    if ( [notification.userInfo[MTIsCollectKey] boolValue]) {//收藏成功
+//        [self.deals insertObject:deal atIndex:0];
+//    }else{//取消收藏成功
+//        [self.deals removeObject:deal];
+//    }
+//    [self.collectionView reloadData];
     
+    [self.deals removeAllObjects];
     
-//    //    if ([notification.userInfo[MTIsCollectKey] boolValue]) {
-//    //        // 收藏成功
-//    //        [self.deals insertObject:notification.userInfo[MTCollectDealKey] atIndex:0];
-//    //    } else {
-//    //        // 取消收藏成功
-//    //        [self.deals removeObject:notification.userInfo[MTCollectDealKey]];
-//    //    }
-//    //
-//    //    [self.collectionView reloadData];
-//    [self.deals removeAllObjects];
-//    
-//    self.currentPage = 0;
-//    [self loadMoreDeals];
+    self.currentPage = 0;
+    [self loadMoreDeals];
 }
 
 - (void)back {
@@ -169,8 +159,10 @@ static NSString * const reuseIdentifier = @"deal";
     return _noDataView;
 }
 
-
-
+#pragma mark - navBar
+/**
+ *  编辑
+ */
 - (void)edit:(UIBarButtonItem *)item
 {
     if ([item.title isEqualToString:MTEdit]) {
@@ -180,6 +172,22 @@ static NSString * const reuseIdentifier = @"deal";
         item.title = MTEdit;
         self.navigationItem.leftBarButtonItems = @[self.backItem];
     }
+}
+
+
+-(void)selectAll
+{
+    
+}
+
+-(void)remove
+{
+    
+}
+
+-(void)unselectAll
+{
+    
 }
 
 - (void)loadMoreDeals

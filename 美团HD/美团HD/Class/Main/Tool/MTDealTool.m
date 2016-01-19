@@ -28,7 +28,7 @@ static FMDatabase *_db;
 
 + (NSArray *)collectDeals:(int)page
 {
-    int size = 20;
+    int size = 3;
     int pos = (page - 1) * size;
     FMResultSet *set = [_db executeQueryWithFormat:@"SELECT * FROM t_collect_deal ORDER BY id DESC LIMIT %d,%d;", pos, size];
     NSMutableArray *deals = [NSMutableArray array];
