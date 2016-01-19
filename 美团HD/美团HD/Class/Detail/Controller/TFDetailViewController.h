@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class TFDeal;
 @interface TFDetailViewController : UIViewController
+
+@property (nonatomic,strong)TFDeal *deail;
 
 @end

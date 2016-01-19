@@ -29,7 +29,8 @@
 @property (copy, nonatomic) NSString *s_image_url;
 /** string	团购发布上线日期 */
 @property (nonatomic, copy) NSString *publish_date;
-
+/** 详情url */
+@property (nonatomic, copy) NSString *deal_h5_url;
 /**
  {
  "status": "OK",

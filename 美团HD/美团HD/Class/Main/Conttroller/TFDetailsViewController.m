@@ -212,7 +212,9 @@ static NSString * const reuseIdentifier = @"deal";
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     TFDeal *deal = self.deals[indexPath.row];
-    
+    TFDetailViewController *detail = [[TFDetailViewController alloc]init];
+    detail.deail = deal;
+    [self presentViewController:detail animated:YES completion:nil];
 }
 
 - (UIImageView *)noDataView
