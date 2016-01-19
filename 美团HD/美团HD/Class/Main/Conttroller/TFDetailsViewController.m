@@ -213,7 +213,7 @@ static NSString * const reuseIdentifier = @"deal";
 {
     TFDeal *deal = self.deals[indexPath.row];
     TFDetailViewController *detail = [[TFDetailViewController alloc]init];
-    detail.deail = deal;
+    detail.deal = deal;
     [self presentViewController:detail animated:YES completion:nil];
 }
 

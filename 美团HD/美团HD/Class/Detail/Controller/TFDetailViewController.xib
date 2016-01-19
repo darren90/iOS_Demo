@@ -8,8 +8,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TFDetailViewController">
             <connections>
+                <outlet property="collectButton" destination="wla-3M-Mn7" id="Ebt-2B-VPd"/>
                 <outlet property="iconView" destination="Z40-Mn-AGm" id="Vq5-zZ-aud"/>
+                <outlet property="leftTimeButton" destination="WPn-5X-7V9" id="dnT-Le-bnK"/>
                 <outlet property="loadingView" destination="ps2-Uz-YRL" id="IFt-kI-fN9"/>
+                <outlet property="refundableAnyTimeButton" destination="2bL-B5-bDJ" id="qj0-nC-MM5"/>
+                <outlet property="refundableExpireButton" destination="vKg-x4-foY" id="fby-Pv-Inf"/>
                 <outlet property="subTitleLabel" destination="gOJ-YF-4iC" id="CVn-ms-hIO"/>
                 <outlet property="titleLabel" destination="YOv-dK-paq" id="mjZ-wb-nzq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -105,6 +109,9 @@
                                     </constraints>
                                     <state key="normal" title="立即抢购" backgroundImage="bg_deal_purchaseButton"/>
                                     <state key="highlighted" backgroundImage="bg_deal_purchaseButton_highlighted"/>
+                                    <connections>
+                                        <action selector="buy" destination="-1" eventType="touchUpInside" id="F4P-QS-esw"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hK-pL-QQH">
                                     <rect key="frame" x="226" y="227" width="30" height="30"/>
@@ -113,6 +120,9 @@
                                         <constraint firstAttribute="width" constant="30" id="WzZ-nS-xFX"/>
                                     </constraints>
                                     <state key="normal" title="分享"/>
+                                    <connections>
+                                        <action selector="share" destination="-1" eventType="touchUpInside" id="qCz-KD-1WI"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wla-3M-Mn7">
                                     <rect key="frame" x="168" y="227" width="30" height="30"/>
@@ -122,10 +132,37 @@
                                     </constraints>
                                     <state key="normal" image="icon_collect"/>
                                     <state key="highlighted" image="icon_collect_highlighted"/>
+                                    <connections>
+                                        <action selector="collect" destination="-1" eventType="touchUpInside" id="YZL-XO-o1i"/>
+                                    </connections>
                                 </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgt-lx-Wr1">
                                     <rect key="frame" x="0.0" y="257" width="370" height="80"/>
                                     <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bL-B5-bDJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="185" height="40"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <state key="normal" title="支持随时退" image="icon_order_unrefundable">
+                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            </state>
+                                            <state key="selected" title="支持过期退" image="icon_order_refundable">
+                                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKg-x4-foY">
+                                            <rect key="frame" x="0.0" y="40" width="185" height="40"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <state key="normal" title="支持随时退" image="icon_order_unrefundable">
+                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            </state>
+                                            <state key="selected" title="支持过期退" image="icon_order_refundable">
+                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            </state>
+                                        </button>
                                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPn-5X-7V9">
                                             <rect key="frame" x="185" y="0.0" width="185" height="40"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -146,30 +183,6 @@
                                             </state>
                                             <state key="selected" title="支持过期退" image="icon_order_refundable">
                                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            </state>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKg-x4-foY">
-                                            <rect key="frame" x="0.0" y="40" width="185" height="40"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <state key="normal" title="支持随时退" image="icon_order_unrefundable">
-                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            </state>
-                                            <state key="selected" title="支持过期退" image="icon_order_refundable">
-                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            </state>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bL-B5-bDJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="185" height="40"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <state key="normal" title="支持随时退" image="icon_order_unrefundable">
-                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            </state>
-                                            <state key="selected" title="支持过期退" image="icon_order_refundable">
-                                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                         </button>
                                     </subviews>

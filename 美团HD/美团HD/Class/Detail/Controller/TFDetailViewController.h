@@ -11,6 +11,6 @@
 @class TFDeal;
 @interface TFDetailViewController : UIViewController
 
-@property (nonatomic,strong)TFDeal *deail;
+@property (nonatomic,strong)TFDeal *deal;
 
 @end
