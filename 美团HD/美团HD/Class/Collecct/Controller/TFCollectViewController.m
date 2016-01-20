@@ -169,12 +169,19 @@ static NSString * const reuseIdentifier = @"deal";
         item.title = MTDone;
         self.navigationItem.leftBarButtonItems = @[self.backItem, self.selectAllItem, self.unselectAllItem, self.removeItem];
         
-        //出现蒙版
-        self.collectionView 
+        //出现蒙版 进入编辑状态
+        for (MTDealCell *cell  in [self.collectionView visibleCells]) {
+            cell.editing = YES;
+        }
         
     } else {
         item.title = MTEdit;
         self.navigationItem.leftBarButtonItems = @[self.backItem];
+        
+        //取消编辑状态
+        for (MTDealCell *cell  in [self.collectionView visibleCells]) {
+            cell.editing = NO;
+        }
     }
 }
 

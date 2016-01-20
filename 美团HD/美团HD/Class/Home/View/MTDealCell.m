@@ -75,8 +75,8 @@
 {
     _editing = editing;
     
-    self.cover.hidden = NO;
-    self.selectImg.hidden = NO;
+    self.cover.hidden = !self.cover.hidden;
+//    self.selectImg.hidden = NO;
 }
 
 - (void)drawRect:(CGRect)rect
