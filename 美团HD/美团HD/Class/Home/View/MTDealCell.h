@@ -13,4 +13,8 @@
 @interface MTDealCell : UICollectionViewCell
 @property (nonatomic, strong) TFDeal *deal;
 
+/**
+ *  是否正在编辑
+ */
+@property (nonatomic,assign,getter=isEditing)BOOL editing;
 @end

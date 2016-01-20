@@ -93,13 +93,20 @@
                             <constraint firstAttribute="height" constant="24" id="wjN-Ky-uCh"/>
                         </constraints>
                     </imageView>
-                    <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHm-FP-X09" userLabel="遮盖">
+                    <button hidden="YES" opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHm-FP-X09" userLabel="遮盖">
                         <rect key="frame" x="0.0" y="0.0" width="305" height="305"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
                             <action selector="coverClick:" destination="leD-CM-6Zm" eventType="touchUpInside" id="KeI-uR-eLW"/>
                         </connections>
                     </button>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_choosed" translatesAutoresizingMaskIntoConstraints="NO" id="jDN-vg-npM">
+                        <rect key="frame" x="279" y="279" width="26" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="26" id="Nnr-hD-WrW"/>
+                            <constraint firstAttribute="height" constant="26" id="krb-15-lkH"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
@@ -114,25 +121,30 @@
                 <constraint firstAttribute="trailing" secondItem="yHm-FP-X09" secondAttribute="trailing" id="WOA-zy-QKO"/>
                 <constraint firstItem="L2U-Fs-ESo" firstAttribute="top" secondItem="leD-CM-6Zm" secondAttribute="top" constant="5" id="bdt-Mb-Mlb"/>
                 <constraint firstItem="a5S-9d-0ff" firstAttribute="top" secondItem="L2U-Fs-ESo" secondAttribute="bottom" constant="10" id="gem-QM-9UQ"/>
+                <constraint firstAttribute="trailing" secondItem="jDN-vg-npM" secondAttribute="trailing" id="k2b-Et-dJr"/>
                 <constraint firstItem="yHm-FP-X09" firstAttribute="leading" secondItem="leD-CM-6Zm" secondAttribute="leading" id="pZj-W4-iw0"/>
+                <constraint firstAttribute="bottom" secondItem="jDN-vg-npM" secondAttribute="bottom" id="wVE-xS-2Np"/>
                 <constraint firstItem="AhP-s0-XNA" firstAttribute="leading" secondItem="leD-CM-6Zm" secondAttribute="leading" id="wtM-dx-LiU"/>
                 <constraint firstAttribute="bottom" secondItem="yHm-FP-X09" secondAttribute="bottom" id="x7F-zS-7NZ"/>
                 <constraint firstItem="L2U-Fs-ESo" firstAttribute="leading" secondItem="leD-CM-6Zm" secondAttribute="leading" constant="5" id="yeU-T0-pyo"/>
             </constraints>
             <size key="customSize" width="305" height="305"/>
             <connections>
+                <outlet property="cover" destination="yHm-FP-X09" id="6Oy-fC-nis"/>
                 <outlet property="currentPriceLabel" destination="Svs-aR-Kgo" id="QW5-sZ-dlb"/>
                 <outlet property="dealNewView" destination="AhP-s0-XNA" id="bKJ-gq-vfd"/>
                 <outlet property="descLabel" destination="E92-eQ-xc2" id="v7P-Ig-Abh"/>
                 <outlet property="imageView" destination="L2U-Fs-ESo" id="Yiw-0f-gNm"/>
                 <outlet property="listPriceLabel" destination="IEy-mo-ddb" id="LsZ-qX-79T"/>
                 <outlet property="purchaseCountLabel" destination="zjf-mc-esg" id="2ee-Bj-vNt"/>
+                <outlet property="selectImg" destination="jDN-vg-npM" id="ZZk-0U-hLz"/>
                 <outlet property="titleLabel" destination="FXO-D1-08B" id="TtD-vw-nnY"/>
             </connections>
             <point key="canvasLocation" x="440.5" y="215.5"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="ic_choosed" width="26" height="26"/>
         <image name="ic_deal_new" width="38" height="24"/>
         <image name="placeholder_deal" width="273" height="172"/>
     </resources>

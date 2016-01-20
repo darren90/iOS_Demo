@@ -168,6 +168,10 @@ static NSString * const reuseIdentifier = @"deal";
     if ([item.title isEqualToString:MTEdit]) {
         item.title = MTDone;
         self.navigationItem.leftBarButtonItems = @[self.backItem, self.selectAllItem, self.unselectAllItem, self.removeItem];
+        
+        //出现蒙版
+        self.collectionView 
+        
     } else {
         item.title = MTEdit;
         self.navigationItem.leftBarButtonItems = @[self.backItem];

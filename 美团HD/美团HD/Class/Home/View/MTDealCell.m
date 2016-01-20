@@ -21,6 +21,8 @@
  属性名不能以new开头
  */
 @property (weak, nonatomic) IBOutlet UIImageView *dealNewView;
+@property (weak, nonatomic) IBOutlet UIButton *cover;
+@property (weak, nonatomic) IBOutlet UIImageView *selectImg;
 
 - (IBAction)coverClick:(UIButton *)sender;
 
@@ -66,6 +68,15 @@
     NSString *nowStr = [fmt stringFromDate:[NSDate date]];
     // 隐藏: 发布日期 < 今天
     self.dealNewView.hidden = ([deal.publish_date compare:nowStr] == NSOrderedAscending);
+}
+
+
+-(void)setEditing:(BOOL)editing
+{
+    _editing = editing;
+    
+    self.cover.hidden = NO;
+    self.selectImg.hidden = NO;
 }
 
 - (void)drawRect:(CGRect)rect
