@@ -15,6 +15,7 @@
 #import "MTDealCell.h"
 #import "UIView+AutoLayout.h"
 #import "TFDetailViewController.h"
+#import "TFDeal.h"
 
 NSString *const MTDone = @"完成";
 NSString *const MTEdit = @"编辑";
@@ -170,8 +171,8 @@ static NSString * const reuseIdentifier = @"deal";
         self.navigationItem.leftBarButtonItems = @[self.backItem, self.selectAllItem, self.unselectAllItem, self.removeItem];
         
         //出现蒙版 进入编辑状态
-        for (MTDealCell *cell  in [self.collectionView visibleCells]) {
-            cell.editing = YES;
+        for (TFDeal *deal in self.deals) {
+            deal.editing = YES;
         }
         
     } else {
@@ -179,10 +180,12 @@ static NSString * const reuseIdentifier = @"deal";
         self.navigationItem.leftBarButtonItems = @[self.backItem];
         
         //取消编辑状态
-        for (MTDealCell *cell  in [self.collectionView visibleCells]) {
-            cell.editing = NO;
+        for (TFDeal *deal in self.deals) {
+            deal.editing = NO;
         }
     }
+    
+    [self.collectionView reloadData];
 }
 
 

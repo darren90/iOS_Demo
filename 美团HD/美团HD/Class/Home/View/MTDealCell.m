@@ -68,16 +68,19 @@
     NSString *nowStr = [fmt stringFromDate:[NSDate date]];
     // 隐藏: 发布日期 < 今天
     self.dealNewView.hidden = ([deal.publish_date compare:nowStr] == NSOrderedAscending);
-}
-
-
--(void)setEditing:(BOOL)editing
-{
-    _editing = editing;
     
-    self.cover.hidden = !self.cover.hidden;
-//    self.selectImg.hidden = NO;
+    //根据模型属性，控制cover的显示隐藏
+    self.cover.hidden = !deal.isEditing;
 }
+
+
+//-(void)setEditing:(BOOL)editing
+//{
+//    _editing = editing;
+//    
+//    self.cover.hidden = !self.cover.hidden;
+////    self.selectImg.hidden = NO;
+//}
 
 - (void)drawRect:(CGRect)rect
 {

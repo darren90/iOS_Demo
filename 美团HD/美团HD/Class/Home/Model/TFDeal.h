@@ -38,6 +38,14 @@
 
 /** 团购限制条件 */
 @property (nonatomic, strong) MTRestrictions *restrictions;
+
+
+//增加属性
+/**
+ *  是否正在编辑
+ */
+@property (nonatomic,assign,getter=isEditing)BOOL editing;
+
 /**
  {
  "status": "OK",
