@@ -20,7 +20,10 @@
 /**
  属性名不能以new开头
  */
-@property (weak, nonatomic) IBOutlet UIImageView *dealNewView; 
+@property (weak, nonatomic) IBOutlet UIImageView *dealNewView;
+
+- (IBAction)coverClick:(UIButton *)sender;
+
 @end
 
 @implementation MTDealCell
@@ -71,5 +74,7 @@
 //    [[UIImage imageNamed:@"bg_dealcell"] drawAsPatternInRect:rect];
     // 拉伸
     [[UIImage imageNamed:@"bg_dealcell"] drawInRect:rect];
+}
+- (IBAction)coverClick:(UIButton *)sender {
 }
 @end
