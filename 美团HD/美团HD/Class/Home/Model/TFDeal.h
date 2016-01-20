@@ -47,6 +47,11 @@
 @property (nonatomic,assign,getter=isEditing)BOOL editing;
 
 /**
+ *  是否打钩
+ */
+@property (nonatomic,assign,getter=isChecking)BOOL checking;
+
+/**
  {
  "status": "OK",
  "total_count": 11,

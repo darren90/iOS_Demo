@@ -71,6 +71,10 @@
     
     //根据模型属性，控制cover的显示隐藏
     self.cover.hidden = !deal.isEditing;
+    
+    
+    //根据模型属性，控制打钩的显示
+    self.selectImg.hidden = !self.deal.checking;
 }
 
 
@@ -90,5 +94,13 @@
     [[UIImage imageNamed:@"bg_dealcell"] drawInRect:rect];
 }
 - (IBAction)coverClick:(UIButton *)sender {
+    self.deal.checking = !self.deal.checking;
+    self.selectImg.hidden = !self.deal.checking;
 }
 @end
+
+
+
+
+
+

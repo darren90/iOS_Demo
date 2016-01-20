@@ -64,7 +64,7 @@ static NSString * const reuseIdentifier = @"deal";
 - (UIBarButtonItem *)removeItem
 {
     if (!_removeItem) {
-        self.removeItem = [[UIBarButtonItem alloc] initWithTitle:MTString(@"删除") style:UIBarButtonItemStyleDone target:self action:@selector(remove)];
+        self.removeItem = [[UIBarButtonItem alloc] initWithTitle:MTString(@"删除") style:UIBarButtonItemStyleDone target:self action:@selector(removeThisDeal)];
     }
     return _removeItem;
 }
@@ -191,17 +191,32 @@ static NSString * const reuseIdentifier = @"deal";
 
 -(void)selectAll
 {
+    for (TFDeal *deal in self.deals) {
+//        deal.editing = YES;
+        deal.checking = YES;
+    }
     
+    [self.collectionView reloadData];
 }
 
--(void)remove
+-(void)removeThisDeal
 {
-    
+    for (TFDeal *deal in self.deals) {
+        if (deal.isChecking) {
+            [MTDealTool removeCollectDeal:deal];
+        }
+    }
+    [self.collectionView reloadData];
 }
 
 -(void)unselectAll
 {
+    for (TFDeal *deal in self.deals) {
+        //        deal.editing = YES;
+        deal.checking = NO;
+    }
     
+    [self.collectionView reloadData];
 }
 
 - (void)loadMoreDeals
