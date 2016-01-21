@@ -21,7 +21,7 @@ NSString *const MTDone = @"完成";
 NSString *const MTEdit = @"编辑";
 #define MTString(str) [NSString stringWithFormat:@"  %@  ", str]
 
-@interface TFCollectViewController ()
+@interface TFCollectViewController ()<MTDealCellDelegate>
 
 @property (nonatomic,strong)NSMutableArray  * deals;
 
@@ -269,8 +269,14 @@ static NSString * const reuseIdentifier = @"deal";
     MTDealCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     cell.deal = self.deals[indexPath.item];
-    
+    cell.delegate = self;
     return cell;
+}
+
+#pragma mark - cell选择的代理
+-(void)dealCellCheckingStateDidChage:(MTDealCell *)cell
+{
+    
 }
 
 #pragma mark <UICollectionViewDelegate>

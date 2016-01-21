@@ -96,6 +96,11 @@
 - (IBAction)coverClick:(UIButton *)sender {
     self.deal.checking = !self.deal.checking;
     self.selectImg.hidden = !self.deal.checking;
+    
+    
+    if ([self.delegate respondsToSelector:@selector(dealCellCheckingStateDidChage:)]) {
+        [self.delegate dealCellCheckingStateDidChage:self.deal];
+    }
 }
 @end
 

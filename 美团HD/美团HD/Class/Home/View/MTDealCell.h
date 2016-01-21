@@ -7,8 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-@class MTDeal, TFDeal;
+@class MTDeal, TFDeal,MTDealCell;
 
+
+@protocol MTDealCellDelegate <NSObject>
+
+@optional
+-(void)dealCellCheckingStateDidChage:(MTDealCell *)cell;
+
+@end
 
 @interface MTDealCell : UICollectionViewCell
 @property (nonatomic, strong) TFDeal *deal;
@@ -17,4 +24,8 @@
  *  是否正在编辑
  */
 //@property (nonatomic,assign,getter=isEditing)BOOL editing;
+
+
+@property (nonatomic,weak)id <MTDealCellDelegate> delegate;
+
 @end
