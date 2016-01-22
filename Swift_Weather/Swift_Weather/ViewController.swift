@@ -25,7 +25,9 @@ class ViewController: UIViewController {
     }
     
     func iOS8() -> Bool{
-        return true
+        let versionStr = UIDevice .currentDevice().systemVersion
+        let versionDou:Double = Double(versionStr)!
+        return versionDou > 8.0
     }
 
     override func didReceiveMemoryWarning() {
