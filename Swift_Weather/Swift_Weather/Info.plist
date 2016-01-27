@@ -4,6 +4,10 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>https://github.com/darren90/iOS_Demo</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>我们需要使用你的地理位置</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
