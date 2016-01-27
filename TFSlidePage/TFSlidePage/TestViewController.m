@@ -7,6 +7,7 @@
 //
 
 #import "TestViewController.h"
+#define KRandomColor     [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0];
 
 @interface TestViewController ()
 
@@ -18,6 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"测试";
+    self.view.backgroundColor = KRandomColor;
 }
 
 - (void)didReceiveMemoryWarning {

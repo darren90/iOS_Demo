@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--首页-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="y1f-HZ-WWS">
+                    <navigationItem key="navigationItem" title="首页" id="y1f-HZ-WWS">
                         <barButtonItem key="rightBarButtonItem" title="Jump" id="frl-kB-SZS">
                             <connections>
                                 <segue destination="CWx-II-olP" kind="push" id="99c-6W-Rhq"/>

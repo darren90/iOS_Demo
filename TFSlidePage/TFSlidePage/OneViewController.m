@@ -33,7 +33,7 @@
 {
     DLTabedSlideView *tabedSlideView = [[DLTabedSlideView alloc]init];
     [self.view addSubview:tabedSlideView];
-    tabedSlideView.frame = CGRectMake(0, 20, self.view.frame.size.width, self.view.frame.size.height);
+    tabedSlideView.frame = CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height);
     self.tabedSlideView = tabedSlideView;
     self.tabedSlideView.baseViewController = self;
     self.tabedSlideView.delegate = self;
@@ -48,7 +48,7 @@
     DLTabedbarItem *item3 = [DLTabedbarItem itemWithTitle:@"泰剧"];
     self.tabedSlideView.tabbarItems = @[item1, item2, item3];
     [self.tabedSlideView buildTabbar];
-    tabedSlideView.backgroundColor = [UIColor brownColor];
+    tabedSlideView.backgroundColor = [UIColor grayColor];
     self.tabedSlideView.selectedIndex = 0;
     
     
