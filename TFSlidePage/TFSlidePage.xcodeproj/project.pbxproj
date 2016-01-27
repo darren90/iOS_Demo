@@ -22,6 +22,8 @@
 		89964F611C58C6A8005E1FA8 /* DLScrollTabbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89964F571C58C6A8005E1FA8 /* DLScrollTabbarView.m */; };
 		89964F621C58C6A8005E1FA8 /* DLTabedSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89964F5A1C58C6A8005E1FA8 /* DLTabedSlideView.m */; };
 		89964F631C58C6A8005E1FA8 /* DLUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 89964F5C1C58C6A8005E1FA8 /* DLUtility.m */; };
+		89964F691C58C98A005E1FA8 /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89964F681C58C98A005E1FA8 /* OneViewController.m */; };
+		89964F6C1C58CA45005E1FA8 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89964F6B1C58CA45005E1FA8 /* TestViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,10 @@
 		89964F5A1C58C6A8005E1FA8 /* DLTabedSlideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLTabedSlideView.m; sourceTree = "<group>"; };
 		89964F5B1C58C6A8005E1FA8 /* DLUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLUtility.h; sourceTree = "<group>"; };
 		89964F5C1C58C6A8005E1FA8 /* DLUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLUtility.m; sourceTree = "<group>"; };
+		89964F671C58C98A005E1FA8 /* OneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
+		89964F681C58C98A005E1FA8 /* OneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
+		89964F6A1C58CA45005E1FA8 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		89964F6B1C58CA45005E1FA8 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,15 +130,18 @@
 		89964F161C58C5E7005E1FA8 /* TFSlidePage */ = {
 			isa = PBXGroup;
 			children = (
+				89964F641C58C8B6005E1FA8 /* TFSlidePage */,
 				89964F4A1C58C6A8005E1FA8 /* DLSlideView */,
 				89964F1A1C58C5E7005E1FA8 /* AppDelegate.h */,
 				89964F1B1C58C5E7005E1FA8 /* AppDelegate.m */,
+				89964F231C58C5E7005E1FA8 /* Assets.xcassets */,
+				89964F201C58C5E7005E1FA8 /* Main.storyboard */,
 				89964F1D1C58C5E7005E1FA8 /* ViewController.h */,
 				89964F1E1C58C5E7005E1FA8 /* ViewController.m */,
-				89964F201C58C5E7005E1FA8 /* Main.storyboard */,
-				89964F231C58C5E7005E1FA8 /* Assets.xcassets */,
-				89964F251C58C5E7005E1FA8 /* LaunchScreen.storyboard */,
-				89964F281C58C5E7005E1FA8 /* Info.plist */,
+				89964F671C58C98A005E1FA8 /* OneViewController.h */,
+				89964F681C58C98A005E1FA8 /* OneViewController.m */,
+				89964F6A1C58CA45005E1FA8 /* TestViewController.h */,
+				89964F6B1C58CA45005E1FA8 /* TestViewController.m */,
 				89964F171C58C5E7005E1FA8 /* Supporting Files */,
 			);
 			path = TFSlidePage;
@@ -141,6 +150,8 @@
 		89964F171C58C5E7005E1FA8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				89964F251C58C5E7005E1FA8 /* LaunchScreen.storyboard */,
+				89964F281C58C5E7005E1FA8 /* Info.plist */,
 				89964F181C58C5E7005E1FA8 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -201,6 +212,29 @@
 				89964F581C58C6A8005E1FA8 /* DLSlideTabbarProtocol.h */,
 			);
 			path = DLTabbarView;
+			sourceTree = "<group>";
+		};
+		89964F641C58C8B6005E1FA8 /* TFSlidePage */ = {
+			isa = PBXGroup;
+			children = (
+				89964F651C58C8B6005E1FA8 /* Model */,
+				89964F661C58C8B6005E1FA8 /* View */,
+			);
+			path = TFSlidePage;
+			sourceTree = "<group>";
+		};
+		89964F651C58C8B6005E1FA8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		89964F661C58C8B6005E1FA8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,9 +373,11 @@
 				89964F5E1C58C6A8005E1FA8 /* DLCustomSlideView.m in Sources */,
 				89964F631C58C6A8005E1FA8 /* DLUtility.m in Sources */,
 				89964F5D1C58C6A8005E1FA8 /* DLLRUCache.m in Sources */,
+				89964F6C1C58CA45005E1FA8 /* TestViewController.m in Sources */,
 				89964F5F1C58C6A8005E1FA8 /* DLSlideView.m in Sources */,
 				89964F611C58C6A8005E1FA8 /* DLScrollTabbarView.m in Sources */,
 				89964F191C58C5E7005E1FA8 /* main.m in Sources */,
+				89964F691C58C98A005E1FA8 /* OneViewController.m in Sources */,
 				89964F601C58C6A8005E1FA8 /* DLFixedTabbarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +520,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TFSlidePage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ftf.loding.TFSlidePage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -495,6 +532,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TFSlidePage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ftf.loding.TFSlidePage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -568,6 +606,7 @@
 				89964F431C58C5E7005E1FA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		89964F441C58C5E7005E1FA8 /* Build configuration list for PBXNativeTarget "TFSlidePageTests" */ = {
 			isa = XCConfigurationList;
@@ -576,6 +615,7 @@
 				89964F461C58C5E7005E1FA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		89964F471C58C5E7005E1FA8 /* Build configuration list for PBXNativeTarget "TFSlidePageUITests" */ = {
 			isa = XCConfigurationList;
@@ -584,6 +624,7 @@
 				89964F491C58C5E7005E1FA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
