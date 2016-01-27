@@ -134,21 +134,7 @@
 }
 
 - (void)layoutTabbar{
-//    float width = self.bounds.size.width/self.tabbarItems.count;
-//    float height = self.bounds.size.height;
-//    float x = 0.0f;
-//    for (NSInteger i=0; i<self.tabbarItems.count; i++) {
-//        x = i*width;
-//        UILabel *label = (UILabel *)[scrollView_ viewWithTag:kLabelTagBase+i];
-//        UIImageView *imageView = (UIImageView *)[scrollView_ viewWithTag:kImageTagBase+i];
-//        UIImageView *selectedIamgeView = (UIImageView *)[scrollView_ viewWithTag:kSelectedImageTagBase+i];
-//        label.frame = CGRectMake(x + (width-label.bounds.size.width-CGRectGetWidth(imageView.bounds))/2.0f, (height-label.bounds.size.height)/2.0f, CGRectGetWidth(label.bounds), CGRectGetHeight(label.bounds));
-//        imageView.frame = CGRectMake(label.frame.origin.x + label.bounds.size.width+kImageSpacingX, (height-imageView.bounds.size.height)/2.0, CGRectGetWidth(imageView.bounds), CGRectGetHeight(imageView.bounds));
-//        selectedIamgeView.frame = imageView.frame;
-//    }
-    
-//    float trackX = width*self.selectedIndex;
-//    trackView_.frame = CGRectMake(trackX, trackView_.frame.origin.y, width, kTrackViewHeight);
+  
 }
 
 - (NSInteger)tabbarCount{
@@ -156,13 +142,11 @@
 }
 
 - (void)switchingFrom:(NSInteger)fromIndex to:(NSInteger)toIndex percent:(float)percent{
-    //DLScrollTabbarItem *fromItem = [self.tabbarItems objectAtIndex:fromIndex];
     UILabel *fromLabel = (UILabel *)[scrollView_ viewWithTag:kLabelTagBase+fromIndex];
     fromLabel.textColor = [DLUtility getColorOfPercent:percent between:self.tabItemNormalColor and:self.tabItemSelectedColor];
     
     UILabel *toLabel = nil;
     if (toIndex >= 0 && toIndex < [self tabbarCount]) {
-        //DLScrollTabbarItem *toItem = [self.tabbarItems objectAtIndex:toIndex];
         toLabel = (UILabel *)[scrollView_ viewWithTag:kLabelTagBase+toIndex];
         toLabel.textColor = [DLUtility getColorOfPercent:percent between:self.tabItemSelectedColor and:self.tabItemNormalColor];
     }
@@ -212,25 +196,12 @@
             //选中的居中显示
             rc = CGRectMake(CGRectGetMidX(rc) - scrollView_.bounds.size.width/2.0f, rc.origin.y, scrollView_.bounds.size.width, rc.size.height);
 // 滚动左右两格到可见位置
-//            if (selectedIndex > 0) {
-//                UIView *leftView = [scrollView_ viewWithTag:kViewTagBase+selectedIndex-1];
-//                rc = CGRectUnion(rc, leftView.frame);
-//            }
-//            if (selectedIndex < [self tabbarCount]-1) {
-//                UIView *rightView = [scrollView_ viewWithTag:kViewTagBase+selectedIndex+1];
-//                rc = CGRectUnion(rc, rightView.frame);
-//            }
             [scrollView_ scrollRectToVisible:rc animated:YES];
             
             // track view
             CGRect trackRc = [scrollView_ convertRect:toLabel.bounds fromView:toLabel];
             trackView_.frame = CGRectMake(trackRc.origin.x, trackView_.frame.origin.y, trackRc.size.width, CGRectGetHeight(trackView_.bounds));
         }
-        
-//        float width = self.bounds.size.width/self.tabbarItems.count;
-//        float trackX = width*selectedIndex;
-//        trackView_.frame = CGRectMake(trackX, trackView_.frame.origin.y, CGRectGetWidth(trackView_.bounds), CGRectGetHeight(trackView_.bounds));
-        
         _selectedIndex = selectedIndex;
     }
 }

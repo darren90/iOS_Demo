@@ -104,8 +104,6 @@
         barItem.title = item.title;
         barItem.titleColor = self.tabItemNormalColor;
         barItem.selectedTitleColor = self.tabItemSelectedColor;
-        barItem.image = item.image;
-        barItem.selectedImage = item.selectedImage;
         
         [tabbarItems addObject:barItem];
     }
@@ -115,19 +113,6 @@
     tabbar_.backgroundImage = self.tabbarBackgroundImage;
 
 }
-//- (void)setTabarView:(id<DLSlideTabbarProtocol>)tabarView{
-//    assert([tabarView isKindOfClass:[UIView class]]);
-//    assert(slideView_.viewControllers == nil || slideView_.viewControllers.count == [tabarView tabbarCount]);
-//    
-//    if (_tabarView != tabarView) {
-//        _tabarView.delegate = nil;
-//        _tabarView = tabarView;
-//        
-//        tabarView.delegate = self;
-//        [self layoutBarAndSlide];
-//
-//    }
-//}
 
 - (void)setSelectedIndex:(NSInteger)selectedIndex{
     _selectedIndex = selectedIndex;

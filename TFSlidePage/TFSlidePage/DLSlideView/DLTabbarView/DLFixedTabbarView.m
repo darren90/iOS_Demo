@@ -25,7 +25,7 @@
 @implementation DLFixedTabbarView{
     UIScrollView *scrollView_;
     UIImageView *backgroudView_;
-    UIImageView *trackView_;
+    UIImageView *trackView_;//底下的线
 }
 
 - (void)commonInit{
@@ -40,9 +40,6 @@
     trackView_ = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.bounds.size.height-kTrackViewHeight-1, self.bounds.size.width, kTrackViewHeight)];
     [self addSubview:trackView_];
     trackView_.layer.cornerRadius = 2.0f;
-
-//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
-//    [scrollView_ addGestureRecognizer:tap];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder{
@@ -88,25 +85,11 @@
             label.tag = kLabelTagBase+i;
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
             [label addGestureRecognizer:tap];
-            
-            
-            UIImageView *imageView = [[UIImageView alloc] initWithImage:item.image];
-            [imageView sizeToFit];
-            imageView.tag = kImageTagBase+i;
-            
-            UIImageView *selectedImageView = [[UIImageView alloc] initWithImage:item.selectedImage];
-            [selectedImageView sizeToFit];
-            selectedImageView.alpha = 0.0f;
-            selectedImageView.tag = kSelectedImageTagBase+i;
-
+        
             [scrollView_ addSubview:label];
-            [scrollView_ addSubview:imageView];
-            [scrollView_ addSubview:selectedImageView];
             i++;
             
             label.userInteractionEnabled = YES;
-            imageView.userInteractionEnabled = YES;
-            selectedImageView.userInteractionEnabled = YES;
         }
 //        [self layoutTabbar];
     }
@@ -132,7 +115,6 @@
         UILabel *label = (UILabel *)[scrollView_ viewWithTag:kLabelTagBase+i];
         UIImageView *imageView = (UIImageView *)[scrollView_ viewWithTag:kImageTagBase+i];
         UIImageView *selectedIamgeView = (UIImageView *)[scrollView_ viewWithTag:kSelectedImageTagBase+i];
-//        label.frame = CGRectMake(x + (width-label.bounds.size.width-CGRectGetWidth(imageView.bounds))/2.0f , (height-label.bounds.size.height)/2.0f, CGRectGetWidth(label.bounds), CGRectGetHeight(label.bounds));
         CGFloat labelW = CGRectGetWidth(label.bounds);
         CGFloat inset = (self.bounds.size.width - margin*(count+1) - count*labelW) /2;
 
@@ -147,7 +129,6 @@
     CGFloat inset = (self.bounds.size.width - margin*(count+1) - count*labelW) /2;
     float trackX = (margin*(self.selectedIndex+1)+ inset+labelW *self.selectedIndex)-KMarginMore / 2;
     trackView_.frame = CGRectMake(trackX, trackView_.frame.origin.y, labelW+KMarginMore, kTrackViewHeight);
-//    trackView_.frame = CGRectMake(trackX, trackView_.frame.origin.y, width, kTrackViewHeight);
 }
 
 - (NSInteger)tabbarCount{
@@ -174,7 +155,6 @@
     }
     
     float width = self.bounds.size.width/self.tabbarItems.count;
-//    float trackX;
     
     UILabel *label = (UILabel *)[scrollView_ viewWithTag:kLabelTagBase+0];
     CGFloat labelW = CGRectGetWidth(label.bounds);
@@ -213,14 +193,12 @@
         }
         
         float width = self.bounds.size.width/self.tabbarItems.count;
-//        float trackX = width*selectedIndex;
         NSInteger count = self.tabbarItems.count;
         UILabel *label = (UILabel *)[scrollView_ viewWithTag:kLabelTagBase+0];
         CGFloat labelW = CGRectGetWidth(label.bounds);
         CGFloat inset = (self.bounds.size.width - KMargin*(count+1) - count*labelW) /2;
         float trackX = (KMargin*(selectedIndex+1)+ inset+labelW *selectedIndex)-KMarginMore / 2;
 
-        
         trackView_.frame = CGRectMake(trackX, trackView_.frame.origin.y, CGRectGetWidth(trackView_.bounds), CGRectGetHeight(trackView_.bounds));
 
         _selectedIndex = selectedIndex;
@@ -240,7 +218,6 @@
     NSInteger i = tap.view.tag - kLabelTagBase;
     self.selectedIndex = i;
     if (self.delegate) {
-         NSLog(@"--self.selectedIndex:%ld",(long)i);
         [self.delegate DLSlideTabbar:self selectAt:i];
     }
 }
