@@ -43,6 +43,10 @@
 @property(nonatomic, strong) NSArray *tabbarItems;
 @property(nonatomic, assign) float tabbarHeight;
 @property(nonatomic, assign) float tabbarBottomSpacing;
+/**
+ *  字体大小
+ */
+@property (nonatomic,strong)UIFont * titleFont;
 
 // cache properties
 @property(nonatomic, assign) NSInteger cacheCount;

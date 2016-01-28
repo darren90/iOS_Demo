@@ -40,6 +40,7 @@
     self.tabedSlideView.tabItemNormalColor = [UIColor whiteColor];
     self.tabedSlideView.tabItemSelectedColor = [UIColor colorWithRed:0.833 green:0.052 blue:0.130 alpha:1.000];
     self.tabedSlideView.tabbarTrackColor = [UIColor colorWithRed:0.833 green:0.052 blue:0.130 alpha:1.000];
+//    self.tabedSlideView.titleFont = [UIFont boldSystemFontOfSize:20];
     //    self.tabedSlideView.tabbarBackgroundImage = [UIImage imageNamed:@"tabbarBk"];
     self.tabedSlideView.tabbarBottomSpacing = 0.0;
     
