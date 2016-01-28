@@ -91,7 +91,6 @@
             
             label.userInteractionEnabled = YES;
         }
-//        [self layoutTabbar];
     }
 }
 
@@ -135,6 +134,9 @@
     return self.tabbarItems.count;
 }
 
+/**
+ *  滑动的时候，执行的方法
+ */
 - (void)switchingFrom:(NSInteger)fromIndex to:(NSInteger)toIndex percent:(float)percent{
     DLFixedTabbarViewTabItem *fromItem = [self.tabbarItems objectAtIndex:fromIndex];
     UILabel *fromLabel = (UILabel *)[scrollView_ viewWithTag:kLabelTagBase+fromIndex];
@@ -154,12 +156,12 @@
         toSelectedIamge.alpha = percent;
     }
     
-    float width = self.bounds.size.width/self.tabbarItems.count;
+//    float width = self.bounds.size.width/self.tabbarItems.count;
     
     UILabel *label = (UILabel *)[scrollView_ viewWithTag:kLabelTagBase+0];
     CGFloat labelW = CGRectGetWidth(label.bounds);
     CGFloat inset = (self.bounds.size.width - KMargin*(self.tabbarItems.count+1) - self.tabbarItems.count*labelW) /2;
-    float trackX = (KMargin*(fromIndex+1)+ inset+labelW *fromIndex)-KMarginMore / 2;
+    float trackX = (KMargin*(fromIndex+1)+ inset+labelW *fromIndex)- KMarginMore / 2;
     if (toIndex > fromIndex) {
         trackX = trackX + (labelW+KMargin)*percent;//width*fromIndex + width*percent;//trackX + KMargin;
     }
@@ -170,8 +172,11 @@
     trackView_.frame = CGRectMake(trackX, trackView_.frame.origin.y, CGRectGetWidth(trackView_.bounds), CGRectGetHeight(trackView_.bounds));
 }
 
+/**
+ *  点击上面的ite的时候，执行的方法
+ */
 - (void)setSelectedIndex:(NSInteger)selectedIndex{
-    if (_selectedIndex != selectedIndex) {
+   if (_selectedIndex != selectedIndex) {
         if (_selectedIndex >= 0) {
             DLFixedTabbarViewTabItem *fromItem = [self.tabbarItems objectAtIndex:_selectedIndex];
             UILabel *fromLabel = (UILabel *)[scrollView_ viewWithTag:kLabelTagBase+_selectedIndex];
@@ -192,13 +197,18 @@
             toSelectedIamge.alpha = 1.0f;
         }
         
-        float width = self.bounds.size.width/self.tabbarItems.count;
-        NSInteger count = self.tabbarItems.count;
-        UILabel *label = (UILabel *)[scrollView_ viewWithTag:kLabelTagBase+0];
-        CGFloat labelW = CGRectGetWidth(label.bounds);
-        CGFloat inset = (self.bounds.size.width - KMargin*(count+1) - count*labelW) /2;
-        float trackX = (KMargin*(selectedIndex+1)+ inset+labelW *selectedIndex)-KMarginMore / 2;
-
+//        float width = self.bounds.size.width/self.tabbarItems.count;
+        
+//        NSInteger count = self.tabbarItems.count;
+//        UILabel *label = (UILabel *)[scrollView_ viewWithTag:kLabelTagBase+0];
+//        CGFloat labelW = CGRectGetWidth(label.bounds);
+//        CGFloat inset = (self.bounds.size.width - KMargin*(count+1) - count*labelW) /2;
+//        float trackX = (KMargin*(selectedIndex+1)+ inset+labelW *selectedIndex)- KMarginMore / 2;
+       
+       //
+        UILabel *label = (UILabel *)[scrollView_ viewWithTag:kLabelTagBase+selectedIndex];
+       float trackX = CGRectGetMinX(label.frame);
+       
         trackView_.frame = CGRectMake(trackX, trackView_.frame.origin.y, CGRectGetWidth(trackView_.bounds), CGRectGetHeight(trackView_.bounds));
 
         _selectedIndex = selectedIndex;
