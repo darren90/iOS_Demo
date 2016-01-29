@@ -24,6 +24,7 @@
 		89964F631C58C6A8005E1FA8 /* DLUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 89964F5C1C58C6A8005E1FA8 /* DLUtility.m */; };
 		89964F691C58C98A005E1FA8 /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89964F681C58C98A005E1FA8 /* OneViewController.m */; };
 		89964F6C1C58CA45005E1FA8 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89964F6B1C58CA45005E1FA8 /* TestViewController.m */; };
+		FEE4D6F51C5BAB2A00CE4D32 /* TFSlidePageView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE4D6F41C5BAB2A00CE4D32 /* TFSlidePageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,8 @@
 		89964F681C58C98A005E1FA8 /* OneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
 		89964F6A1C58CA45005E1FA8 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		89964F6B1C58CA45005E1FA8 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		FEE4D6F31C5BAB2A00CE4D32 /* TFSlidePageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFSlidePageView.h; sourceTree = "<group>"; };
+		FEE4D6F41C5BAB2A00CE4D32 /* TFSlidePageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFSlidePageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +133,7 @@
 		89964F161C58C5E7005E1FA8 /* TFSlidePage */ = {
 			isa = PBXGroup;
 			children = (
-				89964F641C58C8B6005E1FA8 /* TFSlidePage */,
+				FEE4D6F01C5BAB0A00CE4D32 /* TFSlidePage */,
 				89964F4A1C58C6A8005E1FA8 /* DLSlideView */,
 				89964F1A1C58C5E7005E1FA8 /* AppDelegate.h */,
 				89964F1B1C58C5E7005E1FA8 /* AppDelegate.m */,
@@ -214,23 +217,25 @@
 			path = DLTabbarView;
 			sourceTree = "<group>";
 		};
-		89964F641C58C8B6005E1FA8 /* TFSlidePage */ = {
+		FEE4D6F01C5BAB0A00CE4D32 /* TFSlidePage */ = {
 			isa = PBXGroup;
 			children = (
-				89964F651C58C8B6005E1FA8 /* Model */,
-				89964F661C58C8B6005E1FA8 /* View */,
+				FEE4D6F11C5BAB0A00CE4D32 /* Model */,
+				FEE4D6F21C5BAB0A00CE4D32 /* View */,
+				FEE4D6F31C5BAB2A00CE4D32 /* TFSlidePageView.h */,
+				FEE4D6F41C5BAB2A00CE4D32 /* TFSlidePageView.m */,
 			);
 			path = TFSlidePage;
 			sourceTree = "<group>";
 		};
-		89964F651C58C8B6005E1FA8 /* Model */ = {
+		FEE4D6F11C5BAB0A00CE4D32 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		89964F661C58C8B6005E1FA8 /* View */ = {
+		FEE4D6F21C5BAB0A00CE4D32 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -369,6 +374,7 @@
 			files = (
 				89964F621C58C6A8005E1FA8 /* DLTabedSlideView.m in Sources */,
 				89964F1F1C58C5E7005E1FA8 /* ViewController.m in Sources */,
+				FEE4D6F51C5BAB2A00CE4D32 /* TFSlidePageView.m in Sources */,
 				89964F1C1C58C5E7005E1FA8 /* AppDelegate.m in Sources */,
 				89964F5E1C58C6A8005E1FA8 /* DLCustomSlideView.m in Sources */,
 				89964F631C58C6A8005E1FA8 /* DLUtility.m in Sources */,
