@@ -15,6 +15,34 @@
 
 @implementation TFSlidePageView
 
+- (id)initWithCoder:(NSCoder *)aDecoder{
+    if (self = [super initWithCoder:aDecoder]) {
+        [self initSlideSubViews];
+    }
+    return self;
+}
+- (id)initWithFrame:(CGRect)frame{
+    if (self = [super initWithFrame:frame]) {
+        [self initSlideSubViews];
+    }
+    return self;
+}
 
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    
+    [self layoutSlideSubViews];
+}
+
+-(void)initSlideSubViews
+{
+    
+}
+
+
+-(void)layoutSlideSubViews
+{
+    
+}
 
 @end
