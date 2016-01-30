@@ -11,8 +11,8 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface ViewController ()
-@property (nonatomic, strong) CAGradientLayer *gradientLayer;
-
+@property (weak, nonatomic) IBOutlet UIImageView *imgView;
+@property (weak, nonatomic) IBOutlet UIView *secView;
 @end
 
 @implementation ViewController
@@ -23,32 +23,53 @@
     
     self.view.backgroundColor = [UIColor lightGrayColor];
     
-    [self setGradientLayer];
+    [self setGradientLayer1];
+    [self setGradientLayer2];
 }
-
--(void)setGradientLayer
+-(void)setGradientLayer2
 {
     // 创建渐变色图层
-    self.gradientLayer             = [CAGradientLayer layer];
-    self.gradientLayer.frame       = CGRectMake(100, 100, 200, 200);
-//    self.gradientLayer. = self.view;
-    self.gradientLayer.borderWidth = 1;
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame       = self.secView.bounds;
     
-    self.gradientLayer.colors = @[
-                                  (id)[UIColor grayColor].CGColor,
+    gradientLayer.colors = @[
+                                (id)[UIColor cyanColor].CGColor,
                                   (id)[UIColor blueColor].CGColor,
+                                  (id)[UIColor redColor].CGColor
+                                  ];
+    // 设置渐变方向(0~1)
+    gradientLayer.startPoint = CGPointMake(0, 0);
+    gradientLayer.endPoint = CGPointMake(0, 1);
+    
+    // 设置渐变色的起始位置和终止位置(颜色的分割点)
+    gradientLayer.locations = @[@(0.05f),@(0.70f),@(0.25f)];
+    gradientLayer.borderWidth  = 0.0;
+    
+    // 添加图层
+    [self.secView.layer addSublayer:gradientLayer];
+}
+
+
+-(void)setGradientLayer1
+{
+    // 创建渐变色图层
+    CAGradientLayer *gradientLayer= [CAGradientLayer layer];
+    gradientLayer.frame       = self.imgView.bounds;//CGRectMake(100, 100, 200, 200);
+    
+    gradientLayer.colors = @[
+                                  (id)[UIColor clearColor].CGColor,
                                   (id)[UIColor whiteColor].CGColor
                                   ];
     // 设置渐变方向(0~1)
-    self.gradientLayer.startPoint = CGPointMake(0, 0);
-    self.gradientLayer.endPoint = CGPointMake(0, 1);
+    gradientLayer.startPoint = CGPointMake(0, 0);
+    gradientLayer.endPoint = CGPointMake(0, 1);
     
     // 设置渐变色的起始位置和终止位置(颜色的分割点)
-    self.gradientLayer.locations = @[@(0.5f),@(0.15f), @(0.70)];
-    self.gradientLayer.borderWidth  = 0.0;
+    gradientLayer.locations = @[@(0.15f),@(0.95f)];
+    gradientLayer.borderWidth  = 0.0;
     
     // 添加图层
-    [self.view.layer addSublayer:self.gradientLayer];
+    [self.imgView.layer addSublayer:gradientLayer];
 }
 
 

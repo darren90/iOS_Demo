@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,51 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_me_pic2" translatesAutoresizingMaskIntoConstraints="NO" id="z2C-mn-FSG">
+                                <rect key="frame" x="20" y="111" width="560" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="4gF-G0-jtG"/>
+                                    <constraint firstAttribute="width" constant="240" id="SmR-1U-4E2"/>
+                                    <constraint firstAttribute="height" constant="200" id="zhv-4n-Btt"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="4gF-G0-jtG"/>
+                                        <exclude reference="SmR-1U-4E2"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="588-lI-GJt">
+                                <rect key="frame" x="20" y="349" width="560" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="7cb-EJ-Zof"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="588-lI-GJt" firstAttribute="top" secondItem="z2C-mn-FSG" secondAttribute="bottom" constant="38" id="19u-pe-Qtm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="588-lI-GJt" secondAttribute="trailing" id="DaK-db-hGt"/>
+                            <constraint firstItem="z2C-mn-FSG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ET8-9F-Wcp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="z2C-mn-FSG" secondAttribute="trailing" id="SWo-RL-wfc"/>
+                            <constraint firstItem="z2C-mn-FSG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="U3d-ox-Tpg"/>
+                            <constraint firstItem="z2C-mn-FSG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="91" id="bVQ-NG-TjT"/>
+                            <constraint firstItem="588-lI-GJt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="mpZ-I2-Nf4"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imgView" destination="z2C-mn-FSG" id="4Wm-4c-s2D"/>
+                        <outlet property="secView" destination="588-lI-GJt" id="6ck-8j-Mfz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="502" y="281"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg_me_pic2" width="1242" height="538"/>
+    </resources>
 </document>
