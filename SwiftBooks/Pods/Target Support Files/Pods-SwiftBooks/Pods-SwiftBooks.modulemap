@@ -1,0 +1,6 @@
+framework module Pods_SwiftBooks {
+  umbrella header "Pods-SwiftBooks-umbrella.h"
+
+  export *
+  module * { export * }
+}

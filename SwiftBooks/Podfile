@@ -1,0 +1,26 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '6.0'
+use_frameworks!
+
+target 'SwiftBooks' do
+
+pod 'AFNetworking'
+pod 'MJRefresh'
+pod 'FMDB'
+pod 'Masonry'
+pod 'Toast'
+pod 'MBProgressHUD'
+pod 'SDWebImage'
+pod 'UITableView+FDTemplateLayoutCell'
+
+
+end
+
+target 'SwiftBooksTests' do
+
+end
+
+target 'SwiftBooksUITests' do
+
+end
+
