@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		152B754DAEACF8D717C7E538 /* Pods_SwiftBooks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0168FB179EA569336F3257A0 /* Pods_SwiftBooks.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FE177D861C5F921600E6AAC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE177D851C5F921600E6AAC7 /* AppDelegate.swift */; };
-		FE177D881C5F921600E6AAC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE177D871C5F921600E6AAC7 /* ViewController.swift */; };
+		FE177D881C5F921600E6AAC7 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE177D871C5F921600E6AAC7 /* BookViewController.swift */; };
 		FE177D8B1C5F921600E6AAC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE177D891C5F921600E6AAC7 /* Main.storyboard */; };
 		FE177D8D1C5F921600E6AAC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE177D8C1C5F921600E6AAC7 /* Assets.xcassets */; };
 		FE177D901C5F921600E6AAC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE177D8E1C5F921600E6AAC7 /* LaunchScreen.storyboard */; };
 		FE177D9B1C5F921600E6AAC7 /* SwiftBooksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE177D9A1C5F921600E6AAC7 /* SwiftBooksTests.swift */; };
 		FE177DA61C5F921600E6AAC7 /* SwiftBooksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE177DA51C5F921600E6AAC7 /* SwiftBooksUITests.swift */; };
 		FE177DB41C5F964E00E6AAC7 /* NetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE177DB31C5F964E00E6AAC7 /* NetManager.swift */; };
+		FE177DB61C5F9FF400E6AAC7 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE177DB51C5F9FF400E6AAC7 /* Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +42,7 @@
 		F1A423B739068B4817F2C87D /* Pods-SwiftBooks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftBooks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftBooks/Pods-SwiftBooks.debug.xcconfig"; sourceTree = "<group>"; };
 		FE177D821C5F921600E6AAC7 /* SwiftBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE177D851C5F921600E6AAC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FE177D871C5F921600E6AAC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FE177D871C5F921600E6AAC7 /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		FE177D8A1C5F921600E6AAC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE177D8C1C5F921600E6AAC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE177D8F1C5F921600E6AAC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +54,7 @@
 		FE177DA51C5F921600E6AAC7 /* SwiftBooksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftBooksUITests.swift; sourceTree = "<group>"; };
 		FE177DA71C5F921600E6AAC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE177DB31C5F964E00E6AAC7 /* NetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetManager.swift; sourceTree = "<group>"; };
+		FE177DB51C5F9FF400E6AAC7 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				FE177D851C5F921600E6AAC7 /* AppDelegate.swift */,
-				FE177D871C5F921600E6AAC7 /* ViewController.swift */,
+				FE177D871C5F921600E6AAC7 /* BookViewController.swift */,
+				FE177DB51C5F9FF400E6AAC7 /* Book.swift */,
 				FE177DB31C5F964E00E6AAC7 /* NetManager.swift */,
 				FE177D891C5F921600E6AAC7 /* Main.storyboard */,
 				FE177D8C1C5F921600E6AAC7 /* Assets.xcassets */,
@@ -334,7 +337,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE177D881C5F921600E6AAC7 /* ViewController.swift in Sources */,
+				FE177DB61C5F9FF400E6AAC7 /* Book.swift in Sources */,
+				FE177D881C5F921600E6AAC7 /* BookViewController.swift in Sources */,
 				FE177DB41C5F964E00E6AAC7 /* NetManager.swift in Sources */,
 				FE177D861C5F921600E6AAC7 /* AppDelegate.swift in Sources */,
 			);
