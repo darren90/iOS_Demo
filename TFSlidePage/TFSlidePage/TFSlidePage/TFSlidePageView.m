@@ -7,8 +7,8 @@
 //
 
 #import "TFSlidePageView.h"
-
-
+#import "TFScrollView.h"
+ 
 @interface TFSlidePageView()
 
 @end
