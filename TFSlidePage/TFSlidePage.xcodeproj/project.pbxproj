@@ -24,6 +24,7 @@
 		89964F631C58C6A8005E1FA8 /* DLUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 89964F5C1C58C6A8005E1FA8 /* DLUtility.m */; };
 		89964F691C58C98A005E1FA8 /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89964F681C58C98A005E1FA8 /* OneViewController.m */; };
 		89964F6C1C58CA45005E1FA8 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89964F6B1C58CA45005E1FA8 /* TestViewController.m */; };
+		89FB48901C60520C002717EE /* TFScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FB488F1C60520C002717EE /* TFScrollView.m */; };
 		FEE4D6F51C5BAB2A00CE4D32 /* TFSlidePageView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE4D6F41C5BAB2A00CE4D32 /* TFSlidePageView.m */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,8 @@
 		89964F681C58C98A005E1FA8 /* OneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
 		89964F6A1C58CA45005E1FA8 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		89964F6B1C58CA45005E1FA8 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		89FB488E1C60520C002717EE /* TFScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFScrollView.h; sourceTree = "<group>"; };
+		89FB488F1C60520C002717EE /* TFScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFScrollView.m; sourceTree = "<group>"; };
 		FEE4D6F31C5BAB2A00CE4D32 /* TFSlidePageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFSlidePageView.h; sourceTree = "<group>"; };
 		FEE4D6F41C5BAB2A00CE4D32 /* TFSlidePageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFSlidePageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -238,6 +241,8 @@
 		FEE4D6F21C5BAB0A00CE4D32 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				89FB488E1C60520C002717EE /* TFScrollView.h */,
+				89FB488F1C60520C002717EE /* TFScrollView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -373,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89964F621C58C6A8005E1FA8 /* DLTabedSlideView.m in Sources */,
+				89FB48901C60520C002717EE /* TFScrollView.m in Sources */,
 				89964F1F1C58C5E7005E1FA8 /* ViewController.m in Sources */,
 				FEE4D6F51C5BAB2A00CE4D32 /* TFSlidePageView.m in Sources */,
 				89964F1C1C58C5E7005E1FA8 /* AppDelegate.m in Sources */,
