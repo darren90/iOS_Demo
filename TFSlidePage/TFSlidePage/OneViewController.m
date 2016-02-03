@@ -45,20 +45,12 @@
     self.tabedSlideView.tabbarBottomSpacing = 0.0;
     
     DLTabedbarItem *item1 = [DLTabedbarItem itemWithTitle:@"日剧"];
-    DLTabedbarItem *item2 = [DLTabedbarItem itemWithTitle:@"韩剧"];
+    DLTabedbarItem *item2 = [DLTabedbarItem itemWithTitle:@"韩剧啊"];
     DLTabedbarItem *item3 = [DLTabedbarItem itemWithTitle:@"泰剧"];
     self.tabedSlideView.tabbarItems = @[item1, item2, item3];
     [self.tabedSlideView buildTabbar];
     tabedSlideView.backgroundColor = [UIColor grayColor];
     self.tabedSlideView.selectedIndex = 0;
-    
-    
-    //    self.leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    //    [self.leftBtn setFrame:CGRectMake(0, -6, 44, 44)];
-    //    [self.leftBtn setImage:[UIImage imageNamed:@"nav_btn_back_n"] forState:UIControlStateNormal];
-    //    [self.leftBtn setImage:[UIImage imageNamed:@"nav_back_me_h"] forState:UIControlStateHighlighted];
-    //    [self.leftBtn addTarget:self action:@selector(backViewController) forControlEvents:UIControlEventTouchUpInside];
-    //    [self.leftBtn.imageView setContentMode:UIViewContentModeScaleAspectFit];
 }
 
 - (NSInteger)numberOfTabsInDLTabedSlideView:(DLTabedSlideView *)sender{
