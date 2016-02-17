@@ -52,6 +52,8 @@
 		892F91041C744ECF0021752A /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 892F90EE1C744ECF0021752A /* LICENSE */; };
 		892F91051C744ECF0021752A /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 892F90EF1C744ECF0021752A /* README.md */; };
 		892F91061C744ECF0021752A /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 892F90F11C744ECF0021752A /* UICountingLabel.m */; };
+		892F910F1C74535D0021752A /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F910E1C74535D0021752A /* SideViewController.swift */; };
+		892F91111C7453D90021752A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F91101C7453D90021752A /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +82,7 @@
 		892F90221C741C250021752A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		892F90241C741C250021752A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		892F90271C741C250021752A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		892F90291C741C250021752A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		892F90291C741C250021752A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../ZhiHuPlus/Info.plist; sourceTree = "<group>"; };
 		892F902E1C741C250021752A /* ZhiHuPlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZhiHuPlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		892F90321C741C250021752A /* ZhiHuPlusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZhiHuPlusTests.swift; sourceTree = "<group>"; };
 		892F90341C741C250021752A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -160,6 +162,8 @@
 		892F90EF1C744ECF0021752A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		892F90F01C744ECF0021752A /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
 		892F90F11C744ECF0021752A /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
+		892F910E1C74535D0021752A /* SideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = "<group>"; };
+		892F91101C7453D90021752A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DBF239F9E882F2F32A3F3E7B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -216,12 +220,10 @@
 			children = (
 				892F901D1C741C250021752A /* AppDelegate.swift */,
 				892F904B1C7424F60021752A /* ZhiHuPlus-Bridging-Header.h */,
-				892F904F1C744E660021752A /* Class */,
 				892F901F1C741C250021752A /* ViewController.swift */,
 				892F90211C741C250021752A /* Main.storyboard */,
 				892F90241C741C250021752A /* Assets.xcassets */,
-				892F90261C741C250021752A /* LaunchScreen.storyboard */,
-				892F90291C741C250021752A /* Info.plist */,
+				892F904F1C744E660021752A /* Class */,
 			);
 			path = ZhiHuPlus;
 			sourceTree = "<group>";
@@ -229,6 +231,8 @@
 		892F90311C741C250021752A /* ZhiHuPlusTests */ = {
 			isa = PBXGroup;
 			children = (
+				892F90261C741C250021752A /* LaunchScreen.storyboard */,
+				892F90291C741C250021752A /* Info.plist */,
 				892F90321C741C250021752A /* ZhiHuPlusTests.swift */,
 				892F90341C741C250021752A /* Info.plist */,
 			);
@@ -248,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				892F90501C744E660021752A /* Main */,
+				892F91071C7453320021752A /* Side */,
 				892F90511C744E660021752A /* Other */,
 			);
 			path = Class;
@@ -256,6 +261,9 @@
 		892F90501C744E660021752A /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				892F910B1C7453390021752A /* Controller */,
+				892F910C1C7453390021752A /* Model */,
+				892F910D1C7453390021752A /* View */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -467,6 +475,60 @@
 			path = UICountingLabel;
 			sourceTree = "<group>";
 		};
+		892F91071C7453320021752A /* Side */ = {
+			isa = PBXGroup;
+			children = (
+				892F91081C7453320021752A /* Controller */,
+				892F91091C7453320021752A /* Model */,
+				892F910A1C7453320021752A /* View */,
+			);
+			path = Side;
+			sourceTree = "<group>";
+		};
+		892F91081C7453320021752A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				892F910E1C74535D0021752A /* SideViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		892F91091C7453320021752A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		892F910A1C7453320021752A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		892F910B1C7453390021752A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				892F91101C7453D90021752A /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		892F910C1C7453390021752A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		892F910D1C7453390021752A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A12AC9E75D18D9FC19CCEFAD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -669,6 +731,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				892F90F71C744ECF0021752A /* PNColor.m in Sources */,
+				892F910F1C74535D0021752A /* SideViewController.swift in Sources */,
 				892F91011C744ECF0021752A /* PNScatterChartData.m in Sources */,
 				892F90FC1C744ECF0021752A /* PNPieChart.m in Sources */,
 				892F91061C744ECF0021752A /* UICountingLabel.m in Sources */,
@@ -694,6 +757,7 @@
 				892F90C01C744E670021752A /* TAPageControl.m in Sources */,
 				892F90FD1C744ECF0021752A /* PNPieChartDataItem.m in Sources */,
 				892F90F91C744ECF0021752A /* PNLineChart.m in Sources */,
+				892F91111C7453D90021752A /* MainViewController.swift in Sources */,
 				892F90201C741C250021752A /* ViewController.swift in Sources */,
 				892F91021C744ECF0021752A /* PNScatterChartDataItem.m in Sources */,
 				892F90A81C744E670021752A /* myUILabel.m in Sources */,
@@ -754,6 +818,7 @@
 				892F90271C741C250021752A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ../ZhiHuPlus;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
