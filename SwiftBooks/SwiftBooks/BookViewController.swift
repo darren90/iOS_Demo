@@ -14,7 +14,7 @@ class BookViewController: UIViewController {
     let KeyBooks = "books"
     let URLString = "https://api.douban.com/v2/book/search"
     var tag = "Swift"
-//    var books = [Book]()
+    var books = [Book]()
     
 
     override func viewDidLoad() {
