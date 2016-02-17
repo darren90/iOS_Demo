@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A05A461D060A944D7768985 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61532937EED2F2A88A3DD904 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		892F901E1C741C250021752A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F901D1C741C250021752A /* AppDelegate.swift */; };
 		892F90201C741C250021752A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F901F1C741C250021752A /* ViewController.swift */; };
 		892F90231C741C250021752A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 892F90211C741C250021752A /* Main.storyboard */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		61532937EED2F2A88A3DD904 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		640A75AC40E9CF86266FC941 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		892F901A1C741C250021752A /* ZhiHuPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhiHuPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		892F901D1C741C250021752A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		892F901F1C741C250021752A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +50,8 @@
 		892F90391C741C250021752A /* ZhiHuPlusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZhiHuPlusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		892F903D1C741C250021752A /* ZhiHuPlusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZhiHuPlusUITests.swift; sourceTree = "<group>"; };
 		892F903F1C741C250021752A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		892F904B1C7424F60021752A /* ZhiHuPlus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZhiHuPlus-Bridging-Header.h"; sourceTree = "<group>"; };
+		DBF239F9E882F2F32A3F3E7B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A05A461D060A944D7768985 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +87,8 @@
 				892F90311C741C250021752A /* ZhiHuPlusTests */,
 				892F903C1C741C250021752A /* ZhiHuPlusUITests */,
 				892F901B1C741C250021752A /* Products */,
+				A12AC9E75D18D9FC19CCEFAD /* Pods */,
+				A36982DAB5A4E5F5E77DDB94 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				892F901D1C741C250021752A /* AppDelegate.swift */,
+				892F904B1C7424F60021752A /* ZhiHuPlus-Bridging-Header.h */,
 				892F901F1C741C250021752A /* ViewController.swift */,
 				892F90211C741C250021752A /* Main.storyboard */,
 				892F90241C741C250021752A /* Assets.xcassets */,
@@ -125,6 +134,23 @@
 			path = ZhiHuPlusUITests;
 			sourceTree = "<group>";
 		};
+		A12AC9E75D18D9FC19CCEFAD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DBF239F9E882F2F32A3F3E7B /* Pods.debug.xcconfig */,
+				640A75AC40E9CF86266FC941 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A36982DAB5A4E5F5E77DDB94 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				61532937EED2F2A88A3DD904 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +158,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 892F90421C741C250021752A /* Build configuration list for PBXNativeTarget "ZhiHuPlus" */;
 			buildPhases = (
+				17DF6BE266E4E0A9E001818E /* Check Pods Manifest.lock */,
 				892F90161C741C250021752A /* Sources */,
 				892F90171C741C250021752A /* Frameworks */,
 				892F90181C741C250021752A /* Resources */,
+				D934AF2754B1C63EE303D703 /* Embed Pods Frameworks */,
+				C6183F977DEEA4B08D7DBEF4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,6 +279,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		17DF6BE266E4E0A9E001818E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C6183F977DEEA4B08D7DBEF4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D934AF2754B1C63EE303D703 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		892F90161C741C250021752A /* Sources */ = {
@@ -397,23 +474,34 @@
 		};
 		892F90431C741C250021752A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBF239F9E882F2F32A3F3E7B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ZhiHuPlus/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ftf.loding.ZhiHuPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ZhiHuPlus/ZhiHuPlus-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		892F90441C741C250021752A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 640A75AC40E9CF86266FC941 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ZhiHuPlus/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ftf.loding.ZhiHuPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ZhiHuPlus/ZhiHuPlus-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -484,6 +572,7 @@
 				892F90441C741C250021752A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		892F90451C741C250021752A /* Build configuration list for PBXNativeTarget "ZhiHuPlusTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +581,7 @@
 				892F90471C741C250021752A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		892F90481C741C250021752A /* Build configuration list for PBXNativeTarget "ZhiHuPlusUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +590,7 @@
 				892F904A1C741C250021752A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
