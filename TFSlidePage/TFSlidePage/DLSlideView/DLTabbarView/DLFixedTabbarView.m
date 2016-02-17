@@ -172,7 +172,7 @@
         trackX =trackX - (labelW+KMargin)*percent;// width*fromIndex - width*percent;//;
     }
 
-    trackView_.frame = CGRectMake(trackX, trackView_.frame.origin.y, CGRectGetWidth(trackView_.bounds), CGRectGetHeight(trackView_.bounds));
+    trackView_.frame = CGRectMake(trackX, trackView_.frame.origin.y,labelW, CGRectGetHeight(trackView_.bounds));
 }
 
 /**
@@ -212,7 +212,9 @@
         UILabel *label = (UILabel *)[scrollView_ viewWithTag:kLabelTagBase+selectedIndex];
        float trackX = CGRectGetMinX(label.frame);
        
-        trackView_.frame = CGRectMake(trackX, trackView_.frame.origin.y, CGRectGetWidth(trackView_.bounds), CGRectGetHeight(trackView_.bounds));
+        trackView_.frame = CGRectMake(trackX, trackView_.frame.origin.y, CGRectGetWidth(label.bounds), CGRectGetHeight(trackView_.bounds));
+
+       NSLog(@"--wwwww:%f--:%@", CGRectGetWidth(label.bounds),NSStringFromCGRect(trackView_.frame));
 
         _selectedIndex = selectedIndex;
     }
