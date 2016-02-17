@@ -19,13 +19,34 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="nKE-6j-LcF" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="fUS-8i-Rnv"/>
                         <segue destination="w2T-6u-huB" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="01p-gF-Kmj"/>
+                        <segue destination="Yai-DX-FGs" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="cef-gX-8yf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-234" y="-204"/>
+        </scene>
+        <!--Side View Controller-->
+        <scene sceneID="riH-3l-CHG">
+            <objects>
+                <viewController id="Yai-DX-FGs" customClass="SideViewController" customModule="ZhiHuPlus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Cp-2X-Loz"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Pa-eq-wRR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UGO-4U-gmt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="w2T-6u-huB" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="uY1-HT-rU3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mud-2q-yob" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="635" y="-462"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="T5k-fN-nTJ">
@@ -56,37 +77,6 @@
             </objects>
             <point key="canvasLocation" x="1319" y="228"/>
         </scene>
-        <!--Side View Controller-->
-        <scene sceneID="PwZ-RV-8RQ">
-            <objects>
-                <tableViewController id="nKE-6j-LcF" customClass="SideViewController" customModule="ZhiHuPlus" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pwG-ec-q6C">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="EAN-OW-lgY">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EAN-OW-lgY" id="rYR-T2-9bg">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="nKE-6j-LcF" id="9qA-G0-CIj"/>
-                            <outlet property="delegate" destination="nKE-6j-LcF" id="sQ6-ZY-ere"/>
-                        </connections>
-                    </tableView>
-                    <connections>
-                        <segue destination="w2T-6u-huB" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="ZPp-6u-UPr"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jgD-dH-tPD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="570" y="-516"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Mk3-Fs-hix">
             <objects>
@@ -105,6 +95,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZPp-6u-UPr"/>
+        <segue reference="uY1-HT-rU3"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -13,7 +13,9 @@ class MainViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-      let leftButton = UIBarButtonItem(image: UIImage(named: "menu"), style: .Plain, target: self.reveal, action: <#T##Selector#>)
+      let leftButton = UIBarButtonItem(image: UIImage(named: "menu"), style: .Plain, target: self.revealViewController(), action: "revealToggle:")
+      self.navigationItem.setLeftBarButtonItem(leftButton, animated: false)
+
     }
 
     override func didReceiveMemoryWarning() {
