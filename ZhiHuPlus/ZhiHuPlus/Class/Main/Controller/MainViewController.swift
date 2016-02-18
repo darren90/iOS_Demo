@@ -22,6 +22,10 @@ class MainViewController: UITableViewController,SDCycleScrollViewDelegate,Parall
         self.tableView.estimatedRowHeight = 50
         self.tableView.showsVerticalScrollIndicator = false
         
+        //设置透明NavBar
+        self.navigationController?.navigationBar.lt_setBackgroundColor(UIColor.clearColor())
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
         setNavBar()
 
         let leftButton = UIBarButtonItem(image: UIImage(named: "menu"), style: .Plain, target: self.revealViewController(), action: "revealToggle:")
@@ -120,6 +124,11 @@ class MainViewController: UITableViewController,SDCycleScrollViewDelegate,Parall
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
+    
+    
+    
+    
+    
  
     //设置滑动极限修改该值需要一并更改layoutHeaderViewForScrollViewOffset中的对应值
     func lockDirection() {
@@ -132,3 +141,17 @@ class MainViewController: UITableViewController,SDCycleScrollViewDelegate,Parall
     }
 
 }
+
+
+
+
+//拓展NavigationController以设置StatusBar
+extension UINavigationController {
+    public override func childViewControllerForStatusBarStyle() -> UIViewController? {
+        return self.topViewController
+    }
+    public override func childViewControllerForStatusBarHidden() -> UIViewController? {
+        return self.topViewController
+    }
+}
+
