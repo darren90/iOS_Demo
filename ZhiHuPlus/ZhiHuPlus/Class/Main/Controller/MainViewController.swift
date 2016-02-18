@@ -10,14 +10,45 @@ import UIKit
 
 class MainViewController: UITableViewController {
 
+    var bannerArray:[HomeModel] = []//轮播的数组
+    var dataArray: [HomeModel] = []//轮播以下的数组
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
       let leftButton = UIBarButtonItem(image: UIImage(named: "menu"), style: .Plain, target: self.revealViewController(), action: "revealToggle:")
       self.navigationItem.setLeftBarButtonItem(leftButton, animated: false)
 
+        getHomeData()
     }
-
+    
+    func getHomeData(){
+        
+        APIManager.get("http://news-at.zhihu.com/api/4/news/latest", params: nil, success: { (json) -> Void in
+            let homeData:Array = json["stories"] as! Array<[String:AnyObject]>
+            let bannerData:Array = json["top_stories"] as! Array<[String:AnyObject]>
+    
+            for i in 0 ..< homeData.count   {
+                let id = homeData[i]["id"] as! String
+                let img = homeData[i]["image"] as! String
+                let title = homeData[i]["title"] as! String
+                self.dataArray.append(HomeModel(id: id, image: img, title: title))
+            }
+        
+            for i in 0 ..< bannerData.count   {
+                let id = bannerData[i]["id"] as! String
+                let img = bannerData[i]["image"] as! String
+                let title = bannerData[i]["title"] as! String
+                self.bannerArray.append(HomeModel(id: id, image: img, title: title))
+            }
+            
+            }) { (error) -> Void in
+                
+        }
+    }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -27,23 +58,22 @@ class MainViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.dataArray.count;
     }
 
-    /*
+  
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
 
-        // Configure the cell...
-
+        
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.

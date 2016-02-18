@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4A05A461D060A944D7768985 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61532937EED2F2A88A3DD904 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		8910A21D1C75655C009E8B22 /* SideCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8910A21C1C75655C009E8B22 /* SideCell1.swift */; };
+		8910A21F1C756568009E8B22 /* SideCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8910A21E1C756568009E8B22 /* SideCell2.swift */; };
+		8910A2211C756988009E8B22 /* ZhiHuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8910A2201C756988009E8B22 /* ZhiHuModel.swift */; };
+		8910A2261C7572F1009E8B22 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8910A2251C7572F1009E8B22 /* APIManager.swift */; };
+		8910A2291C759C76009E8B22 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8910A2281C759C76009E8B22 /* HomeModel.swift */; };
+		8910A22B1C75B2FE009E8B22 /* HomeMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8910A22A1C75B2FE009E8B22 /* HomeMainCell.swift */; };
 		892F901E1C741C250021752A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F901D1C741C250021752A /* AppDelegate.swift */; };
 		892F90201C741C250021752A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F901F1C741C250021752A /* ViewController.swift */; };
 		892F90231C741C250021752A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 892F90211C741C250021752A /* Main.storyboard */; };
@@ -76,6 +82,12 @@
 /* Begin PBXFileReference section */
 		61532937EED2F2A88A3DD904 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		640A75AC40E9CF86266FC941 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		8910A21C1C75655C009E8B22 /* SideCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideCell1.swift; sourceTree = "<group>"; };
+		8910A21E1C756568009E8B22 /* SideCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideCell2.swift; sourceTree = "<group>"; };
+		8910A2201C756988009E8B22 /* ZhiHuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZhiHuModel.swift; sourceTree = "<group>"; };
+		8910A2251C7572F1009E8B22 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		8910A2281C759C76009E8B22 /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		8910A22A1C75B2FE009E8B22 /* HomeMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMainCell.swift; sourceTree = "<group>"; };
 		892F901A1C741C250021752A /* ZhiHuPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhiHuPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		892F901D1C741C250021752A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		892F901F1C741C250021752A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +205,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8910A2241C7572B5009E8B22 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8910A2251C7572F1009E8B22 /* APIManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		892F90111C741C250021752A = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +291,7 @@
 		892F90511C744E660021752A /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				8910A2241C7572B5009E8B22 /* Manager */,
 				892F90521C744E660021752A /* Vendor */,
 			);
 			path = Other;
@@ -489,6 +510,8 @@
 			isa = PBXGroup;
 			children = (
 				892F910E1C74535D0021752A /* SideViewController.swift */,
+				8910A21C1C75655C009E8B22 /* SideCell1.swift */,
+				8910A21E1C756568009E8B22 /* SideCell2.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -511,6 +534,7 @@
 			isa = PBXGroup;
 			children = (
 				892F91101C7453D90021752A /* MainViewController.swift */,
+				8910A22A1C75B2FE009E8B22 /* HomeMainCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -518,6 +542,8 @@
 		892F910C1C7453390021752A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8910A2201C756988009E8B22 /* ZhiHuModel.swift */,
+				8910A2281C759C76009E8B22 /* HomeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -740,17 +766,21 @@
 				892F90FE1C744ECF0021752A /* PNRadarChart.m in Sources */,
 				892F91051C744ECF0021752A /* README.md in Sources */,
 				892F90F51C744ECF0021752A /* PNChartLabel.m in Sources */,
+				8910A21F1C756568009E8B22 /* SideCell2.swift in Sources */,
 				892F90F41C744ECF0021752A /* PNBarChart.m in Sources */,
 				892F90A91C744E670021752A /* ParallaxHeaderView.m in Sources */,
 				892F90A61C744E670021752A /* GradientView.m in Sources */,
 				892F90C31C744E670021752A /* UIView+SDExtension.m in Sources */,
 				892F90A71C744E670021752A /* MSWeakTimer.m in Sources */,
 				892F90FB1C744ECF0021752A /* PNLineChartDataItem.m in Sources */,
+				8910A21D1C75655C009E8B22 /* SideCell1.swift in Sources */,
 				892F90F81C744ECF0021752A /* PNGenericChart.m in Sources */,
 				892F90C51C744E670021752A /* ZFModalTransitionAnimator.m in Sources */,
 				892F90F31C744ECF0021752A /* PNBar.m in Sources */,
 				892F90BE1C744E670021752A /* TAAnimatedDotView.m in Sources */,
+				8910A2211C756988009E8B22 /* ZhiHuModel.swift in Sources */,
 				892F91031C744ECF0021752A /* README.md in Sources */,
+				8910A2291C759C76009E8B22 /* HomeModel.swift in Sources */,
 				892F90C41C744E670021752A /* SWRevealViewController.m in Sources */,
 				892F91001C744ECF0021752A /* PNScatterChart.m in Sources */,
 				892F90BD1C744E670021752A /* TAAbstractDotView.m in Sources */,
@@ -758,10 +788,12 @@
 				892F90FD1C744ECF0021752A /* PNPieChartDataItem.m in Sources */,
 				892F90F91C744ECF0021752A /* PNLineChart.m in Sources */,
 				892F91111C7453D90021752A /* MainViewController.swift in Sources */,
+				8910A22B1C75B2FE009E8B22 /* HomeMainCell.swift in Sources */,
 				892F90201C741C250021752A /* ViewController.swift in Sources */,
 				892F91021C744ECF0021752A /* PNScatterChartDataItem.m in Sources */,
 				892F90A81C744E670021752A /* myUILabel.m in Sources */,
 				892F901E1C741C250021752A /* AppDelegate.swift in Sources */,
+				8910A2261C7572F1009E8B22 /* APIManager.swift in Sources */,
 				892F90BF1C744E670021752A /* TADotView.m in Sources */,
 				892F90A41C744E670021752A /* UIImage+ImageEffects.m in Sources */,
 				892F90A51C744E670021752A /* UINavigationBar+Awesome.m in Sources */,

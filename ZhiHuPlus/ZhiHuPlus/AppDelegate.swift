@@ -7,15 +7,21 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var sideArray: [SideModel] = []//侧边栏的条目
+
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        getThemesData()
         return true
     }
 
@@ -42,5 +48,90 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    
+    func getThemesData(){
+        
+        APIManager.get("http://news-at.zhihu.com/api/4/themes", params: nil, success: { (json) -> Void in
+            
+            let data = json["others"]
+//            print(data)
+
+            for i in 0..<data!!.count {
+                let ID = String(data!![i]["id"])
+                let name = String(data!![i]["name"])
+                self.sideArray.append(SideModel(id: ID, name: name))
+            }
+//            print(self.sideArray)
+
+            }) { (error) -> Void in
+                
+        }
+        
+//        Alamofire.request(.GET, "http://news-at.zhihu.com/api/4/themes").responseJSON { (_, _, dataResult) -> Void in
+//            guard dataResult.error == nil else{
+//                print("捕获数据失败")
+//                return
+//            }
+//            
+//            let data = JSON(dataResult.value!)["others"]
+//            print(data)
+//            
+//            for i in 0..<data.count {
+//                let ID = String(data[i]["id"])
+//                let name = String(data[i]["name"])
+//                self.sideArray.append(SideModel(id: ID, name: name))
+//            }
+//            
+//        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

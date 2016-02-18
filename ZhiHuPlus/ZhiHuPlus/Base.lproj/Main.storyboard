@@ -80,7 +80,7 @@
                                 <rect key="frame" x="0.0" y="126" width="600" height="429"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="r70-VN-nZE">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="r70-VN-nZE" customClass="SideCell1" customModule="ZhiHuPlus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r70-VN-nZE" id="dk7-sl-Ase">
@@ -122,7 +122,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="vds-Zl-pJl">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="vds-Zl-pJl" customClass="SideCell2" customModule="ZhiHuPlus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vds-Zl-pJl" id="z6E-OY-r7n">
@@ -186,7 +186,7 @@
             </objects>
             <point key="canvasLocation" x="635" y="-462"/>
         </scene>
-        <!--Root View Controller-->
+        <!--首页-->
         <scene sceneID="T5k-fN-nTJ">
             <objects>
                 <tableViewController id="aCI-vS-Qfl" customClass="MainViewController" customModule="ZhiHuPlus" customModuleProvider="target" sceneMemberID="viewController">
@@ -195,12 +195,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="tTI-o7-lBq">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="93" id="tTI-o7-lBq" customClass="HomeMainCell" customModule="ZhiHuPlus" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="93"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tTI-o7-lBq" id="ZNY-BK-maI">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="92.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple Pay 登陆中国，距离刷手机不刷卡的时代更近了" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="469" translatesAutoresizingMaskIntoConstraints="NO" id="Trz-dG-5Kb">
+                                            <rect key="frame" x="15" y="0.0" width="469" height="92.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Da-UG-EYu">
+                                            <rect key="frame" x="499" y="15" width="66" height="61.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="66" id="TWl-8d-c3d"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="8Da-UG-EYu" secondAttribute="trailing" constant="27" id="D4G-ew-mod"/>
+                                        <constraint firstItem="8Da-UG-EYu" firstAttribute="leading" secondItem="Trz-dG-5Kb" secondAttribute="trailing" constant="15" id="IMq-Px-fUm"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="8Da-UG-EYu" secondAttribute="bottom" constant="8" id="SGh-n8-HnC"/>
+                                        <constraint firstAttribute="bottom" secondItem="Trz-dG-5Kb" secondAttribute="bottom" id="UNk-g2-j7l"/>
+                                        <constraint firstItem="Trz-dG-5Kb" firstAttribute="leading" secondItem="ZNY-BK-maI" secondAttribute="leading" constant="15" id="fzn-ut-TdP"/>
+                                        <constraint firstItem="Trz-dG-5Kb" firstAttribute="top" secondItem="ZNY-BK-maI" secondAttribute="top" id="hVJ-y4-Zlb"/>
+                                        <constraint firstItem="8Da-UG-EYu" firstAttribute="top" secondItem="ZNY-BK-maI" secondAttribute="topMargin" constant="7" id="nsl-oH-ILV"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -209,7 +232,7 @@
                             <outlet property="delegate" destination="aCI-vS-Qfl" id="CWd-qm-72z"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="XWz-q0-LMG"/>
+                    <navigationItem key="navigationItem" title="首页" id="XWz-q0-LMG"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r70-gT-xic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
