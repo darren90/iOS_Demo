@@ -123,6 +123,11 @@ class MainViewController: UITableViewController,SDCycleScrollViewDelegate,Parall
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        //保证点击的是TableContentViewCell
+        guard tableView.cellForRowAtIndexPath(indexPath) is HomeMainCell else {
+            return
+        }
     }
     
     
@@ -139,7 +144,11 @@ class MainViewController: UITableViewController,SDCycleScrollViewDelegate,Parall
     func cycleScrollView(cycleScrollView: SDCycleScrollView!, didSelectItemAtIndex index: Int) {
         
     }
-
+    
+    //设置StatusBar为白色
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
 }
 
 
