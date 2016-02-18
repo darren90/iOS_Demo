@@ -8,18 +8,51 @@
 
 import UIKit
 
-class MainViewController: UITableViewController {
+class MainViewController: UITableViewController,SDCycleScrollViewDelegate,ParallaxHeaderViewDelegate {
 
+    var cycleScrollView: SDCycleScrollView!
+    
     var bannerArray:[HomeModel] = []//轮播的数组
     var dataArray: [HomeModel] = []//轮播以下的数组
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.rowHeight = 90//UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 50
+        self.tableView.showsVerticalScrollIndicator = false
+        
+        setNavBar()
 
-      let leftButton = UIBarButtonItem(image: UIImage(named: "menu"), style: .Plain, target: self.revealViewController(), action: "revealToggle:")
-      self.navigationItem.setLeftBarButtonItem(leftButton, animated: false)
+        let leftButton = UIBarButtonItem(image: UIImage(named: "menu"), style: .Plain, target: self.revealViewController(), action: "revealToggle:")
+        self.navigationItem.setLeftBarButtonItem(leftButton, animated: false)
 
         getHomeData()
+    }
+    
+    
+    func setNavBar(){
+        //配置无限循环scrollView
+        cycleScrollView = SDCycleScrollView(frame: CGRectMake(0, 0, self.tableView.frame.width, 154), imageURLStringsGroup: nil)
+        
+        cycleScrollView.infiniteLoop = true
+        cycleScrollView.delegate = self
+        cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated
+        cycleScrollView.autoScrollTimeInterval = 6.0;
+        cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleClassic
+        cycleScrollView.titleLabelTextFont = UIFont(name: "STHeitiSC-Medium", size: 21)
+        cycleScrollView.titleLabelBackgroundColor = UIColor.clearColor()
+        cycleScrollView.titleLabelHeight = 60
+        
+        //alpha在未设置的状态下默认为0
+        cycleScrollView.titleLabelAlpha = 1
+        
+        //将其添加到ParallaxView
+        let headerSubview: ParallaxHeaderView = ParallaxHeaderView.parallaxHeaderViewWithSubView(cycleScrollView, forSize: CGSizeMake(self.tableView.frame.width, 154)) as! ParallaxHeaderView
+        headerSubview.delegate  = self
+        
+        //将ParallaxView设置为tableHeaderView
+        self.tableView.tableHeaderView = headerSubview
     }
     
     func getHomeData(){
@@ -27,21 +60,31 @@ class MainViewController: UITableViewController {
         APIManager.get("http://news-at.zhihu.com/api/4/news/latest", params: nil, success: { (json) -> Void in
             let homeData:Array = json["stories"] as! Array<[String:AnyObject]>
             let bannerData:Array = json["top_stories"] as! Array<[String:AnyObject]>
-    
+//            print(homeData)
             for i in 0 ..< homeData.count   {
-                let id = homeData[i]["id"] as! String
-                let img = homeData[i]["image"] as! String
+//                print(homeData[i])
+                let id = String(homeData[i]["id"])//int 类型
+                let img = homeData[i]["images"]![0] as! String
                 let title = homeData[i]["title"] as! String
                 self.dataArray.append(HomeModel(id: id, image: img, title: title))
             }
         
+            var imgs:[String] = []
+            var titles:[String] = []
+            
             for i in 0 ..< bannerData.count   {
-                let id = bannerData[i]["id"] as! String
+//                 print(bannerData[i])
+                let id = String(bannerData[i]["id"])
                 let img = bannerData[i]["image"] as! String
                 let title = bannerData[i]["title"] as! String
+                imgs.append(img)
+                titles.append(title)
                 self.bannerArray.append(HomeModel(id: id, image: img, title: title))
             }
+            self.cycleScrollView.imageURLStringsGroup = imgs
+            self.cycleScrollView.titlesGroup = titles
             
+            self.tableView.reloadData()
             }) { (error) -> Void in
                 
         }
@@ -68,56 +111,24 @@ class MainViewController: UITableViewController {
 
   
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier("homeMain") as! HomeMainCell
+        let model = self.dataArray[indexPath.row]
+        cell.setModel(model)
         return cell
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
  
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    //设置滑动极限修改该值需要一并更改layoutHeaderViewForScrollViewOffset中的对应值
+    func lockDirection() {
+        self.tableView.contentOffset.y = -154
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+ 
+//    didSelectItemAtIndex
+    func cycleScrollView(cycleScrollView: SDCycleScrollView!, didSelectItemAtIndex index: Int) {
+        
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

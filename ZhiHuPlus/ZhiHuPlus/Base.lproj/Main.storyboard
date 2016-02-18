@@ -195,7 +195,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="93" id="tTI-o7-lBq" customClass="HomeMainCell" customModule="ZhiHuPlus" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="homeMain" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeMain" rowHeight="93" id="tTI-o7-lBq" customClass="HomeMainCell" customModule="ZhiHuPlus" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="93"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tTI-o7-lBq" id="ZNY-BK-maI">
@@ -225,6 +225,10 @@
                                         <constraint firstItem="8Da-UG-EYu" firstAttribute="top" secondItem="ZNY-BK-maI" secondAttribute="topMargin" constant="7" id="nsl-oH-ILV"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imgView" destination="8Da-UG-EYu" id="2Uf-YD-Jlp"/>
+                                    <outlet property="titleLabel" destination="Trz-dG-5Kb" id="sn9-jt-qAl"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
