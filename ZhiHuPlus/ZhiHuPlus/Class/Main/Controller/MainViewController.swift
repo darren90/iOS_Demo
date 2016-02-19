@@ -11,6 +11,8 @@ import UIKit
 class MainViewController: UITableViewController,SDCycleScrollViewDelegate,ParallaxHeaderViewDelegate {
 
     var cycleScrollView: SDCycleScrollView!
+    var animator: ZFModalTransitionAnimator!
+
     
     var bannerArray:[HomeModel] = []//轮播的数组
     var dataArray: [HomeModel] = []//轮播以下的数组
@@ -67,7 +69,7 @@ class MainViewController: UITableViewController,SDCycleScrollViewDelegate,Parall
 //            print(homeData)
             for i in 0 ..< homeData.count   {
 //                print(homeData[i])
-                let id = String(homeData[i]["id"])//int 类型
+                let id = String(homeData[i]["id"]!)//int 类型
                 let img = homeData[i]["images"]![0] as! String
                 let title = homeData[i]["title"] as! String
                 self.dataArray.append(HomeModel(id: id, image: img, title: title))
@@ -78,7 +80,7 @@ class MainViewController: UITableViewController,SDCycleScrollViewDelegate,Parall
             
             for i in 0 ..< bannerData.count   {
 //                 print(bannerData[i])
-                let id = String(bannerData[i]["id"])
+                let id = String(bannerData[i]["id"]!)
                 let img = bannerData[i]["image"] as! String
                 let title = bannerData[i]["title"] as! String
                 imgs.append(img)
@@ -128,6 +130,50 @@ class MainViewController: UITableViewController,SDCycleScrollViewDelegate,Parall
         guard tableView.cellForRowAtIndexPath(indexPath) is HomeMainCell else {
             return
         }
+        
+        
+        //拿到webViewController
+        let detailVC = self.storyboard?.instantiateViewControllerWithIdentifier("mainDetail") as!MainDetailViewController
+        detailVC.index = indexPath.row
+        
+        //找到对应detailId
+//        if indexPath.row < appCloud().contentStory.count {
+//            let id = appCloud().contentStory[indexPath.row].id
+//            webViewController.detailId = id
+//        } else {
+//            let newIndex = indexPath.row - appCloud().contentStory.count
+//            let id = (appCloud().pastContentStory[newIndex] as! ContentStoryModel).id
+//            webViewController.detailId = id
+//        }
+        
+      
+        let id:String = self.dataArray[indexPath.row].id 
+        detailVC.detailId = id
+        
+        //取得已读新闻数组以供修改
+//        var readNewsIdArray = NSUserDefaults.standardUserDefaults().objectForKey(Keys.readNewsId) as! [String]
+        
+        //记录已被选中的id
+//        readNewsIdArray.append(webViewController.newsId)
+//        NSUserDefaults.standardUserDefaults().setObject(readNewsIdArray, forKey: Keys.readNewsId)
+        
+        //对animator进行初始化
+        animator = ZFModalTransitionAnimator(modalViewController: detailVC)
+        self.animator.dragable = true
+        self.animator.bounces = false
+        self.animator.behindViewAlpha = 0.7
+        self.animator.behindViewScale = 0.9
+        self.animator.transitionDuration = 0.7
+        self.animator.direction = ZFModalTransitonDirection.Right
+        
+        //设置webViewController
+        detailVC.transitioningDelegate = self.animator
+        
+        //实施转场
+        self.presentViewController(detailVC, animated: true) { () -> Void in
+            
+        }
+        
     }
     
     

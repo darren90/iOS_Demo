@@ -13,7 +13,6 @@
 		8910A2211C756988009E8B22 /* ZhiHuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8910A2201C756988009E8B22 /* ZhiHuModel.swift */; };
 		8910A2261C7572F1009E8B22 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8910A2251C7572F1009E8B22 /* APIManager.swift */; };
 		8910A2291C759C76009E8B22 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8910A2281C759C76009E8B22 /* HomeModel.swift */; };
-		8910A22B1C75B2FE009E8B22 /* HomeMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8910A22A1C75B2FE009E8B22 /* HomeMainCell.swift */; };
 		892F901E1C741C250021752A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F901D1C741C250021752A /* AppDelegate.swift */; };
 		892F90201C741C250021752A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F901F1C741C250021752A /* ViewController.swift */; };
 		892F90231C741C250021752A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 892F90211C741C250021752A /* Main.storyboard */; };
@@ -60,6 +59,8 @@
 		892F91061C744ECF0021752A /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 892F90F11C744ECF0021752A /* UICountingLabel.m */; };
 		892F910F1C74535D0021752A /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F910E1C74535D0021752A /* SideViewController.swift */; };
 		892F91111C7453D90021752A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F91101C7453D90021752A /* MainViewController.swift */; };
+		89D49DED1C76B4B400DC5526 /* HomeMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D49DEC1C76B4B400DC5526 /* HomeMainCell.swift */; };
+		89D49DEF1C76B56B00DC5526 /* MainDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D49DEE1C76B56B00DC5526 /* MainDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,7 +88,6 @@
 		8910A2201C756988009E8B22 /* ZhiHuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZhiHuModel.swift; sourceTree = "<group>"; };
 		8910A2251C7572F1009E8B22 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		8910A2281C759C76009E8B22 /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
-		8910A22A1C75B2FE009E8B22 /* HomeMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMainCell.swift; sourceTree = "<group>"; };
 		892F901A1C741C250021752A /* ZhiHuPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhiHuPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		892F901D1C741C250021752A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		892F901F1C741C250021752A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +176,8 @@
 		892F90F11C744ECF0021752A /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
 		892F910E1C74535D0021752A /* SideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = "<group>"; };
 		892F91101C7453D90021752A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		89D49DEC1C76B4B400DC5526 /* HomeMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMainCell.swift; sourceTree = "<group>"; };
+		89D49DEE1C76B56B00DC5526 /* MainDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainDetailViewController.swift; sourceTree = "<group>"; };
 		DBF239F9E882F2F32A3F3E7B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -534,7 +536,7 @@
 			isa = PBXGroup;
 			children = (
 				892F91101C7453D90021752A /* MainViewController.swift */,
-				8910A22A1C75B2FE009E8B22 /* HomeMainCell.swift */,
+				89D49DEE1C76B56B00DC5526 /* MainDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -551,6 +553,7 @@
 		892F910D1C7453390021752A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				89D49DEC1C76B4B400DC5526 /* HomeMainCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -788,7 +791,7 @@
 				892F90FD1C744ECF0021752A /* PNPieChartDataItem.m in Sources */,
 				892F90F91C744ECF0021752A /* PNLineChart.m in Sources */,
 				892F91111C7453D90021752A /* MainViewController.swift in Sources */,
-				8910A22B1C75B2FE009E8B22 /* HomeMainCell.swift in Sources */,
+				89D49DED1C76B4B400DC5526 /* HomeMainCell.swift in Sources */,
 				892F90201C741C250021752A /* ViewController.swift in Sources */,
 				892F91021C744ECF0021752A /* PNScatterChartDataItem.m in Sources */,
 				892F90A81C744E670021752A /* myUILabel.m in Sources */,
@@ -796,6 +799,7 @@
 				8910A2261C7572F1009E8B22 /* APIManager.swift in Sources */,
 				892F90BF1C744E670021752A /* TADotView.m in Sources */,
 				892F90A41C744E670021752A /* UIImage+ImageEffects.m in Sources */,
+				89D49DEF1C76B56B00DC5526 /* MainDetailViewController.swift in Sources */,
 				892F90A51C744E670021752A /* UINavigationBar+Awesome.m in Sources */,
 				892F90BC1C744E670021752A /* NSData+SDDataCache.m in Sources */,
 				892F90C11C744E670021752A /* SDCollectionViewCell.m in Sources */,
