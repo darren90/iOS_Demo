@@ -10,10 +10,18 @@ import UIKit
 import Alamofire
 
 class MainDetailViewController: UIViewController ,UIScrollViewDelegate,UIWebViewDelegate,UIGestureRecognizerDelegate{
+    @IBOutlet weak var webView: UIWebView!
+    
     var index = 1
     var detailId = ""
     
-    @IBOutlet weak var webView: UIWebView!
+    //接口返回的数据
+    var imageUrl = ""//图片
+    var image_source = ""
+    var share_url = ""
+    var type = ""
+    var titleStr = ""
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,12 +58,17 @@ class MainDetailViewController: UIViewController ,UIScrollViewDelegate,UIWebView
 
         //拉去数据
         APIManager.get(httpUrl, params: nil, success: { (json) -> Void in
-//            print(json)
+            print(json)
             let bodyStr = json["body"] as! String
-            let cssStr:String = json["css"] as! String
+            let cssStr:String = json["css"]!![0] as! String
             
-            print(bodyStr)
-            print(cssStr)
+            self.imageUrl = json["image"] as! String
+            self.image_source = json["image_source"] as! String
+            self.share_url = json["share_url"] as! String
+            self.titleStr = json["title"] as! String
+            
+//            print(bodyStr)
+//            print(cssStr)
             
             var html = "<html> <head>"
             html += "<link rel=\"stylesheet\" href="
@@ -64,13 +77,29 @@ class MainDetailViewController: UIViewController ,UIScrollViewDelegate,UIWebView
             html += bodyStr
             html += "</body> </html>"
            
-            print(html)
-            //
+//            print(html)
+//            let url:NSURL = NSURL(string: html)!
+//            let reqest:NSURLRequest = NSURLRequest(URL:url)
+//            self.webView.loadRequest(reqest)
+           
+            //加载网页数据OK
+            self.webView.loadHTMLString(html, baseURL: nil)
         }) { (error) -> Void in
             print("获取数据失败")
         }
     }
 
+    func webViewDidStartLoad(webView: UIWebView) {
+        print(__FUNCTION__)
+    }
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
+        print(__FUNCTION__)
+    }
+    func webViewDidFinishLoad(webView: UIWebView) {
+        print(__FUNCTION__)
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -79,6 +108,23 @@ class MainDetailViewController: UIViewController ,UIScrollViewDelegate,UIWebView
  
 
 }
+/**
+
+css =     (
+"http://news-at.zhihu.com/css/news_qa.auto.css?v=77778"
+);
+"ga_prefix" = 021918;
+id = 7893543;
+image = "http://pic4.zhimg.com/f736ad28bdf27bd5369030858713dbcb.jpg";
+"image_source" = "TFBOYS-\U6613\U70ca\U5343\U73ba / \U65b0\U6d6a\U5fae\U535a";
+js =     (
+);
+"share_url" = "http://daily.zhihu.com/story/7893543";
+title = "\U6613\U70ca\U5343\U73ba\U90fd\U4e0a\U9ad8\U4e2d\U4e86\Uff0c\U751f\U75c5\U8fd8\U5f97\U770b\U513f\U79d1\Uff0c\U6ca1\U9519";
+type = 0;
+
+
+*/
 
 
 
