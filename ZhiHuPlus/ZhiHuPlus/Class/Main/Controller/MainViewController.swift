@@ -135,18 +135,7 @@ class MainViewController: UITableViewController,SDCycleScrollViewDelegate,Parall
         //拿到webViewController
         let detailVC = self.storyboard?.instantiateViewControllerWithIdentifier("mainDetail") as!MainDetailViewController
         detailVC.index = indexPath.row
-        
-        //找到对应detailId
-//        if indexPath.row < appCloud().contentStory.count {
-//            let id = appCloud().contentStory[indexPath.row].id
-//            webViewController.detailId = id
-//        } else {
-//            let newIndex = indexPath.row - appCloud().contentStory.count
-//            let id = (appCloud().pastContentStory[newIndex] as! ContentStoryModel).id
-//            webViewController.detailId = id
-//        }
-        
-      
+       
         let id:String = self.dataArray[indexPath.row].id 
         detailVC.detailId = id
         
