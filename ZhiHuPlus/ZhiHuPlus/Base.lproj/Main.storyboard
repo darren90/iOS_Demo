@@ -105,7 +105,7 @@
                                                         <constraint firstAttribute="width" constant="42" id="Var-m0-pGR"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -138,7 +138,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="不许无聊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sig-c3-p1N">
                                                     <rect key="frame" x="15" y="0.0" width="91" height="43.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -199,14 +199,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jxR-47-MlS">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="goW-Kl-b7L"/>
+                                    <constraint firstAttribute="height" constant="30" id="goW-Kl-b7L"/>
                                 </constraints>
                             </view>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lmm-gw-8rI">
-                                <rect key="frame" x="0.0" y="28" width="600" height="565"/>
+                                <rect key="frame" x="0.0" y="38" width="600" height="555"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
                         </subviews>
@@ -230,7 +230,57 @@
             </objects>
             <point key="canvasLocation" x="2283" y="479"/>
         </scene>
-        <!--首页-->
+        <!--Launch View Controller-->
+        <scene sceneID="cfy-dy-at0">
+            <objects>
+                <viewController id="gRm-qc-9W8" customClass="LaunchViewController" customModule="ZhiHuPlus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7ZP-7X-1Kr"/>
+                        <viewControllerLayoutGuide type="bottom" id="eQ1-cF-MCD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cSW-tq-Z7o">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZl-Yy-bQe" customClass="JSAnimatedImagesView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="5el-Iq-HNH">
+                                <rect key="frame" x="145" y="366" width="311" height="154"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="154" id="VgM-Bz-9bc"/>
+                                    <constraint firstAttribute="width" constant="311" id="rgr-t7-Hha"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ZhiHuPlus 2.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duO-g1-ims">
+                                <rect key="frame" x="246" y="528" width="107" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iZl-Yy-bQe" firstAttribute="leading" secondItem="cSW-tq-Z7o" secondAttribute="leading" id="5YC-DV-rrF"/>
+                            <constraint firstItem="eQ1-cF-MCD" firstAttribute="top" secondItem="5el-Iq-HNH" secondAttribute="bottom" constant="80" id="98C-Lc-oac"/>
+                            <constraint firstAttribute="bottom" secondItem="iZl-Yy-bQe" secondAttribute="bottom" id="b7O-Di-As5"/>
+                            <constraint firstItem="iZl-Yy-bQe" firstAttribute="top" secondItem="cSW-tq-Z7o" secondAttribute="top" id="cv3-2j-Dzf"/>
+                            <constraint firstItem="duO-g1-ims" firstAttribute="centerX" secondItem="cSW-tq-Z7o" secondAttribute="centerX" id="iZC-bR-t00"/>
+                            <constraint firstAttribute="trailing" secondItem="iZl-Yy-bQe" secondAttribute="trailing" id="ilf-Es-Iay"/>
+                            <constraint firstItem="duO-g1-ims" firstAttribute="top" secondItem="5el-Iq-HNH" secondAttribute="bottom" constant="8" id="mbT-mu-pI3"/>
+                            <constraint firstItem="5el-Iq-HNH" firstAttribute="centerX" secondItem="cSW-tq-Z7o" secondAttribute="centerX" id="ox6-9T-90G"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="launchView" destination="iZl-Yy-bQe" id="6bP-TR-e1a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WJO-UX-etb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2987" y="472"/>
+        </scene>
+        <!--今日热闻-->
         <scene sceneID="T5k-fN-nTJ">
             <objects>
                 <tableViewController id="aCI-vS-Qfl" customClass="MainViewController" customModule="ZhiHuPlus" customModuleProvider="target" sceneMemberID="viewController">
@@ -249,7 +299,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple Pay 登陆中国，距离刷手机不刷卡的时代更近了" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="469" translatesAutoresizingMaskIntoConstraints="NO" id="Trz-dG-5Kb">
                                             <rect key="frame" x="15" y="0.0" width="469" height="92.5"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Da-UG-EYu">
@@ -280,7 +330,12 @@
                             <outlet property="delegate" destination="aCI-vS-Qfl" id="CWd-qm-72z"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="首页" id="XWz-q0-LMG"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="今日热闻" id="XSn-4v-QIv"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="titleItem" destination="XSn-4v-QIv" id="xgc-iV-dJW"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r70-gT-xic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -304,6 +359,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Logo" width="311" height="154"/>
         <image name="home" width="128" height="128"/>
         <image name="placeHolder" width="448" height="90"/>
         <image name="placeHolderB" width="452" height="250"/>
@@ -311,6 +367,6 @@
         <image name="switch" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uY1-HT-rU3"/>
+        <segue reference="01p-gF-Kmj"/>
     </inferredMetricsTieBreakers>
 </document>

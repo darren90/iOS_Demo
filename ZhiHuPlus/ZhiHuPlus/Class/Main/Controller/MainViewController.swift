@@ -10,12 +10,23 @@ import UIKit
 
 class MainViewController: UITableViewController,SDCycleScrollViewDelegate,ParallaxHeaderViewDelegate {
 
+    @IBOutlet weak var titleItem: UINavigationItem!
     var cycleScrollView: SDCycleScrollView!
     var animator: ZFModalTransitionAnimator!
+    var loadCircleView: PNCircleChart!//刷新控件
+    var loadingView: UIActivityIndicatorView!//正在刷新控件
 
+    var dragging = false
+    var triggered = false
     
     var bannerArray:[HomeModel] = []//轮播的数组
     var dataArray: [HomeModel] = []//轮播以下的数组
+    
+    //查看详情后，再次进入主界面，刷新，显示为灰色字体
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,17 +34,36 @@ class MainViewController: UITableViewController,SDCycleScrollViewDelegate,Parall
         self.tableView.rowHeight = 90//UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 50
         self.tableView.showsVerticalScrollIndicator = false
+   
+        let leftButton = UIBarButtonItem(image: UIImage(named: "menu"), style: .Plain, target: self.revealViewController(), action: "revealToggle:")
+        self.navigationItem.setLeftBarButtonItem(leftButton, animated: false)
+        
+        setNavBar()
         
         //设置透明NavBar
         self.navigationController?.navigationBar.lt_setBackgroundColor(UIColor.clearColor())
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
-        setNavBar()
-
-        let leftButton = UIBarButtonItem(image: UIImage(named: "menu"), style: .Plain, target: self.revealViewController(), action: "revealToggle:")
-        self.navigationItem.setLeftBarButtonItem(leftButton, animated: false)
-
-        getHomeData()
+        //设置刷新控件
+        
+        let titleItemW = (self.titleItem.title! as NSString).sizeWithAttributes(nil).width
+        
+        let startX = (self.view.frame.width - titleItemW - 60) / 2
+        let startY:CGFloat = 12.0
+        loadCircleView = PNCircleChart(frame: CGRect(x: startX, y: startY, width: 15, height: 15), total: 100, current: 0, clockwise: true, shadow: false, shadowColor: nil, displayCountingLabel: false, overrideLineWidth: 1)
+        loadCircleView.backgroundColor = UIColor.clearColor()
+        loadCircleView.strokeColor = UIColor.whiteColor()
+        loadCircleView.strokeChart()
+        loadCircleView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
+        self.navigationController?.navigationBar.addSubview(loadCircleView)
+        
+        //初始化下拉加载loadingView
+        loadingView = UIActivityIndicatorView(frame: CGRect(x: startX+2.5, y: startY, width: 10, height: 10))
+        self.navigationController?.navigationBar.addSubview(loadingView)
+  
+        getHomeData { () -> () in
+            
+        }
     }
     
     
@@ -61,7 +91,8 @@ class MainViewController: UITableViewController,SDCycleScrollViewDelegate,Parall
         self.tableView.tableHeaderView = headerSubview
     }
     
-    func getHomeData(){
+    //MARK - 加载网络数据
+    func getHomeData(operate: (()->())?){
         
         APIManager.get("http://news-at.zhihu.com/api/4/news/latest", params: nil, success: { (json) -> Void in
             let homeData:Array = json["stories"] as! Array<[String:AnyObject]>
@@ -91,8 +122,9 @@ class MainViewController: UITableViewController,SDCycleScrollViewDelegate,Parall
             self.cycleScrollView.titlesGroup = titles
             
             self.tableView.reloadData()
+            operate!()
             }) { (error) -> Void in
-                
+            operate!()
         }
     }
     
@@ -131,20 +163,102 @@ class MainViewController: UITableViewController,SDCycleScrollViewDelegate,Parall
             return
         }
         
+        jump2Toetail(indexPath.row,isCell: true)
+    }
+    
+    override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        dragging = false
+    }
+    override func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        dragging = true
+    }
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        //Parallax效果
+        let header = self.tableView.tableHeaderView as! ParallaxHeaderView
+        header.layoutHeaderViewForScrollViewOffset(scrollView.contentOffset)
         
+        //NavBar及titleLabel透明度渐变
+        let color = UIColor(red: 1/255.0, green: 131/255.0, blue: 209/255.0, alpha: 1)
+        let offsetY = scrollView.contentOffset.y
+        let prelude: CGFloat = 90
+        
+//        print("offsetY:\(offsetY)")
+        
+        if offsetY >= -64 {
+            let alpha = min(1, (64 + offsetY) / (64 + prelude))
+            //titleLabel透明度渐变
+            (header.subviews[0].subviews[0] as! SDCycleScrollView).titleLabelAlpha = 1 - alpha
+            (header.subviews[0].subviews[0].subviews[0] as! UICollectionView).reloadData()
+            //NavBar透明度渐变
+            self.navigationController?.navigationBar.lt_setBackgroundColor(color.colorWithAlphaComponent(alpha))
+            if loadCircleView.hidden != true {
+                loadCircleView.hidden = true
+            }
+            if triggered == true && offsetY == -64 {
+                triggered = false
+            }
+        } else {
+            let ratio = (-offsetY - 64)*2
+            if ratio <= 100 {
+                if triggered == false && loadCircleView.hidden == true {
+                    loadCircleView.hidden = false
+                }
+                loadCircleView.updateChartByCurrent(ratio)
+            } else {
+                if loadCircleView.current != 100 {
+                    loadCircleView.updateChartByCurrent(100)
+                }
+                //第一次检测到松手
+                if !dragging && !triggered {
+                    loadCircleView.hidden = true
+                    loadingView.startAnimating()
+                    //进行刷新，加载网络数据
+                    getHomeData { () -> () in
+                        self.loadingView.stopAnimating()
+                    }
+                    triggered = true
+                }
+            }
+        }
+        
+    }
+    
+    
+ 
+    //设置滑动极限修改该值需要一并更改layoutHeaderViewForScrollViewOffset中的对应值
+    func lockDirection() {
+        self.tableView.contentOffset.y = -154
+    }
+ 
+//    didSelectItemAtIndex
+    func cycleScrollView(cycleScrollView: SDCycleScrollView!, didSelectItemAtIndex index: Int) {
+        jump2Toetail(index,isCell: false)
+    }
+    
+    
+    func jump2Toetail(index:Int, isCell:Bool){
+    
         //拿到webViewController
         let detailVC = self.storyboard?.instantiateViewControllerWithIdentifier("mainDetail") as!MainDetailViewController
-        detailVC.index = indexPath.row
-       
-        let id:String = self.dataArray[indexPath.row].id 
+        detailVC.index = index
+        
+        let id:String = self.dataArray[index].id
         detailVC.detailId = id
+
         
-        //取得已读新闻数组以供修改
-//        var readNewsIdArray = NSUserDefaults.standardUserDefaults().objectForKey(Keys.readNewsId) as! [String]
-        
-        //记录已被选中的id
-//        readNewsIdArray.append(webViewController.newsId)
-//        NSUserDefaults.standardUserDefaults().setObject(readNewsIdArray, forKey: Keys.readNewsId)
+        if isCell {
+            //取出已经看过详情的数据
+            let values = NSUserDefaults.standardUserDefaults().objectForKey(KHadReades)
+            if values != nil {
+                var readNewsIdArray = values as! [String]
+                readNewsIdArray.append(id)
+                NSUserDefaults.standardUserDefaults().setObject(readNewsIdArray, forKey: KHadReades)
+                NSUserDefaults.standardUserDefaults().synchronize()
+            }else {
+                NSUserDefaults.standardUserDefaults().setObject([], forKey: KHadReades)
+                NSUserDefaults.standardUserDefaults().synchronize()
+            }
+        }
         
         //对animator进行初始化
         animator = ZFModalTransitionAnimator(modalViewController: detailVC)
@@ -160,42 +274,14 @@ class MainViewController: UITableViewController,SDCycleScrollViewDelegate,Parall
         
         //实施转场
         self.presentViewController(detailVC, animated: true) { () -> Void in
-            
+        
         }
-        
     }
     
-    
-    
-    
-    
- 
-    //设置滑动极限修改该值需要一并更改layoutHeaderViewForScrollViewOffset中的对应值
-    func lockDirection() {
-        self.tableView.contentOffset.y = -154
-    }
- 
-//    didSelectItemAtIndex
-    func cycleScrollView(cycleScrollView: SDCycleScrollView!, didSelectItemAtIndex index: Int) {
-        
-    }
     
     //设置StatusBar为白色
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
-    }
-}
-
-
-
-
-//拓展NavigationController以设置StatusBar
-extension UINavigationController {
-    public override func childViewControllerForStatusBarStyle() -> UIViewController? {
-        return self.topViewController
-    }
-    public override func childViewControllerForStatusBarHidden() -> UIViewController? {
-        return self.topViewController
     }
 }
 

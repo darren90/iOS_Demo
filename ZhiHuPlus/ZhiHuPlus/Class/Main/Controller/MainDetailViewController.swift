@@ -20,6 +20,9 @@ class MainDetailViewController: UIViewController ,UIScrollViewDelegate,UIWebView
     var titleLabel: myUILabel!
     var sourceLabel: UILabel!
     
+    let loadingView: LoadingView = LoadingView(frame: CGRectMake(0, 0, KWidth, 3))
+
+    
     var isHadImg = true
     var dragging = false
     var triggered = false
@@ -41,6 +44,9 @@ class MainDetailViewController: UIViewController ,UIScrollViewDelegate,UIWebView
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //添加进度条
+        webView.addSubview(loadingView)
         
         //避免因含有navBar而对scrollInsets做自动调整
         self.automaticallyAdjustsScrollViewInsets = false
@@ -144,19 +150,23 @@ class MainDetailViewController: UIViewController ,UIScrollViewDelegate,UIWebView
 
     //MARK - webView的代理
     func webViewDidStartLoad(webView: UIWebView) {
+        loadingView.startLoadProgressAnimation()
+
         print(__FUNCTION__)
     }
     func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
         print(__FUNCTION__)
     }
     func webViewDidFinishLoad(webView: UIWebView) {
+        loadingView.endLoadProgressAnimation()
+
         print(__FUNCTION__)
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
-        print("offsetY:\(offsetY)")
-        if offsetY < 0 {
+//        print("offsetY:\(offsetY)")
+        if offsetY < 0 {//设置图片的放大效果
             //不断设置titleLabel及sourceLabel以保证frame正确
             titleLabel.frame = CGRectMake(15, orginalHeight - 80 - offsetY, self.view.frame.width - 30, 60)
             sourceLabel.frame = CGRectMake(15, orginalHeight - 20 - offsetY, self.view.frame.width - 30, 15)
@@ -167,6 +177,7 @@ class MainDetailViewController: UIViewController ,UIScrollViewDelegate,UIWebView
             topImgView.bringSubviewToFront(sourceLabel)
         }
         
+        headerView.layoutWebHeaderViewForScrollViewOffset(scrollView.contentOffset)
     }
     
     

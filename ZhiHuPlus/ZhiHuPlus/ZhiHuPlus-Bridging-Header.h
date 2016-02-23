@@ -12,3 +12,4 @@
 #import "UIImage+ImageEffects.h"
 #import "ZFModalTransitionAnimator.h"
 #import "PNChart.h"
+#import "JSAnimatedImagesView.h"

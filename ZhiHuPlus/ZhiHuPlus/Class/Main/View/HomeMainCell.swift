@@ -24,6 +24,18 @@ class HomeMainCell: UITableViewCell {
     func setModel(model:HomeModel){
         self.titleLabel.text = model.title;
         self.imgView.sd_setImageWithURL(NSURL(string: model.image), completed: nil)
+
+        //取得已经看过的数据
+        let values = NSUserDefaults.standardUserDefaults().objectForKey(KHadReades)
+        if values != nil {
+            let readNewsIdArray =  values as! [String]
+            //是否点击过，点击过就灰色显示
+            if let _ = readNewsIdArray.indexOf(model.id) {
+                titleLabel.textColor = UIColor.lightGrayColor()
+            } else {
+                self.titleLabel.textColor = UIColor.blackColor()
+            }
+        }
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -32,6 +44,4 @@ class HomeMainCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    
-
 }

@@ -59,6 +59,10 @@
 		892F91061C744ECF0021752A /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 892F90F11C744ECF0021752A /* UICountingLabel.m */; };
 		892F910F1C74535D0021752A /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F910E1C74535D0021752A /* SideViewController.swift */; };
 		892F91111C7453D90021752A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F91101C7453D90021752A /* MainViewController.swift */; };
+		8947218D1C7C6C8900789B5D /* JSAnimatedImagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8947218C1C7C6C8900789B5D /* JSAnimatedImagesView.m */; };
+		897E67BB1C7C2E2B00E4DD1F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897E67BA1C7C2E2B00E4DD1F /* LoadingView.swift */; };
+		897E67BE1C7C2F0E00E4DD1F /* TFCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897E67BD1C7C2F0E00E4DD1F /* TFCommon.swift */; };
+		897E67C01C7C631800E4DD1F /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897E67BF1C7C631800E4DD1F /* LaunchViewController.swift */; };
 		89D49DED1C76B4B400DC5526 /* HomeMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D49DEC1C76B4B400DC5526 /* HomeMainCell.swift */; };
 		89D49DEF1C76B56B00DC5526 /* MainDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D49DEE1C76B56B00DC5526 /* MainDetailViewController.swift */; };
 /* End PBXBuildFile section */
@@ -176,6 +180,11 @@
 		892F90F11C744ECF0021752A /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
 		892F910E1C74535D0021752A /* SideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = "<group>"; };
 		892F91101C7453D90021752A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		8947218B1C7C6C8900789B5D /* JSAnimatedImagesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSAnimatedImagesView.h; sourceTree = "<group>"; };
+		8947218C1C7C6C8900789B5D /* JSAnimatedImagesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSAnimatedImagesView.m; sourceTree = "<group>"; };
+		897E67BA1C7C2E2B00E4DD1F /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		897E67BD1C7C2F0E00E4DD1F /* TFCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFCommon.swift; sourceTree = "<group>"; };
+		897E67BF1C7C631800E4DD1F /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		89D49DEC1C76B4B400DC5526 /* HomeMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMainCell.swift; sourceTree = "<group>"; };
 		89D49DEE1C76B56B00DC5526 /* MainDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainDetailViewController.swift; sourceTree = "<group>"; };
 		DBF239F9E882F2F32A3F3E7B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -293,6 +302,7 @@
 		892F90511C744E660021752A /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				897E67BC1C7C2EF000E4DD1F /* Common */,
 				8910A2241C7572B5009E8B22 /* Manager */,
 				892F90521C744E660021752A /* Vendor */,
 			);
@@ -302,6 +312,7 @@
 		892F90521C744E660021752A /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				8947218A1C7C6C8900789B5D /* JSAnimatedImagesView */,
 				892F90C61C744ECF0021752A /* PNChartView */,
 				892F90531C744E660021752A /* AeroEffect */,
 				892F90561C744E660021752A /* AwsomeNavigationBar */,
@@ -537,6 +548,7 @@
 			children = (
 				892F91101C7453D90021752A /* MainViewController.swift */,
 				89D49DEE1C76B56B00DC5526 /* MainDetailViewController.swift */,
+				897E67BF1C7C631800E4DD1F /* LaunchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -554,8 +566,26 @@
 			isa = PBXGroup;
 			children = (
 				89D49DEC1C76B4B400DC5526 /* HomeMainCell.swift */,
+				897E67BA1C7C2E2B00E4DD1F /* LoadingView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8947218A1C7C6C8900789B5D /* JSAnimatedImagesView */ = {
+			isa = PBXGroup;
+			children = (
+				8947218B1C7C6C8900789B5D /* JSAnimatedImagesView.h */,
+				8947218C1C7C6C8900789B5D /* JSAnimatedImagesView.m */,
+			);
+			path = JSAnimatedImagesView;
+			sourceTree = "<group>";
+		};
+		897E67BC1C7C2EF000E4DD1F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				897E67BD1C7C2F0E00E4DD1F /* TFCommon.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		A12AC9E75D18D9FC19CCEFAD /* Pods */ = {
@@ -767,12 +797,15 @@
 				892F90F61C744ECF0021752A /* PNCircleChart.m in Sources */,
 				892F90FF1C744ECF0021752A /* PNRadarChartDataItem.m in Sources */,
 				892F90FE1C744ECF0021752A /* PNRadarChart.m in Sources */,
+				8947218D1C7C6C8900789B5D /* JSAnimatedImagesView.m in Sources */,
 				892F91051C744ECF0021752A /* README.md in Sources */,
 				892F90F51C744ECF0021752A /* PNChartLabel.m in Sources */,
 				8910A21F1C756568009E8B22 /* SideCell2.swift in Sources */,
 				892F90F41C744ECF0021752A /* PNBarChart.m in Sources */,
+				897E67BE1C7C2F0E00E4DD1F /* TFCommon.swift in Sources */,
 				892F90A91C744E670021752A /* ParallaxHeaderView.m in Sources */,
 				892F90A61C744E670021752A /* GradientView.m in Sources */,
+				897E67BB1C7C2E2B00E4DD1F /* LoadingView.swift in Sources */,
 				892F90C31C744E670021752A /* UIView+SDExtension.m in Sources */,
 				892F90A71C744E670021752A /* MSWeakTimer.m in Sources */,
 				892F90FB1C744ECF0021752A /* PNLineChartDataItem.m in Sources */,
@@ -783,6 +816,7 @@
 				892F90BE1C744E670021752A /* TAAnimatedDotView.m in Sources */,
 				8910A2211C756988009E8B22 /* ZhiHuModel.swift in Sources */,
 				892F91031C744ECF0021752A /* README.md in Sources */,
+				897E67C01C7C631800E4DD1F /* LaunchViewController.swift in Sources */,
 				8910A2291C759C76009E8B22 /* HomeModel.swift in Sources */,
 				892F90C41C744E670021752A /* SWRevealViewController.m in Sources */,
 				892F91001C744ECF0021752A /* PNScatterChart.m in Sources */,
