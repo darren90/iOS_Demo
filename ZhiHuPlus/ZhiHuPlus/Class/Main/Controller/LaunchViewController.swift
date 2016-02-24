@@ -44,10 +44,10 @@ class LaunchViewController: UIViewController {
 
                     UIView.animateWithDuration(2.0, animations: { () -> Void in
                         self.lunchImgView.transform = CGAffineTransformMakeScale(1.3, 1.3)
-                        self.view.alpha = 0.5
+                        self.view.alpha = 0.8
                         
                         }, completion: { (_) -> Void in
-                            self.view.alpha = 0.2
+//                            self.view.alpha = 0.2
                             NSNotificationCenter.defaultCenter().postNotificationName(LunchLoadNotication, object: nil)
 //                            let time = dispatch_time(DISPATCH_TIME_NOW,Int64(0.5 * Double(NSEC_PER_SEC)))
 //                            dispatch_after(time, dispatch_get_main_queue(), { () -> Void in

@@ -9,6 +9,9 @@
 import UIKit
 
 class MainViewController: UITableViewController,SDCycleScrollViewDelegate,ParallaxHeaderViewDelegate {
+    
+    //时间数组
+    var dateArray:[String] = []
 
     @IBOutlet weak var titleItem: UINavigationItem!
     var cycleScrollView: SDCycleScrollView!
@@ -64,7 +67,83 @@ class MainViewController: UITableViewController,SDCycleScrollViewDelegate,Parall
         getHomeData { () -> () in
             
         }
+        
+        testGetTime()
+        
+//        tableView.tableFooterView.addc
     }
+    
+    
+    func testGetTime(){
+        for i in 0...1000 {
+            //1天86400秒
+            let dd = NSDate().dateByAddingTimeInterval(28800 - Double(i) * 86400)
+
+            let fm = NSDateFormatter()
+            fm.dateFormat = "yyyyMMdd"//20131119
+            //formate setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+            fm.timeZone = NSTimeZone.init(forSecondsFromGMT: 0)
+            let dateStr = fm.stringFromDate(dd)
+            print("date:\(dateStr),week:\(getWeekOfDay(dd))")
+            dateArray.append(dateStr)
+        }
+    }
+    
+    func getWeekOfDay(date:NSDate) -> String {
+        print("dddd2:\(date)")
+        let interval = date.timeIntervalSince1970
+        let days = Int(interval / 86400)
+        let intValue = (days - 3) % 7
+        switch intValue {
+        case 0:
+            return "星期日"
+        case 1:
+            return "星期一"
+        case 2:
+            return "星期二"
+        case 3:
+            return "星期三"
+        case 4:
+            return "星期四"
+        case 5:
+            return "星期五"
+        case 6:
+            return "星期六"
+        default:
+            break
+        }
+        return "未取到数据"
+    }
+    
+    func getWeekOfDay2(dateStr:String) -> String {
+        let fm = NSDateFormatter()
+        fm.dateFormat = "yyyyMMdd"
+        let date = fm.dateFromString(dateStr)
+        print("dddate:\(date)")
+        let interval = date!.timeIntervalSince1970
+        let days = Int(interval / 86400)
+        let intValue = (days - 3) % 7
+        switch intValue {
+        case 0:
+            return "星期日"
+        case 1:
+            return "星期一"
+        case 2:
+            return "星期二"
+        case 3:
+            return "星期三"
+        case 4:
+            return "星期四"
+        case 5:
+            return "星期五"
+        case 6:
+            return "星期六"
+        default:
+            break
+        }
+        return "未取到数据"
+    }
+
     
     
     func setNavBar(){

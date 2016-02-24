@@ -35,6 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+
+    
     
     func addNotification() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "LunchLoadHadOk:", name: LunchLoadNotication, object: nil)
