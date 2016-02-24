@@ -418,6 +418,7 @@
 				898AE5AD1B541C570085C228 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		898AE5AE1B541C570085C228 /* Build configuration list for PBXNativeTarget "02-UIWebviewTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +427,7 @@
 				898AE5B01B541C570085C228 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
