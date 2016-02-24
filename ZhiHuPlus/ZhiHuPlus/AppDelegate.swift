@@ -21,14 +21,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
+        addNotification()
+
+        let launchVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("launchhhhhhhhh") as! LaunchViewController
+
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        
-        window?.rootViewController = LaunchViewController()
+//        window?.backgroundColor = UIColor.whiteColor()
+        window?.rootViewController = launchVC
         window!.makeKeyAndVisible()
+        print(window?.rootViewController)
         
         getThemesData()
         return true
+    }
+    
+    
+    func addNotification() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "LunchLoadHadOk:", name: LunchLoadNotication, object: nil)
+    }
+
+    
+    // MARK: - Action
+    func LunchLoadHadOk(noti: NSNotification) {
+        
+        let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! SWRevealViewController
+        
+        window?.rootViewController = mainVC
+        window!.makeKeyAndVisible()
+
     }
 
     func applicationWillResignActive(application: UIApplication) {

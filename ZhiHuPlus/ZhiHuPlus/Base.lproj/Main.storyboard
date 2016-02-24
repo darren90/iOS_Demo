@@ -233,7 +233,7 @@
         <!--Launch View Controller-->
         <scene sceneID="cfy-dy-at0">
             <objects>
-                <viewController id="gRm-qc-9W8" customClass="LaunchViewController" customModule="ZhiHuPlus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="launchhhhhhhhh" id="gRm-qc-9W8" customClass="LaunchViewController" customModule="ZhiHuPlus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7ZP-7X-1Kr"/>
                         <viewControllerLayoutGuide type="bottom" id="eQ1-cF-MCD"/>
@@ -242,10 +242,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZl-Yy-bQe" customClass="JSAnimatedImagesView">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DemoLaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="Vmr-at-dzU">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="5el-Iq-HNH">
                                 <rect key="frame" x="145" y="366" width="311" height="154"/>
                                 <constraints>
@@ -256,24 +255,26 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ZhiHuPlus 2.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duO-g1-ims">
                                 <rect key="frame" x="246" y="528" width="107" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="iZl-Yy-bQe" firstAttribute="leading" secondItem="cSW-tq-Z7o" secondAttribute="leading" id="5YC-DV-rrF"/>
+                            <constraint firstItem="Vmr-at-dzU" firstAttribute="top" secondItem="7ZP-7X-1Kr" secondAttribute="bottom" constant="-20" id="0p0-aJ-npy"/>
                             <constraint firstItem="eQ1-cF-MCD" firstAttribute="top" secondItem="5el-Iq-HNH" secondAttribute="bottom" constant="80" id="98C-Lc-oac"/>
-                            <constraint firstAttribute="bottom" secondItem="iZl-Yy-bQe" secondAttribute="bottom" id="b7O-Di-As5"/>
-                            <constraint firstItem="iZl-Yy-bQe" firstAttribute="top" secondItem="cSW-tq-Z7o" secondAttribute="top" id="cv3-2j-Dzf"/>
+                            <constraint firstAttribute="bottom" secondItem="Vmr-at-dzU" secondAttribute="bottom" id="JL3-V4-T2c"/>
+                            <constraint firstAttribute="trailing" secondItem="Vmr-at-dzU" secondAttribute="trailing" id="aEr-cw-9VJ"/>
                             <constraint firstItem="duO-g1-ims" firstAttribute="centerX" secondItem="cSW-tq-Z7o" secondAttribute="centerX" id="iZC-bR-t00"/>
-                            <constraint firstAttribute="trailing" secondItem="iZl-Yy-bQe" secondAttribute="trailing" id="ilf-Es-Iay"/>
                             <constraint firstItem="duO-g1-ims" firstAttribute="top" secondItem="5el-Iq-HNH" secondAttribute="bottom" constant="8" id="mbT-mu-pI3"/>
                             <constraint firstItem="5el-Iq-HNH" firstAttribute="centerX" secondItem="cSW-tq-Z7o" secondAttribute="centerX" id="ox6-9T-90G"/>
+                            <constraint firstItem="Vmr-at-dzU" firstAttribute="leading" secondItem="cSW-tq-Z7o" secondAttribute="leading" id="vU5-5c-Wwb"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="launchView" destination="iZl-Yy-bQe" id="6bP-TR-e1a"/>
+                        <outlet property="logoView" destination="5el-Iq-HNH" id="f43-4y-WWV"/>
+                        <outlet property="lunchImgView" destination="Vmr-at-dzU" id="gcE-2P-brl"/>
+                        <outlet property="themLabel" destination="duO-g1-ims" id="Olf-bI-SOc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WJO-UX-etb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -359,6 +360,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="DemoLaunchImage" width="1080" height="1920"/>
         <image name="Logo" width="311" height="154"/>
         <image name="home" width="128" height="128"/>
         <image name="placeHolder" width="448" height="90"/>

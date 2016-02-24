@@ -14,6 +14,7 @@ public let KWidth: CGFloat = UIScreen.mainScreen().bounds.size.width
 
 public let KHadReades = "KHadReadesFFFFFFFFFFFFFF"
 
+public let LunchLoadNotication = "LunchLoadNotication"
 
 
 

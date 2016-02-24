@@ -32,6 +32,7 @@ class APIManager: NSObject {
         }else{//无参数
             Alamofire.request(.GET, urlStr).responseJSON(completionHandler: { (_, _, dataResult) -> Void in
                 if let result = dataResult.value{
+//                    print(result)
                     success(json: result)
                 }
             })

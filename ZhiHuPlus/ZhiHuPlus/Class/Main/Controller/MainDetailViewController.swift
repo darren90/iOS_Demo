@@ -38,9 +38,6 @@ class MainDetailViewController: UIViewController ,UIScrollViewDelegate,UIWebView
     var type = ""
     var titleStr = ""
     
-    
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
