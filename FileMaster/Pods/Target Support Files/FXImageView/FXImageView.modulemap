@@ -1,0 +1,6 @@
+framework module FXImageView {
+  umbrella header "FXImageView-umbrella.h"
+
+  export *
+  module * { export * }
+}

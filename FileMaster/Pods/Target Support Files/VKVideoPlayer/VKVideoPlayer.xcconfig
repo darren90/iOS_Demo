@@ -1,0 +1,1 @@
+VKVIDEOPLAYER_OTHER_LDFLAGS = -framework "AVFoundation" -framework "MediaPlayer" -framework "QuartzCore"

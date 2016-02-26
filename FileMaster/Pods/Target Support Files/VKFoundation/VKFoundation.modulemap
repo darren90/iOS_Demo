@@ -1,0 +1,6 @@
+framework module VKFoundation {
+  umbrella header "VKFoundation-umbrella.h"
+
+  export *
+  module * { export * }
+}
