@@ -21,23 +21,24 @@ class HomeViewController: UITableViewController {
     var loadingView: UIActivityIndicatorView!//正在刷新控件
     
     override func viewWillAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+        super.viewWillAppear(animated)
         
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-//        self.navigationController?.navigationBar.shadowImage = UIImage()
-        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     //查看详情后，再次进入主界面，刷新，显示为灰色字体
+   
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
         self.tableView.reloadData()
     }
     
     override func viewDidDisappear(animated: Bool) {
-        super.viewDidAppear(animated)
-//        self.navigationController?.navigationBar.setBackgroundImage(nil , forBarMetrics: .Default)
-//        self.navigationController?.navigationBar.shadowImage = nil
+        super.viewDidDisappear(animated)
+        self.navigationController?.navigationBar.setBackgroundImage(nil , forBarMetrics: .Default)
+        self.navigationController?.navigationBar.shadowImage = nil
     }
     
     

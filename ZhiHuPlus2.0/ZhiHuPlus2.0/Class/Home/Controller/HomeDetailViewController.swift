@@ -26,8 +26,7 @@ class HomeDetailViewController: UIViewController,UIGestureRecognizerDelegate {
     var titleLabel: myUILabel!
     var sourceLabel: UILabel!
     
-    let loadingView: LoadingView = LoadingView(frame: CGRectMake(0, 0, KWidth, 3))
-
+    let loadingView: LoadingView = LoadingView(frame: CGRectMake(0, 0, CGFloat(KWidth), 3))
     
     
     var isHadImg = true
@@ -40,7 +39,8 @@ class HomeDetailViewController: UIViewController,UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadDetailData(detailId)
+        
         //避免因含有navBar而对scrollInsets做自动调整
         self.automaticallyAdjustsScrollViewInsets = false
         
@@ -53,14 +53,52 @@ class HomeDetailViewController: UIViewController,UIGestureRecognizerDelegate {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         
         //webView的一些设置
+        webView.addSubview(loadingView)//添加进度条
         webView.scrollView.delegate = self
         webView.scrollView.clipsToBounds = false
         webView.scrollView.showsHorizontalScrollIndicator = true
         webView.scrollView.showsVerticalScrollIndicator = false
-//        webView.scrollView.alway = false
-//        webView.scrollView.
+        webView.scrollView.alwaysBounceVertical = true
+        webView.scrollView.alwaysBounceHorizontal = false
+        
+        setUPSubViews()
     }
     
+    
+    private func setUPSubViews (){
+        blurView = GradientView(frame: CGRectMake(0, -85, self.view.frame.width, orginalHeight + 85), type: TRANSPARENT_GRADIENT_TWICE_TYPE)
+        
+        //设置顶部图片
+        topImgView = UIImageView(frame: CGRectMake(0, 0, self.view.frame.width, orginalHeight))
+        topImgView.contentMode = .ScaleAspectFill
+        topImgView.addSubview(blurView)
+        
+        
+        //设置顶部图片上的titleLabel
+        titleLabel = myUILabel(frame: CGRectMake(15, orginalHeight - 80, self.view.frame.width - 30, 60))
+        titleLabel.font = UIFont(name: "STHeitiSC-Medium", size: 21)
+        titleLabel.textColor = UIColor.whiteColor()
+        titleLabel.shadowColor = UIColor.blackColor()
+        titleLabel.shadowOffset = CGSizeMake(0, 1)
+        titleLabel.verticalAlignment = VerticalAlignmentBottom
+        titleLabel.numberOfLines = 0
+        topImgView.addSubview(titleLabel)
+        
+        //设置Image上的Image_sourceLabel
+        sourceLabel = UILabel(frame: CGRectMake(15, orginalHeight - 22, self.view.frame.width - 30, 15))
+        sourceLabel.font = UIFont(name: "HelveticaNeue", size: 9)
+        sourceLabel.textColor = UIColor.lightTextColor()
+        sourceLabel.textAlignment = NSTextAlignment.Right
+        topImgView.addSubview(sourceLabel)
+        
+        
+        //将其添加到ParallaxView
+        headerView = ParallaxHeaderView.parallaxWebHeaderViewWithSubView(topImgView, forSize: CGSizeMake(self.view.frame.width, orginalHeight)) as! ParallaxHeaderView
+        headerView.delegate = self
+        
+        //将ParallaxView添加到webView下层的scrollView上
+        self.webView.scrollView.addSubview(headerView)
+    }
     
     
     
@@ -83,9 +121,6 @@ class HomeDetailViewController: UIViewController,UIGestureRecognizerDelegate {
             }else{
                 self.isHadImg = false
             }
-            
-            //            print(bodyStr)
-            //            print(cssStr)
             
             var html = "<html> <head>"
             html += "<link rel=\"stylesheet\" href="
@@ -116,10 +151,10 @@ class HomeDetailViewController: UIViewController,UIGestureRecognizerDelegate {
 }
 
 
-extension HomeDetailViewController:UIScrollViewDelegate,UIWebViewDelegate {
+extension HomeDetailViewController:UIScrollViewDelegate,UIWebViewDelegate ,ParallaxHeaderViewDelegate{
     //MARK - webView的代理
     func webViewDidStartLoad(webView: UIWebView) {
-//        loadingView.startLoadProgressAnimation()
+        loadingView.startLoadProgressAnimation()
         
         print(__FUNCTION__)
     }
@@ -127,9 +162,32 @@ extension HomeDetailViewController:UIScrollViewDelegate,UIWebViewDelegate {
         print(__FUNCTION__)
     }
     func webViewDidFinishLoad(webView: UIWebView) {
-//        loadingView.endLoadProgressAnimation()
+        loadingView.endLoadProgressAnimation()
         
         print(__FUNCTION__)
     }
+    
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        //        print("offsetY:\(offsetY)")
+        if offsetY < 0 {//设置图片的放大效果
+            //不断设置titleLabel及sourceLabel以保证frame正确
+            titleLabel.frame = CGRectMake(15, orginalHeight - 80 - offsetY, self.view.frame.width - 30, 60)
+            sourceLabel.frame = CGRectMake(15, orginalHeight - 20 - offsetY, self.view.frame.width - 30, 15)
+            //保证frame正确
+            blurView.frame = CGRectMake(0, -85 - offsetY, self.view.frame.width, orginalHeight + 85)
+            
+            topImgView.bringSubviewToFront(titleLabel)
+            topImgView.bringSubviewToFront(sourceLabel)
+        }
+        
+        headerView.layoutWebHeaderViewForScrollViewOffset(scrollView.contentOffset)
+    }
 
+    //MARK  - ParallaxHeaderViewDelegate代理
+    //设置滑动极限 修改该值需要一并更改layoutWebHeaderViewForScrollViewOffset中的对应值
+    func lockDirection() {
+        self.webView.scrollView.contentOffset.y = -85
+    }
 }
