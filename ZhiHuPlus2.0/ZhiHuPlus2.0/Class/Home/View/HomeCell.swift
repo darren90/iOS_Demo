@@ -23,6 +23,17 @@ class HomeCell: UITableViewCell {
         didSet{
             titleLabel.text = model!.title
             iconView.sd_setImageWithURL(NSURL(string: (model?.image)!), placeholderImage: plcaceHoldeImage)
+            
+            let values = NSUserDefaults.standardUserDefaults().objectForKey(KHadReades)
+            if values != nil {
+                let readNewsIdArray =  values as! [String]
+                //是否点击过，点击过就灰色显示
+                if let _ = readNewsIdArray.indexOf(model!.id!) {
+                    titleLabel.textColor = UIColor.lightGrayColor()
+                } else {
+                    self.titleLabel.textColor = UIColor.blackColor()
+                }
+            }
         }
     }
     

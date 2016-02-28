@@ -59,6 +59,9 @@
 		FEA58DD31C82DB1700FE4E8A /* TFCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA58DD21C82DB1700FE4E8A /* TFCommon.swift */; };
 		FEA58DD51C82DDCF00FE4E8A /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA58DD41C82DDCF00FE4E8A /* HomeModel.swift */; };
 		FEA58DD71C82E3E400FE4E8A /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA58DD61C82E3E400FE4E8A /* HomeCell.swift */; };
+		FEA58DD91C82EEB800FE4E8A /* HomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA58DD81C82EEB800FE4E8A /* HomeDetailViewController.swift */; };
+		FEA58DDB1C82F47A00FE4E8A /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA58DDA1C82F47A00FE4E8A /* LaunchViewController.swift */; };
+		FEA58DDD1C8315F800FE4E8A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA58DDC1C8315F800FE4E8A /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +178,9 @@
 		FEA58DD21C82DB1700FE4E8A /* TFCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFCommon.swift; sourceTree = "<group>"; };
 		FEA58DD41C82DDCF00FE4E8A /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		FEA58DD61C82E3E400FE4E8A /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		FEA58DD81C82EEB800FE4E8A /* HomeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDetailViewController.swift; sourceTree = "<group>"; };
+		FEA58DDA1C82F47A00FE4E8A /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		FEA58DDC1C8315F800FE4E8A /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		FECF54411C82CE1200FACB2B /* ZhiHuPlus2.0-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZhiHuPlus2.0-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -290,6 +296,8 @@
 			isa = PBXGroup;
 			children = (
 				FEA58D4B1C82CFFC00FE4E8A /* HomeViewController.swift */,
+				FEA58DD81C82EEB800FE4E8A /* HomeDetailViewController.swift */,
+				FEA58DDA1C82F47A00FE4E8A /* LaunchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -306,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				FEA58DD61C82E3E400FE4E8A /* HomeCell.swift */,
+				FEA58DDC1C8315F800FE4E8A /* LoadingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -785,6 +794,7 @@
 				FEA58DC11C82D9E300FE4E8A /* PNScatterChart.m in Sources */,
 				FEA58DBD1C82D9E300FE4E8A /* PNPieChart.m in Sources */,
 				FEA58DCD1C82D9E300FE4E8A /* SDCollectionViewCell.m in Sources */,
+				FEA58DDD1C8315F800FE4E8A /* LoadingView.swift in Sources */,
 				FEA58DD71C82E3E400FE4E8A /* HomeCell.swift in Sources */,
 				FEA58DAD1C82D9E300FE4E8A /* UINavigationBar+Awesome.m in Sources */,
 				FEA58DC61C82D9E300FE4E8A /* README.md in Sources */,
@@ -798,9 +808,11 @@
 				FE73A34E1C82CB6E00A74B52 /* AppDelegate.swift in Sources */,
 				FEA58DC21C82D9E300FE4E8A /* PNScatterChartData.m in Sources */,
 				FEA58DB51C82D9E300FE4E8A /* PNBarChart.m in Sources */,
+				FEA58DDB1C82F47A00FE4E8A /* LaunchViewController.swift in Sources */,
 				FEA58DB11C82D9E300FE4E8A /* myUILabel.m in Sources */,
 				FEA58DCA1C82D9E300FE4E8A /* TAAnimatedDotView.m in Sources */,
 				FEA58DD01C82D9E300FE4E8A /* SWRevealViewController.m in Sources */,
+				FEA58DD91C82EEB800FE4E8A /* HomeDetailViewController.swift in Sources */,
 				FEA58DD11C82D9E300FE4E8A /* ZFModalTransitionAnimator.m in Sources */,
 				FEA58D4E1C82D00B00FE4E8A /* LeftSideViewController.swift in Sources */,
 				FEA58DB71C82D9E300FE4E8A /* PNCircleChart.m in Sources */,

@@ -23,21 +23,28 @@ class HomeViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Compact)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+    }
+    
+    //查看详情后，再次进入主界面，刷新，显示为灰色字体
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tableView.reloadData()
     }
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.navigationController?.navigationBar.setBackgroundImage(nil , forBarMetrics: .Default)
-        self.navigationController?.navigationBar.shadowImage = nil
+//        self.navigationController?.navigationBar.setBackgroundImage(nil , forBarMetrics: .Default)
+//        self.navigationController?.navigationBar.shadowImage = nil
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+
         tableView.rowHeight = 90//UITableViewAutomaticDimension
         tableView.showsVerticalScrollIndicator = true
         
@@ -134,6 +141,17 @@ class HomeViewController: UITableViewController {
         cell.model = model
         return cell
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        //保证点击的是TableContentViewCell
+        guard tableView.cellForRowAtIndexPath(indexPath) is HomeCell else {
+            return
+        }
+        
+        jump2Toetail(indexPath.row,isCell: true)
+    }
 
     override func scrollViewDidScroll(scrollView: UIScrollView) {
         //Parallax效果
@@ -141,13 +159,57 @@ class HomeViewController: UITableViewController {
         header.layoutHeaderViewForScrollViewOffset(scrollView.contentOffset)
 
     }
+    
+    
+    func jump2Toetail(index:Int, isCell:Bool){
+        //
+        //拿到webViewController
+        let detailVC = self.storyboard?.instantiateViewControllerWithIdentifier("homeDetail") as!HomeDetailViewController
+        detailVC.index = index
+        
+        let id:String = self.dataArray[index].id!
+        detailVC.detailId = id
+        
+        
+        if isCell {
+            //取出已经看过详情的数据
+            let values = NSUserDefaults.standardUserDefaults().objectForKey(KHadReades)
+            if values != nil {
+                var readNewsIdArray = values as! [String]
+                readNewsIdArray.append(id)
+                NSUserDefaults.standardUserDefaults().setObject(readNewsIdArray, forKey: KHadReades)
+                NSUserDefaults.standardUserDefaults().synchronize()
+            }else {
+                NSUserDefaults.standardUserDefaults().setObject([], forKey: KHadReades)
+                NSUserDefaults.standardUserDefaults().synchronize()
+            }
+        }
+        
+        //对animator进行初始化
+        animator = ZFModalTransitionAnimator(modalViewController: detailVC)
+        self.animator.dragable = true
+        self.animator.bounces = false
+        self.animator.behindViewAlpha = 0.7
+        self.animator.behindViewScale = 0.9
+        self.animator.transitionDuration = 0.7
+        self.animator.direction = ZFModalTransitonDirection.Right
+        
+        //设置webViewController
+        detailVC.transitioningDelegate = self.animator
+        
+        //实施转场
+        self.presentViewController(detailVC, animated: true) { () -> Void in
+            
+        }
+    }
+
 
 }
 
 extension HomeViewController:SDCycleScrollViewDelegate,ParallaxHeaderViewDelegate{
     
     func cycleScrollView(cycleScrollView: SDCycleScrollView!, didSelectItemAtIndex index: Int) {
-        
+        jump2Toetail(index,isCell: false)
     }
     
     func lockDirection() {

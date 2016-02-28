@@ -56,10 +56,92 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="今日热闻" id="L15-cp-cDS"/>
+                    <connections>
+                        <segue destination="zdC-9H-SpI" kind="show" id="401-va-Mdi"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fuk-zD-Xrr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="150" y="-314"/>
+        </scene>
+        <!--Home Detail View Controller-->
+        <scene sceneID="lw0-zb-yAx">
+            <objects>
+                <viewController storyboardIdentifier="homeDetail" id="zdC-9H-SpI" customClass="HomeDetailViewController" customModule="ZhiHuPlus2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gce-sr-1LY"/>
+                        <viewControllerLayoutGuide type="bottom" id="xhC-30-0Xh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jf1-kg-qiI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aWF-aR-uiu">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xhC-30-0Xh" firstAttribute="top" secondItem="aWF-aR-uiu" secondAttribute="bottom" id="0mf-79-phP"/>
+                            <constraint firstItem="aWF-aR-uiu" firstAttribute="leading" secondItem="Jf1-kg-qiI" secondAttribute="leading" id="LxO-8f-EPR"/>
+                            <constraint firstAttribute="trailing" secondItem="aWF-aR-uiu" secondAttribute="trailing" id="k24-YR-X9u"/>
+                            <constraint firstItem="aWF-aR-uiu" firstAttribute="top" secondItem="gce-sr-1LY" secondAttribute="bottom" id="kXb-Jd-OYn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="aWF-aR-uiu" id="Upo-Xn-SGN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YUH-So-9Zn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="927" y="-314"/>
+        </scene>
+        <!--Launch View Controller-->
+        <scene sceneID="qNT-JG-qSZ">
+            <objects>
+                <viewController storyboardIdentifier="launchVc" id="qvp-1H-l1X" customClass="LaunchViewController" customModule="ZhiHuPlus2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MFL-RR-8C3"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ixv-za-70R"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3eM-iF-rpe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DemoLaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="ube-bO-rnZ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="C09-vb-Ae2">
+                                <rect key="frame" x="144.5" y="342" width="311" height="154"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ZhiHuPlus2.0 By FengTengfei" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJH-xd-hoP">
+                                <rect key="frame" x="172" y="526" width="257" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ixv-za-70R" firstAttribute="top" secondItem="ube-bO-rnZ" secondAttribute="bottom" id="G3m-fu-UmW"/>
+                            <constraint firstItem="Ixv-za-70R" firstAttribute="top" secondItem="KJH-xd-hoP" secondAttribute="bottom" constant="50" id="NaP-5S-ksa"/>
+                            <constraint firstItem="KJH-xd-hoP" firstAttribute="centerX" secondItem="3eM-iF-rpe" secondAttribute="centerX" id="UqD-mI-YBG"/>
+                            <constraint firstItem="ube-bO-rnZ" firstAttribute="leading" secondItem="3eM-iF-rpe" secondAttribute="leading" id="XgW-9a-7Re"/>
+                            <constraint firstItem="ube-bO-rnZ" firstAttribute="top" secondItem="3eM-iF-rpe" secondAttribute="top" id="d7u-x3-f2L"/>
+                            <constraint firstItem="KJH-xd-hoP" firstAttribute="top" secondItem="C09-vb-Ae2" secondAttribute="bottom" constant="30" id="mGr-Ox-Z7u"/>
+                            <constraint firstItem="C09-vb-Ae2" firstAttribute="centerX" secondItem="3eM-iF-rpe" secondAttribute="centerX" id="nfr-YO-ZkJ"/>
+                            <constraint firstAttribute="trailing" secondItem="ube-bO-rnZ" secondAttribute="trailing" id="qln-71-M3S"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="lunchImgView" destination="ube-bO-rnZ" id="aju-g9-gpG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bjo-Ca-oCG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1577" y="-314"/>
         </scene>
         <!--首页-->
         <scene sceneID="emr-ci-syz">
@@ -106,4 +188,8 @@
             <point key="canvasLocation" x="-665" y="-296"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="DemoLaunchImage" width="1080" height="1920"/>
+        <image name="Logo" width="311" height="154"/>
+    </resources>
 </document>

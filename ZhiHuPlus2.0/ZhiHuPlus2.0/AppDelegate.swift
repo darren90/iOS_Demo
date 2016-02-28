@@ -19,6 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "LunchLoadHadOk:", name: LunchLoadNotication, object: nil)
+        let launchVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("launchVc") as! LaunchViewController
+
+        
         // Override point for customization after application launch.
         let sd = UIStoryboard.init(name: "Main", bundle: nil)
         let homeVc = sd.instantiateViewControllerWithIdentifier("home") as! HomeViewController
@@ -37,9 +41,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.backgroundColor = UIColor.whiteColor()
-        window?.rootViewController = drawer!
+        window?.rootViewController = launchVC//drawer!
         window?.makeKeyAndVisible()
         return true
+    }
+    
+    
+    // MARK: - Action
+    func LunchLoadHadOk(noti: NSNotification) {
+        window?.rootViewController = drawer!
+        window!.makeKeyAndVisible()
     }
 
     func applicationWillResignActive(application: UIApplication) {
