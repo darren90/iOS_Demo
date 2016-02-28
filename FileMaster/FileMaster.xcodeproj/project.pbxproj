@@ -57,6 +57,7 @@
 		FEA58E8D1C8348F400FE4E8A /* MovieListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58E8C1C8348F400FE4E8A /* MovieListCell.m */; };
 		FEA58E901C834A2000FE4E8A /* MovieList.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58E8F1C834A2000FE4E8A /* MovieList.m */; };
 		FEA58E931C834E0F00FE4E8A /* MoviePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58E921C834E0F00FE4E8A /* MoviePlayerViewController.m */; };
+		FEA58E961C83502000FE4E8A /* ForwardBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58E951C83502000FE4E8A /* ForwardBackView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +156,8 @@
 		FEA58E8F1C834A2000FE4E8A /* MovieList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieList.m; sourceTree = "<group>"; };
 		FEA58E911C834E0F00FE4E8A /* MoviePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviePlayerViewController.h; sourceTree = "<group>"; };
 		FEA58E921C834E0F00FE4E8A /* MoviePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviePlayerViewController.m; sourceTree = "<group>"; };
+		FEA58E941C83502000FE4E8A /* ForwardBackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForwardBackView.h; sourceTree = "<group>"; };
+		FEA58E951C83502000FE4E8A /* ForwardBackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForwardBackView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,6 +313,8 @@
 		FEA58E211C83406700FE4E8A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FEA58E941C83502000FE4E8A /* ForwardBackView.h */,
+				FEA58E951C83502000FE4E8A /* ForwardBackView.m */,
 				FEA58E8B1C8348F400FE4E8A /* MovieListCell.h */,
 				FEA58E8C1C8348F400FE4E8A /* MovieListCell.m */,
 			);
@@ -673,6 +678,7 @@
 				FEA58DF21C83275F00FE4E8A /* ViewController.m in Sources */,
 				FEA58E611C83406700FE4E8A /* VKVideoPlayerCaptionSRT.m in Sources */,
 				FEA58E651C83406700FE4E8A /* VKVideoPlayerTrack.m in Sources */,
+				FEA58E961C83502000FE4E8A /* ForwardBackView.m in Sources */,
 				FEA58DEF1C83275F00FE4E8A /* AppDelegate.m in Sources */,
 				FEA58E631C83406700FE4E8A /* VKVideoPlayerLayerView.m in Sources */,
 				FEA58E681C83406700FE4E8A /* VKVideoPlayerViewController.m in Sources */,
