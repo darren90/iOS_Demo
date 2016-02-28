@@ -20,6 +20,21 @@ class HomeViewController: UITableViewController {
     var loadCircleView: PNCircleChart!//刷新控件
     var loadingView: UIActivityIndicatorView!//正在刷新控件
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Compact)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.navigationBar.setBackgroundImage(nil , forBarMetrics: .Default)
+        self.navigationController?.navigationBar.shadowImage = nil
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
  
@@ -44,6 +59,7 @@ class HomeViewController: UITableViewController {
         cycleView.pageControlStyle = SDCycleScrollViewPageContolStyleClassic
         cycleView.titleLabelTextFont = UIFont.systemFontOfSize(21)
         cycleView.titleLabelHeight = 60
+        cycleView.titleLabelBackgroundColor = UIColor.clearColor()
         cycleView.titleLabelAlpha = 1
         
         let headerView : ParallaxHeaderView = ParallaxHeaderView.parallaxHeaderViewWithSubView(cycleView, forSize: CGSize(width: KWidth, height: HomeHeaderHeight)) as! ParallaxHeaderView
@@ -119,6 +135,12 @@ class HomeViewController: UITableViewController {
         return cell
     }
 
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        //Parallax效果
+        let header = self.tableView.tableHeaderView as! ParallaxHeaderView
+        header.layoutHeaderViewForScrollViewOffset(scrollView.contentOffset)
+
+    }
 
 }
 
@@ -129,8 +151,10 @@ extension HomeViewController:SDCycleScrollViewDelegate,ParallaxHeaderViewDelegat
     }
     
     func lockDirection() {
-        
+        self.tableView.contentOffset.y = -CGFloat(HomeHeaderHeight)
     }
+    
+    
 }
 
 
