@@ -9,33 +9,34 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger,SwipeStyle) {
-    PlayerSwipeUnKnown = -1,
-    PlayerSwipePlaySpeed =  0,
-    PlayerSwipePlayVoice =  1,
-    PlayerSwipePlayLight =  2,
-};
-
 @class VKVideoPlayer;
-
 @interface MoviePlayerViewController : UIViewController
-
-
-/** 当前更新到第几集 */
-@property (nonatomic,assign)int updateNum;
-/** 当前需要播放第几集 */
+/**
+ *  必传参数，- 集ID - 也即seriesId
+ */
+@property (nonatomic,copy)NSString * movieId;
+ 
+/**
+ *  当前需要播放第几集
+ */
 @property (nonatomic,assign)int currentNum;
 
 /**
- *  上次播放到第几秒；注：单位是秒，播放器会自动向前退5s
+ *  标题 （没有拼接集数的title）
  */
-@property (nonatomic,strong)NSNumber *lastDurationTime;
-
-/** 传递的PlayerUrl。播放地址 */
-@property (nonatomic,strong)NSString * playerUrl;
-
-/** 标题 */
 @property (nonatomic,copy)NSString * topTitle;
 
+/**
+ *  分享的时候的 封面url 必传，且是网页地址
+ */
+@property (nonatomic,copy)NSString * coverUrl;
 
-@property (nonatomic,assign)SwipeStyle swipeType;
+
+/**
+ *  播放地址本地已下载的文件，只针对mp4文件(没有后缀的文件名)
+ */
+@property (nonatomic,copy)NSString * playLocalUrl;
+
+
+
+@end

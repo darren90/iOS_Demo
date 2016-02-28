@@ -9,6 +9,7 @@
 #import "MovieListViewController.h"
 #import "MovieListCell.h"
 #import "MovieList.h"
+#import "MoviePlayerViewController.h"
 
 @interface MovieListViewController ()
 @property (nonatomic,strong)NSMutableArray * dataArray;
@@ -73,6 +74,17 @@
     
     return cell;
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    MoviePlayerViewController *playerVc = [[MoviePlayerViewController alloc] init];
+    MovieList *model = self.dataArray[indexPath.row];
+    playerVc.topTitle = model.name;
+    playerVc.playLocalUrl = model.name;
+    [self.navigationController presentViewController:playerVc animated:YES completion:nil];
+}
+
+
+
 
 - (void)logFilePathInDocumentsDir
 {

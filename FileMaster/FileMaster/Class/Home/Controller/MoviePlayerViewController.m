@@ -9,136 +9,120 @@
 
 #import "MoviePlayerViewController.h"
 #import "VKVideoPlayer.h"
-//#import "VKVideoPlayerCaptionSRT.h"
 #import "VKVideoPlayerCaptionSRT.h"
 #import "AppDelegate.h"
-#import "MediaPlayer/MediaPlayer.h"
-#import "ForwardBackView.h"
+#import <MediaPlayer/MediaPlayer.h>
+ #import "ForwardBackView.h"
 
-@interface MoviePlayerViewController ()<AVAudioSessionDelegate,VKVideoPlayerDelegate>
-{
+typedef NS_ENUM(NSInteger,SwipeStyle) {
+    PlayerSwipeUnKnown = -1,
+    PlayerSwipePlaySpeed =  0,
+    PlayerSwipePlayVoice =  1,
+    PlayerSwipePlayLight =  2,
+};
+
+static float scale = 2208.0/900;
+@interface MoviePlayerViewController ()<AVAudioSessionDelegate,VKVideoPlayerDelegate>{
     NSNumber * fastNum;
-    BOOL isEndFast;
+    NSString * shareImagePath;
+    //业务开关
+    BOOL _attached;
+    BOOL isEndFast;//快进结束
 }
-@property (nonatomic, strong) VKVideoPlayer* player;
-@property (nonatomic, strong) NSString *currentLanguageCode;
 
+/**
+ *  是否播放的是本地已经下载的文件，YES：是，NO：可以不用传递
+ */
+@property (nonatomic,assign)BOOL isPlayLocalFile;
 
+//@property (nonatomic, strong) VKVideoPlayer* player;
+@property (nonatomic,copy) NSString *currentLanguageCode;
 /** 时间栏是否隐藏 */
 @property (nonatomic,assign)BOOL isStatusBarHidden;
 
-/** 显示标题的label */
-@property (nonatomic,weak) UILabel *nameLabel;
-@property (nonatomic,strong)ForwardBackView * forwardView;
+ //*快进view*/
+@property (nonatomic,weak)ForwardBackView * forwardView;
 
+/***  引导页  变量 */
 
+@property (nonatomic,assign)BOOL isPlayingChangeState;
+@property (nonatomic,assign)SwipeStyle swipeType;
+/**
+ *  上次播放到第几秒；注：单位是秒，播放器会自动向前退5s
+ */
+@property (nonatomic,strong)NSNumber *lastDurationTime;
+@property (nonatomic, strong) VKVideoPlayer* player;
 @property (nonatomic, assign) CGPoint curTickleStart;
 @end
 
 @implementation MoviePlayerViewController
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
- }
-- (void)viewWillDisappear:(BOOL)animated
-{
+    
+//    self.lastDurationTime = [DatabaseTool getSeekTVDuration:self.movieId episode:self.currentNum];
+//    
+//    if (self.isPlayLocalFile) {
+//        [self.player.view.captionButton setTitle:[self getQuality:self.quality] forState:UIControlStateNormal];
+//        self.player.view.captionButton.userInteractionEnabled = NO;
+//    }else{
+//        self.player.view.captionButton.userInteractionEnabled = YES;
+//    }
+}
+- (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     
-    [self endFullScreen];
+}
+
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+ 
+//    [self addSeekTVDataWithepisodeID:self.episodeSid];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self playSampleClip1];
 }
+
 #pragma mark - 播放
 - (void)playSampleClip1 {
-    [self playStream:[NSURL URLWithString:self.playerUrl]];
+    if (self.isPlayLocalFile) { //播放本地视频
+        //        /Users/rrlhy/Library/Developer/CoreSimulator/Devices/B40AC509-DFB2-443A-B9C0-03A2D58D37AD/data/Containers/Data/Application/E304843C-E9B7-4413-9AAE-48B16EEC6AE1/Documents/video.m3u8
+        NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask , YES) firstObject];
+        NSString *url = [path stringByAppendingString:[NSString stringWithFormat:@"/%@",self.playLocalUrl]];
+        self.player.isPlayLocalFile = YES;
+        [self playStream:[NSURL fileURLWithPath:url]];
+    }else{//播网络视频
+//        self.player.isPlayLocalFile = NO;
+//        [self playStream:[NSURL URLWithString:self.listModel.m3u8.url]];
+    }
     [self.player setCaptionToTop:[self testCaption:@"testCaptionTop"]];
- 
-    
-    //    NSString* path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    //    NSString *url = [path stringByAppendingPathComponent:@"mmaaa.mp4"];
-    //   [self playStream:[NSURL URLWithString:url]];
-}
+ }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     //默认是YES隐藏的
-    //self.isStatusBarHidden = YES;
+    self.isPlayLocalFile = YES;
+    
+    //默认是YES隐藏的
+    self.isStatusBarHidden = NO;
     
     self.player = [[VKVideoPlayer alloc] init];
     self.player.delegate = self;
+    
     self.player.view.frame = self.view.bounds;
     self.player.view.playerControlsAutoHideTime = @10;
     [self.view addSubview:self.player.view];
     
+#pragma mark - 现在不做分享，分享按钮隐藏
+    self.player.view.shareBtn.hidden = YES;//现在不做分享，分享按钮隐藏
+    self.player.view.suggestBtn.hidden = YES;
+    
+    //1-标题
+    self.player.view.titleLabel.text = [NSString stringWithFormat:@"%@-第%d集",self.topTitle,self.currentNum];
+    //2－快进
     [self.view addSubview:self.forwardView];
- 
-    
-    //1-完成
-    UIButton *downBtn = self.player.view.doneButton;
-    //    downBtn.backgroundColor = [UIColor redColor];
-    CGRect downFrame = downBtn.frame;
-    downFrame.size.width += 10;
-    downFrame.origin.y += 6;
-    downBtn.frame = downFrame;
-    // [downBtn setImage:[UIImage imageNamed:@"icon_indictor_img"] forState:UIControlStateNormal];
-    
-    self.player.view.nextButton.hidden= YES;
-    
-    //2-视频质量
-    VKPickerButton *qualityBtn = self.player.view.captionButton;//质量
-    //    CGSize qualiSize = [self.quality sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13]}];
-    qualityBtn.titleLabel.font = [UIFont systemFontOfSize:13];
-    //    CGRect qualityFrame = qualityBtn.frame;
-    //    qualityFrame.size.width = qualiSize.width+10;
-    //    qualityFrame.origin.x -= 10;
-    //    qualityBtn.frame = qualityFrame;
-    //    qualityBtn.backgroundColor = [UIColor redColor];
-    //    [qualityBtn setTitle:self.quality forState:UIControlStateNormal];
-    [qualityBtn setTitle:@"高清" forState:UIControlStateNormal];
-    [qualityBtn setTitleColor:MJColor(153, 153, 153) forState:UIControlStateNormal];
-    [qualityBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-    qualityBtn.enabled = NO;
-    qualityBtn.userInteractionEnabled = NO;
-    
-    //3-下载按钮
-    VKPickerButton *downloadBtn = self.player.view.videoQualityButton;
-    downloadBtn.imageView.contentMode = UIViewContentModeScaleAspectFit;
-    NSString *downloadName = @"下载";
-    [downloadBtn setTitle:downloadName forState:UIControlStateNormal];
-    [downloadBtn setTitle:downloadName forState:UIControlStateHighlighted];
-    downloadBtn.titleLabel.font = [UIFont systemFontOfSize:13];
-    [downloadBtn setTitleColor:MJColor(153, 153, 153) forState:UIControlStateNormal];
-    [downloadBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-    [downloadBtn addTarget:self action:@selector(downMovie) forControlEvents:UIControlEventTouchUpInside];
-    CGRect downloadF = downloadBtn.frame;
-    //    downloadF.origin.x += 10;
-    downloadF.size.width += 30;
-    //    CGFloat downBtnH = 20;
-    //    downloadF.origin.y = (downloadF.size.height - downBtnH)/2;
-    //    downloadF.size.height = downBtnH;
-    downloadBtn.frame = downloadF;
-    
-    //5-选集
-    UIButton * seriesBtn = self.player.view.rewindButton;//倒退30秒 位于右上角
-    [seriesBtn setImage:nil forState:UIControlStateNormal];//
-    //完成
-    //    CGRect downFrame = self.player.view.doneButton.frame;
-    
-    
-    CGFloat height = CGRectGetMaxY(downFrame) - CGRectGetMinY(downFrame);//获取“完成”按钮的高度
-    //设置moviewTitle
-    UILabel *nameLabel = [[UILabel alloc]init];
-    nameLabel.textColor = [UIColor whiteColor];
-    nameLabel.font = [UIFont systemFontOfSize:16];
-    self.nameLabel = nameLabel;
-    [self.player.view addSubviewForControl:nameLabel];
-    nameLabel.text = self.topTitle;
-    CGSize nameSize = [self.topTitle sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16]}];
-    nameLabel.frame = CGRectMake(CGRectGetMaxX(downFrame)+10,CGRectGetMinY(downFrame)+ (height-nameSize.height)/2, nameSize.width, nameSize.height);
     
     //设置为后台播放
     [[NSNotificationCenter defaultCenter] addObserver:self selector: @selector(handleInterruption:) name:AVAudioSessionInterruptionNotification object:[AVAudioSession sharedInstance]];
@@ -147,71 +131,108 @@
     NSError *error = nil;
     [audioSession setCategory:AVAudioSessionCategoryPlayback error:&error];
     [audioSession setActive:YES error:&error];
+    
+    //    if(self.listModel  && self.listModel.episodeList.count){
+    //        [self.view addSubview:self.listMenu];
+    //    }else{
+    //        self.player.view.selectBtn.hidden = YES;//选集
+    //    }
+    //    [self.view addSubview:self.listMenu];
+    
+    //    [self showQualityMenu];//1.0版本不调节清晰度，所以这里不进行注释
 }
 
-- (void)handleInterruption:(NSNotification *)notice
-{
+
+- (void)handleInterruption:(NSNotification *)notice{
+    /* For example:
+     [[NSNotificationCenter defaultCenter] addObserver: myObject
+     selector:    @selector(handleInterruption:)
+     name:        AVAudioSessionInterruptionNotification
+     object:      [AVAudioSession sharedInstance]];
+     */
     [self.player pauseButtonPressed];
 }
 
-
 #pragma - mark VKVideoPlayerDelegate代理
-- (void)videoPlayer:(VKVideoPlayer *)videoPlayer willStartVideo:(id<VKVideoPlayerTrackProtocol>)track
-{
-    if (self.lastDurationTime == nil || self.lastDurationTime == 0) {
-        self.lastDurationTime = @0;
-    }
-    NSLog(@"--ddduration:%@",self.lastDurationTime);
-    [track setLastDurationWatchedInSeconds: self.lastDurationTime];
+- (void)videoPlayer:(VKVideoPlayer *)videoPlayer willStartVideo:(id<VKVideoPlayerTrackProtocol>)track{
+//    self.lastDurationTime = [DatabaseTool getSeekTVDuration:self.movieId episode:self.currentNum];
+//    
+//    if (self.lastDurationTime == nil || self.lastDurationTime == 0) {
+//        self.lastDurationTime = @0;
+//    }
+//    
+//    NSLog(@"--ddduration:%@",self.lastDurationTime);
+//    [track setLastDurationWatchedInSeconds: self.lastDurationTime];
 }
 
-- (BOOL)shouldVideoPlayer:(VKVideoPlayer*)videoPlayer changeStateTo:(VKVideoPlayerState)toState
+//即将播放的代理
+- (void)videoPlayer:(VKVideoPlayer*)videoPlayer didStartVideo:(id<VKVideoPlayerTrackProtocol>)track
 {
-    AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
     
+}
+
+- (BOOL)shouldVideoPlayer:(VKVideoPlayer*)videoPlayer changeStateTo:(VKVideoPlayerState)toState{
+ 
     return YES;
 }
 
+- (void)videoPlayer:(VKVideoPlayer*)videoPlayer willChangeStateTo:(VKVideoPlayerState)toState{
+    //    NSLog(@"----willChangeStateTo:%d",toState);
+    if(self.player.currentTime != 0.0){
+        self.isPlayingChangeState = YES;
+        self.lastDurationTime = [NSNumber numberWithDouble:self.player.currentTime];
+    }
+}
+
 #pragma mark - VKVideoPlayerDelegate代理 - 播放结束，自动消失播放界面
--(void)videoPlayer:(VKVideoPlayer *)videoPlayer didPlayToEnd:(id<VKVideoPlayerTrackProtocol>)track
-{
-//    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-//    appDelegate.allowRotation = NO;
+- (void)videoPlayer:(VKVideoPlayer *)videoPlayer didPlayToEnd:(id<VKVideoPlayerTrackProtocol>)track{
+    
+//    NSString * episodeID = self.episodeSid;
+//    //保存需要字段到数据库
+//    [self addSeekTVDataWithepisodeID:episodeID];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)handleErrorCode:(VKVideoPlayerErrorCode)errorCode track:(id<VKVideoPlayerTrackProtocol>)track customMessage:(NSString *)customMessage
-{
- 
+- (void)handleErrorCode:(VKVideoPlayerErrorCode)errorCode track:(id<VKVideoPlayerTrackProtocol>)track customMessage:(NSString *)customMessage{
+   
 }
 
- 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     UITouch * touch = [touches anyObject];
     self.curTickleStart = [touch locationInView:self.view];
 }
 
 //手势控制音量和亮度
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    
     UITouch *touch = [touches anyObject];
     //当前触摸点
     CGPoint current = [touch locationInView:self.view];
     //上一个触摸点
     CGPoint previous = [touch previousLocationInView:self.view];
     
-    CGRect leftF = CGRectMake(0, 0, KHeight/2, KWidth);//左半边的
-    CGRect reightF = CGRectMake( KHeight + KHeight/2, 0, KHeight/2, KWidth);//右半边
+    CGRect leftF;//左半边的
+    CGRect reightF;//右半边
+    if (!IsIOS8) {
+        leftF = CGRectMake(0, 0, KHeight/2, KWidth);//左半边的
+        reightF = CGRectMake( KHeight/2 , 0, KHeight/2, KWidth);//右半边
+    }else{
+        leftF = CGRectMake(0, 0, KWidth/2, KHeight);//左半边的
+        reightF = CGRectMake( KWidth/2 , 0, KWidth/2, KHeight);//右半边
+    }
     
     CGFloat moveAmtx = current.x - self.curTickleStart.x;
     CGFloat moveAmty = current.y - self.curTickleStart.y;
     
     CGFloat ratio = moveAmty/10000;
     isEndFast = YES;
+    
+    if (self.player.view.isLockBtnEnable) {
+        return;
+    }
+    
     if (CGRectContainsPoint(leftF, previous) && CGRectContainsPoint(leftF, current)&&(fabs(moveAmtx)<fabs(moveAmty))) {//调整左边 亮度
-        NSLog(@"调亮度");
-        self.swipeType = PlayerSwipePlayLight;
+         self.swipeType = PlayerSwipePlayLight;
         //获取屏幕亮度
         CGFloat lightness = [UIScreen mainScreen].brightness;
         lightness = lightness - ratio;
@@ -221,24 +242,18 @@
         if (lightness <= 0) {
             lightness = 0;
         }
-        
         [[UIScreen mainScreen] setBrightness:lightness];
         
     }else if(CGRectContainsPoint(reightF, previous) && CGRectContainsPoint(reightF, current)&&(fabs(moveAmtx) < fabs(moveAmty))){//调整右边 音量
-        NSLog(@"调音量");
-        self.swipeType = PlayerSwipePlayVoice;
+         self.swipeType = PlayerSwipePlayVoice;
         CGFloat volumness = [MPMusicPlayerController applicationMusicPlayer].volume;
         volumness = volumness - ratio;
         [[MPMusicPlayerController applicationMusicPlayer] setVolume:volumness];
         
-    }else if(!CGRectContainsPoint(reightF, previous) && !CGRectContainsPoint(reightF, current)&&(fabs(moveAmtx) > fabs(moveAmty))){
+    }else if(fabs(moveAmtx) > 30 &&(fabs(moveAmtx) > fabs(moveAmty))){
         
-        if (self.player.view.isLockBtnEnable) {
-            return;
-        }
         self.swipeType = PlayerSwipePlaySpeed;
-        NSLog(@"快进后退");
-        self.forwardView.hidden = NO;
+         self.forwardView.hidden = NO;
         if (!isEndFast) {
             [self.player begainFast];
             isEndFast = YES;
@@ -257,10 +272,12 @@
         NSString * currentTime = [VKSharedUtility timeStringFromSecondsValue:currentTotal];
         NSString * total = [VKSharedUtility timeStringFromSecondsValue:(int)self.player.view.scrubber.maximumValue];
         self.forwardView.time = [NSString stringWithFormat:@"%@/%@",currentTime,total];
+    }else{
+        
     }
 }
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     self.curTickleStart = CGPointZero;
     
     if (self.swipeType == PlayerSwipePlaySpeed) {
@@ -271,8 +288,7 @@
     self.forwardView.hidden = YES;
 }
 
-- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     self.curTickleStart = CGPointZero;
     isEndFast = NO;
     self.forwardView.hidden = YES;
@@ -291,7 +307,7 @@
     [self.player setCaptionToTop:[self testCaption:@"testCaptionTop"]];
 }
 
-- (void)playStream:(NSURL*)url {
+- (void)playStream:(NSURL*)url{
     VKVideoPlayerTrack *track = [[VKVideoPlayerTrack alloc] initWithStreamURL:url];
     track.hasNext = YES;
     [self.player loadVideoWithTrack:track];
@@ -319,74 +335,84 @@
     [self.player.view addSubviewForControl:playSample2Button];
 }
 
+#pragma mark - 调节按钮
 #pragma mark - VKVideoPlayerControllerDelegate
 - (void)videoPlayer:(VKVideoPlayer*)videoPlayer didControlByEvent:(VKVideoPlayerControlEvent)event {
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    appDelegate.allowRotation = NO;
- 
-    
     NSLog(@"%s event:%d", __FUNCTION__, event);
-    __weak __typeof(self) weakSelf = self;
-    
-    if (event == VKVideoPlayerControlEventTapDone) {
-//        [DatabaseTool addSeekTVDuration:self.model.movieId episode:self.model.episode duration:self.player.currentTime];
-        [self dismissViewControllerAnimated:YES completion:nil];
+    if (self.player.view.isLockBtnEnable) {
+        return;
     }
-    
+    //返回
+    if (event == VKVideoPlayerControlEventTapDone) {
+        //小屏播放器是点击返回不执行默认的一些逻辑
+       
+        [self.player pauseContent];
+//        NSString * episodeID = self.episodeSid;
+//        if (self.player.currentTime > 0) {
+//            [self addSeekTVDataWithepisodeID:episodeID];
+//        }
+        
+        [self dismissViewControllerAnimated:YES completion:^{
+            [_player pauseContent];
+            [[AVAudioSession sharedInstance] setDelegate:nil];
+            _player.delegate = nil;
+            _player.track = nil;
+            _player = nil;
+        }];
+        
+        
+        return;
+    }
+    //点击屏幕的操作
+    if(event == 0){
+        self.isStatusBarHidden = self.player.view.controls.hidden;
+        [self setNeedsStatusBarAppearanceUpdate];
+        
+//        if (_qualityMenu.isShow) {
+//            _qualityMenu.isShow = NO;
+//        }
+//        if (_listMenu.isShowing == YES) {
+//            [_listMenu hiddenForAnimation];
+//        }
+        return;
+    }
     //全屏操作
     if(event == VKVideoPlayerControlEventTapFullScreen){
         NSLog(@"VKVideoPlayerControlEventTapFullScreen");
+    }
+    
+    //分享
+    if (event == VKVideoPlayerControlEventShare) {
         
+        return;
     }
-    if(event == 0){ //点击屏幕的操作
-        self.isStatusBarHidden = self.nameLabel.hidden;
-        [self setNeedsStatusBarAppearanceUpdate];
+    //上报
+    if (event == VKVideoPlayerControlEventSuggest) {
+        NSLog(@"上报");
+ 
+        return;
     }
+    //选集
+    if (event == VKVideoPlayerControlEventSelectMenu) {
+        NSLog(@"选集");
     
+        return;
+    }
+    //片源质量
     if (event == VKVideoPlayerControlEventTapCaption) {
-        return;//不再调整
-        RUN_ON_UI_THREAD(^{
-            VKPickerButton *button = self.player.view.captionButton;
-            NSArray *subtitleList = @[@"JP", @"EN"];
-            
-            if (button.isPresented) {
-                [button dismiss];
-            } else {
-                weakSelf.player.view.controlHideCountdown = -1;
-                [button presentFromViewController:weakSelf title:NSLocalizedString(@"settings.captionSection.subtitleLanguageCell.text", nil) items:subtitleList formatCellBlock:^(UITableViewCell *cell, id item) {
-                    
-                    NSString* code = (NSString*)item;
-                    cell.textLabel.text = code;
-                    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@%%", @"50"];
-                } isSelectedBlock:^BOOL(id item) {
-                    return [item isEqualToString:weakSelf.currentLanguageCode];
-                } didSelectItemBlock:^(id item) {
-                    [weakSelf setLanguageCode:item];
-                    [button dismiss];
-                } didDismissBlock:^{
-                    weakSelf.player.view.controlHideCountdown = [weakSelf.player.view.playerControlsAutoHideTime integerValue];
-                }];
-            }
-        });
+        [self begainFullScreen];
+        return;
     }
-}
-
-#pragma - mark 退出全屏 并且强制归正
-- (void)endFullScreen
-{
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    appDelegate.allowRotation = NO;
     
-    //强制归正：
-    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
-        SEL selector = NSSelectorFromString(@"setOrientation:");
-        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
-        [invocation setSelector:selector];
-        [invocation setTarget:[UIDevice currentDevice]];
-        int val = UIInterfaceOrientationPortrait;
-        [invocation setArgument:&val atIndex:2];
-        [invocation invoke];
+    if (event == VKVideoPlayerControlEventPause) {//暂停
+        
+        return;
     }
+    
+    if (event == VKVideoPlayerControlEventPlay) {//播放
+        //[self reloadAd];
+    }
+    return;
 }
 
 - (void)setLanguageCode:(NSString*)code {
@@ -403,11 +429,16 @@
     }
 }
 
-- (ForwardBackView*)forwardView
-{
+
+#pragma mark - 快进
+- (ForwardBackView*)forwardView{
     if (!_forwardView) {
         ForwardBackView * forwardView = [[ForwardBackView alloc]initWithFrame:CGRectMake(0, 0, 170, 84)];
-        forwardView.center = CGPointMake(self.view.center.y, self.view.center.x);
+        if (IsIOS8) {
+            forwardView.center = CGPointMake(self.view.center.y, self.view.center.x);
+        }else{
+            forwardView.center = CGPointMake(self.view.center.x, self.view.center.y);
+        }
         forwardView.hidden = YES;
         [self.view addSubview:forwardView];
         self.forwardView = forwardView;
@@ -415,37 +446,129 @@
     return _forwardView;
 }
 
+#pragma - mark - 播放本地文件
+//- (void)playLocalFile:(EpisodeModel *)model urlType:(UrlType)urlType{
+//    [self addSeekTVDataWithepisodeID:model.sid];
+//    [self.player pauseContent];
+//    __weak __typeof(self)weakSelf = self;
+//    [MovieGetPlayUrl getNewM3u8UrlWithSeasonId:self.movieId episodeSid:model.sid quality:@"high" isSmallPlay:YES andBlock:^(urlDataModel *data, NSError *error) {
+//        //        NSLog(@"--data-%@--error:%@",data,error);
+//        NSString *uniquenName = [NSString stringWithFormat:@"%@%@",weakSelf.movieId,model.episodeNo];
+//        
+//        NSString *playUrl = @"";
+//        if (urlType == UrlM3u8) {
+//            NSLog(@"http://127.0.0.1:12345/%@/movie.m3u8",[uniquenName stableName]);
+//            playUrl = [NSString stringWithFormat:@"http://127.0.0.1:12345/%@/movie.m3u8",[uniquenName stableName]];
+//        }else if (urlType == UrlHttp){
+//            playUrl = uniquenName;
+//        }
+//        
+//        weakSelf.episodeSid = model.sid;
+//        weakSelf.currentNum = [model.episodeNo intValue];
+//        weakSelf.lastDurationTime = [DatabaseTool getSeekTVDuration:self.movieId episode:weakSelf.currentNum];
+//        
+//        weakSelf.isPlayLocalFile = YES;
+//        
+//        if (weakSelf.isPlayLocalFile) { //播放本地视频
+//            weakSelf.player.view.captionButton.userInteractionEnabled = NO;
+//            
+//            NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask , YES) firstObject];
+//            NSString *url = [path stringByAppendingString:[NSString stringWithFormat:@"/%@/Video/%@.mp4",kDownDomanPath,playUrl]];
+//            weakSelf.player.isPlayLocalFile = YES;
+//            [weakSelf playStream:[NSURL fileURLWithPath:url]];
+//        }
+//        //        [weakSelf playStream:URL(playUrl)];
+//        weakSelf.player.view.titleLabel.text = [NSString stringWithFormat:@"%@-第%@集",weakSelf.topTitle,model.episodeNo];
+//        [weakSelf.listMenu hiddenForAnimation];
+//    }];
+//}
 
-- (BOOL)shouldAutorotate {
+
+#pragma mark - TopView代理方法
+- (NSString *)getQuality:(NSString *)quality
+{
+    NSString *result = @"高清";
+    if ([quality isEqualToString:@"yuanhua"]) {
+        result = @"原画";
+    }else if ([quality isEqualToString:@"super"]){
+        result = @"超清";
+    }else if ([quality isEqualToString:@"high"]){
+        result = @"高清";
+    }else if([quality isEqualToString:@"low"]){
+        result = @"普清";
+    }else if([quality isEqualToString:@"local"]){
+        result = @"本地";
+    }
+    return result;
+}
+
+
+/**
+ *  设置集数
+ *
+ */
+-(void)setCurrentNum:(int)currentNum
+{
+    _currentNum = currentNum;
+    self.player.view.titleLabel.text = [NSString stringWithFormat:@"%@-第%d集",self.topTitle,currentNum];
+}
+
+-(void)setTopTitle:(NSString *)topTitle
+{
+    _topTitle = topTitle;
+    self.player.view.titleLabel.text = [NSString stringWithFormat:@"%@-第%d集",topTitle,self.currentNum];
+}
+
+
+#pragma mark - 自动转屏的逻辑
+- (BOOL)shouldAutorotate{
     return NO;
 }
-//播放界面只支持横屏
-// Override to allow orientations other than the default portrait orientation.
-// This method is deprecated on ios6
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return interfaceOrientation == UIInterfaceOrientationMaskPortrait;
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    if (self.player.view.isLockBtnEnable) {
+        if (self.interfaceOrientation == UIInterfaceOrientationLandscapeRight) {
+            return  UIInterfaceOrientationMaskLandscapeRight;
+        }else if(self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft){
+            return UIInterfaceOrientationMaskLandscapeLeft;
+        }
+        return UIInterfaceOrientationMaskLandscape;
+    }else{
+        return UIInterfaceOrientationMaskLandscape;
+    }
+}
+#pragma mark - 保存看剧时间
+- (void)addSeekTVDataWithepisodeID:(NSString *)episodeID{
+    if (self.player.currentTime == 0.0)return;
+//    [DatabaseTool addSeekTVDuration:self.movieId episode:self.currentNum duration:self.player.currentTime title:self.topTitle urltpye:UrlHttp quality:self.quality episodeID:episodeID coverUrl:self.coverUrl];
 }
 
-// For ios6, use supportedInterfaceOrientations & shouldAutorotate instead
-- (UIInterfaceOrientationMask) supportedInterfaceOrientations{
-#ifdef __IPHONE_6_0
-    return UIInterfaceOrientationMaskLandscapeRight;
-#endif
-    return UIInterfaceOrientationMaskLandscapeRight;
-}
-
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
+- (UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }
 
-- (void)dealloc
-{
-    [self endFullScreen];
-    self.player = nil;
-    self.player.delegate = nil;
-    self.player.track = nil;
+- (void)dealloc{
+    [[AVAudioSession sharedInstance] setDelegate:nil];
+    _player.delegate = nil;
+    _player.track = nil;
+    _player = nil;
 }
-
+#pragma - mark  进入全屏
+-(void)begainFullScreen
+{
+    NSLog(@"------begainFullScreen");
+    //    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    //    appDelegate.allowRotation = YES;
+    
+    //强制横屏：-：右偏
+    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+        SEL selector = NSSelectorFromString(@"setOrientation:");
+        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+        [invocation setSelector:selector];
+        [invocation setTarget:[UIDevice currentDevice]];
+        int val = UIInterfaceOrientationLandscapeRight;
+        [invocation setArgument:&val atIndex:2];
+        [invocation invoke];
+    }
+}
 @end
-
