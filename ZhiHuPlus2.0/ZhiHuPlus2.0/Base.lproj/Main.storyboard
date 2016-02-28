@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--今日热闻-->
         <scene sceneID="SYh-Al-XiL">
             <objects>
                 <tableViewController storyboardIdentifier="home" id="1mm-ki-ta6" customClass="HomeViewController" customModule="ZhiHuPlus2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -14,13 +14,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gTU-gh-Dtl">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeIdentifier" rowHeight="90" id="gTU-gh-Dtl" customClass="HomeCell" customModule="ZhiHuPlus2_0" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gTU-gh-Dtl" id="Tr4-zS-Vpl">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ek2-zx-377">
+                                            <rect key="frame" x="506" y="10" width="76" height="76"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="76" id="iiS-IQ-b9X"/>
+                                                <constraint firstAttribute="height" constant="76" id="ug0-Rs-b81"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="他若在远处若隐若现，我再五中感到迷茫" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMJ-UL-Brq">
+                                            <rect key="frame" x="18" y="0.0" width="478" height="89.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Ek2-zx-377" firstAttribute="top" secondItem="Tr4-zS-Vpl" secondAttribute="top" constant="10" id="9UR-S4-Gij"/>
+                                        <constraint firstItem="Ek2-zx-377" firstAttribute="leading" secondItem="cMJ-UL-Brq" secondAttribute="trailing" constant="10" id="HoV-za-4Qp"/>
+                                        <constraint firstItem="cMJ-UL-Brq" firstAttribute="leading" secondItem="Tr4-zS-Vpl" secondAttribute="leading" constant="18" id="S30-nH-kVe"/>
+                                        <constraint firstItem="cMJ-UL-Brq" firstAttribute="top" secondItem="Tr4-zS-Vpl" secondAttribute="top" id="gEf-EG-njO"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ek2-zx-377" secondAttribute="trailing" constant="18" id="l7o-8m-09r"/>
+                                        <constraint firstAttribute="bottom" secondItem="cMJ-UL-Brq" secondAttribute="bottom" id="oZ3-zk-smZ"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="iconView" destination="Ek2-zx-377" id="Jdp-T2-aC4"/>
+                                    <outlet property="titleLabel" destination="cMJ-UL-Brq" id="rAi-mq-81k"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -28,7 +55,7 @@
                             <outlet property="delegate" destination="1mm-ki-ta6" id="W9k-ys-cfp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="L15-cp-cDS"/>
+                    <navigationItem key="navigationItem" title="今日热闻" id="L15-cp-cDS"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fuk-zD-Xrr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -297,18 +297,18 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="92.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple Pay 登陆中国，距离刷手机不刷卡的时代更近了" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="469" translatesAutoresizingMaskIntoConstraints="NO" id="Trz-dG-5Kb">
-                                            <rect key="frame" x="15" y="0.0" width="469" height="92.5"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Da-UG-EYu">
                                             <rect key="frame" x="499" y="15" width="66" height="61.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="66" id="TWl-8d-c3d"/>
                                             </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple Pay 登陆中国，距离刷手机不刷卡的时代更近了" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="469" translatesAutoresizingMaskIntoConstraints="NO" id="Trz-dG-5Kb">
+                                            <rect key="frame" x="15" y="0.0" width="469" height="92.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="8Da-UG-EYu" secondAttribute="trailing" constant="27" id="D4G-ew-mod"/>
@@ -369,6 +369,6 @@
         <image name="switch" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="01p-gF-Kmj"/>
+        <segue reference="uY1-HT-rU3"/>
     </inferredMetricsTieBreakers>
 </document>
