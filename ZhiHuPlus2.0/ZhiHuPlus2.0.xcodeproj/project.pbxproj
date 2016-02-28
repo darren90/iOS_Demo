@@ -15,6 +15,8 @@
 		FE73A3581C82CB6E00A74B52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE73A3561C82CB6E00A74B52 /* LaunchScreen.storyboard */; };
 		FE73A3631C82CB6E00A74B52 /* ZhiHuPlus2_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE73A3621C82CB6E00A74B52 /* ZhiHuPlus2_0Tests.swift */; };
 		FE73A36E1C82CB6E00A74B52 /* ZhiHuPlus2_0UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE73A36D1C82CB6E00A74B52 /* ZhiHuPlus2_0UITests.swift */; };
+		FEA58D4C1C82CFFC00FE4E8A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA58D4B1C82CFFC00FE4E8A /* HomeViewController.swift */; };
+		FEA58D4E1C82D00B00FE4E8A /* LeftSideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA58D4D1C82D00B00FE4E8A /* LeftSideViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		FE73A3691C82CB6E00A74B52 /* ZhiHuPlus2.0UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZhiHuPlus2.0UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE73A36D1C82CB6E00A74B52 /* ZhiHuPlus2_0UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZhiHuPlus2_0UITests.swift; sourceTree = "<group>"; };
 		FE73A36F1C82CB6E00A74B52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEA58D4B1C82CFFC00FE4E8A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FEA58D4D1C82D00B00FE4E8A /* LeftSideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSideViewController.swift; sourceTree = "<group>"; };
 		FECF54411C82CE1200FACB2B /* ZhiHuPlus2.0-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZhiHuPlus2.0-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,45 +156,46 @@
 			path = ZhiHuPlus2.0UITests;
 			sourceTree = "<group>";
 		};
-		FECF54321C82CD2100FACB2B /* Class */ = {
+		FEA58D441C82CFC700FE4E8A /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				FECF54331C82CD2100FACB2B /* Main */,
-				FECF54371C82CD2100FACB2B /* Other */,
-				FECF543B1C82CD2100FACB2B /* Side */,
+				FEA58D451C82CFC700FE4E8A /* Controller */,
+				FEA58D461C82CFC700FE4E8A /* Model */,
+				FEA58D471C82CFC700FE4E8A /* View */,
 			);
-			path = Class;
+			path = Home;
 			sourceTree = "<group>";
 		};
-		FECF54331C82CD2100FACB2B /* Main */ = {
+		FEA58D451C82CFC700FE4E8A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FECF54341C82CD2100FACB2B /* Controller */,
-				FECF54351C82CD2100FACB2B /* Model */,
-				FECF54361C82CD2100FACB2B /* View */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		FECF54341C82CD2100FACB2B /* Controller */ = {
-			isa = PBXGroup;
-			children = (
+				FEA58D4B1C82CFFC00FE4E8A /* HomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		FECF54351C82CD2100FACB2B /* Model */ = {
+		FEA58D461C82CFC700FE4E8A /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		FECF54361C82CD2100FACB2B /* View */ = {
+		FEA58D471C82CFC700FE4E8A /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FECF54321C82CD2100FACB2B /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				FEA58D441C82CFC700FE4E8A /* Home */,
+				FECF54371C82CD2100FACB2B /* Other */,
+				FECF543B1C82CD2100FACB2B /* Side */,
+			);
+			path = Class;
 			sourceTree = "<group>";
 		};
 		FECF54371C82CD2100FACB2B /* Other */ = {
@@ -237,6 +242,7 @@
 		FECF543C1C82CD2100FACB2B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FEA58D4D1C82D00B00FE4E8A /* LeftSideViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -439,6 +445,8 @@
 			files = (
 				FE73A3501C82CB6E00A74B52 /* ViewController.swift in Sources */,
 				FE73A34E1C82CB6E00A74B52 /* AppDelegate.swift in Sources */,
+				FEA58D4E1C82D00B00FE4E8A /* LeftSideViewController.swift in Sources */,
+				FEA58D4C1C82CFFC00FE4E8A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

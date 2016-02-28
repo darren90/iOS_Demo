@@ -7,15 +7,38 @@
 //
 
 import UIKit
+import MMDrawerController
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    var drawer:MMDrawerController?
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let sd = UIStoryboard.init(name: "Main", bundle: nil)
+        let homeVc = sd.instantiateViewControllerWithIdentifier("home") as! HomeViewController
+        let nav_homeVc = UINavigationController(rootViewController: homeVc)
+        let leftVc = sd.instantiateViewControllerWithIdentifier("leftSide") as! LeftSideViewController
+        
+        drawer = MMDrawerController(centerViewController: nav_homeVc, leftDrawerViewController: leftVc)
+        drawer?.showsShadow = false
+        drawer?.maximumLeftDrawerWidth = 200.0
+        drawer?.openDrawerGestureModeMask = .All
+        drawer?.closeDrawerGestureModeMask = .All
+//        drawer?.setDrawerVisualStateBlock({ (drawerController, drawerSide, percentVisible) -> Void in
+//            let block:MMDrawerControllerDrawerVisualStateBlock
+//            block =
+//        })
+        
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.backgroundColor = UIColor.whiteColor()
+        window?.rootViewController = drawer!
+        window?.makeKeyAndVisible()
         return true
     }
 
