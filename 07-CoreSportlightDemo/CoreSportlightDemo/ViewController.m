@@ -56,7 +56,7 @@
     NSMutableArray<CSSearchableItem *> *items = [NSMutableArray array];
 
     for (NewsModel *model in self.dataArray) {
-        CSSearchableItemAttributeSet *csSet = [[CSSearchableItemAttributeSet alloc]initWithItemContentType:@"image"];
+        CSSearchableItemAttributeSet *csSet = [[CSSearchableItemAttributeSet alloc]initWithItemContentType:@"test"];
         csSet.title = model.title;
         csSet.contentDescription = model.webUrl;
         csSet.thumbnailData = UIImagePNGRepresentation([UIImage imageNamed:model.imgUrl]);
