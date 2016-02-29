@@ -1,0 +1,525 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FED4E81F1C847EAE00A93F24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FED4E81E1C847EAE00A93F24 /* main.m */; };
+		FED4E8221C847EAE00A93F24 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FED4E8211C847EAE00A93F24 /* AppDelegate.m */; };
+		FED4E8251C847EAE00A93F24 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FED4E8241C847EAE00A93F24 /* ViewController.m */; };
+		FED4E8281C847EAE00A93F24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FED4E8261C847EAE00A93F24 /* Main.storyboard */; };
+		FED4E82A1C847EAE00A93F24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FED4E8291C847EAE00A93F24 /* Assets.xcassets */; };
+		FED4E82D1C847EAE00A93F24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FED4E82B1C847EAE00A93F24 /* LaunchScreen.storyboard */; };
+		FED4E8381C847EAE00A93F24 /* CoreSportlightDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FED4E8371C847EAE00A93F24 /* CoreSportlightDemoTests.m */; };
+		FED4E8431C847EAE00A93F24 /* CoreSportlightDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FED4E8421C847EAE00A93F24 /* CoreSportlightDemoUITests.m */; };
+		FED4E8521C847EF100A93F24 /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FED4E8511C847EF100A93F24 /* NewsModel.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FED4E8341C847EAE00A93F24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FED4E8121C847EAE00A93F24 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FED4E8191C847EAE00A93F24;
+			remoteInfo = CoreSportlightDemo;
+		};
+		FED4E83F1C847EAE00A93F24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FED4E8121C847EAE00A93F24 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FED4E8191C847EAE00A93F24;
+			remoteInfo = CoreSportlightDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FED4E81A1C847EAE00A93F24 /* CoreSportlightDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreSportlightDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FED4E81E1C847EAE00A93F24 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FED4E8201C847EAE00A93F24 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FED4E8211C847EAE00A93F24 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FED4E8231C847EAE00A93F24 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FED4E8241C847EAE00A93F24 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FED4E8271C847EAE00A93F24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FED4E8291C847EAE00A93F24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FED4E82C1C847EAE00A93F24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FED4E82E1C847EAE00A93F24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FED4E8331C847EAE00A93F24 /* CoreSportlightDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreSportlightDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FED4E8371C847EAE00A93F24 /* CoreSportlightDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreSportlightDemoTests.m; sourceTree = "<group>"; };
+		FED4E8391C847EAE00A93F24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FED4E83E1C847EAE00A93F24 /* CoreSportlightDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreSportlightDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FED4E8421C847EAE00A93F24 /* CoreSportlightDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreSportlightDemoUITests.m; sourceTree = "<group>"; };
+		FED4E8441C847EAE00A93F24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FED4E8501C847EF100A93F24 /* NewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsModel.h; sourceTree = "<group>"; };
+		FED4E8511C847EF100A93F24 /* NewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsModel.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FED4E8171C847EAE00A93F24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FED4E8301C847EAE00A93F24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FED4E83B1C847EAE00A93F24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FED4E8111C847EAE00A93F24 = {
+			isa = PBXGroup;
+			children = (
+				FED4E81C1C847EAE00A93F24 /* CoreSportlightDemo */,
+				FED4E8361C847EAE00A93F24 /* CoreSportlightDemoTests */,
+				FED4E8411C847EAE00A93F24 /* CoreSportlightDemoUITests */,
+				FED4E81B1C847EAE00A93F24 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FED4E81B1C847EAE00A93F24 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FED4E81A1C847EAE00A93F24 /* CoreSportlightDemo.app */,
+				FED4E8331C847EAE00A93F24 /* CoreSportlightDemoTests.xctest */,
+				FED4E83E1C847EAE00A93F24 /* CoreSportlightDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FED4E81C1C847EAE00A93F24 /* CoreSportlightDemo */ = {
+			isa = PBXGroup;
+			children = (
+				FED4E8201C847EAE00A93F24 /* AppDelegate.h */,
+				FED4E8211C847EAE00A93F24 /* AppDelegate.m */,
+				FED4E8231C847EAE00A93F24 /* ViewController.h */,
+				FED4E8241C847EAE00A93F24 /* ViewController.m */,
+				FED4E8501C847EF100A93F24 /* NewsModel.h */,
+				FED4E8511C847EF100A93F24 /* NewsModel.m */,
+				FED4E8261C847EAE00A93F24 /* Main.storyboard */,
+				FED4E8291C847EAE00A93F24 /* Assets.xcassets */,
+				FED4E82B1C847EAE00A93F24 /* LaunchScreen.storyboard */,
+				FED4E82E1C847EAE00A93F24 /* Info.plist */,
+				FED4E81D1C847EAE00A93F24 /* Supporting Files */,
+			);
+			path = CoreSportlightDemo;
+			sourceTree = "<group>";
+		};
+		FED4E81D1C847EAE00A93F24 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FED4E81E1C847EAE00A93F24 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FED4E8361C847EAE00A93F24 /* CoreSportlightDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				FED4E8371C847EAE00A93F24 /* CoreSportlightDemoTests.m */,
+				FED4E8391C847EAE00A93F24 /* Info.plist */,
+			);
+			path = CoreSportlightDemoTests;
+			sourceTree = "<group>";
+		};
+		FED4E8411C847EAE00A93F24 /* CoreSportlightDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FED4E8421C847EAE00A93F24 /* CoreSportlightDemoUITests.m */,
+				FED4E8441C847EAE00A93F24 /* Info.plist */,
+			);
+			path = CoreSportlightDemoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FED4E8191C847EAE00A93F24 /* CoreSportlightDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FED4E8471C847EAE00A93F24 /* Build configuration list for PBXNativeTarget "CoreSportlightDemo" */;
+			buildPhases = (
+				FED4E8161C847EAE00A93F24 /* Sources */,
+				FED4E8171C847EAE00A93F24 /* Frameworks */,
+				FED4E8181C847EAE00A93F24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoreSportlightDemo;
+			productName = CoreSportlightDemo;
+			productReference = FED4E81A1C847EAE00A93F24 /* CoreSportlightDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FED4E8321C847EAE00A93F24 /* CoreSportlightDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FED4E84A1C847EAE00A93F24 /* Build configuration list for PBXNativeTarget "CoreSportlightDemoTests" */;
+			buildPhases = (
+				FED4E82F1C847EAE00A93F24 /* Sources */,
+				FED4E8301C847EAE00A93F24 /* Frameworks */,
+				FED4E8311C847EAE00A93F24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FED4E8351C847EAE00A93F24 /* PBXTargetDependency */,
+			);
+			name = CoreSportlightDemoTests;
+			productName = CoreSportlightDemoTests;
+			productReference = FED4E8331C847EAE00A93F24 /* CoreSportlightDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FED4E83D1C847EAE00A93F24 /* CoreSportlightDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FED4E84D1C847EAE00A93F24 /* Build configuration list for PBXNativeTarget "CoreSportlightDemoUITests" */;
+			buildPhases = (
+				FED4E83A1C847EAE00A93F24 /* Sources */,
+				FED4E83B1C847EAE00A93F24 /* Frameworks */,
+				FED4E83C1C847EAE00A93F24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FED4E8401C847EAE00A93F24 /* PBXTargetDependency */,
+			);
+			name = CoreSportlightDemoUITests;
+			productName = CoreSportlightDemoUITests;
+			productReference = FED4E83E1C847EAE00A93F24 /* CoreSportlightDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FED4E8121C847EAE00A93F24 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = tengfei;
+				TargetAttributes = {
+					FED4E8191C847EAE00A93F24 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					FED4E8321C847EAE00A93F24 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = FED4E8191C847EAE00A93F24;
+					};
+					FED4E83D1C847EAE00A93F24 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = FED4E8191C847EAE00A93F24;
+					};
+				};
+			};
+			buildConfigurationList = FED4E8151C847EAE00A93F24 /* Build configuration list for PBXProject "CoreSportlightDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FED4E8111C847EAE00A93F24;
+			productRefGroup = FED4E81B1C847EAE00A93F24 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FED4E8191C847EAE00A93F24 /* CoreSportlightDemo */,
+				FED4E8321C847EAE00A93F24 /* CoreSportlightDemoTests */,
+				FED4E83D1C847EAE00A93F24 /* CoreSportlightDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FED4E8181C847EAE00A93F24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FED4E82D1C847EAE00A93F24 /* LaunchScreen.storyboard in Resources */,
+				FED4E82A1C847EAE00A93F24 /* Assets.xcassets in Resources */,
+				FED4E8281C847EAE00A93F24 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FED4E8311C847EAE00A93F24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FED4E83C1C847EAE00A93F24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FED4E8161C847EAE00A93F24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FED4E8521C847EF100A93F24 /* NewsModel.m in Sources */,
+				FED4E8251C847EAE00A93F24 /* ViewController.m in Sources */,
+				FED4E8221C847EAE00A93F24 /* AppDelegate.m in Sources */,
+				FED4E81F1C847EAE00A93F24 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FED4E82F1C847EAE00A93F24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FED4E8381C847EAE00A93F24 /* CoreSportlightDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FED4E83A1C847EAE00A93F24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FED4E8431C847EAE00A93F24 /* CoreSportlightDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FED4E8351C847EAE00A93F24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FED4E8191C847EAE00A93F24 /* CoreSportlightDemo */;
+			targetProxy = FED4E8341C847EAE00A93F24 /* PBXContainerItemProxy */;
+		};
+		FED4E8401C847EAE00A93F24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FED4E8191C847EAE00A93F24 /* CoreSportlightDemo */;
+			targetProxy = FED4E83F1C847EAE00A93F24 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FED4E8261C847EAE00A93F24 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FED4E8271C847EAE00A93F24 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FED4E82B1C847EAE00A93F24 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FED4E82C1C847EAE00A93F24 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FED4E8451C847EAE00A93F24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FED4E8461C847EAE00A93F24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FED4E8481C847EAE00A93F24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CoreSportlightDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ftf.CoreSportlightDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FED4E8491C847EAE00A93F24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CoreSportlightDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ftf.CoreSportlightDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FED4E84B1C847EAE00A93F24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CoreSportlightDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ftf.CoreSportlightDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoreSportlightDemo.app/CoreSportlightDemo";
+			};
+			name = Debug;
+		};
+		FED4E84C1C847EAE00A93F24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CoreSportlightDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ftf.CoreSportlightDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoreSportlightDemo.app/CoreSportlightDemo";
+			};
+			name = Release;
+		};
+		FED4E84E1C847EAE00A93F24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CoreSportlightDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ftf.CoreSportlightDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CoreSportlightDemo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		FED4E84F1C847EAE00A93F24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CoreSportlightDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ftf.CoreSportlightDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CoreSportlightDemo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FED4E8151C847EAE00A93F24 /* Build configuration list for PBXProject "CoreSportlightDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FED4E8451C847EAE00A93F24 /* Debug */,
+				FED4E8461C847EAE00A93F24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FED4E8471C847EAE00A93F24 /* Build configuration list for PBXNativeTarget "CoreSportlightDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FED4E8481C847EAE00A93F24 /* Debug */,
+				FED4E8491C847EAE00A93F24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FED4E84A1C847EAE00A93F24 /* Build configuration list for PBXNativeTarget "CoreSportlightDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FED4E84B1C847EAE00A93F24 /* Debug */,
+				FED4E84C1C847EAE00A93F24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FED4E84D1C847EAE00A93F24 /* Build configuration list for PBXNativeTarget "CoreSportlightDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FED4E84E1C847EAE00A93F24 /* Debug */,
+				FED4E84F1C847EAE00A93F24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FED4E8121C847EAE00A93F24 /* Project object */;
+}
