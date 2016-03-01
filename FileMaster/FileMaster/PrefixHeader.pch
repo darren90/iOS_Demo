@@ -21,6 +21,7 @@
 #define  KHeight    [UIScreen mainScreen].bounds.size.height
 #define  KWidth     [UIScreen mainScreen].bounds.size.width
 
+#define KBasePlayUrl @"http://127.0.0.1:12345"
 
 //是否是iOS8
 #define IsIOS8 ([[UIDevice currentDevice].systemVersion doubleValue] >= 8.0)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89CDBE6D1C83F06B00C52481 /* HTTPStreamingServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CDBE6C1C83F06B00C52481 /* HTTPStreamingServer.m */; };
 		ACDA0AB9E59633E11723907F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 541DD27D81C8F94CD3ADFDDC /* libPods.a */; };
 		FEA58DEC1C83275F00FE4E8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58DEB1C83275F00FE4E8A /* main.m */; };
 		FEA58DEF1C83275F00FE4E8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58DEE1C83275F00FE4E8A /* AppDelegate.m */; };
@@ -80,6 +81,8 @@
 /* Begin PBXFileReference section */
 		2C0DB9C2757F2FFA7DE76AE0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		541DD27D81C8F94CD3ADFDDC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		89CDBE6B1C83F06B00C52481 /* HTTPStreamingServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPStreamingServer.h; sourceTree = "<group>"; };
+		89CDBE6C1C83F06B00C52481 /* HTTPStreamingServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPStreamingServer.m; sourceTree = "<group>"; };
 		9CE42351BCADF39EDF82BF7A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FEA58DE71C83275F00FE4E8A /* FileMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEA58DEB1C83275F00FE4E8A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -193,6 +196,15 @@
 				2C0DB9C2757F2FFA7DE76AE0 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		89CDBE6A1C83F06B00C52481 /* HTTPServerManager */ = {
+			isa = PBXGroup;
+			children = (
+				89CDBE6B1C83F06B00C52481 /* HTTPStreamingServer.h */,
+				89CDBE6C1C83F06B00C52481 /* HTTPStreamingServer.m */,
+			);
+			path = HTTPServerManager;
 			sourceTree = "<group>";
 		};
 		D4B7F2072E06A46572EED219 /* Frameworks */ = {
@@ -398,6 +410,7 @@
 		FEA58E2B1C83406700FE4E8A /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				89CDBE6A1C83F06B00C52481 /* HTTPServerManager */,
 				FEA58E2C1C83406700FE4E8A /* VKVideoPlayer */,
 			);
 			path = Vendor;
@@ -686,6 +699,7 @@
 				FEA58E901C834A2000FE4E8A /* MovieList.m in Sources */,
 				FEA58DEC1C83275F00FE4E8A /* main.m in Sources */,
 				FEA58E871C8347BE00FE4E8A /* PrivateListViewController.m in Sources */,
+				89CDBE6D1C83F06B00C52481 /* HTTPStreamingServer.m in Sources */,
 				FEA58E641C83406700FE4E8A /* VKVideoPlayerSettingsManager.m in Sources */,
 				FEA58E841C8347A500FE4E8A /* MovieListViewController.m in Sources */,
 				FEA58E931C834E0F00FE4E8A /* MoviePlayerViewController.m in Sources */,

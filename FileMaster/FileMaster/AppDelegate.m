@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import <HTTPServer.h>
+#import "HTTPStreamingServer.h"
 @interface AppDelegate ()
 
 @end
@@ -36,10 +37,14 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    [[HTTPStreamingServer sharedInstance] start];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [[HTTPStreamingServer sharedInstance] stop];
+
 }
 
 @end

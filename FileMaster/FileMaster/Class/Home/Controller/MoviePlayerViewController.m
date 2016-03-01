@@ -92,8 +92,12 @@ static float scale = 2208.0/900;
         //        /Users/rrlhy/Library/Developer/CoreSimulator/Devices/B40AC509-DFB2-443A-B9C0-03A2D58D37AD/data/Containers/Data/Application/E304843C-E9B7-4413-9AAE-48B16EEC6AE1/Documents/video.m3u8
         NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask , YES) firstObject];
         NSString *url = [path stringByAppendingString:[NSString stringWithFormat:@"/%@",self.playLocalUrl]];
+        NSString *playUrl = [NSString stringWithFormat:@"%@/%@",KBasePlayUrl,self.playLocalUrl];
         self.player.isPlayLocalFile = YES;
-        [self playStream:[NSURL fileURLWithPath:url]];
+//        [self playStream:[NSURL fileURLWithPath:url]];
+        NSLog(@"--------------------：%@",url);
+        NSLog(@"%@",playUrl);
+        [self playStream:[NSURL URLWithString:playUrl]];
     }else{//播网络视频
 //        self.player.isPlayLocalFile = NO;
 //        [self playStream:[NSURL URLWithString:self.listModel.m3u8.url]];
