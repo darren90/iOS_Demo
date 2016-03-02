@@ -74,7 +74,7 @@
                     <navigationItem key="navigationItem" id="84y-l5-frD">
                         <barButtonItem key="rightBarButtonItem" title="返回根目录" id="Z4D-lc-t2I">
                             <connections>
-                                <action selector="backToRootVc:" destination="EFA-bn-Z0I" id="xjw-ap-iwr"/>
+                                <action selector="backToRootVc:" destination="EFA-bn-Z0I" id="ODa-fC-gK0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
