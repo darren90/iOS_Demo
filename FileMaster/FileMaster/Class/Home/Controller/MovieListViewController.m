@@ -10,6 +10,9 @@
 #import "MovieListCell.h"
 #import "MovieList.h"
 #import "MoviePlayerViewController.h"
+//#import <a>
+#import "AVURLAsset.h"
+#import "AVAssetImageGenerator.h"
 
 @interface MovieListViewController ()
 @property (nonatomic,strong)NSMutableArray * dataArray;
@@ -101,4 +104,42 @@
         NSLog(@"FileFullPath : %@" , [docsDir stringByAppendingPathComponent:fileName]) ;
     }
 }
+
+//-(void)getImage{
+//    NSString *videoPath= ""
+//    NSURL *videoURL = [NSURL fileURLWithPath:videoPath];
+//    AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:videoURL options:nil];
+//    AVAssetImageGenerator *assetImageGenerator = [[AVAssetImageGenerator alloc] initWithAsset:asset];
+//    assetImageGenerator.appliesPreferredTrackTransform = YES;
+//    assetImageGenerator.apertureMode = AVAssetImageGeneratorApertureModeEncodedPixels;
+//    [asset release];
+//    
+//    CGImageRef thumbnailImageRef = NULL;
+//    CFTimeInterval thumbnailImageTime = 0;
+//    NSError *thumbnailImageGenerationError = nil;
+//    thumbnailImageRef = [assetImageGenerator copyCGImageAtTime:CMTimeMake(thumbnailImageTime, 15) actualTime:NULL error:&thumbnailImageGenerationError];
+//    [assetImageGenerator release];
+//    
+//    if (!thumbnailImageRef)
+//        NSLog(@"thumbnailImageGenerationError %@", thumbnailImageGenerationError);
+//    
+//    UIImage *thumbnailImage = thumbnailImageRef ? [[[UIImage alloc] initWithCGImage:thumbnailImageRef] autorelease] : nil;
+//    //NSData *imageData = UIImagePNGRepresentation(thumbnailImage);
+//}
+
+
+
+/**
+    iOS 视频 帧
+    http://blog.txx.im/blog/2013/09/04/ios-avassertimagegenerator/
+    http://blog.csdn.net/ALDRIDGE1/article/details/24327929
+ 
+*/
+
 @end
+
+
+
+
+
+

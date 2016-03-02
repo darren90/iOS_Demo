@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		89CDBE6D1C83F06B00C52481 /* HTTPStreamingServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CDBE6C1C83F06B00C52481 /* HTTPStreamingServer.m */; };
+		89E759E21C86F4BF002A10BA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E759E11C86F4BF002A10BA /* AVFoundation.framework */; };
+		89E759E41C86F4C8002A10BA /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E759E31C86F4C8002A10BA /* CoreMedia.framework */; };
+		89E759EB1C86F8DB002A10BA /* UIImage+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E759EA1C86F8DB002A10BA /* UIImage+Category.m */; };
 		ACDA0AB9E59633E11723907F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 541DD27D81C8F94CD3ADFDDC /* libPods.a */; };
 		FEA58DEC1C83275F00FE4E8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58DEB1C83275F00FE4E8A /* main.m */; };
 		FEA58DEF1C83275F00FE4E8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58DEE1C83275F00FE4E8A /* AppDelegate.m */; };
@@ -83,6 +86,10 @@
 		541DD27D81C8F94CD3ADFDDC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		89CDBE6B1C83F06B00C52481 /* HTTPStreamingServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPStreamingServer.h; sourceTree = "<group>"; };
 		89CDBE6C1C83F06B00C52481 /* HTTPStreamingServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPStreamingServer.m; sourceTree = "<group>"; };
+		89E759E11C86F4BF002A10BA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		89E759E31C86F4C8002A10BA /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		89E759E91C86F8DB002A10BA /* UIImage+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Category.h"; sourceTree = "<group>"; };
+		89E759EA1C86F8DB002A10BA /* UIImage+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Category.m"; sourceTree = "<group>"; };
 		9CE42351BCADF39EDF82BF7A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FEA58DE71C83275F00FE4E8A /* FileMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEA58DEB1C83275F00FE4E8A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -168,6 +175,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89E759E41C86F4C8002A10BA /* CoreMedia.framework in Frameworks */,
+				89E759E21C86F4BF002A10BA /* AVFoundation.framework in Frameworks */,
 				ACDA0AB9E59633E11723907F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,9 +216,41 @@
 			path = HTTPServerManager;
 			sourceTree = "<group>";
 		};
+		89E759E51C86F513002A10BA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		89E759E61C86F513002A10BA /* Mananger */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mananger;
+			sourceTree = "<group>";
+		};
+		89E759E71C86F513002A10BA /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		89E759E81C86F8BC002A10BA /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				89E759E91C86F8DB002A10BA /* UIImage+Category.h */,
+				89E759EA1C86F8DB002A10BA /* UIImage+Category.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		D4B7F2072E06A46572EED219 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				89E759E31C86F4C8002A10BA /* CoreMedia.framework */,
+				89E759E11C86F4BF002A10BA /* AVFoundation.framework */,
 				541DD27D81C8F94CD3ADFDDC /* libPods.a */,
 			);
 			name = Frameworks;
@@ -402,6 +443,10 @@
 		FEA58E2A1C83406700FE4E8A /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				89E759E81C86F8BC002A10BA /* Category */,
+				89E759E51C86F513002A10BA /* Common */,
+				89E759E61C86F513002A10BA /* Mananger */,
+				89E759E71C86F513002A10BA /* Util */,
 				FEA58E2B1C83406700FE4E8A /* Vendor */,
 			);
 			path = Lib;
@@ -704,6 +749,7 @@
 				FEA58E841C8347A500FE4E8A /* MovieListViewController.m in Sources */,
 				FEA58E931C834E0F00FE4E8A /* MoviePlayerViewController.m in Sources */,
 				FEA58E5E1C83406700FE4E8A /* VKVideoPlayer.m in Sources */,
+				89E759EB1C86F8DB002A10BA /* UIImage+Category.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
