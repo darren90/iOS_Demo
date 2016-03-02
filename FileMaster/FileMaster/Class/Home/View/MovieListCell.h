@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-@class MovieList;
+@class MovieFile;
 @interface MovieListCell : UITableViewCell
++(instancetype)cellWithTableView:(UITableView *)tableView;
 
 
-@property (nonatomic,strong)MovieList * model;
+
+@property (nonatomic,strong)MovieFile * model;
 
 
 @end

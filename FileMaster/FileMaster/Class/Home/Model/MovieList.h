@@ -20,13 +20,10 @@ typedef enum {
 
 @property (nonatomic,copy)NSString * name;
 
-@property (nonatomic,copy)NSString * imgUrl;
-
 @property (nonatomic,assign)FileType fileType;
 @property (nonatomic,strong)UIImage *imgData;
 
 @property (nonatomic,copy)NSString * path;
-
 
 +(instancetype)movieList:(NSString *)name fileType:(FileType)fileType path:(NSString *)path imgData:(UIImage *)imgData;
 

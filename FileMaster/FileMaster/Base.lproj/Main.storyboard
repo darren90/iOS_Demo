@@ -32,70 +32,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="movielistCell" rowHeight="80" id="0nw-Ol-lpl" customClass="MovieListCell">
-                                <rect key="frame" x="0.0" y="92" width="600" height="80"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0nw-Ol-lpl" id="gUO-bl-lMD">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n2Q-dM-q3k">
-                                            <rect key="frame" x="18" y="10" width="80" height="60"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="80" id="3dP-pC-VUM"/>
-                                                <constraint firstAttribute="height" constant="60" id="SKS-1Q-uqh"/>
-                                            </constraints>
-                                        </imageView>
-                                        <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VUY-XX-WpI">
-                                            <rect key="frame" x="8" y="78.5" width="584" height="1"/>
-                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="1" id="lcR-Dl-kqK"/>
-                                            </constraints>
-                                        </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="爱看美剧之神盾局第三季，第22集《神盾局遇到危机，看科尔森巧妙化解危机》" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ro2-ZW-gMy">
-                                            <rect key="frame" x="113" y="10" width="469" height="59.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="VUY-XX-WpI" secondAttribute="trailing" constant="8" id="CjA-wm-4HR"/>
-                                        <constraint firstAttribute="trailing" secondItem="Ro2-ZW-gMy" secondAttribute="trailing" constant="18" id="YOM-KE-8Vc"/>
-                                        <constraint firstAttribute="bottom" secondItem="VUY-XX-WpI" secondAttribute="bottom" id="ZoG-Qj-GEQ"/>
-                                        <constraint firstItem="VUY-XX-WpI" firstAttribute="leading" secondItem="gUO-bl-lMD" secondAttribute="leading" constant="8" id="aFY-A5-LQC"/>
-                                        <constraint firstItem="n2Q-dM-q3k" firstAttribute="top" secondItem="gUO-bl-lMD" secondAttribute="top" constant="10" id="bV3-AP-fI9"/>
-                                        <constraint firstItem="n2Q-dM-q3k" firstAttribute="leading" secondItem="gUO-bl-lMD" secondAttribute="leading" constant="18" id="cDA-K8-WUY"/>
-                                        <constraint firstItem="Ro2-ZW-gMy" firstAttribute="top" secondItem="gUO-bl-lMD" secondAttribute="top" constant="10" id="dAe-qd-WIk"/>
-                                        <constraint firstAttribute="bottom" secondItem="n2Q-dM-q3k" secondAttribute="bottom" constant="9.5" id="qIk-o2-Gpn"/>
-                                        <constraint firstItem="Ro2-ZW-gMy" firstAttribute="leading" secondItem="n2Q-dM-q3k" secondAttribute="trailing" constant="15" id="wTm-wz-isJ"/>
-                                        <constraint firstAttribute="bottom" secondItem="Ro2-ZW-gMy" secondAttribute="bottom" constant="10" id="xSc-QL-ev1"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="iconView" destination="n2Q-dM-q3k" id="Xtu-3m-ddd"/>
-                                    <outlet property="nameLabel" destination="Ro2-ZW-gMy" id="7Uz-Xi-giw"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="OYu-v1-Ae1" id="Hda-9R-IZ1"/>
                             <outlet property="delegate" destination="OYu-v1-Ae1" id="X8b-Cj-Cgs"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="本地视频" id="kn2-0O-B4B">
-                        <barButtonItem key="rightBarButtonItem" title="编辑" id="KWy-l6-RHY">
-                            <connections>
-                                <action selector="editList:" destination="OYu-v1-Ae1" id="6S2-Ig-SLr"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="KWy-l6-RHY"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="EFA-bn-Z0I" kind="push" id="mOU-OJ-tyR"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B68-cY-t1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1126" y="93"/>
+        </scene>
+        <!--Movie Folder View Controller-->
+        <scene sceneID="XYN-bb-sFo">
+            <objects>
+                <tableViewController storyboardIdentifier="folderVc" id="EFA-bn-Z0I" customClass="MovieFolderViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="iui-x5-nrr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ogH-DA-hPU">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ogH-DA-hPU" id="gVt-mE-nlL">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EFA-bn-Z0I" id="zp5-hB-HLj"/>
+                            <outlet property="delegate" destination="EFA-bn-Z0I" id="zV7-Ir-tc8"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="84y-l5-frD">
+                        <barButtonItem key="rightBarButtonItem" title="返回根目录" id="Z4D-lc-t2I">
+                            <connections>
+                                <action selector="backToRootVc:" destination="EFA-bn-Z0I" id="xjw-ap-iwr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RtD-uf-e1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-458" y="93"/>
         </scene>
         <!--本地视频-->
         <scene sceneID="t1Y-yD-i17">

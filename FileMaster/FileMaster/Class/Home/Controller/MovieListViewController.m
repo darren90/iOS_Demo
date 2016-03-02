@@ -10,12 +10,16 @@
 #import "MovieListCell.h"
 #import "MovieList.h"
 #import "MoviePlayerViewController.h"
+#import "MovieFolderViewController.h"
 #import "UIImage+Category.h"
- 
+#import "MovieFile.h"
+
 
 @interface MovieListViewController ()
 - (IBAction)editList:(UIBarButtonItem *)sender;
+
 @property (nonatomic,strong)NSMutableArray * dataArray;
+
 @end
 
 @implementation MovieListViewController
@@ -23,7 +27,10 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    self.dataArray = [self getMovieList];
+    NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents"];
+    NSMutableArray *pathArray  =[self scanFilesAtPath:docsDir];
+
+    self.dataArray = pathArray;//[self getMovieList];
     [self.tableView reloadData];
 }
 
@@ -34,39 +41,55 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
-- (NSMutableArray *)getMovieList
-{
-    NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents"];
+- (NSMutableArray *)scanFilesAtPath:(NSString *)direString {
+    NSMutableArray *pathArray = [NSMutableArray array];
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    
-    NSDirectoryEnumerator *dirEnum = [fileManager enumeratorAtPath:docsDir];
-    
-    NSString *fileName;
-    
-    NSMutableArray *array = [NSMutableArray array];
-    while (fileName = [dirEnum nextObject]) {
-        NSLog(@"FielName : %@" , fileName);
-        //        NSLog(@"FileFullPath : %@" , [docsDir stringByAppendingPathComponent:fileName]) ;
-        NSString *path = [docsDir stringByAppendingPathComponent:fileName];
+    NSArray *tempArray = [fileManager contentsOfDirectoryAtPath:direString error:nil];
+    for (NSString *fileName in tempArray) {
+        MovieFile *movieFile = [[MovieFile alloc]init];
+        
         UIImage *imgData ;
         FileType fileType;
-        if ([fileName hasSuffix:@".mp4"]) {
-            imgData = [UIImage thumbnailImageForVideo:[NSURL fileURLWithPath:path] atTime:10.0];
-            fileType = FileMovieCanPlay;
-        }else if([fileName hasSuffix:@".png"]){
-            imgData = [UIImage imageWithContentsOfFile:path];
-            fileType = FileImage;
-        }else {
-            imgData = [UIImage imageNamed:@"Finder_files"];
-            fileType = FileOther;
-        }
-        MovieList *model = [MovieList movieList:fileName fileType:fileType path:path imgData:imgData];
+        MovieList *model;
         
-        [array addObject:model];
+        BOOL flag = YES;
+        NSString *fullPath = [direString stringByAppendingPathComponent:fileName];
+        if ([fileManager fileExistsAtPath:fullPath isDirectory:&flag]) {
+            if (!flag) {
+                // ignore .DS_Store
+                if (![[fileName substringToIndex:1] isEqualToString:@"."]) {
+                    
+                    if ([fileName hasSuffix:@".mp4"]) {
+                        imgData = [UIImage thumbnailImageForVideo:[NSURL fileURLWithPath:fullPath] atTime:10.0];
+                        fileType = FileMovieCanPlay;
+                    }else if([fileName hasSuffix:@".png"]){
+                        imgData = [UIImage imageWithContentsOfFile:fullPath];
+                        fileType = FileImage;
+                    }else {
+                        imgData = [UIImage imageNamed:@"Finder_files"];
+                        fileType = FileOther;
+                    }
+                    model = [MovieList movieList:fileName fileType:fileType path:fullPath imgData:imgData];
+                    
+                    movieFile.isFolder = NO;
+                    movieFile.file = model;
+                    
+                    [pathArray addObject:movieFile];
+                }
+            }
+            else {
+                movieFile.isFolder = YES;
+                movieFile.subFiles = [self scanFilesAtPath:fullPath];
+                movieFile.folderName = fileName;
+//                [pathArray addObject:[self scanFilesAtPath:fullPath]];
+                [pathArray addObject:movieFile];
+            }
+        }
     }
-    return array;
+    return pathArray;
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -85,7 +108,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MovieListCell  *cell = [tableView dequeueReusableCellWithIdentifier:@"movielistCell"];
+    MovieListCell  *cell = [MovieListCell cellWithTableView:tableView];//[tableView dequeueReusableCellWithIdentifier:@"movielistCell"];
     
     cell.model = self.dataArray[indexPath.row];
     
@@ -93,21 +116,77 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    MovieList *model = self.dataArray[indexPath.row];
+    MovieFile *model = self.dataArray[indexPath.row];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if (model.fileType == FileMovieCanPlay) {
-        MoviePlayerViewController *playerVc = [[MoviePlayerViewController alloc] init];
-        playerVc.topTitle = model.name;
-        playerVc.playLocalUrl = model.name;
-        [self.navigationController presentViewController:playerVc animated:YES completion:nil];
-    }else if (model.fileType == FileImage){
-        
+    if (model.isFolder) {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+         MovieFolderViewController *folderVc = [sb instantiateViewControllerWithIdentifier:@"folderVc"];
+        folderVc.file = model;
+        [self.navigationController pushViewController:folderVc animated:YES];
+    }else{
+        MovieList *list = model.file;
+        if (list.fileType == FileMovieCanPlay) {
+            MoviePlayerViewController *playerVc = [[MoviePlayerViewController alloc] init];
+            playerVc.topTitle = list.name;
+            playerVc.playLocalUrl = list.name;
+            [self.navigationController presentViewController:playerVc animated:YES completion:nil];
+        }else if (list.fileType == FileImage){
+            
+        }
     }
+    
 }
 
 
-
+- (NSMutableArray *)getMovieList
+{
+    NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents"];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    NSDirectoryEnumerator *dirEnum = [fileManager enumeratorAtPath:docsDir];
+    
+    NSString *fileName;
+    
+    NSMutableArray *array = [NSMutableArray array];
+    while (fileName = [dirEnum nextObject]) {
+        NSString *path = [docsDir stringByAppendingPathComponent:fileName];
+        
+        //        NSLog(@"FileFullPath : %@" , [docsDir stringByAppendingPathComponent:fileName]) ;
+        NSLog(@"FielName : %@" , fileName);
+        
+        UIImage *imgData ;
+        FileType fileType;
+        
+        NSString *subPath = [NSString stringWithFormat:@"%@%@",path,fileName];
+        BOOL flag ;
+        [fileManager fileExistsAtPath:subPath isDirectory:&flag];
+        if(flag == YES){//是文件夹
+            [dirEnum skipDescendants];
+            fileType = FileFolder;
+            imgData = [UIImage imageNamed:@"Finder_folder"];
+        }else{
+            
+        }
+        
+        if ([fileName hasSuffix:@".mp4"]) {
+            imgData = [UIImage thumbnailImageForVideo:[NSURL fileURLWithPath:path] atTime:10.0];
+            fileType = FileMovieCanPlay;
+        }else if([fileName hasSuffix:@".png"]){
+            imgData = [UIImage imageWithContentsOfFile:path];
+            fileType = FileImage;
+        }else {
+            imgData = [UIImage imageNamed:@"Finder_files"];
+            fileType = FileOther;
+        }
+        
+        MovieList *model = [MovieList movieList:fileName fileType:fileType path:path imgData:imgData];
+        
+        [array addObject:model];
+    }
+    return array;
+}
 
 - (void)logFilePathInDocumentsDir
 {
@@ -125,27 +204,31 @@
     }
 }
 
-//-(void)getImage{
-//    NSString *videoPath= ""
-//    NSURL *videoURL = [NSURL fileURLWithPath:videoPath];
-//    AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:videoURL options:nil];
-//    AVAssetImageGenerator *assetImageGenerator = [[AVAssetImageGenerator alloc] initWithAsset:asset];
-//    assetImageGenerator.appliesPreferredTrackTransform = YES;
-//    assetImageGenerator.apertureMode = AVAssetImageGeneratorApertureModeEncodedPixels;
-//    [asset release];
-//    
-//    CGImageRef thumbnailImageRef = NULL;
-//    CFTimeInterval thumbnailImageTime = 0;
-//    NSError *thumbnailImageGenerationError = nil;
-//    thumbnailImageRef = [assetImageGenerator copyCGImageAtTime:CMTimeMake(thumbnailImageTime, 15) actualTime:NULL error:&thumbnailImageGenerationError];
-//    [assetImageGenerator release];
-//    
-//    if (!thumbnailImageRef)
-//        NSLog(@"thumbnailImageGenerationError %@", thumbnailImageGenerationError);
-//    
-//    UIImage *thumbnailImage = thumbnailImageRef ? [[[UIImage alloc] initWithCGImage:thumbnailImageRef] autorelease] : nil;
-//    //NSData *imageData = UIImagePNGRepresentation(thumbnailImage);
-//}
+
+- (NSMutableArray *)allFilesAtPath:(NSString *)direString
+{
+    NSMutableArray *pathArray = [NSMutableArray array];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSArray *tempArray = [fileManager contentsOfDirectoryAtPath:direString error:nil];
+    for (NSString *fileName in tempArray) {
+        BOOL flag = YES;
+        NSString *fullPath = [direString stringByAppendingPathComponent:fileName];
+        if ([fileManager fileExistsAtPath:fullPath isDirectory:&flag]) {
+            if (!flag) {
+                // ignore .DS_Store
+                if (![[fileName substringToIndex:1] isEqualToString:@"."]) {
+                    [pathArray addObject:fullPath];
+                }
+            }
+            else {
+                [pathArray addObject:[self allFilesAtPath:fullPath]];
+            }
+        }
+    }
+    
+    return pathArray;
+}
 
 
 

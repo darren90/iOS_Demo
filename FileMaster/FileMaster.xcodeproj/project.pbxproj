@@ -12,6 +12,9 @@
 		89E759E41C86F4C8002A10BA /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E759E31C86F4C8002A10BA /* CoreMedia.framework */; };
 		89E759EB1C86F8DB002A10BA /* UIImage+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E759EA1C86F8DB002A10BA /* UIImage+Category.m */; };
 		ACDA0AB9E59633E11723907F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 541DD27D81C8F94CD3ADFDDC /* libPods.a */; };
+		FE28D8111C872F72000AFC70 /* MovieFolderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE28D8101C872F72000AFC70 /* MovieFolderViewController.m */; };
+		FE28D8141C8734D4000AFC70 /* MovieFile.m in Sources */ = {isa = PBXBuildFile; fileRef = FE28D8131C8734D4000AFC70 /* MovieFile.m */; };
+		FE28D8161C873CCF000AFC70 /* MovieListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE28D8151C873CCF000AFC70 /* MovieListCell.xib */; };
 		FEA58DEC1C83275F00FE4E8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58DEB1C83275F00FE4E8A /* main.m */; };
 		FEA58DEF1C83275F00FE4E8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58DEE1C83275F00FE4E8A /* AppDelegate.m */; };
 		FEA58DF21C83275F00FE4E8A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58DF11C83275F00FE4E8A /* ViewController.m */; };
@@ -91,6 +94,11 @@
 		89E759E91C86F8DB002A10BA /* UIImage+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Category.h"; sourceTree = "<group>"; };
 		89E759EA1C86F8DB002A10BA /* UIImage+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Category.m"; sourceTree = "<group>"; };
 		9CE42351BCADF39EDF82BF7A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FE28D80F1C872F72000AFC70 /* MovieFolderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieFolderViewController.h; sourceTree = "<group>"; };
+		FE28D8101C872F72000AFC70 /* MovieFolderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieFolderViewController.m; sourceTree = "<group>"; };
+		FE28D8121C8734D4000AFC70 /* MovieFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieFile.h; sourceTree = "<group>"; };
+		FE28D8131C8734D4000AFC70 /* MovieFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieFile.m; sourceTree = "<group>"; };
+		FE28D8151C873CCF000AFC70 /* MovieListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieListCell.xib; sourceTree = "<group>"; };
 		FEA58DE71C83275F00FE4E8A /* FileMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEA58DEB1C83275F00FE4E8A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FEA58DED1C83275F00FE4E8A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -348,6 +356,8 @@
 			children = (
 				FEA58E821C8347A500FE4E8A /* MovieListViewController.h */,
 				FEA58E831C8347A500FE4E8A /* MovieListViewController.m */,
+				FE28D80F1C872F72000AFC70 /* MovieFolderViewController.h */,
+				FE28D8101C872F72000AFC70 /* MovieFolderViewController.m */,
 				FEA58E911C834E0F00FE4E8A /* MoviePlayerViewController.h */,
 				FEA58E921C834E0F00FE4E8A /* MoviePlayerViewController.m */,
 			);
@@ -359,6 +369,8 @@
 			children = (
 				FEA58E8E1C834A2000FE4E8A /* MovieList.h */,
 				FEA58E8F1C834A2000FE4E8A /* MovieList.m */,
+				FE28D8121C8734D4000AFC70 /* MovieFile.h */,
+				FE28D8131C8734D4000AFC70 /* MovieFile.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -370,6 +382,7 @@
 				FEA58E951C83502000FE4E8A /* ForwardBackView.m */,
 				FEA58E8B1C8348F400FE4E8A /* MovieListCell.h */,
 				FEA58E8C1C8348F400FE4E8A /* MovieListCell.m */,
+				FE28D8151C873CCF000AFC70 /* MovieListCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -645,6 +658,7 @@
 			files = (
 				FEA58DFA1C83275F00FE4E8A /* LaunchScreen.storyboard in Resources */,
 				FEA58E7D1C83406700FE4E8A /* VKVideoPlayer_zoom_out.png in Resources */,
+				FE28D8161C873CCF000AFC70 /* MovieListCell.xib in Resources */,
 				FEA58E701C83406700FE4E8A /* VKVideoPlayer_next@2x.png in Resources */,
 				FEA58E6C1C83406700FE4E8A /* VKVideoPlayer_close@2x.png in Resources */,
 				FEA58E711C83406700FE4E8A /* VKVideoPlayer_pause.png in Resources */,
@@ -728,6 +742,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEA58E8D1C8348F400FE4E8A /* MovieListCell.m in Sources */,
+				FE28D8111C872F72000AFC70 /* MovieFolderViewController.m in Sources */,
 				FEA58E601C83406700FE4E8A /* VKVideoPlayerCaption.m in Sources */,
 				FEA58E621C83406700FE4E8A /* VKVideoPlayerExternalMonitor.m in Sources */,
 				FEA58E8A1C8347CE00FE4E8A /* SettingViewController.m in Sources */,
@@ -740,6 +755,7 @@
 				FEA58DEF1C83275F00FE4E8A /* AppDelegate.m in Sources */,
 				FEA58E631C83406700FE4E8A /* VKVideoPlayerLayerView.m in Sources */,
 				FEA58E681C83406700FE4E8A /* VKVideoPlayerViewController.m in Sources */,
+				FE28D8141C8734D4000AFC70 /* MovieFile.m in Sources */,
 				FEA58E801C83406700FE4E8A /* README.md in Sources */,
 				FEA58E901C834A2000FE4E8A /* MovieList.m in Sources */,
 				FEA58DEC1C83275F00FE4E8A /* main.m in Sources */,
