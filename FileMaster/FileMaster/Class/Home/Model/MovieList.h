@@ -7,14 +7,27 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
+typedef enum {
+    FileMovieCanPlay,
+    FileMovieCanNotPlay,
+    FileImage,
+    FileFolder,
+    FileOther
+} FileType;
 @interface MovieList : NSObject
-
 
 @property (nonatomic,copy)NSString * name;
 
 @property (nonatomic,copy)NSString * imgUrl;
 
-+(instancetype)movieList:(NSString *)name imgUrl:(NSString *)imgUrl;
+@property (nonatomic,assign)FileType fileType;
+@property (nonatomic,strong)UIImage *imgData;
+
+@property (nonatomic,copy)NSString * path;
+
+
++(instancetype)movieList:(NSString *)name fileType:(FileType)fileType path:(NSString *)path imgData:(UIImage *)imgData;
 
 @end

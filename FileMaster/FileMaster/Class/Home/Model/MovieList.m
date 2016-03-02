@@ -11,11 +11,13 @@
 @implementation MovieList
 
 
-+(instancetype)movieList:(NSString *)name imgUrl:(NSString *)imgUrl
++(instancetype)movieList:(NSString *)name fileType:(FileType)fileType  path:(NSString *)path imgData:(UIImage *)imgData
 {
     MovieList *list = [[MovieList alloc]init];
     list.name = name;
-    list.imgUrl = imgUrl;
+    list.fileType = fileType;
+    list.path = path;
+    list.imgData = imgData;
     return list;
 }
 

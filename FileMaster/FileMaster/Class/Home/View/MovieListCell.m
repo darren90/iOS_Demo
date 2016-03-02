@@ -19,11 +19,12 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    self.iconView.clipsToBounds = YES;
 }
 
 -(void)setModel:(MovieList *)model
 {
-    self.iconView.image = [UIImage imageNamed:model.imgUrl];
+    self.iconView.image = model.imgData;
     self.nameLabel.text = model.name;
 }
 

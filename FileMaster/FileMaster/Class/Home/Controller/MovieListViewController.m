@@ -10,11 +10,11 @@
 #import "MovieListCell.h"
 #import "MovieList.h"
 #import "MoviePlayerViewController.h"
-//#import <a>
-#import "AVURLAsset.h"
-#import "AVAssetImageGenerator.h"
+#import "UIImage+Category.h"
+ 
 
 @interface MovieListViewController ()
+- (IBAction)editList:(UIBarButtonItem *)sender;
 @property (nonatomic,strong)NSMutableArray * dataArray;
 @end
 
@@ -47,9 +47,23 @@
     NSMutableArray *array = [NSMutableArray array];
     while (fileName = [dirEnum nextObject]) {
         NSLog(@"FielName : %@" , fileName);
-        MovieList *model = [MovieList movieList:fileName imgUrl:@""];
+        //        NSLog(@"FileFullPath : %@" , [docsDir stringByAppendingPathComponent:fileName]) ;
+        NSString *path = [docsDir stringByAppendingPathComponent:fileName];
+        UIImage *imgData ;
+        FileType fileType;
+        if ([fileName hasSuffix:@".mp4"]) {
+            imgData = [UIImage thumbnailImageForVideo:[NSURL fileURLWithPath:path] atTime:10.0];
+            fileType = FileMovieCanPlay;
+        }else if([fileName hasSuffix:@".png"]){
+            imgData = [UIImage imageWithContentsOfFile:path];
+            fileType = FileImage;
+        }else {
+            imgData = [UIImage imageNamed:@"Finder_files"];
+            fileType = FileOther;
+        }
+        MovieList *model = [MovieList movieList:fileName fileType:fileType path:path imgData:imgData];
+        
         [array addObject:model];
-//        NSLog(@"FileFullPath : %@" , [docsDir stringByAppendingPathComponent:fileName]) ;
     }
     return array;
 }
@@ -79,11 +93,17 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    MoviePlayerViewController *playerVc = [[MoviePlayerViewController alloc] init];
     MovieList *model = self.dataArray[indexPath.row];
-    playerVc.topTitle = model.name;
-    playerVc.playLocalUrl = model.name;
-    [self.navigationController presentViewController:playerVc animated:YES completion:nil];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (model.fileType == FileMovieCanPlay) {
+        MoviePlayerViewController *playerVc = [[MoviePlayerViewController alloc] init];
+        playerVc.topTitle = model.name;
+        playerVc.playLocalUrl = model.name;
+        [self.navigationController presentViewController:playerVc animated:YES completion:nil];
+    }else if (model.fileType == FileImage){
+        
+    }
 }
 
 
@@ -136,6 +156,16 @@
  
 */
 
+/**
+ *  编辑视频--：删除+加密
+ *
+ *  @param sender
+ */
+- (IBAction)editList:(UIBarButtonItem *)sender {
+    
+    
+    
+}
 @end
 
 
