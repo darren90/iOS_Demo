@@ -32,6 +32,7 @@
 		FE28D84E1C887822000AFC70 /* SettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE28D84C1C887822000AFC70 /* SettingCell.m */; };
 		FE28D84F1C887822000AFC70 /* SettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE28D84D1C887822000AFC70 /* SettingCell.xib */; };
 		FE28D8521C887BE5000AFC70 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE28D8511C887BE5000AFC70 /* AboutViewController.m */; };
+		FE28D8551C88A181000AFC70 /* SettingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE28D8541C88A181000AFC70 /* SettingModel.m */; };
 		FEA58DEC1C83275F00FE4E8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58DEB1C83275F00FE4E8A /* main.m */; };
 		FEA58DEF1C83275F00FE4E8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58DEE1C83275F00FE4E8A /* AppDelegate.m */; };
 		FEA58DF21C83275F00FE4E8A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58DF11C83275F00FE4E8A /* ViewController.m */; };
@@ -149,6 +150,8 @@
 		FE28D84D1C887822000AFC70 /* SettingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingCell.xib; sourceTree = "<group>"; };
 		FE28D8501C887BE5000AFC70 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		FE28D8511C887BE5000AFC70 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		FE28D8531C88A181000AFC70 /* SettingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingModel.h; sourceTree = "<group>"; };
+		FE28D8541C88A181000AFC70 /* SettingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingModel.m; sourceTree = "<group>"; };
 		FEA58DE71C83275F00FE4E8A /* FileMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEA58DEB1C83275F00FE4E8A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FEA58DED1C83275F00FE4E8A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -576,6 +579,8 @@
 		FEA58E281C83406700FE4E8A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FE28D8531C88A181000AFC70 /* SettingModel.h */,
+				FE28D8541C88A181000AFC70 /* SettingModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -907,6 +912,7 @@
 				FEA58E681C83406700FE4E8A /* VKVideoPlayerViewController.m in Sources */,
 				FE28D84E1C887822000AFC70 /* SettingCell.m in Sources */,
 				FE28D8141C8734D4000AFC70 /* MovieFile.m in Sources */,
+				FE28D8551C88A181000AFC70 /* SettingModel.m in Sources */,
 				FE28D8521C887BE5000AFC70 /* AboutViewController.m in Sources */,
 				FEA58E801C83406700FE4E8A /* README.md in Sources */,
 				FEA58E901C834A2000FE4E8A /* MovieList.m in Sources */,

@@ -39,6 +39,7 @@
 //2.友盟
 #define KUmegnAppKey    @"56d8348667e58e6e40000f94"
 
+#define KAppid                  @"1065348807"  //App Store Id
 
 
 #endif /* PrefixHeader_pch */

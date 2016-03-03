@@ -168,7 +168,7 @@
         <!--About View Controller-->
         <scene sceneID="Aek-iH-KKF">
             <objects>
-                <viewController id="ibH-Mo-0P4" customClass="AboutViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="aboutVc" id="ibH-Mo-0P4" customClass="AboutViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GGF-Nr-hbW"/>
                         <viewControllerLayoutGuide type="bottom" id="D70-8b-K5L"/>
@@ -185,28 +185,37 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开启全新文件管理时代" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57V-hE-aMj">
-                                <rect key="frame" x="210" y="227" width="180" height="66"/>
+                                <rect key="frame" x="210" y="208" width="180" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="vpd-LC-SGl"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前版本1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPc-Rp-fV9">
-                                <rect key="frame" x="273" y="313.5" width="54" height="12"/>
+                                <rect key="frame" x="273" y="268.5" width="54" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write By FengTengfei" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNN-Nt-bYP">
-                                <rect key="frame" x="218" y="477" width="164" height="21"/>
+                                <rect key="frame" x="218" y="438" width="164" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="l9g-l8-xZO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你所需要的万能的影音播放器" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwk-44-LtM">
+                                <rect key="frame" x="222" y="248" width="156" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ord-Cd-xnt">
-                                <rect key="frame" x="242" y="502" width="116" height="28"/>
+                                <rect key="frame" x="242" y="463" width="116" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="116" id="Cmu-3b-ews"/>
                                 </constraints>
@@ -216,32 +225,33 @@
                                     <action selector="openWeibo:" destination="ibH-Mo-0P4" eventType="touchUpInside" id="LdD-QF-EU9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你所需要的万能的影音播放器" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwk-44-LtM">
-                                <rect key="frame" x="222" y="293" width="156" height="14.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="jwk-44-LtM" firstAttribute="top" secondItem="57V-hE-aMj" secondAttribute="bottom" id="2aA-Vq-fTl"/>
                             <constraint firstItem="57V-hE-aMj" firstAttribute="centerX" secondItem="1Xm-P4-U2A" secondAttribute="centerX" id="2rU-Za-9xW"/>
-                            <constraint firstItem="57V-hE-aMj" firstAttribute="top" secondItem="7OD-6G-uei" secondAttribute="bottom" constant="29" id="7Tw-qN-XW6"/>
+                            <constraint firstItem="57V-hE-aMj" firstAttribute="top" secondItem="7OD-6G-uei" secondAttribute="bottom" constant="10" id="7Tw-qN-XW6"/>
                             <constraint firstItem="uPc-Rp-fV9" firstAttribute="top" secondItem="57V-hE-aMj" secondAttribute="bottom" constant="39" id="8oQ-CG-2YQ"/>
                             <constraint firstItem="uPc-Rp-fV9" firstAttribute="top" secondItem="jwk-44-LtM" secondAttribute="bottom" constant="6" id="Dk1-JV-NOW"/>
                             <constraint firstItem="7OD-6G-uei" firstAttribute="top" secondItem="GGF-Nr-hbW" secondAttribute="bottom" constant="58" id="Eof-BT-FxI"/>
                             <constraint firstItem="uPc-Rp-fV9" firstAttribute="centerX" secondItem="1Xm-P4-U2A" secondAttribute="centerX" id="J00-TE-84b"/>
+                            <constraint firstItem="jwk-44-LtM" firstAttribute="trailing" secondItem="57V-hE-aMj" secondAttribute="trailing" id="N7O-sU-Gim"/>
                             <constraint firstItem="7OD-6G-uei" firstAttribute="centerX" secondItem="1Xm-P4-U2A" secondAttribute="centerX" id="TLm-cJ-xry"/>
                             <constraint firstItem="mNN-Nt-bYP" firstAttribute="centerX" secondItem="1Xm-P4-U2A" secondAttribute="centerX" id="YzE-kM-xQ3"/>
                             <constraint firstItem="Ord-Cd-xnt" firstAttribute="top" secondItem="mNN-Nt-bYP" secondAttribute="bottom" constant="4" id="dgZ-nb-rNa"/>
                             <constraint firstItem="jwk-44-LtM" firstAttribute="centerX" secondItem="1Xm-P4-U2A" secondAttribute="centerX" id="eme-Kj-qxg"/>
                             <constraint firstItem="jwk-44-LtM" firstAttribute="centerY" secondItem="1Xm-P4-U2A" secondAttribute="centerY" id="f86-ii-Vbu"/>
+                            <constraint firstItem="jwk-44-LtM" firstAttribute="centerX" secondItem="1Xm-P4-U2A" secondAttribute="centerX" id="h25-F3-57p"/>
                             <constraint firstItem="Ord-Cd-xnt" firstAttribute="centerX" secondItem="1Xm-P4-U2A" secondAttribute="centerX" id="lWJ-BV-OTN"/>
-                            <constraint firstItem="D70-8b-K5L" firstAttribute="top" secondItem="Ord-Cd-xnt" secondAttribute="bottom" constant="21" id="shJ-ob-xae"/>
+                            <constraint firstItem="jwk-44-LtM" firstAttribute="top" secondItem="57V-hE-aMj" secondAttribute="bottom" constant="10" id="oob-xN-Ky7"/>
+                            <constraint firstItem="D70-8b-K5L" firstAttribute="top" secondItem="Ord-Cd-xnt" secondAttribute="bottom" constant="60" id="shJ-ob-xae"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="2aA-Vq-fTl"/>
+                                <exclude reference="N7O-sU-Gim"/>
+                                <exclude reference="eme-Kj-qxg"/>
+                                <exclude reference="f86-ii-Vbu"/>
                                 <exclude reference="8oQ-CG-2YQ"/>
                             </mask>
                         </variation>

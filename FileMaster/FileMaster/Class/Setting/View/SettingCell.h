@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class SettingModel;
 @interface SettingCell : UITableViewCell
 
 
 +(instancetype)cellWithTableView:(UITableView *)tableView;
+
+
+@property (nonatomic,strong)SettingModel *model;
 
 @end
