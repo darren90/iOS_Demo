@@ -38,7 +38,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="本地视频" id="kn2-0O-B4B">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="KWy-l6-RHY"/>
+                        <barButtonItem key="rightBarButtonItem" title="批量编辑" id="KWy-l6-RHY">
+                            <connections>
+                                <action selector="editList:" destination="OYu-v1-Ae1" id="nEx-9I-fbr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="EFA-bn-Z0I" kind="push" id="mOU-OJ-tyR"/>

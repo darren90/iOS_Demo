@@ -13,11 +13,11 @@
 @interface MovieListCell()
 @property (weak, nonatomic) IBOutlet UIImageView *iconView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *iconGo;
 
 @end
 
 @implementation MovieListCell
-
 
 +(instancetype)cellWithTableView:(UITableView *)tableView
 {
@@ -38,10 +38,12 @@
     if (model.isFolder) {
         self.iconView.image = [UIImage imageNamed:@"Finder_folder"];
          self.nameLabel.text = model.folderName;
+        self.iconGo.hidden = NO;
     }else{
         MovieList *list = model.file;
         self.iconView.image = list.imgData;
         self.nameLabel.text = list.name;
+        self.iconGo.hidden = YES;
     }
 }
 

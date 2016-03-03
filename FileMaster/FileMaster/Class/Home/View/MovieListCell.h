@@ -12,7 +12,6 @@
 +(instancetype)cellWithTableView:(UITableView *)tableView;
 
 
-
 @property (nonatomic,strong)MovieFile * model;
 
 

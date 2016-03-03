@@ -101,6 +101,7 @@ static float scale = 2208.0/900;
 //        self.player.isPlayLocalFile = NO;
 //        [self playStream:[NSURL URLWithString:self.listModel.m3u8.url]];
     }
+    
     [self.player setCaptionToTop:[self testCaption:@"testCaptionTop"]];
  }
 

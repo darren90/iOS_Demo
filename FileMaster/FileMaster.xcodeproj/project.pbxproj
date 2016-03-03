@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		895ABFAF1C87D65D00ABF2FD /* GetFilesTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 895ABFAE1C87D65D00ABF2FD /* GetFilesTools.m */; };
 		89CDBE6D1C83F06B00C52481 /* HTTPStreamingServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CDBE6C1C83F06B00C52481 /* HTTPStreamingServer.m */; };
 		89E759E21C86F4BF002A10BA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E759E11C86F4BF002A10BA /* AVFoundation.framework */; };
 		89E759E41C86F4C8002A10BA /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E759E31C86F4C8002A10BA /* CoreMedia.framework */; };
@@ -87,6 +88,8 @@
 /* Begin PBXFileReference section */
 		2C0DB9C2757F2FFA7DE76AE0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		541DD27D81C8F94CD3ADFDDC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		895ABFAD1C87D65D00ABF2FD /* GetFilesTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetFilesTools.h; sourceTree = "<group>"; };
+		895ABFAE1C87D65D00ABF2FD /* GetFilesTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetFilesTools.m; sourceTree = "<group>"; };
 		89CDBE6B1C83F06B00C52481 /* HTTPStreamingServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPStreamingServer.h; sourceTree = "<group>"; };
 		89CDBE6C1C83F06B00C52481 /* HTTPStreamingServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPStreamingServer.m; sourceTree = "<group>"; };
 		89E759E11C86F4BF002A10BA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -241,6 +244,8 @@
 		89E759E71C86F513002A10BA /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				895ABFAD1C87D65D00ABF2FD /* GetFilesTools.h */,
+				895ABFAE1C87D65D00ABF2FD /* GetFilesTools.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -745,6 +750,7 @@
 				FE28D8111C872F72000AFC70 /* MovieFolderViewController.m in Sources */,
 				FEA58E601C83406700FE4E8A /* VKVideoPlayerCaption.m in Sources */,
 				FEA58E621C83406700FE4E8A /* VKVideoPlayerExternalMonitor.m in Sources */,
+				895ABFAF1C87D65D00ABF2FD /* GetFilesTools.m in Sources */,
 				FEA58E8A1C8347CE00FE4E8A /* SettingViewController.m in Sources */,
 				FEA58E661C83406700FE4E8A /* VKVideoPlayerView.m in Sources */,
 				FEA58E5F1C83406700FE4E8A /* VKVideoPlayerAirPlay.m in Sources */,
