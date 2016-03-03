@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseTableViewController.h"
 
-@interface PrivateList_RootController : UITableViewController
+@interface PrivateList_RootController : BaseTableViewController
 
 @end

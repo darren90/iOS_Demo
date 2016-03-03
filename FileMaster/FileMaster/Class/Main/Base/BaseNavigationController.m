@@ -57,25 +57,22 @@
     [item setTitleTextAttributes:Disdict forState:UIControlStateDisabled];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    
-    
-    //    self.backBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"nav_back"] style:UIBarButtonItemStylePlain target:nil action:nil];
 }
 
-- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    // fix 'nested pop animation can result in corrupted navigation bar'
-    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        self.interactivePopGestureRecognizer.enabled = NO;
-    }
-    //    NSLog(@"subVCs:%lu",(unsigned long)self.viewControllers.count);
-    if (self.viewControllers.count > 0) {
-        viewController.hidesBottomBarWhenPushed = YES;
-        self.tabBarController.tabBar.backgroundColor = [UIColor clearColor];
-    }
-    
-    [super pushViewController:viewController animated:animated];
-}
+//- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
+//{
+//    // fix 'nested pop animation can result in corrupted navigation bar'
+//    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+//        self.interactivePopGestureRecognizer.enabled = NO;
+//    }
+//    //    NSLog(@"subVCs:%lu",(unsigned long)self.viewControllers.count);
+//    if (self.viewControllers.count > 0) {
+//        viewController.hidesBottomBarWhenPushed = YES;
+//        self.tabBarController.tabBar.backgroundColor = [UIColor clearColor];
+//    }
+//    
+//    [super pushViewController:viewController animated:animated];
+//}
 
 
 
