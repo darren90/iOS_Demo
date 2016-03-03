@@ -29,6 +29,9 @@
 		FE28D8421C886C61000AFC70 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE28D83F1C886C61000AFC70 /* libMobClickLibrary.a */; };
 		FE28D8441C886CAB000AFC70 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FE28D8431C886CAB000AFC70 /* libz.tbd */; };
 		FE28D84A1C886E45000AFC70 /* UIViewController+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = FE28D8491C886E45000AFC70 /* UIViewController+Swizzle.m */; };
+		FE28D84E1C887822000AFC70 /* SettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE28D84C1C887822000AFC70 /* SettingCell.m */; };
+		FE28D84F1C887822000AFC70 /* SettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE28D84D1C887822000AFC70 /* SettingCell.xib */; };
+		FE28D8521C887BE5000AFC70 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE28D8511C887BE5000AFC70 /* AboutViewController.m */; };
 		FEA58DEC1C83275F00FE4E8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58DEB1C83275F00FE4E8A /* main.m */; };
 		FEA58DEF1C83275F00FE4E8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58DEE1C83275F00FE4E8A /* AppDelegate.m */; };
 		FEA58DF21C83275F00FE4E8A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58DF11C83275F00FE4E8A /* ViewController.m */; };
@@ -141,6 +144,11 @@
 		FE28D8431C886CAB000AFC70 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		FE28D8481C886E45000AFC70 /* UIViewController+Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Swizzle.h"; sourceTree = "<group>"; };
 		FE28D8491C886E45000AFC70 /* UIViewController+Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Swizzle.m"; sourceTree = "<group>"; };
+		FE28D84B1C887822000AFC70 /* SettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingCell.h; sourceTree = "<group>"; };
+		FE28D84C1C887822000AFC70 /* SettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingCell.m; sourceTree = "<group>"; };
+		FE28D84D1C887822000AFC70 /* SettingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingCell.xib; sourceTree = "<group>"; };
+		FE28D8501C887BE5000AFC70 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		FE28D8511C887BE5000AFC70 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		FEA58DE71C83275F00FE4E8A /* FileMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEA58DEB1C83275F00FE4E8A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FEA58DED1C83275F00FE4E8A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -559,6 +567,8 @@
 			children = (
 				FEA58E881C8347CE00FE4E8A /* Setting_RootController.h */,
 				FEA58E891C8347CE00FE4E8A /* Setting_RootController.m */,
+				FE28D8501C887BE5000AFC70 /* AboutViewController.h */,
+				FE28D8511C887BE5000AFC70 /* AboutViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -573,6 +583,9 @@
 		FEA58E291C83406700FE4E8A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FE28D84B1C887822000AFC70 /* SettingCell.h */,
+				FE28D84C1C887822000AFC70 /* SettingCell.m */,
+				FE28D84D1C887822000AFC70 /* SettingCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -805,6 +818,7 @@
 				FEA58E671C83406700FE4E8A /* VKVideoPlayerView.xib in Resources */,
 				FEA58E7C1C83406700FE4E8A /* VKVideoPlayer_zoom_in@2x.png in Resources */,
 				FEA58E7E1C83406700FE4E8A /* VKVideoPlayer_zoom_out@2x.png in Resources */,
+				FE28D84F1C887822000AFC70 /* SettingCell.xib in Resources */,
 				FEA58E7A1C83406700FE4E8A /* VKVideoPlayer_rewind@2x.png in Resources */,
 				FEA58E6A1C83406700FE4E8A /* VKVideoPlayerViewController~iphone.xib in Resources */,
 				FEA58E761C83406700FE4E8A /* VKVideoPlayer_play@2x.png in Resources */,
@@ -891,7 +905,9 @@
 				FEA58DEF1C83275F00FE4E8A /* AppDelegate.m in Sources */,
 				FEA58E631C83406700FE4E8A /* VKVideoPlayerLayerView.m in Sources */,
 				FEA58E681C83406700FE4E8A /* VKVideoPlayerViewController.m in Sources */,
+				FE28D84E1C887822000AFC70 /* SettingCell.m in Sources */,
 				FE28D8141C8734D4000AFC70 /* MovieFile.m in Sources */,
+				FE28D8521C887BE5000AFC70 /* AboutViewController.m in Sources */,
 				FEA58E801C83406700FE4E8A /* README.md in Sources */,
 				FEA58E901C834A2000FE4E8A /* MovieList.m in Sources */,
 				FEA58DEC1C83275F00FE4E8A /* main.m in Sources */,
