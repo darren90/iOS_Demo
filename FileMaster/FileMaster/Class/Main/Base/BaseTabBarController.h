@@ -8,6 +8,6 @@
 
 #import "RDVTabBarController.h"
 
-@interface BaseTabBarController : RDVTabBarController
+@interface BaseTabBarController : RDVTabBarController<RDVTabBarControllerDelegate>
 
 @end

@@ -74,7 +74,7 @@
 		FEA58E801C83406700FE4E8A /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = FEA58E5D1C83406700FE4E8A /* README.md */; };
 		FEA58E841C8347A500FE4E8A /* MovieList_RootController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58E831C8347A500FE4E8A /* MovieList_RootController.m */; };
 		FEA58E871C8347BE00FE4E8A /* PrivateList_RootController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58E861C8347BE00FE4E8A /* PrivateList_RootController.m */; };
-		FEA58E8A1C8347CE00FE4E8A /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58E891C8347CE00FE4E8A /* SettingViewController.m */; };
+		FEA58E8A1C8347CE00FE4E8A /* Setting_RootController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58E891C8347CE00FE4E8A /* Setting_RootController.m */; };
 		FEA58E8D1C8348F400FE4E8A /* MovieListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58E8C1C8348F400FE4E8A /* MovieListCell.m */; };
 		FEA58E901C834A2000FE4E8A /* MovieList.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58E8F1C834A2000FE4E8A /* MovieList.m */; };
 		FEA58E931C834E0F00FE4E8A /* MoviePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58E921C834E0F00FE4E8A /* MoviePlayerViewController.m */; };
@@ -208,8 +208,8 @@
 		FEA58E831C8347A500FE4E8A /* MovieList_RootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieList_RootController.m; sourceTree = "<group>"; };
 		FEA58E851C8347BE00FE4E8A /* PrivateList_RootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivateList_RootController.h; sourceTree = "<group>"; };
 		FEA58E861C8347BE00FE4E8A /* PrivateList_RootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivateList_RootController.m; sourceTree = "<group>"; };
-		FEA58E881C8347CE00FE4E8A /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
-		FEA58E891C8347CE00FE4E8A /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		FEA58E881C8347CE00FE4E8A /* Setting_RootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Setting_RootController.h; sourceTree = "<group>"; };
+		FEA58E891C8347CE00FE4E8A /* Setting_RootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Setting_RootController.m; sourceTree = "<group>"; };
 		FEA58E8B1C8348F400FE4E8A /* MovieListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieListCell.h; sourceTree = "<group>"; };
 		FEA58E8C1C8348F400FE4E8A /* MovieListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieListCell.m; sourceTree = "<group>"; };
 		FEA58E8E1C834A2000FE4E8A /* MovieList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieList.h; sourceTree = "<group>"; };
@@ -557,8 +557,8 @@
 		FEA58E271C83406700FE4E8A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FEA58E881C8347CE00FE4E8A /* SettingViewController.h */,
-				FEA58E891C8347CE00FE4E8A /* SettingViewController.m */,
+				FEA58E881C8347CE00FE4E8A /* Setting_RootController.h */,
+				FEA58E891C8347CE00FE4E8A /* Setting_RootController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -879,7 +879,7 @@
 				FE28D84A1C886E45000AFC70 /* UIViewController+Swizzle.m in Sources */,
 				FEA58E621C83406700FE4E8A /* VKVideoPlayerExternalMonitor.m in Sources */,
 				895ABFAF1C87D65D00ABF2FD /* GetFilesTools.m in Sources */,
-				FEA58E8A1C8347CE00FE4E8A /* SettingViewController.m in Sources */,
+				FEA58E8A1C8347CE00FE4E8A /* Setting_RootController.m in Sources */,
 				FEA58E661C83406700FE4E8A /* VKVideoPlayerView.m in Sources */,
 				FEA58E5F1C83406700FE4E8A /* VKVideoPlayerAirPlay.m in Sources */,
 				FE28D8211C886A03000AFC70 /* UIImage+Tint.m in Sources */,

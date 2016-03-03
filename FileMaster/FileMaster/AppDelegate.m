@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import <HTTPServer.h>
 #import "HTTPStreamingServer.h"
+#import "BaseTabBarController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -18,6 +20,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    //    self.window.backgroundColor = [UIColor whiteColor];
+    BaseTabBarController *tabBarVc = [[BaseTabBarController alloc]init];
+    self.window.rootViewController = tabBarVc;
+    
+    [self.window makeKeyAndVisible];
+    
+    
     
     [self umengTrack];//友盟的方法本身是异步执行，所以不需要再异步调用
     return YES;

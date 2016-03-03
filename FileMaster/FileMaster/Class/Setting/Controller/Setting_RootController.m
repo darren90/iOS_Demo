@@ -6,13 +6,13 @@
 //  Copyright © 2016年 tengfei. All rights reserved.
 //
 
-#import "SettingViewController.h"
+#import "Setting_RootController.h"
 
-@interface SettingViewController ()
+@interface Setting_RootController ()
 
 @end
 
-@implementation SettingViewController
+@implementation Setting_RootController
 
 - (void)viewWillAppear:(BOOL)animated
 {

@@ -27,7 +27,7 @@
         <!--本地视频-->
         <scene sceneID="tti-gi-N5K">
             <objects>
-                <tableViewController id="OYu-v1-Ae1" customClass="MovieListViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MovieList" id="OYu-v1-Ae1" customClass="MovieList_RootController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bGk-eI-zXM">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -107,7 +107,7 @@
         <!--加密列表-->
         <scene sceneID="Vwh-Jk-XEF">
             <objects>
-                <tableViewController id="XUZ-dV-ivh" customClass="PrivateListViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="PrivateList" id="XUZ-dV-ivh" customClass="PrivateList_RootController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="xHH-HZ-b13">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,7 +136,7 @@
         <!--设置-->
         <scene sceneID="dGb-FP-1Fa">
             <objects>
-                <tableViewController id="9y8-o2-boh" customClass="SettingViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Setting" id="9y8-o2-boh" customClass="Setting_RootController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="6Ag-vL-NLJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
