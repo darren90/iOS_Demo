@@ -19,13 +19,20 @@
 @end
 
 @implementation MovieFolderViewController
-
--(void)viewWillAppear:(BOOL)animated{
+- (void)viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:animated];
- 
+    [MobClick beginLogPageView:@"文件夹界面"];
+    
     self.dataArray = self.file.subFiles;//[self getMovieList];
     [self.tableView reloadData];
 }
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"文件夹界面"];
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -12,6 +12,10 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
+#import "UIImage+Tint.h"
+#import "UIImage+Category.h"
+#import "MobClick.h" //友盟 统计
+
 // 2.获得RGB颜色
 #define MJColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 
@@ -25,5 +29,15 @@
 
 //是否是iOS8
 #define IsIOS8 ([[UIDevice currentDevice].systemVersion doubleValue] >= 8.0)
+
+
+//1:腾讯bugly
+#define KBuglyAPPID     @"900013400"
+#define KBuglyAPPKey    @"1fF819yLwrAw7t9I"
+
+//2.友盟
+#define KUmegnAppKey    @"56d8348667e58e6e40000f94"
+
+
 
 #endif /* PrefixHeader_pch */

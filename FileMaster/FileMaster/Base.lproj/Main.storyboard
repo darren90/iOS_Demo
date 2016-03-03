@@ -90,7 +90,7 @@
         <!--本地视频-->
         <scene sceneID="t1Y-yD-i17">
             <objects>
-                <navigationController id="a8h-xE-hF6" sceneMemberID="viewController">
+                <navigationController id="a8h-xE-hF6" customClass="BaseNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="本地视频" image="movie" id="BbF-nQ-iYx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MdG-j2-3CN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -165,7 +165,7 @@
         <!--设置-->
         <scene sceneID="qTL-1o-C6u">
             <objects>
-                <navigationController id="nsZ-C4-DpB" sceneMemberID="viewController">
+                <navigationController id="nsZ-C4-DpB" customClass="BaseNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="设置" image="setting" id="uUu-hM-0G3"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3xq-Qt-eUb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -182,7 +182,7 @@
         <!--加密列表-->
         <scene sceneID="DvT-x9-07o">
             <objects>
-                <navigationController id="2Fk-4i-At1" sceneMemberID="viewController">
+                <navigationController id="2Fk-4i-At1" customClass="BaseNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="加密列表" image="priavte" id="N0j-Wu-6Ip"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4ao-bp-PYy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

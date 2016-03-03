@@ -14,6 +14,18 @@
 
 @implementation SettingViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"设置"];
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"设置"];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

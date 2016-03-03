@@ -16,6 +16,19 @@
 		FE28D8111C872F72000AFC70 /* MovieFolderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE28D8101C872F72000AFC70 /* MovieFolderViewController.m */; };
 		FE28D8141C8734D4000AFC70 /* MovieFile.m in Sources */ = {isa = PBXBuildFile; fileRef = FE28D8131C8734D4000AFC70 /* MovieFile.m */; };
 		FE28D8161C873CCF000AFC70 /* MovieListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE28D8151C873CCF000AFC70 /* MovieListCell.xib */; };
+		FE28D81B1C8868DE000AFC70 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE28D81A1C8868DE000AFC70 /* BaseNavigationController.m */; };
+		FE28D8211C886A03000AFC70 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = FE28D8201C886A03000AFC70 /* UIImage+Tint.m */; };
+		FE28D8241C886A8E000AFC70 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE28D8231C886A8E000AFC70 /* BaseTableViewController.m */; };
+		FE28D8271C886AA5000AFC70 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE28D8261C886AA5000AFC70 /* BaseViewController.m */; };
+		FE28D82F1C886ABF000AFC70 /* RDVTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FE28D82A1C886ABF000AFC70 /* RDVTabBar.m */; };
+		FE28D8301C886ABF000AFC70 /* RDVTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE28D82C1C886ABF000AFC70 /* RDVTabBarController.m */; };
+		FE28D8311C886ABF000AFC70 /* RDVTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FE28D82E1C886ABF000AFC70 /* RDVTabBarItem.m */; };
+		FE28D8351C886AD7000AFC70 /* ObjcRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = FE28D8341C886AD7000AFC70 /* ObjcRuntime.m */; };
+		FE28D8391C886AE3000AFC70 /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FE28D8381C886AE3000AFC70 /* UIView+AutoLayout.m */; };
+		FE28D83C1C886B13000AFC70 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE28D83B1C886B13000AFC70 /* BaseTabBarController.m */; };
+		FE28D8421C886C61000AFC70 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE28D83F1C886C61000AFC70 /* libMobClickLibrary.a */; };
+		FE28D8441C886CAB000AFC70 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FE28D8431C886CAB000AFC70 /* libz.tbd */; };
+		FE28D84A1C886E45000AFC70 /* UIViewController+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = FE28D8491C886E45000AFC70 /* UIViewController+Swizzle.m */; };
 		FEA58DEC1C83275F00FE4E8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58DEB1C83275F00FE4E8A /* main.m */; };
 		FEA58DEF1C83275F00FE4E8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58DEE1C83275F00FE4E8A /* AppDelegate.m */; };
 		FEA58DF21C83275F00FE4E8A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58DF11C83275F00FE4E8A /* ViewController.m */; };
@@ -59,8 +72,8 @@
 		FEA58E7E1C83406700FE4E8A /* VKVideoPlayer_zoom_out@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEA58E5B1C83406700FE4E8A /* VKVideoPlayer_zoom_out@2x.png */; };
 		FEA58E7F1C83406700FE4E8A /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FEA58E5C1C83406700FE4E8A /* LICENSE */; };
 		FEA58E801C83406700FE4E8A /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = FEA58E5D1C83406700FE4E8A /* README.md */; };
-		FEA58E841C8347A500FE4E8A /* MovieListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58E831C8347A500FE4E8A /* MovieListViewController.m */; };
-		FEA58E871C8347BE00FE4E8A /* PrivateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58E861C8347BE00FE4E8A /* PrivateListViewController.m */; };
+		FEA58E841C8347A500FE4E8A /* MovieList_RootController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58E831C8347A500FE4E8A /* MovieList_RootController.m */; };
+		FEA58E871C8347BE00FE4E8A /* PrivateList_RootController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58E861C8347BE00FE4E8A /* PrivateList_RootController.m */; };
 		FEA58E8A1C8347CE00FE4E8A /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58E891C8347CE00FE4E8A /* SettingViewController.m */; };
 		FEA58E8D1C8348F400FE4E8A /* MovieListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58E8C1C8348F400FE4E8A /* MovieListCell.m */; };
 		FEA58E901C834A2000FE4E8A /* MovieList.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58E8F1C834A2000FE4E8A /* MovieList.m */; };
@@ -102,6 +115,32 @@
 		FE28D8121C8734D4000AFC70 /* MovieFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieFile.h; sourceTree = "<group>"; };
 		FE28D8131C8734D4000AFC70 /* MovieFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieFile.m; sourceTree = "<group>"; };
 		FE28D8151C873CCF000AFC70 /* MovieListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieListCell.xib; sourceTree = "<group>"; };
+		FE28D8191C8868DE000AFC70 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		FE28D81A1C8868DE000AFC70 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		FE28D81F1C886A03000AFC70 /* UIImage+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tint.h"; sourceTree = "<group>"; };
+		FE28D8201C886A03000AFC70 /* UIImage+Tint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tint.m"; sourceTree = "<group>"; };
+		FE28D8221C886A8E000AFC70 /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		FE28D8231C886A8E000AFC70 /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		FE28D8251C886AA5000AFC70 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		FE28D8261C886AA5000AFC70 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		FE28D8291C886ABF000AFC70 /* RDVTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBar.h; sourceTree = "<group>"; };
+		FE28D82A1C886ABF000AFC70 /* RDVTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBar.m; sourceTree = "<group>"; };
+		FE28D82B1C886ABF000AFC70 /* RDVTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBarController.h; sourceTree = "<group>"; };
+		FE28D82C1C886ABF000AFC70 /* RDVTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBarController.m; sourceTree = "<group>"; };
+		FE28D82D1C886ABF000AFC70 /* RDVTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBarItem.h; sourceTree = "<group>"; };
+		FE28D82E1C886ABF000AFC70 /* RDVTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBarItem.m; sourceTree = "<group>"; };
+		FE28D8331C886AD7000AFC70 /* ObjcRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjcRuntime.h; sourceTree = "<group>"; };
+		FE28D8341C886AD7000AFC70 /* ObjcRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjcRuntime.m; sourceTree = "<group>"; };
+		FE28D8371C886AE3000AFC70 /* UIView+AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayout.h"; sourceTree = "<group>"; };
+		FE28D8381C886AE3000AFC70 /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
+		FE28D83A1C886B13000AFC70 /* BaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
+		FE28D83B1C886B13000AFC70 /* BaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
+		FE28D83F1C886C61000AFC70 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		FE28D8401C886C61000AFC70 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		FE28D8411C886C61000AFC70 /* MobClickSocialAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickSocialAnalytics.h; sourceTree = "<group>"; };
+		FE28D8431C886CAB000AFC70 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		FE28D8481C886E45000AFC70 /* UIViewController+Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Swizzle.h"; sourceTree = "<group>"; };
+		FE28D8491C886E45000AFC70 /* UIViewController+Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Swizzle.m"; sourceTree = "<group>"; };
 		FEA58DE71C83275F00FE4E8A /* FileMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEA58DEB1C83275F00FE4E8A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FEA58DED1C83275F00FE4E8A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -165,10 +204,10 @@
 		FEA58E5C1C83406700FE4E8A /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		FEA58E5D1C83406700FE4E8A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FEA58E811C83418700FE4E8A /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		FEA58E821C8347A500FE4E8A /* MovieListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieListViewController.h; sourceTree = "<group>"; };
-		FEA58E831C8347A500FE4E8A /* MovieListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieListViewController.m; sourceTree = "<group>"; };
-		FEA58E851C8347BE00FE4E8A /* PrivateListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivateListViewController.h; sourceTree = "<group>"; };
-		FEA58E861C8347BE00FE4E8A /* PrivateListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivateListViewController.m; sourceTree = "<group>"; };
+		FEA58E821C8347A500FE4E8A /* MovieList_RootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieList_RootController.h; sourceTree = "<group>"; };
+		FEA58E831C8347A500FE4E8A /* MovieList_RootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieList_RootController.m; sourceTree = "<group>"; };
+		FEA58E851C8347BE00FE4E8A /* PrivateList_RootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivateList_RootController.h; sourceTree = "<group>"; };
+		FEA58E861C8347BE00FE4E8A /* PrivateList_RootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivateList_RootController.m; sourceTree = "<group>"; };
 		FEA58E881C8347CE00FE4E8A /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		FEA58E891C8347CE00FE4E8A /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		FEA58E8B1C8348F400FE4E8A /* MovieListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieListCell.h; sourceTree = "<group>"; };
@@ -186,9 +225,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE28D8441C886CAB000AFC70 /* libz.tbd in Frameworks */,
 				89E759E41C86F4C8002A10BA /* CoreMedia.framework in Frameworks */,
 				89E759E21C86F4BF002A10BA /* AVFoundation.framework in Frameworks */,
 				ACDA0AB9E59633E11723907F /* libPods.a in Frameworks */,
+				FE28D8421C886C61000AFC70 /* libMobClickLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +294,8 @@
 		89E759E81C86F8BC002A10BA /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				FE28D81F1C886A03000AFC70 /* UIImage+Tint.h */,
+				FE28D8201C886A03000AFC70 /* UIImage+Tint.m */,
 				89E759E91C86F8DB002A10BA /* UIImage+Category.h */,
 				89E759EA1C86F8DB002A10BA /* UIImage+Category.m */,
 			);
@@ -262,11 +305,86 @@
 		D4B7F2072E06A46572EED219 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FE28D8431C886CAB000AFC70 /* libz.tbd */,
 				89E759E31C86F4C8002A10BA /* CoreMedia.framework */,
 				89E759E11C86F4BF002A10BA /* AVFoundation.framework */,
 				541DD27D81C8F94CD3ADFDDC /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE28D8171C8868B2000AFC70 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FE28D8181C8868B2000AFC70 /* Base */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FE28D8181C8868B2000AFC70 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				FE28D83A1C886B13000AFC70 /* BaseTabBarController.h */,
+				FE28D83B1C886B13000AFC70 /* BaseTabBarController.m */,
+				FE28D8191C8868DE000AFC70 /* BaseNavigationController.h */,
+				FE28D81A1C8868DE000AFC70 /* BaseNavigationController.m */,
+				FE28D8221C886A8E000AFC70 /* BaseTableViewController.h */,
+				FE28D8231C886A8E000AFC70 /* BaseTableViewController.m */,
+				FE28D8251C886AA5000AFC70 /* BaseViewController.h */,
+				FE28D8261C886AA5000AFC70 /* BaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		FE28D8281C886ABF000AFC70 /* RDVTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				FE28D8291C886ABF000AFC70 /* RDVTabBar.h */,
+				FE28D82A1C886ABF000AFC70 /* RDVTabBar.m */,
+				FE28D82B1C886ABF000AFC70 /* RDVTabBarController.h */,
+				FE28D82C1C886ABF000AFC70 /* RDVTabBarController.m */,
+				FE28D82D1C886ABF000AFC70 /* RDVTabBarItem.h */,
+				FE28D82E1C886ABF000AFC70 /* RDVTabBarItem.m */,
+			);
+			path = RDVTabBarController;
+			sourceTree = "<group>";
+		};
+		FE28D8321C886AD7000AFC70 /* ObjcRuntime */ = {
+			isa = PBXGroup;
+			children = (
+				FE28D8481C886E45000AFC70 /* UIViewController+Swizzle.h */,
+				FE28D8491C886E45000AFC70 /* UIViewController+Swizzle.m */,
+				FE28D8331C886AD7000AFC70 /* ObjcRuntime.h */,
+				FE28D8341C886AD7000AFC70 /* ObjcRuntime.m */,
+			);
+			path = ObjcRuntime;
+			sourceTree = "<group>";
+		};
+		FE28D8361C886AE3000AFC70 /* UIView-AutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				FE28D8371C886AE3000AFC70 /* UIView+AutoLayout.h */,
+				FE28D8381C886AE3000AFC70 /* UIView+AutoLayout.m */,
+			);
+			path = "UIView-AutoLayout";
+			sourceTree = "<group>";
+		};
+		FE28D83D1C886C61000AFC70 /* ThirdPart */ = {
+			isa = PBXGroup;
+			children = (
+				FE28D83E1C886C61000AFC70 /* UMAnalytics_Sdk_3.4.6 */,
+			);
+			path = ThirdPart;
+			sourceTree = "<group>";
+		};
+		FE28D83E1C886C61000AFC70 /* UMAnalytics_Sdk_3.4.6 */ = {
+			isa = PBXGroup;
+			children = (
+				FE28D83F1C886C61000AFC70 /* libMobClickLibrary.a */,
+				FE28D8401C886C61000AFC70 /* MobClick.h */,
+				FE28D8411C886C61000AFC70 /* MobClickSocialAnalytics.h */,
+			);
+			path = UMAnalytics_Sdk_3.4.6;
 			sourceTree = "<group>";
 		};
 		FEA58DDE1C83275F00FE4E8A = {
@@ -339,6 +457,7 @@
 		FEA58E1D1C83406700FE4E8A /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				FE28D8171C8868B2000AFC70 /* Main */,
 				FEA58E1E1C83406700FE4E8A /* Home */,
 				FEA58E221C83406700FE4E8A /* Private */,
 				FEA58E261C83406700FE4E8A /* Setting */,
@@ -359,8 +478,8 @@
 		FEA58E1F1C83406700FE4E8A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FEA58E821C8347A500FE4E8A /* MovieListViewController.h */,
-				FEA58E831C8347A500FE4E8A /* MovieListViewController.m */,
+				FEA58E821C8347A500FE4E8A /* MovieList_RootController.h */,
+				FEA58E831C8347A500FE4E8A /* MovieList_RootController.m */,
 				FE28D80F1C872F72000AFC70 /* MovieFolderViewController.h */,
 				FE28D8101C872F72000AFC70 /* MovieFolderViewController.m */,
 				FEA58E911C834E0F00FE4E8A /* MoviePlayerViewController.h */,
@@ -405,8 +524,8 @@
 		FEA58E231C83406700FE4E8A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FEA58E851C8347BE00FE4E8A /* PrivateListViewController.h */,
-				FEA58E861C8347BE00FE4E8A /* PrivateListViewController.m */,
+				FEA58E851C8347BE00FE4E8A /* PrivateList_RootController.h */,
+				FEA58E861C8347BE00FE4E8A /* PrivateList_RootController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -473,6 +592,10 @@
 		FEA58E2B1C83406700FE4E8A /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				FE28D83D1C886C61000AFC70 /* ThirdPart */,
+				FE28D8361C886AE3000AFC70 /* UIView-AutoLayout */,
+				FE28D8321C886AD7000AFC70 /* ObjcRuntime */,
+				FE28D8281C886ABF000AFC70 /* RDVTabBarController */,
 				89CDBE6A1C83F06B00C52481 /* HTTPServerManager */,
 				FEA58E2C1C83406700FE4E8A /* VKVideoPlayer */,
 			);
@@ -747,15 +870,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEA58E8D1C8348F400FE4E8A /* MovieListCell.m in Sources */,
+				FE28D8271C886AA5000AFC70 /* BaseViewController.m in Sources */,
 				FE28D8111C872F72000AFC70 /* MovieFolderViewController.m in Sources */,
 				FEA58E601C83406700FE4E8A /* VKVideoPlayerCaption.m in Sources */,
+				FE28D83C1C886B13000AFC70 /* BaseTabBarController.m in Sources */,
+				FE28D8351C886AD7000AFC70 /* ObjcRuntime.m in Sources */,
+				FE28D8391C886AE3000AFC70 /* UIView+AutoLayout.m in Sources */,
+				FE28D84A1C886E45000AFC70 /* UIViewController+Swizzle.m in Sources */,
 				FEA58E621C83406700FE4E8A /* VKVideoPlayerExternalMonitor.m in Sources */,
 				895ABFAF1C87D65D00ABF2FD /* GetFilesTools.m in Sources */,
 				FEA58E8A1C8347CE00FE4E8A /* SettingViewController.m in Sources */,
 				FEA58E661C83406700FE4E8A /* VKVideoPlayerView.m in Sources */,
 				FEA58E5F1C83406700FE4E8A /* VKVideoPlayerAirPlay.m in Sources */,
+				FE28D8211C886A03000AFC70 /* UIImage+Tint.m in Sources */,
 				FEA58DF21C83275F00FE4E8A /* ViewController.m in Sources */,
 				FEA58E611C83406700FE4E8A /* VKVideoPlayerCaptionSRT.m in Sources */,
+				FE28D8301C886ABF000AFC70 /* RDVTabBarController.m in Sources */,
 				FEA58E651C83406700FE4E8A /* VKVideoPlayerTrack.m in Sources */,
 				FEA58E961C83502000FE4E8A /* ForwardBackView.m in Sources */,
 				FEA58DEF1C83275F00FE4E8A /* AppDelegate.m in Sources */,
@@ -765,10 +895,14 @@
 				FEA58E801C83406700FE4E8A /* README.md in Sources */,
 				FEA58E901C834A2000FE4E8A /* MovieList.m in Sources */,
 				FEA58DEC1C83275F00FE4E8A /* main.m in Sources */,
-				FEA58E871C8347BE00FE4E8A /* PrivateListViewController.m in Sources */,
+				FE28D8241C886A8E000AFC70 /* BaseTableViewController.m in Sources */,
+				FEA58E871C8347BE00FE4E8A /* PrivateList_RootController.m in Sources */,
 				89CDBE6D1C83F06B00C52481 /* HTTPStreamingServer.m in Sources */,
 				FEA58E641C83406700FE4E8A /* VKVideoPlayerSettingsManager.m in Sources */,
-				FEA58E841C8347A500FE4E8A /* MovieListViewController.m in Sources */,
+				FEA58E841C8347A500FE4E8A /* MovieList_RootController.m in Sources */,
+				FE28D81B1C8868DE000AFC70 /* BaseNavigationController.m in Sources */,
+				FE28D82F1C886ABF000AFC70 /* RDVTabBar.m in Sources */,
+				FE28D8311C886ABF000AFC70 /* RDVTabBarItem.m in Sources */,
 				FEA58E931C834E0F00FE4E8A /* MoviePlayerViewController.m in Sources */,
 				FEA58E5E1C83406700FE4E8A /* VKVideoPlayer.m in Sources */,
 				89E759EB1C86F8DB002A10BA /* UIImage+Category.m in Sources */,
@@ -915,6 +1049,10 @@
 				INFOPLIST_FILE = FileMaster/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FileMaster/Lib/Vendor/ThirdPart/UMAnalytics_Sdk_3.4.6",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ftf.FileMaster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -929,6 +1067,10 @@
 				INFOPLIST_FILE = FileMaster/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FileMaster/Lib/Vendor/ThirdPart/UMAnalytics_Sdk_3.4.6",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ftf.FileMaster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
