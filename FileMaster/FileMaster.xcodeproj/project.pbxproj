@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		895ABFAF1C87D65D00ABF2FD /* GetFilesTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 895ABFAE1C87D65D00ABF2FD /* GetFilesTools.m */; };
 		89CDBE6D1C83F06B00C52481 /* HTTPStreamingServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CDBE6C1C83F06B00C52481 /* HTTPStreamingServer.m */; };
+		89DF50BE1C8960DB00B3E22A /* SeekDuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DF50BD1C8960DB00B3E22A /* SeekDuration.m */; };
+		89DF50BF1C8961D400B3E22A /* SeekDuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DF50BD1C8960DB00B3E22A /* SeekDuration.m */; };
 		89E759E21C86F4BF002A10BA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E759E11C86F4BF002A10BA /* AVFoundation.framework */; };
 		89E759E41C86F4C8002A10BA /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E759E31C86F4C8002A10BA /* CoreMedia.framework */; };
 		89E759EB1C86F8DB002A10BA /* UIImage+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E759EA1C86F8DB002A10BA /* UIImage+Category.m */; };
@@ -109,6 +111,8 @@
 		895ABFAE1C87D65D00ABF2FD /* GetFilesTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetFilesTools.m; sourceTree = "<group>"; };
 		89CDBE6B1C83F06B00C52481 /* HTTPStreamingServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPStreamingServer.h; sourceTree = "<group>"; };
 		89CDBE6C1C83F06B00C52481 /* HTTPStreamingServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPStreamingServer.m; sourceTree = "<group>"; };
+		89DF50BC1C8960DB00B3E22A /* SeekDuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeekDuration.h; sourceTree = "<group>"; };
+		89DF50BD1C8960DB00B3E22A /* SeekDuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeekDuration.m; sourceTree = "<group>"; };
 		89E759E11C86F4BF002A10BA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		89E759E31C86F4C8002A10BA /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		89E759E91C86F8DB002A10BA /* UIImage+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Category.h"; sourceTree = "<group>"; };
@@ -506,6 +510,8 @@
 				FEA58E8F1C834A2000FE4E8A /* MovieList.m */,
 				FE28D8121C8734D4000AFC70 /* MovieFile.h */,
 				FE28D8131C8734D4000AFC70 /* MovieFile.m */,
+				89DF50BC1C8960DB00B3E22A /* SeekDuration.h */,
+				89DF50BD1C8960DB00B3E22A /* SeekDuration.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -888,6 +894,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89DF50BE1C8960DB00B3E22A /* SeekDuration.m in Sources */,
 				FEA58E8D1C8348F400FE4E8A /* MovieListCell.m in Sources */,
 				FE28D8271C886AA5000AFC70 /* BaseViewController.m in Sources */,
 				FE28D8111C872F72000AFC70 /* MovieFolderViewController.m in Sources */,
@@ -936,6 +943,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEA58E051C83275F00FE4E8A /* FileMasterTests.m in Sources */,
+				89DF50BF1C8961D400B3E22A /* SeekDuration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

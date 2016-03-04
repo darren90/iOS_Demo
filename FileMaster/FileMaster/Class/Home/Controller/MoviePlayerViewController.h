@@ -15,11 +15,6 @@
  *  必传参数，- 集ID - 也即seriesId
  */
 @property (nonatomic,copy)NSString * movieId;
- 
-/**
- *  当前需要播放第几集
- */
-@property (nonatomic,assign)int currentNum;
 
 /**
  *  标题 （没有拼接集数的title）
@@ -36,7 +31,6 @@
  *  播放地址本地已下载的文件，只针对mp4文件(没有后缀的文件名)
  */
 @property (nonatomic,copy)NSString * playLocalUrl;
-
 
 
 @end

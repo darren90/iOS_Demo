@@ -14,6 +14,8 @@
 #import <MediaPlayer/MediaPlayer.h>
  #import "ForwardBackView.h"
 
+#import "SeekDuration.h"
+
 typedef NS_ENUM(NSInteger,SwipeStyle) {
     PlayerSwipeUnKnown = -1,
     PlayerSwipePlaySpeed =  0,
@@ -122,9 +124,13 @@ static float scale = 2208.0/900;
 #pragma mark - 现在不做分享，分享按钮隐藏
     self.player.view.shareBtn.hidden = YES;//现在不做分享，分享按钮隐藏
     self.player.view.suggestBtn.hidden = YES;
+    self.player.view.selectBtn.hidden = YES;
+    [self.player.view.captionButton setTitle:@"本地" forState:UIControlStateNormal];
+    [self.player.view.captionButton setTitle:@"本地" forState:UIControlStateHighlighted];
+
     
     //1-标题
-    self.player.view.titleLabel.text = [NSString stringWithFormat:@"%@-第%d集",self.topTitle,self.currentNum];
+    self.player.view.titleLabel.text = self.topTitle ;
     //2－快进
     [self.view addSubview:self.forwardView];
     
@@ -154,19 +160,28 @@ static float scale = 2208.0/900;
      name:        AVAudioSessionInterruptionNotification
      object:      [AVAudioSession sharedInstance]];
      */
+    [self saveDuration];
     [self.player pauseButtonPressed];
 }
 
 #pragma - mark VKVideoPlayerDelegate代理
 - (void)videoPlayer:(VKVideoPlayer *)videoPlayer willStartVideo:(id<VKVideoPlayerTrackProtocol>)track{
 //    self.lastDurationTime = [DatabaseTool getSeekTVDuration:self.movieId episode:self.currentNum];
-//    
+//
 //    if (self.lastDurationTime == nil || self.lastDurationTime == 0) {
 //        self.lastDurationTime = @0;
 //    }
 //    
 //    NSLog(@"--ddduration:%@",self.lastDurationTime);
 //    [track setLastDurationWatchedInSeconds: self.lastDurationTime];
+    
+    NSNumber *duration = [SeekDuration getDurationWithName:self.topTitle];
+    if (duration == nil || duration == 0) {
+        duration = @0;
+    }
+
+    NSLog(@"--ddduration:%@",duration);
+    [track setLastDurationWatchedInSeconds: duration];
 }
 
 //即将播放的代理
@@ -351,6 +366,7 @@ static float scale = 2208.0/900;
         //小屏播放器是点击返回不执行默认的一些逻辑
        
         [self.player pauseContent];
+        [self saveDuration];
 //        NSString * episodeID = self.episodeSid;
 //        if (self.player.currentTime > 0) {
 //            [self addSeekTVDataWithepisodeID:episodeID];
@@ -487,40 +503,17 @@ static float scale = 2208.0/900;
 //    }];
 //}
 
-
-#pragma mark - TopView代理方法
-- (NSString *)getQuality:(NSString *)quality
-{
-    NSString *result = @"高清";
-    if ([quality isEqualToString:@"yuanhua"]) {
-        result = @"原画";
-    }else if ([quality isEqualToString:@"super"]){
-        result = @"超清";
-    }else if ([quality isEqualToString:@"high"]){
-        result = @"高清";
-    }else if([quality isEqualToString:@"low"]){
-        result = @"普清";
-    }else if([quality isEqualToString:@"local"]){
-        result = @"本地";
-    }
-    return result;
-}
-
+ 
 
 /**
  *  设置集数
  *
  */
--(void)setCurrentNum:(int)currentNum
-{
-    _currentNum = currentNum;
-    self.player.view.titleLabel.text = [NSString stringWithFormat:@"%@-第%d集",self.topTitle,currentNum];
-}
-
+ 
 -(void)setTopTitle:(NSString *)topTitle
 {
     _topTitle = topTitle;
-    self.player.view.titleLabel.text = [NSString stringWithFormat:@"%@-第%d集",topTitle,self.currentNum];
+    self.player.view.titleLabel.text = topTitle;;
 }
 
 
@@ -549,6 +542,12 @@ static float scale = 2208.0/900;
 
 - (UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
+}
+
+
+-(void)saveDuration{
+   NSNumber *duration = [NSNumber numberWithDouble:self.player.currentTime];
+    [SeekDuration saveDuration:self.topTitle duration:duration];
 }
 
 - (void)dealloc{

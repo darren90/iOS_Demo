@@ -71,7 +71,7 @@
 #pragma -mark fengft 修改播放器代码
 //    self.scrubber.backgroundColor = MJColor(255, 135, 119);
 //    self.scrubber.thumbTintColor = [UIColor whiteColor];//条上的按钮颜色
-    self.scrubber.minimumTrackTintColor = MJColor(255, 135, 119);//已经播放的条的颜色
+    self.scrubber.minimumTrackTintColor = MJColor(88, 139, 211);//已经播放的条的颜色
 //    self.scrubber.maximumTrackTintColor = MJColor(68, 68, 68);//未播放的条的颜色
     
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];

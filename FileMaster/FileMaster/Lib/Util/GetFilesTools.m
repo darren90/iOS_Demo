@@ -41,7 +41,7 @@
                         imgData = [UIImage imageWithContentsOfFile:fullPath];
                         fileType = FileImage;
                     }else {
-                        imgData = [UIImage imageNamed:@"Finder_files"];
+                        imgData = [UIImage imageNamed:@"ffile"];
                         fileType = FileOther;
                     }
                     model = [MovieList movieList:fileName fileType:fileType path:fullPath imgData:imgData];
