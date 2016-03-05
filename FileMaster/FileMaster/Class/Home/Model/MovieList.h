@@ -13,6 +13,7 @@ typedef enum {
     FileMovieCanPlay,
     FileMovieCanNotPlay,
     FileImage,
+    FileZIP,
     FileFolder,
     FileOther
 } FileType;

@@ -35,13 +35,16 @@
                 if (![[fileName substringToIndex:1] isEqualToString:@"."]) {
                     
                     if ([fileName hasSuffix:@".mp4"]) {
-                        imgData = [UIImage thumbnailImageForVideo:[NSURL fileURLWithPath:fullPath] atTime:10.0];
+                        imgData = [UIImage thumbnailImageForVideo:[NSURL fileURLWithPath:fullPath] atTime:200.0];
                         fileType = FileMovieCanPlay;
-                    }else if([fileName hasSuffix:@".png"]){
+                    }else if([fileName hasSuffix:@".png"] || [fileName hasSuffix:@".jpg"]){
                         imgData = [UIImage imageWithContentsOfFile:fullPath];
                         fileType = FileImage;
+                    }else if([fileName hasSuffix:@".zip"] || [fileName hasSuffix:@".rar"]){//压缩文件
+                        imgData = [UIImage imageNamed:@"file_zip"];
+                        fileType = FileZIP;
                     }else {
-                        imgData = [UIImage imageNamed:@"ffile"];
+                        imgData = [UIImage imageNamed:@"file_new"];
                         fileType = FileOther;
                     }
                     model = [MovieList movieList:fileName fileType:fileType path:fullPath imgData:imgData];
