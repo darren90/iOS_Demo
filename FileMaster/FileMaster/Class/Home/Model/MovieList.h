@@ -26,6 +26,11 @@ typedef enum {
 
 @property (nonatomic,copy)NSString * path;
 
+/**
+ *  相对于Documents的路径
+ */
+@property (nonatomic,copy)NSString * relaPath;
+
 +(instancetype)movieList:(NSString *)name fileType:(FileType)fileType path:(NSString *)path imgData:(UIImage *)imgData;
 
 @end

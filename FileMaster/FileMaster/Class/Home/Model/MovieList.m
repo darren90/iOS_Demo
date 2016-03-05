@@ -11,6 +11,17 @@
 @implementation MovieList
 
 
+-(void)setPath:(NSString *)path{
+    _path = path;
+    
+    NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents"];
+    int leng = path.length;
+    NSRange otherRange = NSMakeRange(docsDir.length+1, path.length - docsDir.length-1);
+    self.relaPath = [path substringWithRange:otherRange];
+    
+}
+
+
 +(instancetype)movieList:(NSString *)name fileType:(FileType)fileType  path:(NSString *)path imgData:(UIImage *)imgData
 {
     MovieList *list = [[MovieList alloc]init];

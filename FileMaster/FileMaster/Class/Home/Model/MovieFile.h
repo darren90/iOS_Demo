@@ -24,6 +24,12 @@
 @property (nonatomic,strong)NSArray * subFiles;
 
 /**
+ *  这个文件夹的路径
+ */
+@property (nonatomic,copy)NSString * path;
+
+
+/**
  *  isFolder = NO ，这个才有值
  */
 @property (nonatomic,strong)MovieList *file;

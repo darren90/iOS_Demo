@@ -10,6 +10,8 @@
 
 @interface GetFilesTools : NSObject
 
++ (NSMutableArray *)scanMoviesAtPath:(NSString *)direString;
+
 + (NSMutableArray *)scanFilesAtPath:(NSString *)direString;
 
 

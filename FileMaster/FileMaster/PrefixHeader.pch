@@ -15,6 +15,7 @@
 #import "UIImage+Tint.h"
 #import "UIImage+Category.h"
 #import "MobClick.h" //友盟 统计
+#import "WdCleanCaches.h"
 
 // 2.获得RGB颜色
 #define MJColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]

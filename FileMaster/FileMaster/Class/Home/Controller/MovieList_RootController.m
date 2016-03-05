@@ -28,7 +28,7 @@
     [super viewWillAppear:animated];
     
     NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents"];
-    NSMutableArray *pathArray =  [GetFilesTools scanFilesAtPath:docsDir];//[self scanFilesAtPath:docsDir];
+    NSMutableArray *pathArray =  [GetFilesTools scanMoviesAtPath:docsDir];//[self scanFilesAtPath:docsDir];
 
     self.dataArray = pathArray;//[self getMovieList];
     [self.tableView reloadData];
@@ -36,12 +36,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     // 设置tableView在编辑模式下可以多选，并且只需设置一次
-    self.tableView.allowsMultipleSelectionDuringEditing = YES;
-    
-    // 设置tableView在编辑模式下可以多选，并且只需设置一次
-    self.tableView.allowsMultipleSelectionDuringEditing = YES;
+//    self.tableView.allowsMultipleSelectionDuringEditing = YES;
     
     self.tableView.rowHeight = 80;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -96,6 +92,16 @@
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    MovieFile *file = self.dataArray[indexPath.row];
+    MovieList *model = file.file;
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //1：局部删除一行的刷新
+        [self.dataArray removeObjectAtIndex:indexPath.row];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationBottom];
+        
+        [WdCleanCaches deleteDownloadFileWithFilePath:model.path];
+    }
 }
 
 
@@ -162,7 +168,7 @@
  *  @param sender
  */
 - (IBAction)editList:(UIBarButtonItem *)sender {
- 
+    sender.title = self.tableView.isEditing ? @"编辑" : @"完成" ;
     [self.tableView setEditing:!self.tableView.isEditing animated:YES];
     
     

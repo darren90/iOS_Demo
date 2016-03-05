@@ -10,6 +10,7 @@
 #import "RDVTabBarItem.h"
 #import "BaseNavigationController.h"
 
+#import "AllFiles_RootController.h"
 #import "MovieList_RootController.h"
 #import "PrivateList_RootController.h"
 #import "Setting_RootController.h"
@@ -41,6 +42,9 @@
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
+    AllFiles_RootController *allVC = [sb instantiateViewControllerWithIdentifier:@"AllFiles"];
+    BaseNavigationController *allNav = [[BaseNavigationController alloc]initWithRootViewController:allVC];
+    
     MovieList_RootController *movieListVc = [sb instantiateViewControllerWithIdentifier:@"MovieList"];
     BaseNavigationController *movielistNav = [[BaseNavigationController alloc]initWithRootViewController:movieListVc];
  
@@ -49,8 +53,9 @@
     
     Setting_RootController *settingVc = [sb instantiateViewControllerWithIdentifier:@"Setting"];
     BaseNavigationController *settingNav = [[BaseNavigationController alloc]initWithRootViewController:settingVc];
-    
-    [self setViewControllers:@[movielistNav,privateListNav, settingNav]];
+
+//    [self setViewControllers:@[movielistNav,privateListNav, settingNav]];
+    [self setViewControllers:@[allNav,movielistNav, settingNav]];
     
     [self initTabBarForController];
     self.delegate = self;

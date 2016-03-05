@@ -36,6 +36,8 @@
 		FE28D8521C887BE5000AFC70 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE28D8511C887BE5000AFC70 /* AboutViewController.m */; };
 		FE28D8551C88A181000AFC70 /* SettingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE28D8541C88A181000AFC70 /* SettingModel.m */; };
 		FE28D85C1C8A6390000AFC70 /* AllFiles_RootController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE28D85B1C8A6390000AFC70 /* AllFiles_RootController.m */; };
+		FE59C1241C8A681D009666BE /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = FE59C1211C8A681D009666BE /* Global.m */; };
+		FE59C1251C8A681D009666BE /* WdCleanCaches.m in Sources */ = {isa = PBXBuildFile; fileRef = FE59C1231C8A681D009666BE /* WdCleanCaches.m */; };
 		FEA58DEC1C83275F00FE4E8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58DEB1C83275F00FE4E8A /* main.m */; };
 		FEA58DEF1C83275F00FE4E8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58DEE1C83275F00FE4E8A /* AppDelegate.m */; };
 		FEA58DF21C83275F00FE4E8A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA58DF11C83275F00FE4E8A /* ViewController.m */; };
@@ -159,6 +161,10 @@
 		FE28D8541C88A181000AFC70 /* SettingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingModel.m; sourceTree = "<group>"; };
 		FE28D85A1C8A6390000AFC70 /* AllFiles_RootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllFiles_RootController.h; sourceTree = "<group>"; };
 		FE28D85B1C8A6390000AFC70 /* AllFiles_RootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllFiles_RootController.m; sourceTree = "<group>"; };
+		FE59C1201C8A681D009666BE /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
+		FE59C1211C8A681D009666BE /* Global.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Global.m; sourceTree = "<group>"; };
+		FE59C1221C8A681D009666BE /* WdCleanCaches.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WdCleanCaches.h; sourceTree = "<group>"; };
+		FE59C1231C8A681D009666BE /* WdCleanCaches.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WdCleanCaches.m; sourceTree = "<group>"; };
 		FEA58DE71C83275F00FE4E8A /* FileMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEA58DEB1C83275F00FE4E8A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FEA58DED1C83275F00FE4E8A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -438,6 +444,17 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		FE59C11F1C8A681D009666BE /* ClearCache */ = {
+			isa = PBXGroup;
+			children = (
+				FE59C1201C8A681D009666BE /* Global.h */,
+				FE59C1211C8A681D009666BE /* Global.m */,
+				FE59C1221C8A681D009666BE /* WdCleanCaches.h */,
+				FE59C1231C8A681D009666BE /* WdCleanCaches.m */,
+			);
+			path = ClearCache;
+			sourceTree = "<group>";
+		};
 		FEA58DDE1C83275F00FE4E8A = {
 			isa = PBXGroup;
 			children = (
@@ -653,6 +670,7 @@
 		FEA58E2B1C83406700FE4E8A /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				FE59C11F1C8A681D009666BE /* ClearCache */,
 				FE28D83D1C886C61000AFC70 /* ThirdPart */,
 				FE28D8361C886AE3000AFC70 /* UIView-AutoLayout */,
 				FE28D8321C886AD7000AFC70 /* ObjcRuntime */,
@@ -938,6 +956,7 @@
 				FEA58E601C83406700FE4E8A /* VKVideoPlayerCaption.m in Sources */,
 				FE28D83C1C886B13000AFC70 /* BaseTabBarController.m in Sources */,
 				FE28D8351C886AD7000AFC70 /* ObjcRuntime.m in Sources */,
+				FE59C1251C8A681D009666BE /* WdCleanCaches.m in Sources */,
 				FE28D8391C886AE3000AFC70 /* UIView+AutoLayout.m in Sources */,
 				FE28D84A1C886E45000AFC70 /* UIViewController+Swizzle.m in Sources */,
 				FEA58E621C83406700FE4E8A /* VKVideoPlayerExternalMonitor.m in Sources */,
@@ -967,6 +986,7 @@
 				FEA58E641C83406700FE4E8A /* VKVideoPlayerSettingsManager.m in Sources */,
 				FEA58E841C8347A500FE4E8A /* MovieList_RootController.m in Sources */,
 				FE28D85C1C8A6390000AFC70 /* AllFiles_RootController.m in Sources */,
+				FE59C1241C8A681D009666BE /* Global.m in Sources */,
 				FE28D81B1C8868DE000AFC70 /* BaseNavigationController.m in Sources */,
 				FE28D82F1C886ABF000AFC70 /* RDVTabBar.m in Sources */,
 				FE28D8311C886ABF000AFC70 /* RDVTabBarItem.m in Sources */,
