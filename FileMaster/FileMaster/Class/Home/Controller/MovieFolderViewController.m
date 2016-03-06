@@ -72,7 +72,7 @@
         MovieList *list = model.file;
         if (list.fileType == FileMovieCanPlay) {
             MoviePlayerViewController *playerVc = [[MoviePlayerViewController alloc] init];
-            playerVc.topTitle = list.relaPath;
+            playerVc.topTitle = list.name;
             playerVc.playLocalUrl = list.relaPath;
             [self.navigationController presentViewController:playerVc animated:YES completion:nil];
         }else if (list.fileType == FileImage){

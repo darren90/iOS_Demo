@@ -12,6 +12,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 - (IBAction)openWeibo:(UIButton *)sender;
 
+- (IBAction)openGithub:(UIButton *)sender;
+
 @end
 
 @implementation AboutViewController
@@ -43,7 +45,10 @@
 
 
 - (IBAction)openWeibo:(UIButton *)sender {
-    
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://weibo.com/fengtengfei90"]];
+}
+
+- (IBAction)openGithub:(UIButton *)sender {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/darren90"]];
 }
 @end

@@ -232,7 +232,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-76" translatesAutoresizingMaskIntoConstraints="NO" id="7OD-6G-uei">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-my" translatesAutoresizingMaskIntoConstraints="NO" id="7OD-6G-uei">
                                 <rect key="frame" x="262" y="122" width="76" height="76"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="76" id="EFi-KR-fFf"/>
@@ -255,7 +255,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write By FengTengfei" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNN-Nt-bYP">
-                                <rect key="frame" x="218" y="438" width="164" height="21"/>
+                                <rect key="frame" x="218" y="426" width="164" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="l9g-l8-xZO"/>
                                 </constraints>
@@ -270,7 +270,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ord-Cd-xnt">
-                                <rect key="frame" x="242" y="463" width="116" height="28"/>
+                                <rect key="frame" x="242" y="473" width="116" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="116" id="Cmu-3b-ews"/>
                                 </constraints>
@@ -278,6 +278,17 @@
                                 <state key="normal" title="Weibo:STRING冯"/>
                                 <connections>
                                     <action selector="openWeibo:" destination="ibH-Mo-0P4" eventType="touchUpInside" id="LdD-QF-EU9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FkA-pe-IbV">
+                                <rect key="frame" x="198.5" y="447" width="203" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="HcI-ui-hcJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Github:https://github.com/darren90"/>
+                                <connections>
+                                    <action selector="openGithub:" destination="ibH-Mo-0P4" eventType="touchUpInside" id="tXc-pg-Khu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -292,14 +303,16 @@
                             <constraint firstItem="uPc-Rp-fV9" firstAttribute="centerX" secondItem="1Xm-P4-U2A" secondAttribute="centerX" id="J00-TE-84b"/>
                             <constraint firstItem="jwk-44-LtM" firstAttribute="trailing" secondItem="57V-hE-aMj" secondAttribute="trailing" id="N7O-sU-Gim"/>
                             <constraint firstItem="7OD-6G-uei" firstAttribute="centerX" secondItem="1Xm-P4-U2A" secondAttribute="centerX" id="TLm-cJ-xry"/>
+                            <constraint firstItem="FkA-pe-IbV" firstAttribute="centerX" secondItem="1Xm-P4-U2A" secondAttribute="centerX" id="Tjt-pU-HhH"/>
                             <constraint firstItem="mNN-Nt-bYP" firstAttribute="centerX" secondItem="1Xm-P4-U2A" secondAttribute="centerX" id="YzE-kM-xQ3"/>
-                            <constraint firstItem="Ord-Cd-xnt" firstAttribute="top" secondItem="mNN-Nt-bYP" secondAttribute="bottom" constant="4" id="dgZ-nb-rNa"/>
+                            <constraint firstItem="Ord-Cd-xnt" firstAttribute="top" secondItem="mNN-Nt-bYP" secondAttribute="bottom" constant="26" id="dgZ-nb-rNa"/>
                             <constraint firstItem="jwk-44-LtM" firstAttribute="centerX" secondItem="1Xm-P4-U2A" secondAttribute="centerX" id="eme-Kj-qxg"/>
                             <constraint firstItem="jwk-44-LtM" firstAttribute="centerY" secondItem="1Xm-P4-U2A" secondAttribute="centerY" id="f86-ii-Vbu"/>
                             <constraint firstItem="jwk-44-LtM" firstAttribute="centerX" secondItem="1Xm-P4-U2A" secondAttribute="centerX" id="h25-F3-57p"/>
                             <constraint firstItem="Ord-Cd-xnt" firstAttribute="centerX" secondItem="1Xm-P4-U2A" secondAttribute="centerX" id="lWJ-BV-OTN"/>
+                            <constraint firstItem="FkA-pe-IbV" firstAttribute="top" secondItem="mNN-Nt-bYP" secondAttribute="bottom" id="mOo-YE-t1b"/>
                             <constraint firstItem="jwk-44-LtM" firstAttribute="top" secondItem="57V-hE-aMj" secondAttribute="bottom" constant="10" id="oob-xN-Ky7"/>
-                            <constraint firstItem="D70-8b-K5L" firstAttribute="top" secondItem="Ord-Cd-xnt" secondAttribute="bottom" constant="60" id="shJ-ob-xae"/>
+                            <constraint firstItem="D70-8b-K5L" firstAttribute="top" secondItem="Ord-Cd-xnt" secondAttribute="bottom" constant="50" id="shJ-ob-xae"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -356,7 +369,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Icon-76" width="76" height="76"/>
+        <image name="Icon-my" width="76" height="76"/>
         <image name="movie" width="30" height="24"/>
         <image name="priavte" width="30" height="30"/>
         <image name="setting" width="30" height="30"/>
