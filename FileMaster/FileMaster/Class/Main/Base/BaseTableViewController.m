@@ -32,6 +32,9 @@
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
     self.automaticallyAdjustsScrollViewInsets = NO;
     
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
+                                                         forBarMetrics:UIBarMetricsDefault];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     

@@ -40,6 +40,9 @@
     
     // 设置tableView在编辑模式下可以多选，并且只需设置一次
 //    self.tableView.allowsMultipleSelectionDuringEditing = YES;
+   
+    //滑动隐藏navBar
+//    self.navigationController.hidesBarsOnSwipe = YES;
     
     self.tableView.rowHeight = 80;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
