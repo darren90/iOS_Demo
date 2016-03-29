@@ -1,9 +1,0 @@
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
-use_frameworks!
-
-pod 'Alamofire', '~> 2.0'
-pod 'SwiftyJSON', '~> 2.3.2'
-pod 'SDWebImage', '~>3.7'
-pod 'MJExtension', '~> 3.0.10'
-pod 'MMDrawerController', '~> 0.5.7'
