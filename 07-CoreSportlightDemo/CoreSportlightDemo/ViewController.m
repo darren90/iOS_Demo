@@ -38,7 +38,6 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 //    NewsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NewsCell"];
-
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NewsCell"];
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"NewsCell"];
@@ -53,6 +52,7 @@
 
 
 -(void)getNewsData{
+    
     NSMutableArray<CSSearchableItem *> *items = [NSMutableArray array];
 
     for (NewsModel *model in self.dataArray) {
