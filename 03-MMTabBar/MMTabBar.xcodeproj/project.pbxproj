@@ -240,6 +240,7 @@
 		FE0F74291BA477EF00E4ECDC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = tengfei;
 				TargetAttributes = {
@@ -500,6 +501,7 @@
 				FE0F74561BA477F000E4ECDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FE0F74571BA477F000E4ECDC /* Build configuration list for PBXNativeTarget "MMTabBarTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +510,7 @@
 				FE0F74591BA477F000E4ECDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
