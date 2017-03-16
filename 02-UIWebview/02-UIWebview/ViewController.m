@@ -9,8 +9,12 @@
 #import "ViewController.h"
 #import "AppDelegate.h"
 
-@interface ViewController ()<UIWebViewDelegate >
+@interface ViewController ()<UIWebViewDelegate>
+    
 @property (nonatomic,weak)UIWebView * webView;
+    
+@property (nonatomic,assign)BOOL didWebViewLoadOK;
+    
 @end
 
 @implementation ViewController
@@ -27,9 +31,27 @@
 #pragma - mark  进入全屏
 -(void)begainFullScreen
 {
+    if(!self.didWebViewLoadOK) {
+        return;
+    }
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     appDelegate.allowRotation = YES;
+    
+    [[UIDevice currentDevice] setValue:@"UIInterfaceOrientationLandscapeLeft" forKey:@"orientation"];
+    
+    //强制zhuan'p：
+    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+        SEL selector = NSSelectorFromString(@"setOrientation:");
+        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+        [invocation setSelector:selector];
+        [invocation setTarget:[UIDevice currentDevice]];
+        int val = UIInterfaceOrientationLandscapeLeft;
+        [invocation setArgument:&val atIndex:2];
+        [invocation invoke];
+    }
 }
+    
+    
 #pragma - mark 退出全屏
 -(void)endFullScreen
 {
@@ -60,7 +82,8 @@
     
     self.webView.mediaPlaybackRequiresUserAction = YES;
     //http://tv.sohu.com/20150713/n416636681.shtml
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@", @"http://www.iqiyi.com/v_19rron8psw.html?src=focustext_2_20130410_1#curid=378627300_481ef4234d04240f8e3526ba4d503a1d"]];
+    NSURL *url = [NSURL URLWithString: @"http://www.iqiyi.com/v_19rron8psw.html?src=focustext_2_20130410_1#curid=378627300_481ef4234d04240f8e3526ba4d503a1d"];
+    url = [NSURL URLWithString:@"https://v.qq.com/x/cover/j6cgzhtkuonf6te.html"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [webView loadRequest:request ];
 }
@@ -79,6 +102,15 @@
         return YES;
     }
 }
+ 
+-(void)webViewDidFinishLoad:(UIWebView *)webView{
+    self.didWebViewLoadOK = YES;
+}
+    
+-(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+    self.didWebViewLoadOK = NO;
+}
+    
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
