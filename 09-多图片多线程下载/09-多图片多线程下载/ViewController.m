@@ -132,6 +132,7 @@
                     [down resume];
                 }];
                 
+                //下载对象加入队列中
                 [self.operations setObject:downO forKey:url];
                 [self.queue addOperation:downO];
             }
